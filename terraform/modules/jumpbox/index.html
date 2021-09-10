@@ -40,6 +40,10 @@ Version
 =2.71.0
 
 
+ tls
+=3.1.0
+
+
 
 Providers
 
@@ -52,32 +56,28 @@ Version
 
 
  azurerm
-2.65.0
+=2.71.0
 
 
  http
-n/a
-
-
- tls
 n/a …&lt;/!--&gt;">
 <meta property="og:title" content="Jumpbox Terraform Module" />
-<meta property="og:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    Providers    Name Version      azurerm 2.65.0    http n/a    tls n/a    Modules No modules.
-Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface.jumpbox_vm_nic resource   azurerm_network_interface_security_group_association.jumpbox_nsg_association resource   azurerm_network_security_group." />
+<meta property="og:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    tls =3.1.0    Providers    Name Version      azurerm =2.71.0    http n/a    tls =3.1.0    Modules No modules.
+Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/modules/jumpbox/" /><meta property="article:section" content="terraform" />
 
 <meta property="article:modified_time" content="2021-09-09T17:39:46+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
 
 <meta itemprop="name" content="Jumpbox Terraform Module">
-<meta itemprop="description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    Providers    Name Version      azurerm 2.65.0    http n/a    tls n/a    Modules No modules.
-Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface.jumpbox_vm_nic resource   azurerm_network_interface_security_group_association.jumpbox_nsg_association resource   azurerm_network_security_group.">
+<meta itemprop="description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    tls =3.1.0    Providers    Name Version      azurerm =2.71.0    http n/a    tls =3.1.0    Modules No modules.
+Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface.">
 <meta itemprop="dateModified" content="2021-09-09T17:39:46+01:00" />
-<meta itemprop="wordCount" content="116">
+<meta itemprop="wordCount" content="118">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jumpbox Terraform Module"/>
-<meta name="twitter:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    Providers    Name Version      azurerm 2.65.0    http n/a    tls n/a    Modules No modules.
-Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface.jumpbox_vm_nic resource   azurerm_network_interface_security_group_association.jumpbox_nsg_association resource   azurerm_network_security_group."/>
+<meta name="twitter:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    tls =3.1.0    Providers    Name Version      azurerm =2.71.0    http n/a    tls =3.1.0    Modules No modules.
+Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   azurerm_network_interface."/>
 
 
 
@@ -132,7 +132,7 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee110b490d5b2dad4b29e7eead8b3d71.json"
+  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -159,7 +159,7 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee110b490d5b2dad4b29e7eead8b3d71.json"
+  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -370,6 +370,10 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
 <td><a name="requirement_azurerm"></a> <a href="#requirement_azurerm">azurerm</a></td>
 <td>=2.71.0</td>
 </tr>
+<tr>
+<td><a name="requirement_tls"></a> <a href="#requirement_tls">tls</a></td>
+<td>=3.1.0</td>
+</tr>
 </tbody>
 </table>
 <h2 id="providers">Providers</h2>
@@ -383,7 +387,7 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
 <tbody>
 <tr>
 <td><a name="provider_azurerm"></a> <a href="#provider_azurerm">azurerm</a></td>
-<td>2.65.0</td>
+<td>=2.71.0</td>
 </tr>
 <tr>
 <td><a name="provider_http"></a> <a href="#provider_http">http</a></td>
@@ -391,7 +395,7 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
 </tr>
 <tr>
 <td><a name="provider_tls"></a> <a href="#provider_tls">tls</a></td>
-<td>n/a</td>
+<td>=3.1.0</td>
 </tr>
 </tbody>
 </table>
@@ -451,7 +455,7 @@ Resources    Name Type     azurerm_linux_virtual_machine.jumpbox_vm resource   a
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key">tls_private_key.jumpbox_vm_ssh</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/tls/3.1.0/docs/resources/private_key">tls_private_key.jumpbox_vm_ssh</a></td>
 <td>resource</td>
 </tr>
 <tr>

@@ -34,7 +34,7 @@
 <meta itemprop="description" content="Docs for the EU Gateway deployment terraform
 ">
 <meta itemprop="dateModified" content="2021-09-09T17:39:46+01:00" />
-<meta itemprop="wordCount" content="350">
+<meta itemprop="wordCount" content="360">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ireland Terraform Stack"/>
 <meta name="twitter:description" content="Docs for the EU Gateway deployment terraform
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee110b490d5b2dad4b29e7eead8b3d71.json"
+  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee110b490d5b2dad4b29e7eead8b3d71.json"
+  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -318,12 +318,32 @@
 <td>&gt;= 1.0</td>
 </tr>
 <tr>
+<td><a name="requirement_azuread"></a> <a href="#requirement_azuread">azuread</a></td>
+<td>=1.6.0</td>
+</tr>
+<tr>
 <td><a name="requirement_azurerm"></a> <a href="#requirement_azurerm">azurerm</a></td>
 <td>=2.71.0</td>
 </tr>
 <tr>
+<td><a name="requirement_helm"></a> <a href="#requirement_helm">helm</a></td>
+<td>=2.2.0</td>
+</tr>
+<tr>
 <td><a name="requirement_kubectl"></a> <a href="#requirement_kubectl">kubectl</a></td>
 <td>=1.11.2</td>
+</tr>
+<tr>
+<td><a name="requirement_kubernetes"></a> <a href="#requirement_kubernetes">kubernetes</a></td>
+<td>=2.4.1</td>
+</tr>
+<tr>
+<td><a name="requirement_null"></a> <a href="#requirement_null">null</a></td>
+<td>=3.1.0</td>
+</tr>
+<tr>
+<td><a name="requirement_random"></a> <a href="#requirement_random">random</a></td>
+<td>=3.1.0</td>
 </tr>
 </tbody>
 </table>
@@ -393,15 +413,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application">azuread_application.msal_authentication</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/application">azuread_application.msal_authentication</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application_password">azuread_application_password.msal_authentication</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/application_password">azuread_application_password.msal_authentication</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal">azuread_service_principal.msal_authentication</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/service_principal">azuread_service_principal.msal_authentication</a></td>
 <td>resource</td>
 </tr>
 <tr>
@@ -509,59 +529,59 @@
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.dgca_businessrule_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.dgca_businessrule_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.dgca_issuance_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.dgca_issuance_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.dgca_issuance_service_public</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.dgca_issuance_service_public</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.dgca_issuance_web</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.dgca_issuance_web</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.dgca_verifier_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.dgca_verifier_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release">helm_release.msal_authentication</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release">helm_release.msal_authentication</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace">kubernetes_namespace.dgca_businessrule_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace">kubernetes_namespace.dgca_businessrule_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace">kubernetes_namespace.dgca_issuance_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace">kubernetes_namespace.dgca_issuance_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace">kubernetes_namespace.dgca_issuance_service_public</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace">kubernetes_namespace.dgca_issuance_service_public</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace">kubernetes_namespace.dgca_issuance_web</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace">kubernetes_namespace.dgca_issuance_web</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace">kubernetes_namespace.dgca_verifier_service</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace">kubernetes_namespace.dgca_verifier_service</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource">null_resource.upsert_rules</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource">null_resource.upsert_rules</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid">random_uuid.web_auth_oauth2_scope</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/random/3.1.0/docs/resources/uuid">random_uuid.web_auth_oauth2_scope</a></td>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/client_config">azuread_client_config.current</a></td>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/data-sources/client_config">azuread_client_config.current</a></td>
 <td>data source</td>
 </tr>
 <tr>
