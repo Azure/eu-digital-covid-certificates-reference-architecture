@@ -1,7 +1,7 @@
 ---
 title: "Deployment"
 linkTitle: "Deployment"
-weight: 40
+weight: 50
 description: >
     Deploy the EU Digital Green Certificate Reference Architecture
 ---
