@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
+  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -264,6 +264,9 @@ This the multi-page printable view of this section.
 <span style="color:#8f5902;font-style:italic"># OID of the Group to grant Administrator permissions</span>
 <span style="color:#c4a000">administrator_group_oid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
+<span style="color:#8f5902;font-style:italic"># Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</span>
+<span style="color:#c4a000">enable_log_analytics_cluster</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
+
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
@@ -305,6 +308,9 @@ This the multi-page printable view of this section.
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Business Rules Service</span>
 <span style="color:#c4a000">businessrule_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;93&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</span>
+<span style="color:#c4a000">enable_log_analytics_cluster</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
@@ -717,6 +723,13 @@ This the multi-page printable view of this section.
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
+<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td style="text-align:center">no</td>
 </tr>
 <tr>
 <td><a name="input_enable_log_analytics_workspace"></a> <a href="#input_enable_log_analytics_workspace">enable_log_analytics_workspace</a></td>
@@ -1148,6 +1161,13 @@ This the multi-page printable view of this section.
 <td style="text-align:center">no</td>
 </tr>
 <tr>
+<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
+<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
 <td><a name="input_enable_log_analytics_workspace"></a> <a href="#input_enable_log_analytics_workspace">enable_log_analytics_workspace</a></td>
 <td>Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</td>
 <td><code>bool</code></td>
@@ -1381,6 +1401,14 @@ them into modules.</p>
 <td>resource</td>
 </tr>
 <tr>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster">azurerm_log_analytics_cluster.log_analytics_cluster</a></td>
+<td>resource</td>
+</tr>
+<tr>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service">azurerm_log_analytics_linked_service.log_analytics_linked_service</a></td>
+<td>resource</td>
+</tr>
+<tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution">azurerm_log_analytics_solution.anti_malware</a></td>
 <td>resource</td>
 </tr>
@@ -1426,10 +1454,6 @@ them into modules.</p>
 </tr>
 <tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting">azurerm_monitor_diagnostic_setting.acr_diagnostic_logs</a></td>
-<td>resource</td>
-</tr>
-<tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting">azurerm_monitor_diagnostic_setting.diagnostic_logs</a></td>
 <td>resource</td>
 </tr>
 <tr>
@@ -1834,6 +1858,13 @@ them into modules.</p>
 <td>n/a</td>
 <td><code>string</code></td>
 <td><code>&quot;0.1.0&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
+<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>

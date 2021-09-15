@@ -59,12 +59,12 @@ Version
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/modules/base-infra/" /><meta property="article:section" content="terraform" />
 
-<meta property="article:modified_time" content="2021-09-09T17:39:46+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
+<meta property="article:modified_time" content="2021-09-15T16:10:26+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
 
 <meta itemprop="name" content="Base Infrastructure Terraform Module">
 <meta itemprop="description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.4.1    null =3.1.0    random =3.1.0    Providers    Name Version      azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.">
-<meta itemprop="dateModified" content="2021-09-09T17:39:46+01:00" />
-<meta itemprop="wordCount" content="507">
+<meta itemprop="dateModified" content="2021-09-15T16:10:26+01:00" />
+<meta itemprop="wordCount" content="526">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Base Infrastructure Terraform Module"/>
 <meta name="twitter:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.4.1    null =3.1.0    random =3.1.0    Providers    Name Version      azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2."/>
@@ -122,7 +122,7 @@ Version
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
+  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -149,7 +149,7 @@ Version
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
+  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -465,6 +465,14 @@ Version
 <td>resource</td>
 </tr>
 <tr>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster">azurerm_log_analytics_cluster.log_analytics_cluster</a></td>
+<td>resource</td>
+</tr>
+<tr>
+<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service">azurerm_log_analytics_linked_service.log_analytics_linked_service</a></td>
+<td>resource</td>
+</tr>
+<tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution">azurerm_log_analytics_solution.anti_malware</a></td>
 <td>resource</td>
 </tr>
@@ -510,10 +518,6 @@ Version
 </tr>
 <tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting">azurerm_monitor_diagnostic_setting.acr_diagnostic_logs</a></td>
-<td>resource</td>
-</tr>
-<tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting">azurerm_monitor_diagnostic_setting.diagnostic_logs</a></td>
 <td>resource</td>
 </tr>
 <tr>
@@ -918,6 +922,13 @@ Version
 <td>n/a</td>
 <td><code>string</code></td>
 <td><code>&quot;0.1.0&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
+<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>

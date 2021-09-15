@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.050a169beb21e52a4980db756f244565.json"
+  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -324,6 +324,8 @@ location                            = &quot;northeurope&quot;
 parent_dns_zone_name                = &quot;dns name&quot;
 parent_dns_zone_rg_name             = &quot;&lt;id&gt;&quot;
 enable_log_analytics_workspace      = false
+enable_log_analytics_cluster        = false
+
 </code></pre><p>Where:</p>
 <ul>
 <li><code>prefix</code> is set as a unique identifier (please avoid spaces or special characters). This is used to create names and identifiers of the different resources, so multiple deployments can be done on the same subscription.</li>
@@ -338,6 +340,7 @@ enable_log_analytics_workspace      = false
 <li><code>parent_dns_zone_name</code> The name of the domain created for the deployment in the prerequisites section.</li>
 <li><code>parent_dns_zone_rg_name</code> The resource group where the DNS zone has been created.</li>
 <li><code>enable_log_analytics_workspace</code> Enable Azure Log Analytics Workspace, disabled by default.</li>
+<li><code>enable_log_analytics_cluster</code> Enable Azure Log Analytics cluster, disabled by default. <code>enable_log_analytics_workspace</code>  is also required if you wish Log Analytics cluster to be enabled. Also advised to looking into your Azure Subcription&rsquo;s Qoutas before enabling.</li>
 </ul>
 <h2 id="all-in-one-deployment">All In One Deployment</h2>
 <p>Once the variables file has been created, the process of creating the infrastructure and deploying the application has been automated though terraform and scripts. Before initialing the deployment, Azure cli (az) must be logged in, you can log in by running <code>az login</code>.
