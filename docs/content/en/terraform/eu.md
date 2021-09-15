@@ -13,7 +13,9 @@ description: >
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | =2.71.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | =2.2.0 |
 | <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | =1.11.2 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | =2.4.1 |
 
 ## Providers
 
@@ -39,8 +41,8 @@ description: >
 | [azurerm_mysql_database.mysql_db](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/mysql_database) | resource |
 | [azurerm_role_assignment.dgc_gateway_identity_kv_role_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/role_assignment) | resource |
 | [azurerm_user_assigned_identity.dgc_gateway_identity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/user_assigned_identity) | resource |
-| [helm_release.dgc_gateway](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [kubernetes_namespace.dgc_gateway](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
+| [helm_release.dgc_gateway](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [kubernetes_namespace.dgc_gateway](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
 | [terraform_remote_state.dev](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
@@ -56,6 +58,8 @@ description: >
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to deploy into | `string` | n/a | yes |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
+| <a name="input_enable_log_analytics_cluster"></a> [enable\_log\_analytics\_cluster](#input\_enable\_log\_analytics\_cluster) | Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace | `bool` | `false` | no |
+| <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_gateway_version"></a> [gateway\_version](#input\_gateway\_version) | Version Number of the Gateway | `string` | `"79"` | no |
 | <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"3"` | no |
 

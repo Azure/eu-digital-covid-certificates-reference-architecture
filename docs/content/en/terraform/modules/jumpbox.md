@@ -11,13 +11,15 @@ weight: 20
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | =2.71.0 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | =3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 2.65.0 |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | =2.71.0 |
+| <a name="provider_http"></a> [http](#provider\_http) | n/a |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | =3.1.0 |
 
 ## Modules
 
@@ -38,8 +40,9 @@ No modules.
 | [azurerm_subnet.subnet](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/subnet) | resource |
 | [azurerm_virtual_machine_extension.jumpbox_vm_aad](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/virtual_machine_extension) | resource |
 | [azurerm_virtual_network.vnet](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/virtual_network) | resource |
-| [tls_private_key.jumpbox_vm_ssh](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
+| [tls_private_key.jumpbox_vm_ssh](https://registry.terraform.io/providers/hashicorp/tls/3.1.0/docs/resources/private_key) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/data-sources/client_config) | data source |
+| [http_http.local_external_ip](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
 
 ## Inputs
 
