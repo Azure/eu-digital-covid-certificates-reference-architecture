@@ -1,0 +1,46 @@
+From 51759aa88ff0f08bb04e1eb90dce963e53e587fd Mon Sep 17 00:00:00 2001
+From: Kiall Mac Innes <kiall.macinnes@microsoft.com>
+Date: Mon, 9 Aug 2021 15:38:14 +0100
+Subject: [PATCH 2/2] APECOE Patch: Add support for KeyVault properties
+
+---
+ pom.xml             | 23 +++++++++++++++++++++++
+ 2 files changed, 23 insertions(+)
+
+diff --git a/pom.xml b/pom.xml
+index b02f0c0..cd13fb6 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -127,6 +127,29 @@
+                 </plugins>
+             </build>
+         </profile>
++        <profile>
++            <id>azure</id>
++            <properties>
++                <azure.version>3.6.0</azure.version>
++            </properties>
++            <dependencyManagement>
++                <dependencies>
++                    <dependency>
++                        <groupId>com.azure.spring</groupId>
++                        <artifactId>azure-spring-boot-bom</artifactId>
++                        <version>${azure.version}</version>
++                        <type>pom</type>
++                        <scope>import</scope>
++                    </dependency>
++                </dependencies>
++            </dependencyManagement>
++            <dependencies>
++                <dependency>
++                    <groupId>com.azure.spring</groupId>
++                    <artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>
++                </dependency>
++            </dependencies>
++        </profile>
+     </profiles>
+
+     <distributionManagement>
+--
+2.27.0
+
