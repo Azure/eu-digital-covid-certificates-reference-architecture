@@ -18,8 +18,12 @@ IE jumpbox:
 $(shell $(MAKE) -sC eudgc-ie print-ssh-cmd)
 
 
-To issue your first test Cert, in you Web Browser head to: $(shell $(MAKE) -sC eudgc-ie output-hostnames)
+To issue your first test Cert, in you Web Browser head to: $(shell $(MAKE) -sC eudgc-ie output-issuance-web-address)
 
+Required Endpoints to apply when building the Android Apps:
+- Issuance Service: $(shell $(MAKE) -sC eudgc-ie output-issuance-service-url)
+- Business Rule Service: $(shell $(MAKE) -sC eudgc-ie output-businessrule-service-url)
+- Verifier Service: $(shell $(MAKE) -sC eudgc-ie output-verifier-service-url)
 
 Enjoy! 😀
 

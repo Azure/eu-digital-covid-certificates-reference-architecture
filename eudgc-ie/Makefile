@@ -38,4 +38,20 @@ workspace:
 
 .PHONY: output-hostnames
 output-hostnames:
+	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.[]["value"]' | sed "s/.*/&\//")"
+
+.PHONY: output-issuance-web-address
+output-issuance-web-address:
 	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["issuance_web_address"]["value"]' | sed "s/.*/&\//")"
+
+.PHONY: output-issuance-service-url
+output-issuance-service-url:
+	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")"
+
+.PHONY: output-businessrule-service-url
+output-businessrule-service-url:
+	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")"
+
+.PHONY: output-verifier-service-url
+output-verifier-service-url:
+	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")"
