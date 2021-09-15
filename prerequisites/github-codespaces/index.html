@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.87.0" /><link rel="canonical" type="text/html" href="/getting-started/">
-<link rel="alternate" type="application/rss&#43;xml" href="/getting-started/index.xml">
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta name="generator" content="Hugo 0.87.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -19,20 +17,28 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Getting Started | EU Digital Green Cert - Azure Example</title>
+<title>GitHub Codespaces | EU Digital Green Cert - Azure Example</title>
 
 
-  
-  <meta name="description" content="">
-<meta property="og:title" content="Getting Started" />
-<meta property="og:description" content="An example of the EU Digital Green Cert system on Azure" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/getting-started/" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
+  <meta name="description" content="Prerequisites necessary for deployment using GitHub Codespaces
+">
+<meta property="og:title" content="GitHub Codespaces" />
+<meta property="og:description" content="Prerequisites necessary for deployment using GitHub Codespaces
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/prerequisites/github-codespaces/" /><meta property="article:section" content="prerequisites" />
 
-<meta itemprop="name" content="Getting Started">
-<meta itemprop="description" content="An example of the EU Digital Green Cert system on Azure"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Getting Started"/>
-<meta name="twitter:description" content="An example of the EU Digital Green Cert system on Azure"/>
+<meta property="article:modified_time" content="2021-09-15T18:32:05+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
+
+<meta itemprop="name" content="GitHub Codespaces">
+<meta itemprop="description" content="Prerequisites necessary for deployment using GitHub Codespaces
+">
+<meta itemprop="dateModified" content="2021-09-15T18:32:05+01:00" />
+<meta itemprop="wordCount" content="188">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitHub Codespaces"/>
+<meta name="twitter:description" content="Prerequisites necessary for deployment using GitHub Codespaces
+"/>
 
 
 
@@ -61,7 +67,7 @@
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -87,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
+  data-offline-search-index-json-src="/offline-search-index.421d67f7f876ce2e3af15d6d83d281a1.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -99,305 +105,232 @@
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-          </div>
-          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
-          </div>
-          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.421d67f7f876ce2e3af15d6d83d281a1.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="EU Digital Green Certificate - Azure Example Deployment" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-background-li">
+  <a href="/background/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-background"><span class="">Background</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-prerequisites-li">
+  <a href="/prerequisites/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-prerequisites"><span class="">Prerequisites</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitescommon-li">
+  <a href="/prerequisites/common/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitescommon"><span class="">Common</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitesdevcontainer-li">
+  <a href="/prerequisites/devcontainer/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitesdevcontainer"><span class="">VS Code DevContainer</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-prerequisitesgithub-codespaces-li">
+  <a href="/prerequisites/github-codespaces/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-prerequisitesgithub-codespaces"><span class="td-sidebar-nav-active-item">GitHub Codespaces</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitesmanual-li">
+  <a href="/prerequisites/manual/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitesmanual"><span class="">Manual</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-deployment-li">
+  <a href="/deployment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-deployment"><span class="">Deployment</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentcertificates-li">
+  <a href="/deployment/certificates/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deploymentcertificates"><span class="">Certificate Generation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentdeployment-li">
+  <a href="/deployment/deployment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deploymentdeployment"><span class="">Deployment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentvalidation-li">
+  <a href="/deployment/validation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deploymentvalidation"><span class="">Validation</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-android-apps-li">
+  <a href="/android-apps/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-android-apps"><span class="">Android Applications</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-android-appsbuild-li">
+  <a href="/android-apps/build/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-android-appsbuild"><span class="">Build</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-deep-dives-li">
+  <a href="/deep-dives/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-deep-dives"><span class="">Deep Dives</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesprivate-link-li">
+  <a href="/deep-dives/private-link/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesprivate-link"><span class="">Private Link</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveskeyvault-li">
+  <a href="/deep-dives/keyvault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskeyvault"><span class="">KeyVault</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divescmk-li">
+  <a href="/deep-dives/cmk/" title="Customer Managed Keys" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divescmk"><span class="">CMK</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-mysql-li">
+  <a href="/deep-dives/aad-mysql/" title="AAD authentication for MySQL" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-mysql"><span class="">AAD for MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-aks-li">
+  <a href="/deep-dives/aad-aks/" title="AAD authentication for Azure Kubernetes Service" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-aks"><span class="">AAD for AKS</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-terraform-li">
+  <a href="/terraform/" title="Terraform Docs (Autogenerated)" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-terraform"><span class="">Terraform</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformvariables-li">
+  <a href="/terraform/variables/" title="Installation - Variables" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformvariables"><span class="">Variables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformdev-li">
+  <a href="/terraform/dev/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformdev"><span class="">Development Terraform Stack</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformeu-li">
+  <a href="/terraform/eu/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformeu"><span class="">EU Terraform Stack</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformie-li">
+  <a href="/terraform/ie/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformie"><span class="">Ireland Terraform Stack</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-terraformmodules-li">
+  <a href="/terraform/modules/" title="Terraform Modules" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-terraformmodules"><span class="">Modules</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformmodulesbase-infra-li">
+  <a href="/terraform/modules/base-infra/" title="Base Infrastructure Terraform Module" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformmodulesbase-infra"><span class="">Base Infrastructure Module</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformmodulesjumpbox-li">
+  <a href="/terraform/modules/jumpbox/" title="Jumpbox Terraform Module" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformmodulesjumpbox"><span class="">Jumpbox Module</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+  
+  
+  
+  
+  
+  
+  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+  
+  
+    <a id="print" href="/prerequisites/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+  
+  </div>
+
+
             
 
 
-
-
-<div class="td-content">
-<div class="pageinfo pageinfo-primary d-print-none">
-<p>
-This the multi-page printable view of this section.
-<a href="#" onclick="print();return false;">Click here to print</a>.
-</p><p>
-<a href="/getting-started/">Return to the regular view of this page</a>.
-</p>
-</div>
-
-
-
-<h1 class="title">Getting Started</h1>
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prepare-guthub-orginsation">Prepare GutHub Orginsation</a></li>
+        <li><a href="#fork-the-respository-and-open-in-codespaces">Fork the respository and open in Codespaces</a></li>
+        <li><a href="#open-a-terminal-within-codespaces">Open a Terminal within Codespaces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
 
 
 
+            
 
-
-    <ul>
-    
-  
-  
-  
-  
-
-  
-    
-    
 	
-<li>1: <a href="#pg-cf853b17d81981029feade8154c913bb">Prerequisites</a></li>
+		
 
 
-    
+
   
-    
-    
+  
+
 	
-<li>2: <a href="#pg-def55343ea5048561e5a556d4b51c637">GitHub Codespaces</a></li>
+		
 
 
-    
+
   
-    
-    
+  
+
 	
-<li>3: <a href="#pg-6c0adce68e6015e8a2ce9d5a0caafeea">Certificate Generation</a></li>
 
-
-    
-  
-    
-    
-	
-<li>4: <a href="#pg-810ad17891d965a35863e5b03873ddbc">Deployment</a></li>
-
-
-    
-  
-    
-    
-	
-<li>5: <a href="#pg-e572b86fca40ff763c9447f4766f5173">Validation</a></li>
-
-
-    
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
   
 
-    </ul>
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
 
 
-<div class="content">
-      
-</div>
-</div>
 
 
-  
-  
-  
-  
 
-  
-  
 
-  
-    
-    
-	
-    
 
-<div class="td-content" style="">
-    
-	<h1 id="pg-cf853b17d81981029feade8154c913bb">1 - Prerequisites</h1>
-    <div class="lead">Description of the necessary prerequisites</div>
-	<h3 id="azure-prerequisites">Azure Prerequisites</h3>
-<ul>
-<li>An active Azure account, with a subscription available for us.</li>
-<li>Any preview features needing to be registered?</li>
-</ul>
-<p>TODO&hellip;</p>
-<ul>
-<li>DNS Domain Name / Zone resource in Azure?</li>
-<li>TF State?</li>
-</ul>
-<h2 id="deployment-with-devcontainer">Deployment with devcontainer</h2>
-<p>This repository includes configuration for a development container, allowing for repeatable and reliable usage in an VS Code DevContainer or using GitHub Codespaces.</p>
-<p>This document describes it&rsquo;s use within a VS Code DevContainer.</p>
-<h3 id="download-and-install-docker">Download and install Docker</h3>
-<p><a href="https://www.docker.com/products/docker-desktop">Docker</a> (Versions vary depending on the platform)</p>
-<h3 id="download-and-install-vs-code">Download and install VS Code</h3>
-<p>Visual studio code is the Microsoft free IDE, it can be downloaded here: <a href="https://code.visualstudio.com/">Visual Studio code</a></p>
-<h3 id="install-required-vs-code-extensions">Install required VS Code extensions</h3>
-<p>The devlopment in containers (&ldquo;Remote - Containers&rdquo;), it is not installed by default with VS code and it is an addon, it can be installed through the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">web link</a>.</p>
-<h3 id="clone-the-respository-and-open-in-a-devcontainer">Clone the respository and open in a DevContainer</h3>
-<p>Once the repository has been cloned, VS code will promt to open the repository in a container, if this would not happen, it can be triggered by the command palete (CMD+Shift+p) and selecting the command &lsquo;Reopen in container&rsquo;. The first time, vs code automatically will build and run the container locally, attaching the IDE UI to it.</p>
-<p>Once container has been opened, please go to the deployment page of the docs.</p>
-<h2 id="manual-deployment---prerequisites-not-recommended">Manual Deployment - Prerequisites (Not Recommended)</h2>
-<p>If you would like to run the deployment in your PC without a container, this here is a compresive list of the tools required to complete the deployment. The versions of the tools used, can be found in the <a href=".devcontainer/Dockerfile">Dockerfile</a>.</p>
-<p>The following are needed for a deployment:</p>
-<h3 id="install-required-vs-code-extensions-1">Install required VS Code extensions</h3>
-<p>The devlopment in containers (&ldquo;Remote - Containers&rdquo;), it is not installed by default with VS code and it is an addon, it can be installed through the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">web link</a>.</p>
-<h3 id="clone-the-respository-and-open-in-a-devcontainer-1">Clone the respository and open in a DevContainer</h3>
-<p>Once the repository has been cloned, VS code will promt to open the repository in a container, if this would not happen, it can be triggered by the command palete (CMD+Shift+p) and selecting the command &lsquo;Reopen in container&rsquo;. The first time, vs code automatically will build and run the container locally, attaching the IDE UI to it.</p>
-<p>Once container has been opened, please go to the deployment page of the docs.</p>
-<h2 id="manual-deployment-prerequisites-not-recommended">Manual Deployment Prerequisites (Not Recommended)</h2>
-<p>If you would like to run the deployment in your PC without a container, this here is a compresive list of the tools required to complete the deployment. The versions of the tools used, can be found in the <a href=".devcontainer/Dockerfile">Dockerfile</a>.</p>
-<ul>
-<li>Bash</li>
-<li><a href="https://git-scm.com/downloads">Git</a></li>
-<li><a href="https://www.terraform.io/downloads.html">Terraform</a></li>
-<li><a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Az CLI</a></li>
-<li>Az ssh extension (run <code>az extension add --name ssh</code>)</li>
-<li><a href="https://stedolan.github.io/jq/download/">Jq</a></li>
-<li><a href="https://helm.sh/docs/intro/install/">Helm</a></li>
-<li><a href="https://www.gnu.org/software/make/">Make</a></li>
-<li><a href="https://kubernetes.io/docs/tasks/tools/">Kubectl</a></li>
-<li><a href="https://docs.microsoft.com/en-us/java/openjdk/download">Java JDK 11</a></li>
-<li>If using a AZ CLI version earlier than  2.25, please upgrade to the latest, or install <code>requests[socks]</code> in the az cli folders:
-<ul>
-<li>Ubuntu: <code>sudo /opt/az/bin/python3 /opt/az/bin/pip3 install requests[socks]==2.25.1 --target=/opt/az/lib/python3.6/site-packages/</code></li>
-<li>OSX: <code>pip3 install 'requests[socks]' --prefix /usr/local/Cellar/azure-cli/2.26.1/libexec --ignore-installed</code> (you may need to update the version number as the cli updates)</li>
-</ul>
+<li class="breadcrumb-item" >
+	<a href="/prerequisites/">Prerequisites</a>
 </li>
-</ul>
-<p>Once the tooling is installed and the code has been checked out, please proceed to the deployment page of this docs.</p>
-
-</div>
 
 
 
-    
-	
-  
-    
-    
-	
-    
 
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-def55343ea5048561e5a556d4b51c637">2 - GitHub Codespaces</h1>
-    <div class="lead">Open the project as a GitHub Codespace</div>
-	<p>This repository includes configuration for a development container, allowing for repeatable and reliable usage in an VS Code DevContainer or using GitHub Codespaces.</p>
-<p>This document describes it&rsquo;s use within a GitHub Codespaces.</p>
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/prerequisites/github-codespaces/">GitHub Codespaces</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>GitHub Codespaces</h1>
+	<div class="lead">Prerequisites necessary for deployment using GitHub Codespaces</div>
+	<header class="article-meta">
+		
+		
+			
+				
+
+
+			
+				
+
+
+			
+		
+		
+	</header>    
+	<p>This repository includes configuration for a DevContainer, allowing for repeatable and reliable usage in GitHub Codespaces or using <a href="/prerequisites/devcontainer/">VS Code DevContainer</a>.</p>
+<p>This document describes it&rsquo;s use within a GitHub Codespaces. For other options, see <a href="/prerequisites/">here</a>.</p>
+<h3 id="prepare-guthub-orginsation">Prepare GutHub Orginsation</h3>
+<p>To use Codespaces, you must <a href="https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-codespaces-for-your-organization">enable codespaces for your organization</a>. Please follow the GitHub documentation, if Codespaces has not already been enabled.</p>
 <h3 id="fork-the-respository-and-open-in-codespaces">Fork the respository and open in Codespaces</h3>
-<p>TODO: Blocked until we migrate to GitHub</p>
+<p>Navigate to the <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture">Reference Architecture GitHub Repository</a>, and choose the &ldquo;Fork&rdquo; button from the upper right hand side of the page &amp; choose the approperiate organisation.</p>
+<p>Once the fork has been created - Choose the green &ldquo;Code&rdquo; button at the upper left of the page, select the CodeSpaces tab, select &ldquo;New Codespace&rdquo; and finally, select the machine type. We recommend the smallest machine type, that is the 2 core &amp; 4GB RAM option.</p>
+<p>GitHub will take several minutes to build the Codespace, once complete, proceed to the section below.</p>
+<h3 id="open-a-terminal-within-codespaces">Open a Terminal within Codespaces</h3>
+<p>To open a Terminal within the Codespace, press <code>Ctrl+Shift+P</code> (<code>Cmd+Shift+P</code> on OSX), and begin to type &ldquo;Terminal&rdquo;. Choose the &ldquo;Terminal: Create New Terminal&rdquo; option and press return.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
 
 </div>
 
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-6c0adce68e6015e8a2ce9d5a0caafeea">3 - Certificate Generation</h1>
-    <div class="lead">Generate Required Certificates</div>
-	<h3 id="certificiate-types-and-background">Certificiate Types and Background</h3>
-<p>TODO: An intro to each type of cert used etc, links to the EU DGC repos documentation, etc</p>
-
 </div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-810ad17891d965a35863e5b03873ddbc">4 - Deployment</h1>
-    <div class="lead">Deploy the EU Digital Green Certificate Reference Architecture</div>
-	<h2 id="set-variables">Set Variables</h2>
-<p>Create a <code>terraform.tfvars</code> at the root of the repo that contains:</p>
-<pre><code>prefix                              = &quot;&lt;prefix&gt;&quot;
-subscription_id                     = &quot;&lt;id&gt;&quot;
-tenant_id                           = &quot;&lt;id&gt;&quot;
-jumpbox_ssh_source_address_prefixes = []
-acr_username                        = &quot;apecoeacr&quot;
-acr_password                        = &quot;&lt;ADMIN PW FETCHED FROM APECOE ACR in DEV1 SUB&gt;&quot;
-administrator_group_oid             = &quot;&lt;id&gt;&quot;
-location                            = &quot;northeurope&quot;
-parent_dns_zone_name                = &quot;dns name&quot;
-parent_dns_zone_rg_name             = &quot;&lt;id&gt;&quot;
-enable_log_analytics_workspace      = false
-enable_log_analytics_cluster        = false
-
-</code></pre><p>Where:</p>
-<ul>
-<li><code>prefix</code> is set as a unique identifier (please avoid spaces or special characters). This is used to create names and identifiers of the different resources, so multiple deployments can be done on the same subscription.</li>
-<li><code>jumpbox_ssh_source_address_prefixes</code> is set as the public IP address(es) from which you are connecting to Azure (run <code>curl icanhazip.com</code> to find your public IP).</li>
-<li><code>tenant_id</code> is the id of the tenant owning the subcription where the deployment will be made.</li>
-<li><code>subscription_id</code> the id of the subcription where the deployment wil be made.</li>
-<li><code>jumpbox_ssh_source_address_prefixes</code> Additional allowed ip / network prefixes allowed to connect to the jump boxes. We will automatically add the external IP address of the machine running the deployment. These should be in a comma separated list, using network prefix format like : <code>[&quot;10.0.0.0/8&quot;,&quot;192.168.100.25/32&quot;]</code></li>
-<li><code>acr_username</code> the username of the ACR (Azure containter registry) where the images will be pulled from.</li>
-<li><code>acr_password</code> password for the ACR.</li>
-<li><code>administrator_group_oid</code> Object id of the AAD group that will get adminstrator access.</li>
-<li><code>location</code> The az region (short name) where the deployment will be made.</li>
-<li><code>parent_dns_zone_name</code> The name of the domain created for the deployment in the prerequisites section.</li>
-<li><code>parent_dns_zone_rg_name</code> The resource group where the DNS zone has been created.</li>
-<li><code>enable_log_analytics_workspace</code> Enable Azure Log Analytics Workspace, disabled by default.</li>
-<li><code>enable_log_analytics_cluster</code> Enable Azure Log Analytics cluster, disabled by default. <code>enable_log_analytics_workspace</code>  is also required if you wish Log Analytics cluster to be enabled. Also advised to looking into your Azure Subcription&rsquo;s Qoutas before enabling.</li>
-</ul>
-<h2 id="all-in-one-deployment">All In One Deployment</h2>
-<p>Once the variables file has been created, the process of creating the infrastructure and deploying the application has been automated though terraform and scripts. Before initialing the deployment, Azure cli (az) must be logged in, you can log in by running <code>az login</code>.
-After logged, the process can be started by running <code>make</code> on the base directory of the project. This will create the required certificates and start the terraform deployment of the different components described in the step by step process.</p>
-<h2 id="step-by-step-deployment">Step by Step Deployment</h2>
-<p>This section describes how to apply each step manually instead of gettin invoked by the main <code>make</code>.</p>
-<h3 id="step-by-step---terraform-workspaces">Step by Step - Terraform workspaces</h3>
-<p>Deployment is done via terraform, which supports workspaces for isolation between different deployments of the same infrastructure. In this case, we use the variable defined in <code>prefix</code> to create different terraform workspaces, so multiple users can perform a deployment in the same subscription. Running <code>make workspace</code> will go to the different terraform stacks and adjust the namespace.</p>
-<h3 id="step-by-step---tools">Step by Step - Tools</h3>
-<p>Some dgc specific signatures are required for the certificate generation in the next step, tools target in main Makefile, downloads the gdc-cli binary (jar) in the tools folder. There&rsquo;s also a Makefile in the tools folder that can be invoked directly.</p>
-<h3 id="step-by-step---certificates">Step by Step - Certificates</h3>
-<p>As describes in <code>certificates</code> doc section, project relies on certificates to ensure security as well as the green digitcal certificate itself.
-The process of generating the certificates has been automated in an <a href="scripts/generate-certs.sh">script</a>, it can be invoked with the required arguments/variables by <code>make certs</code> command.</p>
-<h3 id="step-by-step---jumpboxes">Step by Step - Jumpboxes</h3>
-<p>For security, none of the services used in this deployment, uses public endpoints (except of course the load balances), this prevents anyy public IP reaching the Databases or Key vault. This means that before connecting Kubernetes cluster (AKS) to perform deployments, we need to connect to jumphosts that have private connectivity to the services.</p>
-<p>This step is performed by moving to the <code>eudgc-dev</code> and executing <code>make</code>. The first part of this make target will create the infrastructure for the jumpboxes using terraform, once the VMs are ready, it will create ssh configuration files (in <code>eudgc-dev/jumpbox-ssh-configs</code> folder) to facilitate the access to it as well as stablishing the required tunnels to reach AKS clusters.</p>
-<h3 id="step-by-step---eu-infrastructure">Step by Step - EU Infrastructure</h3>
-<p>Each country service, relies on the &ldquo;central&rdquo; european gategway. The folder <code>eudgc-eu</code> contains the folder with the infrastructre and deployment of the gateway. The default make target (all), will first stanlish the required ssh tunnels to start the proxy in the VNET where the deployment will be made, enabling the deployment of the application after the AKS cluster is up and running.</p>
-<h3 id="step-by-step---ie-infrastructure">Step by Step - IE Infrastructure</h3>
-<p>The main applications of this deployment are the validation and rules services, that are deployed by each country and the mobile apps will contact to. Those services, as well as the EU are deployed into a kubernetes (AKS) cluster, applying the same security principles, only the HTTPS services being exposed. All the infrastructre and deployment is done via terraform, in the folder <code>eudgc-ie</code>.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-e572b86fca40ff763c9447f4766f5173">5 - Validation</h1>
-    <div class="lead">Validation the deployment of the EU Digital Green Certificate Reference Architecture</div>
-	<h3 id="issue-a-certificate">Issue a Certificate</h3>
-<p>TODO: Descibe how to access the Issuance Web site and how to issue a Vaccine Cert.</p>
-<h3 id="ssh-to-eu-jumpboxes">SSH to EU Jumpboxes</h3>
-<p>During the creation of the <code>eudgc-dev</code> terraform stack, VNets and Jumpboxes are created as jumphosts to access the AKS cluster securely. Once the infrastructure has been deployed, the process generates SSH configuration files to simplify the access to the jumphosts in the folder <code>eudgc-dev/jumpbox-ssh-configs</code>. The creation of config files (in case keys are changed externally/manually), can be regenerated by the make target <code>make ssh-config</code>, will write the files in the folder mentioned above.</p>
-<p>In order to start an interactive ssh to any of the two zones (eu or ie) we can use the ssh config files. The command can be automatically generated by issuing <code>make print-ssh-cmd</code> which will output the ssh command to connect to VMs. This target is the root directory as well as <code>eudgc-eu</code> and <code>eudgc-ie</code></p>
-<h3 id="access-aks">Access AKS</h3>
-<p>The simplest way to access the private interface in the AKS cluster from your computer is through a SOCKS5 tunnel, this is compatible with the CLI tooling required to operate a Kubernetes cluster. SSH has builtin capabilities to create this types of proxies in the local network and send the traffic through the ssh tunnel. Two convenience make targets <code>ssh-tunnel-start</code> and <code>ssh-tunnel-stop</code> are available, once tunnels are started, exporting the following variables will make the CLI tooling to use the proxy.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">ALL_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5h://127.0.0.1:8881
-<span style="color:#204a87">export</span> <span style="color:#000">HTTPS_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5://127.0.0.1:8881
-<span style="color:#204a87">export</span> <span style="color:#000">HTTP_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5://127.0.0.1:8881
-</code></pre></div><p>Use port 8881 for EU and 8882 for IE deployments.</p>
-
-</div>
-
-
-
-    
-	
-  
-
 
 
           </main>

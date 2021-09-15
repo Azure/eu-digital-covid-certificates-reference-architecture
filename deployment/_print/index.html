@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.87.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.87.0" /><link rel="canonical" type="text/html" href="/deployment/">
+<link rel="alternate" type="application/rss&#43;xml" href="/deployment/index.xml">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -17,28 +19,20 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Validation | EU Digital Green Cert - Azure Example</title>
+<title>Deployment | EU Digital Green Cert - Azure Example</title>
 
 
-  <meta name="description" content="Validation the deployment of the EU Digital Green Certificate Reference Architecture
-">
-<meta property="og:title" content="Validation" />
-<meta property="og:description" content="Validation the deployment of the EU Digital Green Certificate Reference Architecture
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/getting-started/validation/" /><meta property="article:section" content="getting-started" />
+  
+  <meta name="description" content="">
+<meta property="og:title" content="Deployment" />
+<meta property="og:description" content="An example of the EU Digital Green Cert system on Azure" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/deployment/" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
 
-<meta property="article:modified_time" content="2021-09-15T17:23:14+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
-
-<meta itemprop="name" content="Validation">
-<meta itemprop="description" content="Validation the deployment of the EU Digital Green Certificate Reference Architecture
-">
-<meta itemprop="dateModified" content="2021-09-15T17:23:14+01:00" />
-<meta itemprop="wordCount" content="250">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Validation"/>
-<meta name="twitter:description" content="Validation the deployment of the EU Digital Green Certificate Reference Architecture
-"/>
+<meta itemprop="name" content="Deployment">
+<meta itemprop="description" content="An example of the EU Digital Green Cert system on Azure"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deployment"/>
+<meta name="twitter:description" content="An example of the EU Digital Green Cert system on Azure"/>
 
 
 
@@ -67,7 +61,7 @@
 
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -93,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
+  data-offline-search-index-json-src="/offline-search-index.421d67f7f876ce2e3af15d6d83d281a1.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -105,205 +99,180 @@
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
-          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            
-<div id="td-sidebar-menu" class="td-sidebar__inner">
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; Search this site…"
-  aria-label="Search this site…"
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.7bb1c6de890cb9e32f7ebe081ac0bdba.json"
-  data-offline-search-base-href="/"
-  data-offline-search-max-results="10"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
-  <nav class="collapse td-sidebar-nav" id="td-section-nav">
-    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
-  <a href="/" title="EU Digital Green Certificate - Azure Example Deployment" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Documentation</span></a>
-  <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-background-li">
-  <a href="/background/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-background"><span class="">Background</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-getting-started-li">
-  <a href="/getting-started/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-getting-started"><span class="">Getting Started</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getting-startedprerequisites-li">
-  <a href="/getting-started/prerequisites/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getting-startedprerequisites"><span class="">Prerequisites</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getting-startedgithub-codespaces-li">
-  <a href="/getting-started/github-codespaces/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getting-startedgithub-codespaces"><span class="">GitHub Codespaces</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getting-startedcertificates-li">
-  <a href="/getting-started/certificates/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getting-startedcertificates"><span class="">Certificate Generation</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getting-starteddeployment-li">
-  <a href="/getting-started/deployment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getting-starteddeployment"><span class="">Deployment</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-getting-startedvalidation-li">
-  <a href="/getting-started/validation/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-getting-startedvalidation"><span class="td-sidebar-nav-active-item">Validation</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-android-apps-li">
-  <a href="/android-apps/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-android-apps"><span class="">Android Applications</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-android-appsbuild-li">
-  <a href="/android-apps/build/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-android-appsbuild"><span class="">Build</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-deep-dives-li">
-  <a href="/deep-dives/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-deep-dives"><span class="">Deep Dives</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesprivate-link-li">
-  <a href="/deep-dives/private-link/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesprivate-link"><span class="">Private Link</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveskeyvault-li">
-  <a href="/deep-dives/keyvault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskeyvault"><span class="">KeyVault</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divescmk-li">
-  <a href="/deep-dives/cmk/" title="Customer Managed Keys" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divescmk"><span class="">CMK</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-mysql-li">
-  <a href="/deep-dives/aad-mysql/" title="AAD authentication for MySQL" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-mysql"><span class="">AAD for MySQL</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-aks-li">
-  <a href="/deep-dives/aad-aks/" title="AAD authentication for Azure Kubernetes Service" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-aks"><span class="">AAD for AKS</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-terraform-li">
-  <a href="/terraform/" title="Terraform Docs (Autogenerated)" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-terraform"><span class="">Terraform</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformvariables-li">
-  <a href="/terraform/variables/" title="Installation - Variables" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformvariables"><span class="">Variables</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformdev-li">
-  <a href="/terraform/dev/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformdev"><span class="">Development Terraform Stack</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformeu-li">
-  <a href="/terraform/eu/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformeu"><span class="">EU Terraform Stack</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformie-li">
-  <a href="/terraform/ie/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformie"><span class="">Ireland Terraform Stack</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-terraformmodules-li">
-  <a href="/terraform/modules/" title="Terraform Modules" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-terraformmodules"><span class="">Modules</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformmodulesbase-infra-li">
-  <a href="/terraform/modules/base-infra/" title="Base Infrastructure Terraform Module" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformmodulesbase-infra"><span class="">Base Infrastructure Module</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-terraformmodulesjumpbox-li">
-  <a href="/terraform/modules/jumpbox/" title="Jumpbox Terraform Module" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-terraformmodulesjumpbox"><span class="">Jumpbox Module</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li>
-  </ul>
-</li>
-    </ul>
-  </nav>
-</div>
-
-          </aside>
-          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-            
-  
-  
-  
-  
-  
-  
-  <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-  
-  
-    <a id="print" href="/getting-started/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
-  
-  </div>
-
-
-            
-
-
-<div class="td-toc"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#issue-a-certificate">Issue a Certificate</a></li>
-        <li><a href="#ssh-to-eu-jumpboxes">SSH to EU Jumpboxes</a></li>
-        <li><a href="#access-aks">Access AKS</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-
-
-
-            
-
-	
-		
-
-
-
-  
-  
-
-	
-		
-
-
-
-  
-  
-
-	
-
-          </aside>
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/deployment/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Deployment</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
   
 
-            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-	<ol class="breadcrumb spb-1">
-		
+  
+    
+    
+	
+<li>1: <a href="#pg-542dc00fe47d13127676522988b98c64">Certificate Generation</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-b9a4a5a0671ddf27dde5cd81d762194c">Deployment</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-5f1f244f3c8958781382537f9cd8a82d">Validation</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-542dc00fe47d13127676522988b98c64">1 - Certificate Generation</h1>
+    <div class="lead">Generate Required Certificates</div>
+	<h3 id="certificiate-types-and-background">Certificiate Types and Background</h3>
+<p>TODO: An intro to each type of cert used etc, links to the EU DGC repos documentation, etc</p>
+
+</div>
 
 
 
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b9a4a5a0671ddf27dde5cd81d762194c">2 - Deployment</h1>
+    <div class="lead">Deploy the EU Digital Green Certificate Reference Architecture</div>
+	<h2 id="set-variables">Set Variables</h2>
+<p>Create a <code>terraform.tfvars</code> at the root of the repo that contains:</p>
+<pre><code>prefix                              = &quot;&lt;prefix&gt;&quot;
+subscription_id                     = &quot;&lt;id&gt;&quot;
+tenant_id                           = &quot;&lt;id&gt;&quot;
+jumpbox_ssh_source_address_prefixes = []
+acr_username                        = &quot;apecoeacr&quot;
+acr_password                        = &quot;&lt;ADMIN PW FETCHED FROM APECOE ACR in DEV1 SUB&gt;&quot;
+administrator_group_oid             = &quot;&lt;id&gt;&quot;
+location                            = &quot;northeurope&quot;
+parent_dns_zone_name                = &quot;dns name&quot;
+parent_dns_zone_rg_name             = &quot;&lt;id&gt;&quot;
+enable_log_analytics_workspace      = false
+enable_log_analytics_cluster        = false
+
+</code></pre><p>Where:</p>
+<ul>
+<li><code>prefix</code> is set as a unique identifier (please avoid spaces or special characters). This is used to create names and identifiers of the different resources, so multiple deployments can be done on the same subscription.</li>
+<li><code>jumpbox_ssh_source_address_prefixes</code> is set as the public IP address(es) from which you are connecting to Azure (run <code>curl icanhazip.com</code> to find your public IP).</li>
+<li><code>tenant_id</code> is the id of the tenant owning the subcription where the deployment will be made.</li>
+<li><code>subscription_id</code> the id of the subcription where the deployment wil be made.</li>
+<li><code>jumpbox_ssh_source_address_prefixes</code> Additional allowed ip / network prefixes allowed to connect to the jump boxes. We will automatically add the external IP address of the machine running the deployment. These should be in a comma separated list, using network prefix format like : <code>[&quot;10.0.0.0/8&quot;,&quot;192.168.100.25/32&quot;]</code></li>
+<li><code>acr_username</code> the username of the ACR (Azure containter registry) where the images will be pulled from.</li>
+<li><code>acr_password</code> password for the ACR.</li>
+<li><code>administrator_group_oid</code> Object id of the AAD group that will get adminstrator access.</li>
+<li><code>location</code> The az region (short name) where the deployment will be made.</li>
+<li><code>parent_dns_zone_name</code> The name of the domain created for the deployment in the prerequisites section.</li>
+<li><code>parent_dns_zone_rg_name</code> The resource group where the DNS zone has been created.</li>
+<li><code>enable_log_analytics_workspace</code> Enable Azure Log Analytics Workspace, disabled by default.</li>
+<li><code>enable_log_analytics_cluster</code> Enable Azure Log Analytics cluster, disabled by default. <code>enable_log_analytics_workspace</code>  is also required if you wish Log Analytics cluster to be enabled. Also advised to looking into your Azure Subcription&rsquo;s Qoutas before enabling.</li>
+</ul>
+<h2 id="all-in-one-deployment">All In One Deployment</h2>
+<p>Once the variables file has been created, the process of creating the infrastructure and deploying the application has been automated though terraform and scripts. Before initialing the deployment, Azure cli (az) must be logged in, you can log in by running <code>az login</code>.
+After logged, the process can be started by running <code>make</code> on the base directory of the project. This will create the required certificates and start the terraform deployment of the different components described in the step by step process.</p>
+<h2 id="step-by-step-deployment">Step by Step Deployment</h2>
+<p>This section describes how to apply each step manually instead of gettin invoked by the main <code>make</code>.</p>
+<h3 id="step-by-step---terraform-workspaces">Step by Step - Terraform workspaces</h3>
+<p>Deployment is done via terraform, which supports workspaces for isolation between different deployments of the same infrastructure. In this case, we use the variable defined in <code>prefix</code> to create different terraform workspaces, so multiple users can perform a deployment in the same subscription. Running <code>make workspace</code> will go to the different terraform stacks and adjust the namespace.</p>
+<h3 id="step-by-step---tools">Step by Step - Tools</h3>
+<p>Some dgc specific signatures are required for the certificate generation in the next step, tools target in main Makefile, downloads the gdc-cli binary (jar) in the tools folder. There&rsquo;s also a Makefile in the tools folder that can be invoked directly.</p>
+<h3 id="step-by-step---certificates">Step by Step - Certificates</h3>
+<p>As describes in <code>certificates</code> doc section, project relies on certificates to ensure security as well as the green digitcal certificate itself.
+The process of generating the certificates has been automated in an <a href="scripts/generate-certs.sh">script</a>, it can be invoked with the required arguments/variables by <code>make certs</code> command.</p>
+<h3 id="step-by-step---jumpboxes">Step by Step - Jumpboxes</h3>
+<p>For security, none of the services used in this deployment, uses public endpoints (except of course the load balances), this prevents anyy public IP reaching the Databases or Key vault. This means that before connecting Kubernetes cluster (AKS) to perform deployments, we need to connect to jumphosts that have private connectivity to the services.</p>
+<p>This step is performed by moving to the <code>eudgc-dev</code> and executing <code>make</code>. The first part of this make target will create the infrastructure for the jumpboxes using terraform, once the VMs are ready, it will create ssh configuration files (in <code>eudgc-dev/jumpbox-ssh-configs</code> folder) to facilitate the access to it as well as stablishing the required tunnels to reach AKS clusters.</p>
+<h3 id="step-by-step---eu-infrastructure">Step by Step - EU Infrastructure</h3>
+<p>Each country service, relies on the &ldquo;central&rdquo; european gategway. The folder <code>eudgc-eu</code> contains the folder with the infrastructre and deployment of the gateway. The default make target (all), will first stanlish the required ssh tunnels to start the proxy in the VNET where the deployment will be made, enabling the deployment of the application after the AKS cluster is up and running.</p>
+<h3 id="step-by-step---ie-infrastructure">Step by Step - IE Infrastructure</h3>
+<p>The main applications of this deployment are the validation and rules services, that are deployed by each country and the mobile apps will contact to. Those services, as well as the EU are deployed into a kubernetes (AKS) cluster, applying the same security principles, only the HTTPS services being exposed. All the infrastructre and deployment is done via terraform, in the folder <code>eudgc-ie</code>.</p>
+
+</div>
 
 
 
+    
+	
+  
+    
+    
+	
+    
 
-<li class="breadcrumb-item" >
-	<a href="/getting-started/">Getting Started</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item active" aria-current="page">
-	<a href="/getting-started/validation/">Validation</a>
-</li>
-
-	</ol>
-</nav	>
-
-            
-<div class="td-content">
-	<h1>Validation</h1>
-	<div class="lead">Validation the deployment of the EU Digital Green Certificate Reference Architecture</div>
-	<header class="article-meta">
-		
-		
-			
-				
-
-
-			
-				
-
-
-			
-		
-		
-	</header>    
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5f1f244f3c8958781382537f9cd8a82d">3 - Validation</h1>
+    <div class="lead">Validation the deployment of the EU Digital Green Certificate Reference Architecture</div>
 	<h3 id="issue-a-certificate">Issue a Certificate</h3>
 <p>TODO: Descibe how to access the Issuance Web site and how to issue a Vaccine Cert.</p>
 <h3 id="ssh-to-eu-jumpboxes">SSH to EU Jumpboxes</h3>
@@ -316,13 +285,14 @@
 <span style="color:#204a87">export</span> <span style="color:#000">HTTP_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5://127.0.0.1:8881
 </code></pre></div><p>Use port 8881 for EU and 8882 for IE deployments.</p>
 
-	
-	
-	<div class="text-muted mt-5 pt-3 border-top">
-
 </div>
 
-</div>
+
+
+    
+	
+  
+
 
 
           </main>
