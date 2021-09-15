@@ -11,18 +11,22 @@ weight: 10
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | =2.71.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | =2.2.0 |
 | <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | =1.11.2 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | =2.4.1 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | =3.1.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | =3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | =2.71.0 |
-| <a name="provider_helm"></a> [helm](#provider\_helm) | n/a |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | =2.2.0 |
 | <a name="provider_kubectl"></a> [kubectl](#provider\_kubectl) | =1.11.2 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | =2.4.1 |
+| <a name="provider_null"></a> [null](#provider\_null) | =3.1.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | =3.1.0 |
 
 ## Modules
 
@@ -41,6 +45,22 @@ No modules.
 | [azurerm_key_vault_key.mysql_encryption_key](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_key) | resource |
 | [azurerm_key_vault_secret.mysql_pw](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_kubernetes_cluster.aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/kubernetes_cluster) | resource |
+| [azurerm_log_analytics_cluster.log_analytics_cluster](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster) | resource |
+| [azurerm_log_analytics_linked_service.log_analytics_linked_service](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service) | resource |
+| [azurerm_log_analytics_solution.anti_malware](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.azure_activity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.change_tracking](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.container_insights](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.key_vault_analytics](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.network_monitoring](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.security_insights](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.service_map](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.sql_assessment_plus](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_solution.updates](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
+| [azurerm_log_analytics_workspace.log_analytics_workspace](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_workspace) | resource |
+| [azurerm_monitor_diagnostic_setting.acr_diagnostic_logs](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting) | resource |
+| [azurerm_monitor_diagnostic_setting.keyvault_diagnostic_logs](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting) | resource |
+| [azurerm_monitor_diagnostic_setting.mysql_diagnostic_logs](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/monitor_diagnostic_setting) | resource |
 | [azurerm_mysql_active_directory_administrator.mysql_aadadmin](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/mysql_active_directory_administrator) | resource |
 | [azurerm_mysql_server.mysql](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/mysql_server) | resource |
 | [azurerm_mysql_server_key.mysql_encryption_key](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/mysql_server_key) | resource |
@@ -86,20 +106,23 @@ No modules.
 | [azurerm_virtual_network.vnet](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/virtual_network) | resource |
 | [azurerm_virtual_network_peering.from-dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/virtual_network_peering) | resource |
 | [azurerm_virtual_network_peering.to-dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/virtual_network_peering) | resource |
-| [helm_release.aad_pod_identity](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.cert_manager](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.csi_secrets_store_provider](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.external_dns](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.haproxy_ingress](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [helm_release.aad_pod_identity](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.cert_manager](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.csi_secrets_store_provider](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.external_dns](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.haproxy_ingress](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
 | [kubectl_manifest.cert_manager_clusterissuer_letsencrypt](https://registry.terraform.io/providers/gavinbunney/kubectl/1.11.2/docs/resources/manifest) | resource |
 | [kubectl_manifest.external_dns_azure_identity](https://registry.terraform.io/providers/gavinbunney/kubectl/1.11.2/docs/resources/manifest) | resource |
 | [kubectl_manifest.external_dns_azure_identity_binding](https://registry.terraform.io/providers/gavinbunney/kubectl/1.11.2/docs/resources/manifest) | resource |
-| [kubernetes_namespace.aad_pod_identity](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.cert_manager](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.external_dns](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.haproxy_ingress](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [null_resource.import-image](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [random_password.mysql_pw](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [kubernetes_namespace.aad_pod_identity](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.cert_manager](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.external_dns](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.haproxy_ingress](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [null_resource.aks_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [null_resource.import-image](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [null_resource.keyvault_admin_group_ra_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [null_resource.mysql_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [random_password.mysql_pw](https://registry.terraform.io/providers/hashicorp/random/3.1.0/docs/resources/password) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/data-sources/client_config) | data source |
 | [azurerm_resource_group.aks_managed_rg](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/data-sources/resource_group) | data source |
 
@@ -125,6 +148,8 @@ No modules.
 | <a name="input_cert_manager_image_tag"></a> [cert\_manager\_image\_tag](#input\_cert\_manager\_image\_tag) | n/a | `string` | `"v1.4.0"` | no |
 | <a name="input_csi_node_driver_registrar_image_tag"></a> [csi\_node\_driver\_registrar\_image\_tag](#input\_csi\_node\_driver\_registrar\_image\_tag) | n/a | `string` | `"v2.2.0"` | no |
 | <a name="input_csi_secrets_store_provider_azure_chart_version"></a> [csi\_secrets\_store\_provider\_azure\_chart\_version](#input\_csi\_secrets\_store\_provider\_azure\_chart\_version) | n/a | `string` | `"0.1.0"` | no |
+| <a name="input_enable_log_analytics_cluster"></a> [enable\_log\_analytics\_cluster](#input\_enable\_log\_analytics\_cluster) | Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace | `bool` | `false` | no |
+| <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_external_dns_chart_version"></a> [external\_dns\_chart\_version](#input\_external\_dns\_chart\_version) | n/a | `string` | `"5.1.3"` | no |
 | <a name="input_external_dns_image_tag"></a> [external\_dns\_image\_tag](#input\_external\_dns\_image\_tag) | n/a | `string` | `"0.8.0-debian-10-r26"` | no |
 | <a name="input_haproxy_ingress_chart_version"></a> [haproxy\_ingress\_chart\_version](#input\_haproxy\_ingress\_chart\_version) | n/a | `string` | `"v0.13.0-beta.2"` | no |
@@ -132,6 +157,8 @@ No modules.
 | <a name="input_kube_syslog_sidecar_image_digest"></a> [kube\_syslog\_sidecar\_image\_digest](#input\_kube\_syslog\_sidecar\_image\_digest) | n/a | `string` | `"sha256:f948c128ad982b3676269542da1d9e4339f5553a9fc6831b02edf21a667620d9"` | no |
 | <a name="input_kube_syslog_sidecar_image_tag"></a> [kube\_syslog\_sidecar\_image\_tag](#input\_kube\_syslog\_sidecar\_image\_tag) | n/a | `string` | `"v0.0.1-f948c12"` | no |
 | <a name="input_livenessprobe_csi_driver_image_tag"></a> [livenessprobe\_csi\_driver\_image\_tag](#input\_livenessprobe\_csi\_driver\_image\_tag) | n/a | `string` | `"v2.3.0"` | no |
+| <a name="input_log_analytics_workspace_sku"></a> [log\_analytics\_workspace\_sku](#input\_log\_analytics\_workspace\_sku) | The SKU (pricing level) of the Log Analytics workspace. For new subscriptions the SKU should be set to PerGB2018 | `string` | `"PerGB2018"` | no |
+| <a name="input_log_retention_in_days"></a> [log\_retention\_in\_days](#input\_log\_retention\_in\_days) | The retention period for the logs in days | `number` | `30` | no |
 | <a name="input_secrets_store_csi_driver_image_tag"></a> [secrets\_store\_csi\_driver\_image\_tag](#input\_secrets\_store\_csi\_driver\_image\_tag) | n/a | `string` | `"v0.1.0"` | no |
 | <a name="input_secrets_store_driver_crds_image_tag"></a> [secrets\_store\_driver\_crds\_image\_tag](#input\_secrets\_store\_driver\_crds\_image\_tag) | n/a | `string` | `"v0.1.0"` | no |
 

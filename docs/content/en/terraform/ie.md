@@ -12,8 +12,13 @@ description: >
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | =1.6.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | =2.71.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | =2.2.0 |
 | <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | =1.11.2 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | =2.4.1 |
+| <a name="requirement_null"></a> [null](#requirement\_null) | =3.1.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | =3.1.0 |
 
 ## Providers
 
@@ -37,9 +42,9 @@ description: >
 
 | Name | Type |
 |------|------|
-| [azuread_application.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application) | resource |
-| [azuread_application_password.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application_password) | resource |
-| [azuread_service_principal.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal) | resource |
+| [azuread_application.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/application) | resource |
+| [azuread_application_password.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/application_password) | resource |
+| [azuread_service_principal.msal_authentication](https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/resources/service_principal) | resource |
 | [azurerm_key_vault_certificate.dsc_key_store_certificate](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_certificate.tls_key_store_certificate](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_certificate) | resource |
 | [azurerm_key_vault_certificate.upload_key_store_certificate](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_certificate) | resource |
@@ -66,20 +71,20 @@ description: >
 | [azurerm_user_assigned_identity.dgca_issuance_web_identity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/user_assigned_identity) | resource |
 | [azurerm_user_assigned_identity.dgca_verifier_service_identity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/user_assigned_identity) | resource |
 | [azurerm_user_assigned_identity.msal_authentication](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/user_assigned_identity) | resource |
-| [helm_release.dgca_businessrule_service](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.dgca_issuance_service](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.dgca_issuance_service_public](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.dgca_issuance_web](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.dgca_verifier_service](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [helm_release.msal_authentication](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [kubernetes_namespace.dgca_businessrule_service](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.dgca_issuance_service](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.dgca_issuance_service_public](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.dgca_issuance_web](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.dgca_verifier_service](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [null_resource.upsert_rules](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [random_uuid.web_auth_oauth2_scope](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
-| [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/data-sources/client_config) | data source |
+| [helm_release.dgca_businessrule_service](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.dgca_issuance_service](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.dgca_issuance_service_public](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.dgca_issuance_web](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.dgca_verifier_service](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [helm_release.msal_authentication](https://registry.terraform.io/providers/hashicorp/helm/2.2.0/docs/resources/release) | resource |
+| [kubernetes_namespace.dgca_businessrule_service](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.dgca_issuance_service](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.dgca_issuance_service_public](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.dgca_issuance_web](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [kubernetes_namespace.dgca_verifier_service](https://registry.terraform.io/providers/hashicorp/kubernetes/2.4.1/docs/resources/namespace) | resource |
+| [null_resource.upsert_rules](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [random_uuid.web_auth_oauth2_scope](https://registry.terraform.io/providers/hashicorp/random/3.1.0/docs/resources/uuid) | resource |
+| [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/1.6.0/docs/data-sources/client_config) | data source |
 | [terraform_remote_state.dev](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 | [terraform_remote_state.eu](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
@@ -97,6 +102,8 @@ description: >
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to deploy into | `string` | n/a | yes |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
 | <a name="input_businessrule_service_version"></a> [businessrule\_service\_version](#input\_businessrule\_service\_version) | Version Number of the Business Rules Service | `string` | `"93"` | no |
+| <a name="input_enable_log_analytics_cluster"></a> [enable\_log\_analytics\_cluster](#input\_enable\_log\_analytics\_cluster) | Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace | `bool` | `false` | no |
+| <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"94"` | no |
 | <a name="input_issuance_web_version"></a> [issuance\_web\_version](#input\_issuance\_web\_version) | Version Number of the Issuance Web | `string` | `"90"` | no |
 | <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"0.0.1"` | no |

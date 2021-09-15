@@ -15,10 +15,10 @@ Gather the required variables:
 administrator_group_oid = ""
 
 # List of network prefixes allowed to SSH to Jumpbox VM
-jumpbox_ssh_source_address_prefixes = ""
+jumpbox_ssh_source_address_prefixes = []
 
 # Location Name
-location = "northeurope"
+location = ""
 
 # Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing
 prefix = ""
@@ -44,6 +44,12 @@ acr_username = ""
 
 # OID of the Group to grant Administrator permissions
 administrator_group_oid = ""
+
+# Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace
+enable_log_analytics_cluster = false
+
+# Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
+enable_log_analytics_workspace = false
 
 # Version Number of the Gateway
 gateway_version = "79"
@@ -87,6 +93,12 @@ administrator_group_oid = ""
 
 # Version Number of the Business Rules Service
 businessrule_service_version = "93"
+
+# Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace
+enable_log_analytics_cluster = false
+
+# Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
+enable_log_analytics_workspace = false
 
 # Version Number of the Issuance Service
 issuance_service_version = "94"
