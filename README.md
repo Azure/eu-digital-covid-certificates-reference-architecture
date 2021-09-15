@@ -1,14 +1,13 @@
-# Project
+# COVID 19 EU Digital Green Certificate Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## Background
+In early 2021 the European Union agreed to implement a system for member countries to issue and verify vaccination, testing and recovery certificates using a stndardized system. This is part of an initiative to homoginize travel/immigration policies among member countries. The system is made up of several components which have been shared in a sample implementation on a Github repo [here](https://github.com/eu-digital-green-certificates).
 
-As the maintainer of this project, please make a few updates:
+## Project goals
+As for other sample applications, PE COE intends to focus on data protection and privacy controls and showcase options and capabilities of Azure as the hosting cloud. The architecture choices will therefor be driven by the opportunity to showcase these features rather than scale/performance considerations.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Data protection/data residency scenarios
+TODO...
 
 ## Contributing
 

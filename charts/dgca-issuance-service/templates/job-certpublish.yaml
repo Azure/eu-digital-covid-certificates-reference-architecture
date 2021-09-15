@@ -1,0 +1,48 @@
+{{- if .Values.issuance.endpoints.publishCert }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "dgca-issuance-service.fullname" . }}-cert-publish
+  labels:
+    {{- include "dgca-issuance-service.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+spec:
+  ttlSecondsAfterFinished: 600 # Job will self-delete 10 mins after successful completion
+  template:
+    metadata:
+      annotations:
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "dgca-issuance-service.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: OnFailure
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+      - name: {{ .Chart.Name }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.utility.image.repository }}:{{ .Values.utility.image.tag }}"
+        imagePullPolicy: {{ .Values.utility.image.pullPolicy }}
+        command:
+        - curl
+        - -X
+        - PUT
+        - --fail
+        - --verbose
+        - http://{{ include "dgca-issuance-service.fullname" . }}/dgci/certPublish
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

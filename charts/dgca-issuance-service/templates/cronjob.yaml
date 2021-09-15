@@ -1,0 +1,47 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "dgca-issuance-service.fullname" . }}-refresh
+  labels:
+    {{- include "dgca-issuance-service.labels" . | nindent 4 }}
+spec:
+  schedule: "@hourly"
+  startingDeadlineSeconds: 600
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  concurrencyPolicy: Replace
+
+  jobTemplate:
+    metadata:
+      annotations:
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "dgca-issuance-service.selectorLabels" . | nindent 8 }}
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          containers:
+          - name: refresh
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 16 }}
+            image: "{{ .Values.utility.image.repository }}:{{ .Values.utility.image.tag }}"
+            imagePullPolicy: {{ .Values.utility.image.pullPolicy }}
+            command:
+                - /bin/sh
+                - -c
+                - curl --fail -X POST http://{{ include "dgca-issuance-service.fullname" . }}/management/refresh
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}

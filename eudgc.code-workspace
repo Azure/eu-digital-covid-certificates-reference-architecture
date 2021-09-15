@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Deploy All Stacks",
+				"command": "make",
+				"args": ["all"],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				},
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "Deploy Dev Stack",
+				"command": "make",
+				"args": ["terraform"],
+				"options": {
+					"cwd": "${workspaceFolder}/eudgc-dev"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Deploy EU Stack",
+				"command": "make",
+				"args": ["terraform"],
+				"options": {
+					"cwd": "${workspaceFolder}/eudgc-eu"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Deploy IE Stack",
+				"command": "make",
+				"args": ["terraform"],
+				"options": {
+					"cwd": "${workspaceFolder}/eudgc-ie"
+				},
+				"group": "build"
+			}
+		]
+	}
+}

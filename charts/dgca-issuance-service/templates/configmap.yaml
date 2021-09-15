@@ -1,0 +1,129 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dgca-issuance-service.fullname" . }}
+  labels:
+    {{- include "dgca-issuance-service.labels" . | nindent 4 }}
+data:
+  application-k8s.yml: |
+    server:
+      port: 8080
+
+    management:
+      server:
+        port: 8080
+
+      endpoint:
+        info:
+          enabled: true
+        health:
+          enabled: true
+        refresh:
+          enabled: true
+
+      endpoints:
+        enabled-by-default: false
+        web:
+          base-path: /management
+          exposure:
+            include: info,health,refresh
+            exclude: ""
+
+    spring:
+      jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      datasource:
+        url: "{{ .Values.spring.datasource.url }}"
+        username: "{{ .Values.spring.datasource.username }}"
+
+    dgc:
+      gateway:
+        connector:
+          enabled: {{ .Values.dgc.gateway.connector.enabled }}
+          endpoint: {{ .Values.dgc.gateway.connector.endpoint }}
+          tls-trust-store:
+            path: file:/mnt/secrets-store/tls_trust_store.p12
+          tls-key-store:
+            path: file:/mnt/secrets-store/tls_key_store.p12
+            password: ""
+          trust-anchor:
+            path: file:/mnt/secrets-store/trustanchor.p12
+          upload-key-store:
+            path: file:/mnt/secrets-store/upload.p12
+            password: ""
+
+    issuance:
+      dgciPrefix: "{{ .Values.issuance.dgciPrefix }}"
+      countryCode: "{{ .Values.issuance.countryCode }}"
+      tanExpirationHours: 48
+      contextFile: /dgc/context.json
+
+      keyStoreFile: /mnt/secrets-store/dsc.p12
+      keyStorePassword: ""
+      privateKeyPassword: ""
+
+      endpoints:
+        frontendIssuing: {{ .Values.issuance.endpoints.frontendIssuing }}
+        backendIssuing: {{ .Values.issuance.endpoints.backendIssuing }}
+        testTools: {{ .Values.issuance.endpoints.testTools }}
+        wallet: {{ .Values.issuance.endpoints.wallet }}
+        publishCert: {{ .Values.issuance.endpoints.publishCert }}
+        did: {{ .Values.issuance.endpoints.did }}
+
+  application-azure.yml: |
+    azure:
+      keyvault:
+        enabled: {{ .Values.azure.keyvault.enabled }}
+        uri: {{ .Values.azure.keyvault.uri }}
+        secret-keys: "dgc.gateway.connector.trust-anchor.password,dgc.gateway.connector.trust-anchor.alias,dgc.gateway.connector.tls-trust-store.password,dgc.gateway.connector.tls-key-store.alias,dgc.gateway.connector.upload-key-store.alias,issuance.certAlias"
+
+  context.json: |
+    {
+      "origin": "DE",
+      "versions": {
+        "default": {
+          "privacyUrl": "https://publications.europa.eu/en/web/about-us/legal-notices/eu-mobile-apps",
+          "context": {
+            "url": "{{ .Values.context.issuance_service_url }}/context",
+            "pubKeys": [
+              "{{ .Values.context.public_key_pin }}"
+            ]
+          },
+          "endpoints": {
+            "claim": {
+              "url": "{{ .Values.context.issuance_service_url }}/dgci/wallet/claim",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "countryList": {
+              "url": "{{ .Values.context.businessrule_service_url }}/countrylist",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "countries": {
+              "url": "{{ .Values.context.businessrule_service_url }}/countrylist",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "rules": {
+              "url": "{{ .Values.context.businessrule_service_url }}/rules",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "valuesets": {
+              "url": "{{ .Values.context.businessrule_service_url }}/valuesets",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            }
+          }
+        },
+        "0.1.0": {
+          "outdated": true
+        }
+      }
+    }

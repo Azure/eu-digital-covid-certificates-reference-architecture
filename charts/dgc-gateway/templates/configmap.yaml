@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dgc-gateway.fullname" . }}
+  labels:
+    {{- include "dgc-gateway.labels" . | nindent 4 }}
+data:
+  application-k8s.yml: |
+    server:
+      port: 8080
+
+    spring:
+      datasource:
+        url: "{{ .Values.spring.datasource.url }}"
+        username: "{{ .Values.spring.datasource.username }}"
+        hikari:
+          maxLifetime: 900000 # 15 Minutes in milliseconds.
+          idleTimeout: 120000 # 2 Minutes in milliseconds.
+
+    management:
+      server:
+        port: 8080
+
+      endpoint:
+        info:
+          enabled: true
+        health:
+          enabled: true
+        refresh:
+          enabled: true
+
+      endpoints:
+        enabled-by-default: false
+        web:
+          base-path: /management
+          exposure:
+            include: info,health,refresh
+            exclude: ""
+
+    dgc:
+      trustAnchor:
+        keyStorePath: /mnt/secrets-store/ta.p12
+        keyStorePass: ""
+
+  application-azure.yml: |
+    azure:
+      keyvault:
+        enabled: {{ .Values.azure.keyvault.enabled }}
+        uri: {{ .Values.azure.keyvault.uri }}
+        secret-keys: "dgc.trustAnchor.certificateAlias"

@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "dgc-gateway.fullname" . }}-valuesets
+  labels:
+    {{- include "dgc-gateway.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+    "helm.sh/hook-weight": "10"
+spec:
+  template:
+    metadata:
+      annotations:
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- if .Values.aadPodIdentity.enabled }}
+        aadpodidbinding: {{ include "dgc-gateway.fullname" . }}-identity
+        {{- end }}
+        {{- include "dgc-gateway.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: mysql
+        image: "{{ .Values.utility.image.repository }}:{{ .Values.utility.image.tag }}"
+        imagePullPolicy: {{ .Values.utility.image.pullPolicy }}
+        command: ["/mnt/valuesets/run.sh"]
+        workingDir: "/mnt/valuesets"
+        env:
+          - name: "DATABASE_HOST"
+            value: "{{ .Values.database.host }}"
+          - name: "DATABASE_USER"
+            value: "{{ .Values.spring.datasource.username }}"
+          - name: "DATABASE_NAME"
+            value: "{{ .Values.database.name }}"
+        volumeMounts:
+        - name: sql
+          mountPath: /mnt/valuesets
+      volumes:
+      - name: sql
+        configMap:
+          name: {{ include "dgc-gateway.fullname" . }}-valuesets-config
+          defaultMode: 0755

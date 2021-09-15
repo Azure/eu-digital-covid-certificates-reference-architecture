@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dgca-verifier-service.fullname" . }}
+  labels:
+    {{- include "dgca-verifier-service.labels" . | nindent 4 }}
+data:
+  application-k8s.yml: |
+    server:
+      port: 8080
+
+    management:
+      server:
+        port: 8080
+
+      endpoint:
+        info:
+          enabled: true
+        health:
+          enabled: true
+        refresh:
+          enabled: true
+
+      endpoints:
+        enabled-by-default: false
+        web:
+          base-path: /management
+          exposure:
+            include: info,health,refresh
+            exclude: ""
+
+    spring:
+      jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      datasource:
+        url: "{{ .Values.spring.datasource.url }}"
+        username: "{{ .Values.spring.datasource.username }}"
+
+    dgc:
+      gateway:
+        connector:
+          enabled: {{ .Values.dgc.gateway.connector.enabled }}
+          endpoint: {{ .Values.dgc.gateway.connector.endpoint }}
+          tls-trust-store:
+            path: file:/mnt/secrets-store/tls_trust_store.p12
+          tls-key-store:
+            path: file:/mnt/secrets-store/tls_key_store.p12
+            password: ""
+          trust-anchor:
+            path: file:/mnt/secrets-store/trustanchor.p12
+
+    verifier:
+      contextFile: /dgc/context.json
+
+  application-azure.yml: |
+    azure:
+      keyvault:
+        enabled: {{ .Values.azure.keyvault.enabled }}
+        uri: {{ .Values.azure.keyvault.uri }}
+        secret-keys: "dgc.gateway.connector.trust-anchor.password,dgc.gateway.connector.trust-anchor.alias,dgc.gateway.connector.tls-trust-store.password,dgc.gateway.connector.tls-key-store.alias"
+
+  context.json: |
+    {
+      "origin": "DE",
+      "versions": {
+        "default": {
+          "privacyUrl": "https://publications.europa.eu/en/web/about-us/legal-notices/eu-mobile-apps",
+          "context": {
+            "url": "{{ .Values.context.verifier_service_url }}/context",
+            "pubKeys": [
+              "{{ .Values.context.public_key_pin }}"
+            ]
+          },
+          "endpoints": {
+            "status": {
+              "url": "{{ .Values.context.verifier_service_url }}/signercertificateStatus",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "update": {
+              "url": "{{ .Values.context.verifier_service_url }}/signercertificateUpdate",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "countryList": {
+              "url": "{{ .Values.context.businessrule_service_url }}/countrylist",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "countries": {
+              "url": "{{ .Values.context.businessrule_service_url }}/countrylist",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "rules": {
+              "url": "{{ .Values.context.businessrule_service_url }}/rules",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            },
+            "valuesets": {
+              "url": "{{ .Values.context.businessrule_service_url }}/valuesets",
+              "pubKeys": [
+                "{{ .Values.context.public_key_pin }}"
+              ]
+            }
+          }
+        },
+        "0.1.0": {
+          "outdated": true
+        }
+      }
+    }

@@ -1,0 +1,12 @@
+insert into trusted_party (created_at, country, thumbprint, raw_data, signature, certificate_type)
+select
+    now() as created_at,
+    '$COUNTRY' as country,
+    '$THUMBPRINT' as thumbprint,
+    '$RAW' as raw_data,
+    '$SIGNATURE' as signature,
+    '$TYPE' as certificate_type
+    ON DUPLICATE KEY UPDATE
+        raw_data = '$RAW',
+        signature = '$SIGNATURE' ,
+        certificate_type = '$TYPE';

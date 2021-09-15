@@ -1,0 +1,102 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "msal-authentication.fullname" . }}
+  labels:
+    {{- include "msal-authentication.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "msal-authentication.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "msal-authentication.selectorLabels" . | nindent 8 }}
+        {{- if .Values.aadPodIdentity.enabled }}
+        aadpodidbinding: {{ include "msal-authentication.fullname" . }}-aad-identity
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "msal-authentication.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: DataProtectionFileLocation
+            value: /mnt/dp
+          - name: ForceHttps
+            value: "true"
+          - name: AzureAd__Instance
+            value: https://login.microsoftonline.com/
+          - name: AzureAd__Domain
+            value: microsoft.onmicrosoft.com
+          - name: AzureAd__TenantId
+            value: "{{ .Values.tenant_id }}"
+          - name: AzureAd__ClientId
+            value: "{{ .Values.client_id }}"
+          - name: AzureAd__CallbackPath
+            value: /msal/signin-oidc
+          - name: AzureAd__SignedOutCallbackPath
+            value: /msal/signout-callback-oidc
+          - name: AzureAd__ClientSecret
+            valueFrom:
+              secretKeyRef:
+                name: {{ include "msal-authentication.fullname" . }}-secret
+                key: AzureAd__ClientSecret
+          - name: Logging__LogLevel__Default
+            value: Debug
+          - name: AllowedHosts
+            value: "*"
+          - name: RedirectParam
+            value: rd
+          - name: ShowLogin
+            value: "false"
+          volumeMounts:
+          - mountPath: "/mnt/dp"
+            name: dpvol
+          - name: secrets-store
+            mountPath: "/mnt/secrets-store"
+            readOnly: true
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: dpvol
+        persistentVolumeClaim:
+          claimName: {{ include "msal-authentication.fullname" . }}-pvc
+      - name: secrets-store
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: {{ include "msal-authentication.fullname" . }}-secret-provider
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

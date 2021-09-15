@@ -1,0 +1,73 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "mysql-aad-setup.fullname" . }}
+  labels:
+    {{- include "mysql-aad-setup.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+    "helm.sh/hook-weight": "10"
+spec:
+  ttlSecondsAfterFinished: 600 # Job will self-delete 10 mins after successful completion
+  template:
+    metadata:
+      annotations:
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- if .Values.aadPodIdentity.enabled }}
+        aadpodidbinding: {{ include "mysql-aad-setup.fullname" . }}-identity
+        {{- end }}
+        {{- include "mysql-aad-setup.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: OnFailure
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "mysql-aad-setup.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: db-init
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/mnt/db-init/run.sh"]
+          workingDir: "/mnt/db-init"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: "DATABASE_HOST"
+              value: "{{ .Values.database.host }}"
+            - name: "DATABASE_ADMIN_USER"
+              value: "{{ .Values.database.adminUser }}"
+            - name: "DATABASE_USER"
+              value: "{{ .Values.database.user }}"
+            - name: "DATABASE_NAME"
+              value: "{{ .Values.database.name }}"
+            - name: "DATABASE_CLIENT_ID"
+              value: "{{ .Values.database.clientID }}"
+          volumeMounts:
+          - name: db-init
+            mountPath: /mnt/db-init
+      volumes:
+      - name: db-init
+        configMap:
+            name: {{ include "mysql-aad-setup.fullname" . }}-config
+            defaultMode: 0755
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -1,0 +1,12 @@
+apiVersion: v2
+
+name: mysql-aad-setup
+description: A Helm chart for Kubernetes
+type: application
+
+# When version is bumped, then matching version
+# in dgc-gateway/Chart.yaml dependencies[] must
+# also be updated.
+version: 0.1.1
+
+appVersion: "1.16.0"
