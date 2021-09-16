@@ -1,15 +1,3 @@
-# Deploy dedacated Azure Log Analytics Cluster 
-resource "azurerm_log_analytics_cluster" "log_analytics_cluster" {
-  count               = var.enable_log_analytics_cluster ? 1 : 0
-  name                = "${var.prefix}${var.name}-log-analytics-cluster"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-
-  identity {
-    type = "SystemAssigned"
-  }
-}
-
 # Azure Log Analytics Workspace
 resource "azurerm_log_analytics_workspace" "log_analytics_workspace" {
   count               = var.enable_log_analytics_workspace ? 1 : 0
@@ -170,12 +158,17 @@ resource "azurerm_log_analytics_solution" "updates" {
   }
 }
 
+locals {
+  # note: putting [*] behind a single value will create a list (if it is null then it will be an empty list)
+  log_analytics_cluster_id = var.log_analytics_cluster_id[*]
+}
+
 # Link AKS Log Analytics Workspace to Log Analytics Cluster
 resource "azurerm_log_analytics_linked_service" "log_analytics_linked_service" {
-  count               = var.enable_log_analytics_workspace && var.enable_log_analytics_cluster ? 1 : 0
+  count               = var.enable_log_analytics_workspace ? 1 : 0 && count(local.log_analytics_cluster_id)
   resource_group_name = azurerm_resource_group.rg.name
   workspace_id        = azurerm_log_analytics_workspace.log_analytics_workspace[0].id
-  write_access_id     = azurerm_log_analytics_cluster.log_analytics_cluster[0].id
+  write_access_id     = local.log_analytics_cluster_id[0]
 
   depends_on = [
     azurerm_log_analytics_solution.container_insights,
