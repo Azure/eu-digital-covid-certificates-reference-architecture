@@ -2,7 +2,7 @@
 resource "azurerm_key_vault_key" "mysql_encryption_key" {
   name         = "mysql-encryption-key"
   key_vault_id = azurerm_key_vault.keyvault.id
-  key_type     = "RSA"
+  key_type     = "RSA-HSM"
   key_size     = 2048
   key_opts     = ["unwrapKey", "wrapKey", ]
 
