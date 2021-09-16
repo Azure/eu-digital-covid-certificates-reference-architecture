@@ -129,7 +129,7 @@ variable "log_retention_in_days" {
   default     = 30
 }
 variable "log_analytics_cluster_id" {
-  type        = bool
+  type        = string
   description = "Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied"
   default     = null
 }

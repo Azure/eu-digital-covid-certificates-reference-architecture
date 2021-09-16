@@ -165,7 +165,7 @@ locals {
 
 # Link AKS Log Analytics Workspace to Log Analytics Cluster
 resource "azurerm_log_analytics_linked_service" "log_analytics_linked_service" {
-  count               = var.enable_log_analytics_workspace ? 1 : 0 && count(local.log_analytics_cluster_id)
+  count               = var.enable_log_analytics_workspace && length(local.log_analytics_cluster_id) != 0 ? 1 : 0
   resource_group_name = azurerm_resource_group.rg.name
   workspace_id        = azurerm_log_analytics_workspace.log_analytics_workspace[0].id
   write_access_id     = local.log_analytics_cluster_id[0]

@@ -63,7 +63,7 @@ variable "enable_log_analytics_workspace" {
 }
 
 variable "log_analytics_cluster_id" {
-  type        = bool
+  type        = string
   description = "Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied"
   default     = null
 }
