@@ -15,14 +15,18 @@ prefix                              = "<prefix>"
 subscription_id                     = "<id>"
 tenant_id                           = "<id>"
 jumpbox_ssh_source_address_prefixes = []
-acr_username                        = "apecoeacr"
-acr_password                        = "<ADMIN PW FETCHED FROM APECOE ACR in DEV1 SUB>"
+ghcr_username                       = "<GH Username>"
+ghcr_password                       = "<GH Password / Token>"
 administrator_group_oid             = "<id>"
 location                            = "northeurope"
 parent_dns_zone_name                = "dns name"
 parent_dns_zone_rg_name             = "<id>"
 enable_log_analytics_workspace      = false
+<<<<<<< HEAD
 log_analytics_cluster_id            = "<id>"
+=======
+enable_log_analytics_cluster        = false
+>>>>>>> 4bdf743... Switch from Private ACR, to Private GHCR
 ```
 
 Where:

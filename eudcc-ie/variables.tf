@@ -18,15 +18,15 @@ variable "tenant_id" {
   description = "Tenant to deploy into"
 }
 
-variable "acr_username" {
+variable "ghcr_username" {
   type        = string
-  description = "ACR Username"
+  description = "GitHub Container Registry Username"
 }
 
-variable "acr_password" {
+variable "ghcr_password" {
   type        = string
   sensitive   = true
-  description = "ACR Password"
+  description = "GitHub Container Registry Password"
 }
 
 variable "parent_dns_zone_name" {
@@ -47,25 +47,25 @@ variable "administrator_group_oid" {
 variable "issuance_service_version" {
   type        = string
   description = "Version Number of the Issuance Service"
-  default     = "94"
+  default     = "1.0.5-7408b55-azure-0.0.1-1293959"
 }
 
 variable "issuance_web_version" {
   type        = string
   description = "Version Number of the Issuance Web"
-  default     = "90"
+  default     = "1.1.2-45daa28-azure-0.0.1-1293959"
 }
 
 variable "businessrule_service_version" {
   type        = string
   description = "Version Number of the Business Rules Service"
-  default     = "93"
+  default     = "1.1.2-b0be8f4-azure-0.0.1-1293959"
 }
 
 variable "verifier_service_version" {
   type        = string
   description = "Version Number of the Verifier Service"
-  default     = "95"
+  default     = "1.0.4-5888cb7-azure-0.0.1-1293959"
 }
 
 variable "msal_proxy_version" {
@@ -83,7 +83,7 @@ variable "nginx_image_tag" {
 variable "utility_image_tag" {
   type        = string
   description = "Tag of the Utility Image to import"
-  default     = "3"
+  default     = "0.0.1-c5b4119"
 }
 
 variable "enable_log_analytics_workspace" {

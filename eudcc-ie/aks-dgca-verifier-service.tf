@@ -116,20 +116,20 @@ resource "helm_release" "dgca_verifier_service" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/eu-digital-green-certificates/dgca-verifier-service"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/dgca-verifier-service"
         "tag"        = var.verifier_service_version
       }
 
       "utility" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
       }
 
       "nginx" = {
         "image" = {
-          "repository" : "${module.base_infra.acr_login_server}/nginx"
+          "repository" : "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/nginx"
           "tag" : var.nginx_image_tag
         }
       }
@@ -184,7 +184,7 @@ resource "helm_release" "dgca_verifier_service" {
     jsonencode({
       "mysql-aad-setup" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
 

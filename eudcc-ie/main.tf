@@ -68,34 +68,34 @@ module "base_infra" {
   log_analytics_cluster_id       = var.log_analytics_cluster_id
   acr_imports = {
     dgca-issuance-service = {
-      source      = "apecoeacr.azurecr.io/eu-digital-green-certificates/dgca-issuance-service:${var.issuance_service_version}"
-      destination = "eu-digital-green-certificates/dgca-issuance-service:${var.issuance_service_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgca-issuance-service:${var.issuance_service_version}"
+      destination = "eu-digital-covid-certificates/dgca-issuance-service:${var.issuance_service_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     dgca-issuance-web = {
-      source      = "apecoeacr.azurecr.io/eu-digital-green-certificates/dgca-issuance-web:${var.issuance_web_version}"
-      destination = "eu-digital-green-certificates/dgca-issuance-web:${var.issuance_web_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgca-issuance-web:${var.issuance_web_version}"
+      destination = "eu-digital-covid-certificates/dgca-issuance-web:${var.issuance_web_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     dgca-businessrule-service = {
-      source      = "apecoeacr.azurecr.io/eu-digital-green-certificates/dgca-businessrule-service:${var.businessrule_service_version}"
-      destination = "eu-digital-green-certificates/dgca-businessrule-service:${var.businessrule_service_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgca-businessrule-service:${var.businessrule_service_version}"
+      destination = "eu-digital-covid-certificates/dgca-businessrule-service:${var.businessrule_service_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     dgca-verifier-service = {
-      source      = "apecoeacr.azurecr.io/eu-digital-green-certificates/dgca-verifier-service:${var.verifier_service_version}"
-      destination = "eu-digital-green-certificates/dgca-verifier-service:${var.verifier_service_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgca-verifier-service:${var.verifier_service_version}"
+      destination = "eu-digital-covid-certificates/dgca-verifier-service:${var.verifier_service_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     utility = {
-      source      = "apecoeacr.azurecr.io/utility:${var.utility_image_tag}"
-      destination = "utility:${var.utility_image_tag}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/utility:${var.utility_image_tag}"
+      destination = "eu-digital-covid-certificates/utility:${var.utility_image_tag}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     nginx = {
       # Used by DGCA Verifier Service Context Sidecar
@@ -103,10 +103,10 @@ module "base_infra" {
       destination = "nginx:${var.nginx_image_tag}"
     }
     msal-net-proxy = {
-      source      = "apecoeacr.azurecr.io/azure/msal-net-proxy:${var.msal_proxy_version}"
-      destination = "azure/msal-net-proxy:${var.msal_proxy_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/msal-net-proxy:${var.msal_proxy_version}"
+      destination = "eu-digital-covid-certificates/msal-net-proxy:${var.msal_proxy_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
   }
 
