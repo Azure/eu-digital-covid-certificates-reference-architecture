@@ -59,12 +59,12 @@ Version
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/modules/base-infra/" /><meta property="article:section" content="terraform" />
 
-<meta property="article:modified_time" content="2021-09-17T10:59:52+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
+<meta property="article:modified_time" content="2021-09-17T14:58:03+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
 
 <meta itemprop="name" content="Base Infrastructure Terraform Module">
 <meta itemprop="description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.4.1    null =3.1.0    random =3.1.0    Providers    Name Version      azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.">
-<meta itemprop="dateModified" content="2021-09-17T10:59:52+01:00" />
-<meta itemprop="wordCount" content="526">
+<meta itemprop="dateModified" content="2021-09-17T14:58:03+01:00" />
+<meta itemprop="wordCount" content="525">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Base Infrastructure Terraform Module"/>
 <meta name="twitter:description" content="Requirements    Name Version      terraform &gt;= 1.0    azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2.4.1    null =3.1.0    random =3.1.0    Providers    Name Version      azurerm =2.71.0    helm =2.2.0    kubectl =1.11.2    kubernetes =2."/>
@@ -122,7 +122,7 @@ Version
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7c4df9576cb3dbf29ce65d8b292b798.json"
+  data-offline-search-index-json-src="/offline-search-index.674e8dd7a75cfc26b05039a511c69bff.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -149,7 +149,7 @@ Version
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7c4df9576cb3dbf29ce65d8b292b798.json"
+  data-offline-search-index-json-src="/offline-search-index.674e8dd7a75cfc26b05039a511c69bff.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -471,10 +471,6 @@ Version
 </tr>
 <tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/kubernetes_cluster">azurerm_kubernetes_cluster.aks</a></td>
-<td>resource</td>
-</tr>
-<tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster">azurerm_log_analytics_cluster.log_analytics_cluster</a></td>
 <td>resource</td>
 </tr>
 <tr>
@@ -934,13 +930,6 @@ Version
 <td style="text-align:center">no</td>
 </tr>
 <tr>
-<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
-<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
-<td><code>bool</code></td>
-<td><code>false</code></td>
-<td style="text-align:center">no</td>
-</tr>
-<tr>
 <td><a name="input_enable_log_analytics_workspace"></a> <a href="#input_enable_log_analytics_workspace">enable_log_analytics_workspace</a></td>
 <td>Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</td>
 <td><code>bool</code></td>
@@ -994,6 +983,13 @@ Version
 <td>n/a</td>
 <td><code>string</code></td>
 <td><code>&quot;v2.3.0&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_log_analytics_cluster_id"></a> <a href="#input_log_analytics_cluster_id">log_analytics_cluster_id</a></td>
+<td>Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>

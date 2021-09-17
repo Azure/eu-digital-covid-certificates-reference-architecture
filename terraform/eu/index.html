@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/eu/" /><meta property="article:section" content="terraform" />
 
-<meta property="article:modified_time" content="2021-09-17T10:59:52+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
+<meta property="article:modified_time" content="2021-09-17T14:58:03+01:00" /><meta property="og:site_name" content="EU Digital Green Cert - Azure Example" />
 
 <meta itemprop="name" content="EU Terraform Stack">
 <meta itemprop="description" content="Docs for the EU Gateway deployment terraform
 ">
-<meta itemprop="dateModified" content="2021-09-17T10:59:52+01:00" />
-<meta itemprop="wordCount" content="225">
+<meta itemprop="dateModified" content="2021-09-17T14:58:03+01:00" />
+<meta itemprop="wordCount" content="226">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="EU Terraform Stack"/>
 <meta name="twitter:description" content="Docs for the EU Gateway deployment terraform
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7c4df9576cb3dbf29ce65d8b292b798.json"
+  data-offline-search-index-json-src="/offline-search-index.674e8dd7a75cfc26b05039a511c69bff.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7c4df9576cb3dbf29ce65d8b292b798.json"
+  data-offline-search-index-json-src="/offline-search-index.674e8dd7a75cfc26b05039a511c69bff.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -507,13 +507,6 @@
 <td style="text-align:center">yes</td>
 </tr>
 <tr>
-<td><a name="input_enable_log_analytics_cluster"></a> <a href="#input_enable_log_analytics_cluster">enable_log_analytics_cluster</a></td>
-<td>Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace</td>
-<td><code>bool</code></td>
-<td><code>false</code></td>
-<td style="text-align:center">no</td>
-</tr>
-<tr>
 <td><a name="input_enable_log_analytics_workspace"></a> <a href="#input_enable_log_analytics_workspace">enable_log_analytics_workspace</a></td>
 <td>Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</td>
 <td><code>bool</code></td>
@@ -525,6 +518,13 @@
 <td>Version Number of the Gateway</td>
 <td><code>string</code></td>
 <td><code>&quot;79&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_log_analytics_cluster_id"></a> <a href="#input_log_analytics_cluster_id">log_analytics_cluster_id</a></td>
+<td>Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>

@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7c4df9576cb3dbf29ce65d8b292b798.json"
+  data-offline-search-index-json-src="/offline-search-index.674e8dd7a75cfc26b05039a511c69bff.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -208,20 +208,19 @@ This the multi-page printable view of this section.
     <div class="lead">Deploy the EU Digital Green Certificate Reference Architecture</div>
 	<h2 id="set-variables">Set Variables</h2>
 <p>Create a <code>terraform.tfvars</code> at the root of the repo that contains:</p>
-<pre><code>prefix                              = &quot;&lt;prefix&gt;&quot;
-subscription_id                     = &quot;&lt;id&gt;&quot;
-tenant_id                           = &quot;&lt;id&gt;&quot;
-jumpbox_ssh_source_address_prefixes = []
-acr_username                        = &quot;apecoeacr&quot;
-acr_password                        = &quot;&lt;ADMIN PW FETCHED FROM APECOE ACR in DEV1 SUB&gt;&quot;
-administrator_group_oid             = &quot;&lt;id&gt;&quot;
-location                            = &quot;northeurope&quot;
-parent_dns_zone_name                = &quot;dns name&quot;
-parent_dns_zone_rg_name             = &quot;&lt;id&gt;&quot;
-enable_log_analytics_workspace      = false
-enable_log_analytics_cluster        = false
-
-</code></pre><p>Where:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#c4a000">prefix</span>                              = <span style="color:#4e9a06">&#34;&lt;prefix&gt;&#34;</span>
+<span style="color:#c4a000">subscription_id</span>                     = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">tenant_id</span>                           = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">jumpbox_ssh_source_address_prefixes</span> = <span style="color:#000;font-weight:bold">[]</span>
+<span style="color:#c4a000">acr_username</span>                        = <span style="color:#4e9a06">&#34;apecoeacr&#34;</span>
+<span style="color:#c4a000">acr_password</span>                        = <span style="color:#4e9a06">&#34;&lt;ADMIN PW FETCHED FROM APECOE ACR in DEV1 SUB&gt;&#34;</span>
+<span style="color:#c4a000">administrator_group_oid</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">location</span>                            = <span style="color:#4e9a06">&#34;northeurope&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;dns name&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">enable_log_analytics_workspace</span>      = <span style="color:#204a87;font-weight:bold">false</span>
+<span style="color:#c4a000">log_analytics_cluster_id</span>            = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+</code></pre></div><p>Where:</p>
 <ul>
 <li><code>prefix</code> is set as a unique identifier (please avoid spaces or special characters). This is used to create names and identifiers of the different resources, so multiple deployments can be done on the same subscription.</li>
 <li><code>jumpbox_ssh_source_address_prefixes</code> is set as the public IP address(es) from which you are connecting to Azure (run <code>curl icanhazip.com</code> to find your public IP).</li>
@@ -235,7 +234,7 @@ enable_log_analytics_cluster        = false
 <li><code>parent_dns_zone_name</code> The name of the domain created for the deployment in the prerequisites section.</li>
 <li><code>parent_dns_zone_rg_name</code> The resource group where the DNS zone has been created.</li>
 <li><code>enable_log_analytics_workspace</code> Enable Azure Log Analytics Workspace, disabled by default.</li>
-<li><code>enable_log_analytics_cluster</code> Enable Azure Log Analytics cluster, disabled by default. <code>enable_log_analytics_workspace</code>  is also required if you wish Log Analytics cluster to be enabled. Also advised to looking into your Azure Subcription&rsquo;s Qoutas before enabling.</li>
+<li><code>log_analytics_cluster_id</code> The resource ID of the Azure Log Analytics cluster with CMK (Customer Managed Key) where the Logs from Log Analytics Workspace will be sent to, disabled by default. <code>enable_log_analytics_workspace</code>  is also required to be enabled to gather the logging data.</li>
 </ul>
 <h2 id="all-in-one-deployment">All In One Deployment</h2>
 <p>Once the variables file has been created, the process of creating the infrastructure and deploying the application has been automated though terraform and scripts. Before initialing the deployment, Azure cli (az) must be logged in, you can log in by running <code>az login</code>.

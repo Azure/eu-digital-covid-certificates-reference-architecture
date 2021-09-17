@@ -146,10 +146,6 @@
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster&#34;&gt;azurerm_log_analytics_cluster.log_analytics_cluster&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;resource&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service&#34;&gt;azurerm_log_analytics_linked_service.log_analytics_linked_service&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
@@ -606,13 +602,6 @@
 &lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a name=&#34;input_enable_log_analytics_cluster&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_enable_log_analytics_cluster&#34;&gt;enable_log_analytics_cluster&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bool&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;a name=&#34;input_enable_log_analytics_workspace&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_enable_log_analytics_workspace&#34;&gt;enable_log_analytics_workspace&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;bool&lt;/code&gt;&lt;/td&gt;
@@ -666,6 +655,13 @@
 &lt;td&gt;n/a&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;&amp;quot;v2.3.0&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a name=&#34;input_log_analytics_cluster_id&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_log_analytics_cluster_id&#34;&gt;log_analytics_cluster_id&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;null&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
