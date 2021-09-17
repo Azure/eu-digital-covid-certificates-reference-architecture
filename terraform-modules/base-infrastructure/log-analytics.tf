@@ -168,7 +168,7 @@ resource "azurerm_log_analytics_linked_service" "log_analytics_linked_service" {
   count               = var.enable_log_analytics_workspace && length(local.log_analytics_cluster_id) != 0 ? 1 : 0
   resource_group_name = azurerm_resource_group.rg.name
   workspace_id        = azurerm_log_analytics_workspace.log_analytics_workspace[0].id
-  write_access_id     = local.log_analytics_cluster_id[0]
+  write_access_id     = var.log_analytics_cluster_id
 
   depends_on = [
     azurerm_log_analytics_solution.container_insights,
