@@ -158,11 +158,6 @@ resource "azurerm_log_analytics_solution" "updates" {
   }
 }
 
-locals {
-  # note: putting [*] behind a single value will create a list (if it is null then it will be an empty list)
-  log_analytics_cluster_id = var.log_analytics_cluster_id[*]
-}
-
 # Link AKS Log Analytics Workspace to Log Analytics Cluster
 resource "azurerm_log_analytics_linked_service" "log_analytics_linked_service" {
   count               = var.enable_log_analytics_workspace && var.log_analytics_cluster_id != null ? 1 : 0
