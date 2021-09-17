@@ -45,7 +45,6 @@ No modules.
 | [azurerm_key_vault_key.mysql_encryption_key](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_key) | resource |
 | [azurerm_key_vault_secret.mysql_pw](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_kubernetes_cluster.aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/kubernetes_cluster) | resource |
-| [azurerm_log_analytics_cluster.log_analytics_cluster](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_cluster) | resource |
 | [azurerm_log_analytics_linked_service.log_analytics_linked_service](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service) | resource |
 | [azurerm_log_analytics_solution.anti_malware](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_solution.azure_activity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
@@ -148,7 +147,6 @@ No modules.
 | <a name="input_cert_manager_image_tag"></a> [cert\_manager\_image\_tag](#input\_cert\_manager\_image\_tag) | n/a | `string` | `"v1.4.0"` | no |
 | <a name="input_csi_node_driver_registrar_image_tag"></a> [csi\_node\_driver\_registrar\_image\_tag](#input\_csi\_node\_driver\_registrar\_image\_tag) | n/a | `string` | `"v2.2.0"` | no |
 | <a name="input_csi_secrets_store_provider_azure_chart_version"></a> [csi\_secrets\_store\_provider\_azure\_chart\_version](#input\_csi\_secrets\_store\_provider\_azure\_chart\_version) | n/a | `string` | `"0.1.0"` | no |
-| <a name="input_enable_log_analytics_cluster"></a> [enable\_log\_analytics\_cluster](#input\_enable\_log\_analytics\_cluster) | Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace | `bool` | `false` | no |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_external_dns_chart_version"></a> [external\_dns\_chart\_version](#input\_external\_dns\_chart\_version) | n/a | `string` | `"5.1.3"` | no |
 | <a name="input_external_dns_image_tag"></a> [external\_dns\_image\_tag](#input\_external\_dns\_image\_tag) | n/a | `string` | `"0.8.0-debian-10-r26"` | no |
@@ -157,6 +155,7 @@ No modules.
 | <a name="input_kube_syslog_sidecar_image_digest"></a> [kube\_syslog\_sidecar\_image\_digest](#input\_kube\_syslog\_sidecar\_image\_digest) | n/a | `string` | `"sha256:f948c128ad982b3676269542da1d9e4339f5553a9fc6831b02edf21a667620d9"` | no |
 | <a name="input_kube_syslog_sidecar_image_tag"></a> [kube\_syslog\_sidecar\_image\_tag](#input\_kube\_syslog\_sidecar\_image\_tag) | n/a | `string` | `"v0.0.1-f948c12"` | no |
 | <a name="input_livenessprobe_csi_driver_image_tag"></a> [livenessprobe\_csi\_driver\_image\_tag](#input\_livenessprobe\_csi\_driver\_image\_tag) | n/a | `string` | `"v2.3.0"` | no |
+| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `bool` | `null` | no |
 | <a name="input_log_analytics_workspace_sku"></a> [log\_analytics\_workspace\_sku](#input\_log\_analytics\_workspace\_sku) | The SKU (pricing level) of the Log Analytics workspace. For new subscriptions the SKU should be set to PerGB2018 | `string` | `"PerGB2018"` | no |
 | <a name="input_log_retention_in_days"></a> [log\_retention\_in\_days](#input\_log\_retention\_in\_days) | The retention period for the logs in days | `number` | `30` | no |
 | <a name="input_secrets_store_csi_driver_image_tag"></a> [secrets\_store\_csi\_driver\_image\_tag](#input\_secrets\_store\_csi\_driver\_image\_tag) | n/a | `string` | `"v0.1.0"` | no |

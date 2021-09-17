@@ -128,8 +128,8 @@ variable "log_retention_in_days" {
   type        = number
   default     = 30
 }
-variable "enable_log_analytics_cluster" {
-  type        = bool
-  description = "Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace"
-  default     = false
+variable "log_analytics_cluster_id" {
+  type        = string
+  description = "Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied"
+  default     = null
 }

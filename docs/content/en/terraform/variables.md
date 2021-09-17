@@ -45,9 +45,6 @@ acr_username = ""
 # OID of the Group to grant Administrator permissions
 administrator_group_oid = ""
 
-# Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace
-enable_log_analytics_cluster = false
-
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false
 
@@ -56,6 +53,9 @@ gateway_version = "79"
 
 # Location Name
 location = ""
+
+# Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied
+log_analytics_cluster_id = ""
 
 # Parent DNS Zone Name
 parent_dns_zone_name = ""
@@ -94,9 +94,6 @@ administrator_group_oid = ""
 # Version Number of the Business Rules Service
 businessrule_service_version = "93"
 
-# Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace
-enable_log_analytics_cluster = false
-
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false
 
@@ -108,6 +105,9 @@ issuance_web_version = "90"
 
 # Location Name
 location = ""
+
+# Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied
+log_analytics_cluster_id = ""
 
 # version of the msal docker image to use
 msal_proxy_version = "0.0.1"

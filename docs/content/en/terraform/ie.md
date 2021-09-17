@@ -102,10 +102,10 @@ description: >
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to deploy into | `string` | n/a | yes |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
 | <a name="input_businessrule_service_version"></a> [businessrule\_service\_version](#input\_businessrule\_service\_version) | Version Number of the Business Rules Service | `string` | `"93"` | no |
-| <a name="input_enable_log_analytics_cluster"></a> [enable\_log\_analytics\_cluster](#input\_enable\_log\_analytics\_cluster) | Enable the creation of Azure Log Analytics Custer linked to Log Analytics Workspace | `bool` | `false` | no |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"94"` | no |
 | <a name="input_issuance_web_version"></a> [issuance\_web\_version](#input\_issuance\_web\_version) | Version Number of the Issuance Web | `string` | `"90"` | no |
+| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `bool` | `null` | no |
 | <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"0.0.1"` | no |
 | <a name="input_nginx_image_tag"></a> [nginx\_image\_tag](#input\_nginx\_image\_tag) | Tag of the Nginx Image to import | `string` | `"1.21.1"` | no |
 | <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"3"` | no |
@@ -115,5 +115,8 @@ description: >
 
 | Name | Description |
 |------|-------------|
-| <a name="output_issuance_web_address"></a> [issuance\_web\_address](#output\_issuance\_web\_address) | The web address where the issueance website can be accessed |
+| <a name="output_businessrule_service_url"></a> [businessrule\_service\_url](#output\_businessrule\_service\_url) | The url where the business rule backend can be accessed |
+| <a name="output_issuance_service_url"></a> [issuance\_service\_url](#output\_issuance\_service\_url) | The url where the issuance backend can be accessed |
+| <a name="output_issuance_web_address"></a> [issuance\_web\_address](#output\_issuance\_web\_address) | The web address where the issuance website can be accessed |
+| <a name="output_verifier_service_url"></a> [verifier\_service\_url](#output\_verifier\_service\_url) | The url where the verifier service backend can be accessed |
 <!-- END_TF_DOCS -->
