@@ -4,3 +4,15 @@
 [submodule "upstream/dgc-gateway"]
 	path = upstream/dgc-gateway
 	url = https://github.com/eu-digital-green-certificates/dgc-gateway.git
+[submodule "upstream/dgca-businessrule-service"]
+	path = upstream/dgca-businessrule-service
+	url = https://github.com/eu-digital-green-certificates/dgca-businessrule-service.git
+[submodule "upstream/dgca-issuance-service"]
+	path = upstream/dgca-issuance-service
+	url = https://github.com/eu-digital-green-certificates/dgca-issuance-service.git
+[submodule "upstream/dgca-issuance-web"]
+	path = upstream/dgca-issuance-web
+	url = https://github.com/eu-digital-green-certificates/dgca-issuance-web.git
+[submodule "upstream/dgca-verifier-service"]
+	path = upstream/dgca-verifier-service
+	url = https://github.com/eu-digital-green-certificates/dgca-verifier-service.git

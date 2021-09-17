@@ -1,0 +1,27 @@
+From d4e7b3668bfdb13df76688282e97ee5fd0d78c06 Mon Sep 17 00:00:00 2001
+From: Kiall Mac Innes <kiall@macinnes.ie>
+Date: Wed, 11 Aug 2021 16:26:23 +0100
+Subject: [PATCH 3/3] APECOE Patch: Add MySQL Dep
+
+---
+ pom.xml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/pom.xml b/pom.xml
+index 4f2a1f4..4addb13 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -99,6 +99,10 @@
+           <groupId>com.azure.spring</groupId>
+           <artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>
+         </dependency>
++        <dependency>
++            <groupId>mysql</groupId>
++            <artifactId>mysql-connector-java</artifactId>
++        </dependency>
+       </dependencies>
+     </profile>
+   </profiles>
+-- 
+2.27.0
+
