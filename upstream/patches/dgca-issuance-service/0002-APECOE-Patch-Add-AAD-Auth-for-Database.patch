@@ -1,0 +1,93 @@
+From d2ed7d093792184ea87844993eb31e1a8716f1d8 Mon Sep 17 00:00:00 2001
+From: Kiall Mac Innes <kiall@macinnes.ie>
+Date: Tue, 10 Aug 2021 11:11:20 +0100
+Subject: [PATCH 2/3] APECOE Patch: Add AAD Auth for Database
+
+---
+ .../apecoe/ApecoeDataSourceConfig.java        | 74 +++++++++++++++++++
+ 1 file changed, 74 insertions(+)
+ create mode 100644 src/main/java/eu/europa/ec/dgc/issuance/apecoe/ApecoeDataSourceConfig.java
+
+diff --git a/src/main/java/eu/europa/ec/dgc/issuance/apecoe/ApecoeDataSourceConfig.java b/src/main/java/eu/europa/ec/dgc/issuance/apecoe/ApecoeDataSourceConfig.java
+new file mode 100644
+index 0000000..c2f2296
+--- /dev/null
++++ b/src/main/java/eu/europa/ec/dgc/issuance/apecoe/ApecoeDataSourceConfig.java
+@@ -0,0 +1,74 @@
++package eu.europa.ec.dgc.issuance.apecoe;
++
++import java.io.BufferedReader;
++import java.io.InputStreamReader;
++import java.net.HttpURLConnection;
++import java.net.URL;
++import javax.sql.DataSource;
++import lombok.RequiredArgsConstructor;
++import lombok.extern.slf4j.Slf4j;
++import org.json.JSONObject;
++import org.json.JSONTokener;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.boot.jdbc.DataSourceBuilder;
++import org.springframework.cloud.context.config.annotation.RefreshScope;
++import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Configuration;
++import org.springframework.context.annotation.Primary;
++import org.springframework.context.annotation.Profile;
++
++@Configuration
++@Profile("azure")
++@RequiredArgsConstructor
++@Slf4j
++public class ApecoeDataSourceConfig {
++    @Value("${spring.datasource.url}")
++    private String url;
++
++    @Value("${spring.datasource.username}")
++    private String username;
++
++    /**
++     * Creates a DataSource.
++     *
++     * @return DataSource
++     */
++    @Bean
++    @Primary
++    @RefreshScope
++    public DataSource apecoeDataSource() {
++        log.info("Building AAD Integrated DataSource");
++
++        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
++
++        try {
++            URL url = new URL("http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fossrdbms-aad.database.windows.net");
++
++            // Prepare the Request
++            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
++            connection.setRequestMethod("GET");
++            connection.setRequestProperty("Metadata", "true");
++            connection.setConnectTimeout(2 * 1000);
++            connection.setReadTimeout(5 * 1000);
++
++            // Execute the Request & Extract the Access Token
++            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
++            String accessToken = new JSONObject(new JSONTokener(reader)).getString("access_token");
++
++            // Configure the DataSource
++            dataSourceBuilder.url(this.url);
++            dataSourceBuilder.username(this.username);
++            dataSourceBuilder.password(accessToken);
++
++            // Close up
++            reader.close();
++            connection.disconnect();
++        } catch (Exception e) {
++            log.error("Failed to build AAD Integrated DataSource");
++            e.printStackTrace();
++            return null;
++        }
++
++        return (DataSource) dataSourceBuilder.build();
++    }
++}
+-- 
+2.27.0
+
