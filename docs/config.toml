@@ -1,7 +1,7 @@
 
 baseURL = '/'
 languageCode = 'en'
-title = 'EU Digital Green Cert - Azure Example'
+title = 'EU Digital COVID Certificate - Azure Example'
 
 enableRobotsTXT = true
 
@@ -51,8 +51,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = 'EU Digital Green Cert - Azure Example'
-description = "An example of the EU Digital Green Cert system on Azure"
+title = 'EU Digital COVID Certificate - Azure Example'
+description = "An example of the EU Digital COVID Certificate system on Azure"
 languageName ="English"
 # Weight used for sorting.
 weight = 1

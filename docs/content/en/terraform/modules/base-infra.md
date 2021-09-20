@@ -155,7 +155,7 @@ No modules.
 | <a name="input_kube_syslog_sidecar_image_digest"></a> [kube\_syslog\_sidecar\_image\_digest](#input\_kube\_syslog\_sidecar\_image\_digest) | n/a | `string` | `"sha256:f948c128ad982b3676269542da1d9e4339f5553a9fc6831b02edf21a667620d9"` | no |
 | <a name="input_kube_syslog_sidecar_image_tag"></a> [kube\_syslog\_sidecar\_image\_tag](#input\_kube\_syslog\_sidecar\_image\_tag) | n/a | `string` | `"v0.0.1-f948c12"` | no |
 | <a name="input_livenessprobe_csi_driver_image_tag"></a> [livenessprobe\_csi\_driver\_image\_tag](#input\_livenessprobe\_csi\_driver\_image\_tag) | n/a | `string` | `"v2.3.0"` | no |
-| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `bool` | `null` | no |
+| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `string` | `null` | no |
 | <a name="input_log_analytics_workspace_sku"></a> [log\_analytics\_workspace\_sku](#input\_log\_analytics\_workspace\_sku) | The SKU (pricing level) of the Log Analytics workspace. For new subscriptions the SKU should be set to PerGB2018 | `string` | `"PerGB2018"` | no |
 | <a name="input_log_retention_in_days"></a> [log\_retention\_in\_days](#input\_log\_retention\_in\_days) | The retention period for the logs in days | `number` | `30` | no |
 | <a name="input_secrets_store_csi_driver_image_tag"></a> [secrets\_store\_csi\_driver\_image\_tag](#input\_secrets\_store\_csi\_driver\_image\_tag) | n/a | `string` | `"v0.1.0"` | no |

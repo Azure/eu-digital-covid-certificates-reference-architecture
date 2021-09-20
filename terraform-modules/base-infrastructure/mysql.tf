@@ -63,7 +63,7 @@ resource "azurerm_mysql_server" "mysql" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
-  administrator_login          = "dgc"
+  administrator_login          = "eudcc"
   administrator_login_password = azurerm_key_vault_secret.mysql_pw.value
 
   sku_name = "GP_Gen5_2"
