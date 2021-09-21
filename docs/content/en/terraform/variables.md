@@ -110,7 +110,7 @@ location = ""
 log_analytics_cluster_id = ""
 
 # version of the msal docker image to use
-msal_proxy_version = "0.0.1"
+msal_proxy_version = "latest"
 
 # Tag of the Nginx Image to import
 nginx_image_tag = "1.21.1"

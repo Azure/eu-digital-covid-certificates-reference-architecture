@@ -102,11 +102,11 @@ module "base_infra" {
       source      = "docker.io/library/nginx:${var.nginx_image_tag}"
       destination = "nginx:${var.nginx_image_tag}"
     }
+    # TODO: Using the `latest` tag is bad practice, we'll work with the upstream team to
+    #       get some better tags applied to the image.
     msal-net-proxy = {
-      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/msal-net-proxy:${var.msal_proxy_version}"
-      destination = "eu-digital-covid-certificates/msal-net-proxy:${var.msal_proxy_version}"
-      username    = var.ghcr_username
-      password    = var.ghcr_password
+      source      = "docker.io/easyauthfork8s/msal-net-proxy-opt:${var.msal_proxy_version}"
+      destination = "eu-digital-covid-certificates/msal-net-proxy-opt:${var.msal_proxy_version}"
     }
   }
 

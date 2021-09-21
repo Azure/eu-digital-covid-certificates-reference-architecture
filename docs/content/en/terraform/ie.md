@@ -106,7 +106,7 @@ description: >
 | <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"1.0.5-7408b55-azure-0.0.1-1293959"` | no |
 | <a name="input_issuance_web_version"></a> [issuance\_web\_version](#input\_issuance\_web\_version) | Version Number of the Issuance Web | `string` | `"1.1.2-45daa28-azure-0.0.1-1293959"` | no |
 | <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `string` | `null` | no |
-| <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"0.0.1"` | no |
+| <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"latest"` | no |
 | <a name="input_nginx_image_tag"></a> [nginx\_image\_tag](#input\_nginx\_image\_tag) | Tag of the Nginx Image to import | `string` | `"1.21.1"` | no |
 | <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"0.0.1-c5b4119"` | no |
 | <a name="input_verifier_service_version"></a> [verifier\_service\_version](#input\_verifier\_service\_version) | Version Number of the Verifier Service | `string` | `"1.0.4-5888cb7-azure-0.0.1-1293959"` | no |

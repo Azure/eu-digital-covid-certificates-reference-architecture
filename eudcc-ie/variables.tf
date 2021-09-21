@@ -71,7 +71,7 @@ variable "verifier_service_version" {
 variable "msal_proxy_version" {
   type        = string
   description = "version of the msal docker image to use"
-  default     = "0.0.1"
+  default     = "latest"
 }
 
 variable "nginx_image_tag" {
