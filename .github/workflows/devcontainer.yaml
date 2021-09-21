@@ -30,9 +30,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # GHCR Requires the image name to be lowercase, while
+      # `github.repository` will contain `Azure/...`.
+      - name: lowercase-repository
+        run: >-
+          GITHUB_REPO=${{ github.repository }};
+          echo "GITHUB_REPO_LWR=${GITHUB_REPO,,}" >> ${GITHUB_ENV};
+
       - name: Build and push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .devcontainer/
           push: true
-          tags: ${{ env.REGISTRY }}/azure/eu-digital-covid-certificates-reference-architecture/devcontainer:latest
+          tags: ${{ env.REGISTRY }}/${{ env.GITHUB_REPO_LWR }}/devcontainer:latest
