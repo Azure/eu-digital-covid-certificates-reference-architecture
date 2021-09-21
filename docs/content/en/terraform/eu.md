@@ -60,7 +60,7 @@ description: >
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_gateway_version"></a> [gateway\_version](#input\_gateway\_version) | Version Number of the Gateway | `string` | `"79"` | no |
-| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `bool` | `null` | no |
+| <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `string` | `null` | no |
 | <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"3"` | no |
 
 ## Outputs

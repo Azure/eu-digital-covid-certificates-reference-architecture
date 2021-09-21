@@ -81,13 +81,13 @@ privacy_policy = "https://privacy.microsoft.com/en-us/privacystatement"
 version_menu = "Releases"
 
 # # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-# github_repo = "https://github.com/gwatts/mostlydocs"
-# github_branch = "main"
+github_repo = "https://github.com/Azure/eu-digital-covid-certificates-reference-architecture"
+github_branch = "main"
 # # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 
 # Specify a value here if your content directory is not in your repo's root directory
-# github_subdir = ""
+github_subdir = "docs"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 #gcs_engine_id = "011737558837375720776:fsdu1nryfng"
@@ -123,32 +123,16 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
-# [[params.links.user]]
-# 	name = "User mailing list"
-# 	url = "https://example.org/mail"
-# 	icon = "fa fa-envelope"
-#         desc = "Discussion and help from your fellow users"
-# [[params.links.user]]
-# 	name ="Twitter"
-# 	url = "https://example.org/twitter"
-# 	icon = "fab fa-twitter"
-#         desc = "Follow us on Twitter to get the latest news!"
-# [[params.links.user]]
-# 	name = "Stack Overflow"
-# 	url = "https://example.org/stack"
-# 	icon = "fab fa-stack-overflow"
-#         desc = "Practical questions and curated answers"
-# # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-# [[params.links.developer]]
-# 	name = "GitHub"
-# 	url = "https://github.com/google/docsy"
-# 	icon = "fab fa-github"
-#         desc = "Development takes place here!"
-# [[params.links.developer]]
-# 	name = "Slack"
-# 	url = "https://example.org/slack"
-# 	icon = "fab fa-slack"
-#         desc = "Chat with other project developers"
+[[params.links.developer]]
+	name = "EU Digital COVID Certificate"
+	url = "https://github.com/eu-digital-green-certificates/"
+	icon = "fab fa-github"
+        desc = "EU Digital COVID Certificate Github organisation"
+[[params.links.developer]]
+	name = "Linux Foundation Public Health Slack"
+	url = "https://slack.lfph.io/"
+	icon = "fab fa-slack"
+         desc = "EU Digital COVID Certificate Slack"
 # [[params.links.developer]]
 # 	name = "Developer mailing list"
 # 	url = "https://example.org/mail"
