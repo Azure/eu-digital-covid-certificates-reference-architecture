@@ -98,38 +98,62 @@ variable "kube_syslog_sidecar_image_tag" {
 variable "csi_secrets_store_provider_azure_chart_version" {
   default = "0.1.0"
 }
+
 variable "azure_key_vault_provider_image_tag" {
   default = "v0.1.0"
 }
+
 variable "secrets_store_csi_driver_image_tag" {
   default = "v0.1.0"
 }
+
 variable "csi_node_driver_registrar_image_tag" {
   default = "v2.2.0"
 }
+
 variable "livenessprobe_csi_driver_image_tag" {
   default = "v2.3.0"
 }
+
 variable "secrets_store_driver_crds_image_tag" {
   default = "v0.1.0"
 }
+
 variable "enable_log_analytics_workspace" {
   type        = bool
   description = "Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not"
   default     = false
 }
+
 variable "log_analytics_workspace_sku" {
   description = "The SKU (pricing level) of the Log Analytics workspace. For new subscriptions the SKU should be set to PerGB2018"
   type        = string
   default     = "PerGB2018"
 }
+
 variable "log_retention_in_days" {
   description = "The retention period for the logs in days"
   type        = number
   default     = 30
 }
+
 variable "log_analytics_cluster_id" {
   type        = string
   description = "Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied"
   default     = null
+}
+
+variable "jump_box_identity_file" {
+  type        = string
+  description = "The RSA Key for the Jump Box, required for remote executing code over SSH"
+}
+
+variable "jump_box_identity_user" {
+  type        = string
+  description = "The User for the Jump Box to authenticate, required for remote executing code over SSH"
+}
+
+variable "jump_box_identity_host" {
+  type        = string
+  description = "The Host address for the Jump Box, required for remote executing code over SSH"
 }

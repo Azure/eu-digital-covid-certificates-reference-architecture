@@ -67,3 +67,18 @@ variable "log_analytics_cluster_id" {
   description = "Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied"
   default     = null
 }
+
+variable "jump_box_identity_file" {
+  type        = string
+  description = "The RSA Key for the Jump Box, required for remote executing code over SSH"
+}
+
+variable "jump_box_identity_user" {
+  type        = string
+  description = "The User for the Jump Box to authenticate, required for remote executing code over SSH"
+}
+
+variable "jump_box_identity_host" {
+  type        = string
+  description = "The Host address for the Jump Box, required for remote executing code over SSH"
+}
