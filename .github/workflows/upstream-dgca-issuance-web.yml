@@ -50,6 +50,12 @@ jobs:
           APP_TAG=$(git describe --tags ${APP_REV} 2> /dev/null || echo 0.0.0);
           APP_VERSION=${APP_TAG}-${APP_SHA}-azure-${AZURE_VERSION};
           echo "APP_VERSION=${APP_VERSION}" >> ${GITHUB_ENV};
+      # GHCR Requires the image name to be lowercase, while
+      # `github.repository` will contain `Azure/...`.
+      - name: lowercase-repository
+        run: >-
+          GITHUB_REPO=${{ github.repository }};
+          echo "GITHUB_REPO_LWR=${GITHUB_REPO,,}" >> ${GITHUB_ENV};
       - name: docker
         working-directory: ./upstream/dgca-issuance-web
         run: >-
@@ -62,6 +68,6 @@ jobs:
           --tag "${APP_PACKAGES_URL}:${APP_VERSION}";
           docker push "${APP_PACKAGES_URL}:${APP_VERSION}";
         env:
-          APP_PACKAGES_URL: ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgca-issuance-web
+          APP_PACKAGES_URL: ghcr.io/${{ env.GITHUB_REPO_LWR }}/dgca-issuance-web
           APP_PACKAGES_USERNAME: ${{ github.actor }}
           APP_PACKAGES_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
