@@ -23,7 +23,7 @@ on:
     paths:
       - 'upstream/dgc-gateway'
       - 'upstream/patches/dgc-gateway/**'
-      - '.github/workflows/upstream-dgc-gateway.yaml'
+      - '.github/workflows/upstream-dgc-gateway.yml'
 
 jobs:
   build-docker:

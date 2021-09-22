@@ -22,7 +22,7 @@ on:
       - main
     paths:
       - 'upstream/dgca-issuance-web'
-      - '.github/workflows/upstream-dgca-issuance-web.yaml'
+      - '.github/workflows/upstream-dgca-issuance-web.yml'
 
 jobs:
   build-docker:

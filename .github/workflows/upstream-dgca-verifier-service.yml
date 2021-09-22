@@ -23,7 +23,7 @@ on:
     paths:
       - 'upstream/dgca-verifier-service'
       - 'upstream/patches/dgca-verifier-service/**'
-      - '.github/workflows/upstream-dgca-verifier-service.yaml'
+      - '.github/workflows/upstream-dgca-verifier-service.yml'
 
 jobs:
   build-docker:
