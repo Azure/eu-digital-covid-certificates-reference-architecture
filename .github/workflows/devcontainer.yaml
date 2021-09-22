@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - '.devcontainer/**'
+      - '.github/workflows/devcontainer.yml'
 
 env:
   REGISTRY: ghcr.io
