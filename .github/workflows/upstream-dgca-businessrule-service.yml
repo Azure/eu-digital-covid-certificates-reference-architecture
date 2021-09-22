@@ -23,7 +23,7 @@ on:
     paths:
       - 'upstream/dgca-businessrule-service'
       - 'upstream/patches/dgca-businessrule-service/**'
-      - '.github/workflows/upstream-dgca-businessrule-service.yaml'
+      - '.github/workflows/upstream-dgca-businessrule-service.yml'
 
 jobs:
   build-docker:
