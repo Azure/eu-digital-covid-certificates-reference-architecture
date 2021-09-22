@@ -23,6 +23,7 @@ on:
     paths:
       - 'upstream/dgca-issuance-service'
       - 'upstream/patches/dgca-issuance-service/**'
+      - '.github/workflows/upstream-dgca-issuance-service.yaml'
 
 jobs:
   build-docker:
