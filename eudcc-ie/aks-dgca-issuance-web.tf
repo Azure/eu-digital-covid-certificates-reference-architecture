@@ -104,7 +104,7 @@ resource "helm_release" "dgca_issuance_web" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/eu-digital-green-certificates/dgca-issuance-web"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/dgca-issuance-web"
         "tag"        = var.issuance_web_version
       }
 
@@ -188,7 +188,7 @@ resource "helm_release" "msal_authentication" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/azure/msal-net-proxy"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/msal-net-proxy-opt"
         "tag"        = var.msal_proxy_version
       }
 

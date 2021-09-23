@@ -92,24 +92,24 @@ description: >
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_acr_password"></a> [acr\_password](#input\_acr\_password) | ACR Password | `string` | n/a | yes |
-| <a name="input_acr_username"></a> [acr\_username](#input\_acr\_username) | ACR Username | `string` | n/a | yes |
 | <a name="input_administrator_group_oid"></a> [administrator\_group\_oid](#input\_administrator\_group\_oid) | OID of the Group to grant Administrator permissions. This is used to allow access to the jumpboxes for deployments and troubleshooting | `string` | n/a | yes |
+| <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Password | `string` | n/a | yes |
+| <a name="input_ghcr_username"></a> [ghcr\_username](#input\_ghcr\_username) | GitHub Container Registry Username | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Location Name | `string` | n/a | yes |
 | <a name="input_parent_dns_zone_name"></a> [parent\_dns\_zone\_name](#input\_parent\_dns\_zone\_name) | Parent DNS Zone Name | `string` | n/a | yes |
 | <a name="input_parent_dns_zone_rg_name"></a> [parent\_dns\_zone\_rg\_name](#input\_parent\_dns\_zone\_rg\_name) | Parent DNS Zone Resource Group Name | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to deploy into | `string` | n/a | yes |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
-| <a name="input_businessrule_service_version"></a> [businessrule\_service\_version](#input\_businessrule\_service\_version) | Version Number of the Business Rules Service | `string` | `"93"` | no |
+| <a name="input_businessrule_service_version"></a> [businessrule\_service\_version](#input\_businessrule\_service\_version) | Version Number of the Business Rules Service | `string` | `"1.1.2-b0be8f4-azure-0.0.1-1293959"` | no |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
-| <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"94"` | no |
-| <a name="input_issuance_web_version"></a> [issuance\_web\_version](#input\_issuance\_web\_version) | Version Number of the Issuance Web | `string` | `"90"` | no |
+| <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"1.0.5-7408b55-azure-0.0.1-1293959"` | no |
+| <a name="input_issuance_web_version"></a> [issuance\_web\_version](#input\_issuance\_web\_version) | Version Number of the Issuance Web | `string` | `"1.1.2-45daa28-azure-0.0.1-1293959"` | no |
 | <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `string` | `null` | no |
-| <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"0.0.1"` | no |
+| <a name="input_msal_proxy_version"></a> [msal\_proxy\_version](#input\_msal\_proxy\_version) | version of the msal docker image to use | `string` | `"latest"` | no |
 | <a name="input_nginx_image_tag"></a> [nginx\_image\_tag](#input\_nginx\_image\_tag) | Tag of the Nginx Image to import | `string` | `"1.21.1"` | no |
-| <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"3"` | no |
-| <a name="input_verifier_service_version"></a> [verifier\_service\_version](#input\_verifier\_service\_version) | Version Number of the Verifier Service | `string` | `"95"` | no |
+| <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"0.0.1-c5b4119"` | no |
+| <a name="input_verifier_service_version"></a> [verifier\_service\_version](#input\_verifier\_service\_version) | Version Number of the Verifier Service | `string` | `"1.0.4-5888cb7-azure-0.0.1-1293959"` | no |
 
 ## Outputs
 

@@ -101,13 +101,13 @@ resource "helm_release" "dgc_gateway" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/eu-digital-green-certificates/dgc-gateway"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/dgc-gateway"
         "tag"        = var.gateway_version
       }
 
       "utility" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
       }
@@ -151,7 +151,7 @@ resource "helm_release" "dgc_gateway" {
     jsonencode({
       "mysql-aad-setup" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
 

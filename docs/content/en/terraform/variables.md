@@ -36,12 +36,6 @@ tenant_id = ""
 <!-- BEGIN_TF_DOCS_EU -->
 ```ini
 
-# ACR Password
-acr_password = ""
-
-# ACR Username
-acr_username = ""
-
 # OID of the Group to grant Administrator permissions
 administrator_group_oid = ""
 
@@ -49,7 +43,13 @@ administrator_group_oid = ""
 enable_log_analytics_workspace = false
 
 # Version Number of the Gateway
-gateway_version = "79"
+gateway_version = "1.1.3-44c8778-azure-0.0.1-5f09fbf"
+
+# GitHub Container Registry Password
+ghcr_password = ""
+
+# GitHub Container Registry Username
+ghcr_username = ""
 
 # Location Name
 location = ""
@@ -73,7 +73,7 @@ subscription_id = ""
 tenant_id = ""
 
 # Tag of the Utility Image to import
-utility_image_tag = "3"
+utility_image_tag = "0.0.1-c5b4119"
 ```
 <!-- END_TF_DOCS_EU -->
 
@@ -82,26 +82,26 @@ utility_image_tag = "3"
 <!-- BEGIN_TF_DOCS_IE -->
 ```ini
 
-# ACR Password
-acr_password = ""
-
-# ACR Username
-acr_username = ""
-
 # OID of the Group to grant Administrator permissions. This is used to allow access to the jumpboxes for deployments and troubleshooting
 administrator_group_oid = ""
 
 # Version Number of the Business Rules Service
-businessrule_service_version = "93"
+businessrule_service_version = "1.1.2-b0be8f4-azure-0.0.1-1293959"
 
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false
 
+# GitHub Container Registry Password
+ghcr_password = ""
+
+# GitHub Container Registry Username
+ghcr_username = ""
+
 # Version Number of the Issuance Service
-issuance_service_version = "94"
+issuance_service_version = "1.0.5-7408b55-azure-0.0.1-1293959"
 
 # Version Number of the Issuance Web
-issuance_web_version = "90"
+issuance_web_version = "1.1.2-45daa28-azure-0.0.1-1293959"
 
 # Location Name
 location = ""
@@ -110,7 +110,7 @@ location = ""
 log_analytics_cluster_id = ""
 
 # version of the msal docker image to use
-msal_proxy_version = "0.0.1"
+msal_proxy_version = "latest"
 
 # Tag of the Nginx Image to import
 nginx_image_tag = "1.21.1"
@@ -131,9 +131,9 @@ subscription_id = ""
 tenant_id = ""
 
 # Tag of the Utility Image to import
-utility_image_tag = "3"
+utility_image_tag = "0.0.1-c5b4119"
 
 # Version Number of the Verifier Service
-verifier_service_version = "95"
+verifier_service_version = "1.0.4-5888cb7-azure-0.0.1-1293959"
 ```
 <!-- END_TF_DOCS_IE -->
