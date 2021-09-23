@@ -41,12 +41,12 @@ PARAMETERS
 }
 
 # Assign Pollicy Definition for Allowed Locations
-resource "azurerm_policy_assignment" "assignment_policy_allowed_location" {
-  name                 = "${var.prefix}${var.name} Region Policy assignment"
-  scope                = azurerm_resource_group.rg.id
+resource "azurerm_resource_group_policy_assignment" "assignment_policy_allowed_location" {
+  name                 = "${var.prefix}${var.name} Region Group Policy assignment"
+  resource_group_id    = azurerm_resource_group.rg.id
   policy_definition_id = azurerm_policy_set_definition.definition_policy_allowed_location.id
-  description          = "Policy Assignment created via an Acceptance Test"
-  display_name         = "Acceptance Test Run %d"
+  display_name         = "${var.prefix}${var.name} Region Policy"
+  description          = "This Policy enforces that only the creation of Resources in the allowed Azure regions for the scope of the resource group ${azurerm_resource_group.rg.name}."
   parameters           = <<PARAMETERS
 {
   "allowedLocations": {
