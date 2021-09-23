@@ -5,7 +5,7 @@ provider "azurerm" {
 }
 
 locals {
-  name = "eudgc-dev"
+  name = "eudcc-dev"
 }
 
 # Deploy the EU Dev Jumpbox

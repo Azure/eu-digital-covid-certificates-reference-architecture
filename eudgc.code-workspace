@@ -25,7 +25,7 @@
 				"command": "make",
 				"args": ["terraform"],
 				"options": {
-					"cwd": "${workspaceFolder}/eudgc-dev"
+					"cwd": "${workspaceFolder}/eudcc-dev"
 				},
 				"group": "build"
 			},
@@ -34,7 +34,7 @@
 				"command": "make",
 				"args": ["terraform"],
 				"options": {
-					"cwd": "${workspaceFolder}/eudgc-eu"
+					"cwd": "${workspaceFolder}/eudcc-eu"
 				},
 				"group": "build"
 			},
@@ -43,7 +43,7 @@
 				"command": "make",
 				"args": ["terraform"],
 				"options": {
-					"cwd": "${workspaceFolder}/eudgc-ie"
+					"cwd": "${workspaceFolder}/eudcc-ie"
 				},
 				"group": "build"
 			}
