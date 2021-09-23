@@ -16,6 +16,8 @@ resource "azurerm_policy_set_definition" "definition_policy_allowed_location" {
         }
     }
 PARAMETERS
+  # Deploy the built-in "Allowed locations for resource groups" Policy
+  #
   # This policy enables you to restrict the locations your organization can create resource groups in. Use to enforce your geo-compliance requirements.
   policy_definition_reference {
     policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e765b5de-1225-4ba3-bd56-1ac6695af988"
