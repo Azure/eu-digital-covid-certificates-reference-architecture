@@ -50,6 +50,18 @@ resource "azurerm_policy_set_definition" "policy_set_definition" {
     }
     VALUE
   }
+  # Deploy the built-in "Keys using RSA cryptography should have a specified minimum key size" Policy
+  #
+  # Set the minimum allowed key size for use with your key vaults. Use of RSA keys with small key sizes is not a secure practice and doesn't meet many industry certification requirements.
+  policy_definition_reference {
+    policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9"
+    parameter_values     = <<VALUE
+    {
+      "effect": { "value" : "Audit" },
+      "minimumRSAKeySize": {"value": 2048}
+    }
+    VALUE
+  }
 }
 
 # Assign Pollicy Definition for Azure Policies to be applied
