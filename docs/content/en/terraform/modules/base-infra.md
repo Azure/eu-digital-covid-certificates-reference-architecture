@@ -66,7 +66,6 @@ No modules.
 | [azurerm_network_security_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_group) | resource |
 | [azurerm_network_security_rule.haproxy_ingress_allow_http](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_rule) | resource |
 | [azurerm_network_security_rule.haproxy_ingress_allow_https](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_rule) | resource |
-| [azurerm_policy_assignment.assignment_policy_allowed_location](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/policy_assignment) | resource |
 | [azurerm_policy_set_definition.definition_policy_allowed_location](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/policy_set_definition) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_acr](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
@@ -90,6 +89,7 @@ No modules.
 | [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group) | resource |
 | [azurerm_resource_group_policy_assignment.aks_acr_policy](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group_policy_assignment) | resource |
 | [azurerm_resource_group_policy_assignment.aks_baseline_policy](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group_policy_assignment) | resource |
+| [azurerm_resource_group_policy_assignment.assignment_policy_allowed_location](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group_policy_assignment) | resource |
 | [azurerm_role_assignment.aks_acr](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_encryption_set](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.aks_identity_dns_contributer](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/role_assignment) | resource |
