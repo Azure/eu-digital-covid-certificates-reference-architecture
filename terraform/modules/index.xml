@@ -230,6 +230,10 @@
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/policy_set_definition&#34;&gt;azurerm_policy_set_definition.definition_policy_allowed_location&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;resource&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone&#34;&gt;azurerm_private_dns_zone.private_dns_zone_acr&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
@@ -315,6 +319,10 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group_policy_assignment&#34;&gt;azurerm_resource_group_policy_assignment.aks_baseline_policy&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;resource&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/resource_group_policy_assignment&#34;&gt;azurerm_resource_group_policy_assignment.assignment_policy_allowed_location&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
