@@ -38,13 +38,25 @@ resource "azurerm_policy_set_definition" "policy_set_definition" {
     }
     VALUE
   }
+  # Deploy the built-in "Managed disks should use a specific set of disk encryption sets for the customer-managed key encryption" Policy
+  #
+  # Requiring a specific set of disk encryption sets to be used with managed disks give you control over the keys used for encryption at rest. You are able to select the allowed encrypted sets and all others are rejected when attached to a disk. Learn more at https://aka.ms/disks-cmk.
+  policy_definition_reference {
+    policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/d461a302-a187-421a-89ac-84acdb4edc04"
+    parameter_values     = <<VALUE
+    {
+      "effect": { "value" : "Audit" },
+      "allowedEncryptionSets": {"value": ["${azurerm_disk_encryption_set.aks_encryption_set.id}"]}
+    }
+    VALUE
+  }
 }
 
 # Assign Pollicy Definition for Azure Policies to be applied
 resource "azurerm_resource_group_policy_assignment" "resource_group_policy_assignment" {
   name                 = "${var.prefix}${var.name} Resource Group Policy Assignment"
   resource_group_id    = azurerm_resource_group.rg.id
-  policy_definition_id = azurerm_policy_set_definition.definition_policy_allowed_location.id
+  policy_definition_id = azurerm_policy_set_definition.policy_set_definition.id
   display_name         = "${var.prefix}${var.name} Policy Initiative"
   description          = "Initiative of Policies to enforce the locality, security and privacy of all the resources of ${azurerm_resource_group.rg.name}."
 }
