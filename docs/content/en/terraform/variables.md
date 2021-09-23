@@ -51,6 +51,15 @@ enable_log_analytics_workspace = false
 # Version Number of the Gateway
 gateway_version = "79"
 
+# The RSA Key for the Jump Box, required for remote executing code over SSH
+jump_box_identity_file = ""
+
+# The Host address for the Jump Box, required for remote executing code over SSH
+jump_box_identity_host = ""
+
+# The User for the Jump Box to authenticate, required for remote executing code over SSH
+jump_box_identity_user = ""
+
 # Location Name
 location = ""
 
@@ -102,6 +111,15 @@ issuance_service_version = "94"
 
 # Version Number of the Issuance Web
 issuance_web_version = "90"
+
+# The RSA Key for the Jump Box, required for remote executing code over SSH
+jump_box_identity_file = ""
+
+# The Host address for the Jump Box, required for remote executing code over SSH
+jump_box_identity_host = ""
+
+# The User for the Jump Box to authenticate, required for remote executing code over SSH
+jump_box_identity_user = ""
 
 # Location Name
 location = ""

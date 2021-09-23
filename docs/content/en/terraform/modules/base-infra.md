@@ -120,6 +120,7 @@ No modules.
 | [null_resource.aks_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
 | [null_resource.import-image](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
 | [null_resource.keyvault_admin_group_ra_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
+| [null_resource.keyvault_private_endpoint_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
 | [null_resource.mysql_delay_before_consent](https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource) | resource |
 | [random_password.mysql_pw](https://registry.terraform.io/providers/hashicorp/random/3.1.0/docs/resources/password) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/data-sources/client_config) | data source |
@@ -133,6 +134,9 @@ No modules.
 | <a name="input_dev_vnet_id"></a> [dev\_vnet\_id](#input\_dev\_vnet\_id) | Dev VNet ID | `string` | n/a | yes |
 | <a name="input_dev_vnet_name"></a> [dev\_vnet\_name](#input\_dev\_vnet\_name) | Dev VNet Name | `string` | n/a | yes |
 | <a name="input_dev_vnet_rg_name"></a> [dev\_vnet\_rg\_name](#input\_dev\_vnet\_rg\_name) | Dev VNet RG Name | `string` | n/a | yes |
+| <a name="input_jump_box_identity_file"></a> [jump\_box\_identity\_file](#input\_jump\_box\_identity\_file) | The RSA Key for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
+| <a name="input_jump_box_identity_host"></a> [jump\_box\_identity\_host](#input\_jump\_box\_identity\_host) | The Host address for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
+| <a name="input_jump_box_identity_user"></a> [jump\_box\_identity\_user](#input\_jump\_box\_identity\_user) | The User for the Jump Box to authenticate, required for remote executing code over SSH | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Location Name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Environment Name | `string` | n/a | yes |
 | <a name="input_parent_dns_zone_name"></a> [parent\_dns\_zone\_name](#input\_parent\_dns\_zone\_name) | Parent DNS Zone Name | `string` | n/a | yes |
