@@ -7,7 +7,10 @@ resource "azurerm_key_vault_key" "mysql_encryption_key" {
   key_opts     = ["unwrapKey", "wrapKey", ]
 
   depends_on = [
+    azurerm_key_vault.keyvault,
     null_resource.keyvault_admin_group_ra_delay_before_consent,
+    azurerm_role_assignment.keyvault_admin_group_ra,    # Required for destroy ordering
+    azurerm_private_endpoint.keyvault_private_endpoint, # Required for destroy ordering
   ]
 }
 
@@ -53,6 +56,7 @@ resource "azurerm_key_vault_secret" "mysql_pw" {
 
   depends_on = [
     azurerm_key_vault.keyvault,
+    null_resource.keyvault_admin_group_ra_delay_before_consent,
     azurerm_role_assignment.keyvault_admin_group_ra,    # Required for destroy ordering
     azurerm_private_endpoint.keyvault_private_endpoint, # Required for destroy ordering
   ]
