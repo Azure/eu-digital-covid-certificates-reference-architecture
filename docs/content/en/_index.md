@@ -1,6 +1,6 @@
 
 ---
-title: "EU Digital Green Certificate - Azure Example Deployment"
+title: "EU Digital COVID Certificate - Azure Example Deployment"
 linkTitle: "Documentation"
 type: "docs"
 weight: 20

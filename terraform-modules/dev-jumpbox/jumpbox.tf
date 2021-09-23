@@ -56,11 +56,11 @@ resource "azurerm_linux_virtual_machine" "jumpbox_vm" {
   location                        = azurerm_resource_group.rg.location
   resource_group_name             = azurerm_resource_group.rg.name
   size                            = "Standard_D2_v2"
-  admin_username                  = "eudgc"
+  admin_username                  = "eudcc"
   disable_password_authentication = true
 
   admin_ssh_key {
-    username   = "eudgc"
+    username   = "eudcc"
     public_key = chomp(tls_private_key.jumpbox_vm_ssh.public_key_openssh)
   }
 
