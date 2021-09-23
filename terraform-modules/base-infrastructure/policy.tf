@@ -39,7 +39,7 @@ PARAMETERS
 # Assign Pollicy Definition for Allowed Locations
 resource "azurerm_policy_assignment" "assignment_policy_allowed_location" {
   name                 = "${var.prefix}${var.name} Region Policy assignment"
-  scope                = azurerm_resource_group.rg
+  scope                = azurerm_resource_group.rg.id
   policy_definition_id = azurerm_policy_set_definition.definition_policy_allowed_location.id
   description          = "Policy Assignment created via an Acceptance Test"
   display_name         = "Acceptance Test Run %d"
