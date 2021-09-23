@@ -92,9 +92,9 @@ generate_country() {
     echo "Signing $country Auth Cert"
     dgc-cli ta sign -c cert_ta.pem -k key_ta.pem -i ${country}_cert_auth.pem > ${country}_cert_auth_signing.txt
     export COUNTRY=$country
-    export THUMBPRINT=$(cat ${country}_cert_auth_signing.txt | grep Thumbprint | cut -d' ' -f3)
-    export RAW=$(cat ${country}_cert_auth_signing.txt | grep Raw | cut -d' ' -f4)
-    export SIGNATURE=$(cat ${country}_cert_auth_signing.txt | grep Signature | cut -d' ' -f3)
+    export THUMBPRINT=$(cat ${country}_cert_auth_signing.txt | grep Thumbprint: | cut -d' ' -f3)
+    export RAW=$(cat ${country}_cert_auth_signing.txt | grep "Raw Data:" | cut -d' ' -f4)
+    export SIGNATURE=$(cat ${country}_cert_auth_signing.txt | grep Signature: | cut -d' ' -f3)
     export TYPE="AUTHENTICATION"
 
     jq ".[. | length] |= . + {\"country\": \"${COUNTRY}\", \"certificate_type\": \"${TYPE}\", \"thumbprint\": \"${THUMBPRINT}\", \"raw_data\": \"${RAW}\", \"signature\": \"${SIGNATURE}\"}" trusted-parties.json > trusted-parties.json.tmp && \
@@ -103,9 +103,9 @@ generate_country() {
     echo "Signing $country CSCA Cert"
     dgc-cli ta sign -c cert_ta.pem -k key_ta.pem -i ${country}_cert_csca.pem > ${country}_cert_csca_signing.txt
     export COUNTRY=$country
-    export THUMBPRINT=$(cat ${country}_cert_csca_signing.txt | grep Thumbprint | cut -d' ' -f3)
-    export RAW=$(cat ${country}_cert_csca_signing.txt | grep Raw | cut -d' ' -f4)
-    export SIGNATURE=$(cat ${country}_cert_csca_signing.txt | grep Signature | cut -d' ' -f3)
+    export THUMBPRINT=$(cat ${country}_cert_csca_signing.txt | grep Thumbprint: | cut -d' ' -f3)
+    export RAW=$(cat ${country}_cert_csca_signing.txt | grep "Raw Data:" | cut -d' ' -f4)
+    export SIGNATURE=$(cat ${country}_cert_csca_signing.txt | grep Signature: | cut -d' ' -f3)
     export TYPE="CSCA"
 
     jq ".[. | length] |= . + {\"country\": \"${COUNTRY}\", \"certificate_type\": \"${TYPE}\", \"thumbprint\": \"${THUMBPRINT}\", \"raw_data\": \"${RAW}\", \"signature\": \"${SIGNATURE}\"}" trusted-parties.json > trusted-parties.json.tmp && \
@@ -114,9 +114,9 @@ generate_country() {
     echo "Signing $country Upload Cert"
     dgc-cli ta sign -c cert_ta.pem -k key_ta.pem -i ${country}_cert_upload.pem > ${country}_cert_upload_signing.txt
     export COUNTRY=$country
-    export THUMBPRINT=$(cat ${country}_cert_upload_signing.txt | grep Thumbprint | cut -d' ' -f3)
-    export RAW=$(cat ${country}_cert_upload_signing.txt | grep Raw | cut -d' ' -f4)
-    export SIGNATURE=$(cat ${country}_cert_upload_signing.txt | grep Signature | cut -d' ' -f3)
+    export THUMBPRINT=$(cat ${country}_cert_upload_signing.txt | grep Thumbprint: | cut -d' ' -f3)
+    export RAW=$(cat ${country}_cert_upload_signing.txt | grep "Raw Data:" | cut -d' ' -f4)
+    export SIGNATURE=$(cat ${country}_cert_upload_signing.txt | grep Signature: | cut -d' ' -f3)
     export TYPE="UPLOAD"
 
     jq ".[. | length] |= . + {\"country\": \"${COUNTRY}\", \"certificate_type\": \"${TYPE}\", \"thumbprint\": \"${THUMBPRINT}\", \"raw_data\": \"${RAW}\", \"signature\": \"${SIGNATURE}\"}" trusted-parties.json > trusted-parties.json.tmp && \

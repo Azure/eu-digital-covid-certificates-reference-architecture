@@ -115,13 +115,13 @@ resource "helm_release" "dgca_businessrule_service" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/eu-digital-green-certificates/dgca-businessrule-service"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/dgca-businessrule-service"
         "tag"        = var.businessrule_service_version
       }
 
       "utility" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
       }
@@ -170,7 +170,7 @@ resource "helm_release" "dgca_businessrule_service" {
     jsonencode({
       "mysql-aad-setup" = {
         "image" = {
-          "repository" = "${module.base_infra.acr_login_server}/utility"
+          "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/utility"
           "tag"        = var.utility_image_tag
         }
 

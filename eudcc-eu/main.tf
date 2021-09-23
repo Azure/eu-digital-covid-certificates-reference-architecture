@@ -49,16 +49,16 @@ module "base_infra" {
 
   acr_imports = {
     dgc-gateway = {
-      source      = "apecoeacr.azurecr.io/eu-digital-green-certificates/dgc-gateway:${var.gateway_version}"
-      destination = "eu-digital-green-certificates/dgc-gateway:${var.gateway_version}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/dgc-gateway:${var.gateway_version}"
+      destination = "eu-digital-covid-certificates/dgc-gateway:${var.gateway_version}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
     utility = {
-      source      = "apecoeacr.azurecr.io/utility:${var.utility_image_tag}"
-      destination = "utility:${var.utility_image_tag}"
-      username    = var.acr_username
-      password    = var.acr_password
+      source      = "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/utility:${var.utility_image_tag}"
+      destination = "eu-digital-covid-certificates/utility:${var.utility_image_tag}"
+      username    = var.ghcr_username
+      password    = var.ghcr_password
     }
   }
 
