@@ -2,9 +2,9 @@ SHELL:=/bin/bash
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 SUB_ID = $(shell cat $(ROOT_DIR)/../terraform.tfvars| grep ^subscription_id | cut -d'"' -f2)
 
-JUMP_BOX_IDENTITY_FILE = $(shell cat $(ROOT_DIR)/../eudgc-dev/jumpbox-ssh-configs/eu-ssh-config | grep IdentityFile | cut -d' ' -f2 | head -n 1)
-JUMP_BOX_USER = $(shell cat $(ROOT_DIR)/../eudgc-dev/jumpbox-ssh-configs/eu-ssh-config | grep User | cut -d' ' -f2 | head -n 1)
-JUMP_BOX_HOST = $(shell cat $(ROOT_DIR)/../eudgc-dev/jumpbox-ssh-configs/eu-ssh-config | grep HostName | cut -d' ' -f2 | head -n 1)
+JUMP_BOX_IDENTITY_FILE = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu-ssh-config | grep IdentityFile | cut -d' ' -f2 | head -n 1)
+JUMP_BOX_USER = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu-ssh-config | grep User | cut -d' ' -f2 | head -n 1)
+JUMP_BOX_HOST = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu-ssh-config | grep HostName | cut -d' ' -f2 | head -n 1)
 
 .PHONY: all
 all: ssh-tunnel-start terraform ssh-tunnel-stop
