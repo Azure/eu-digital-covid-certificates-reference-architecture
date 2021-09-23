@@ -42,7 +42,7 @@ data "terraform_remote_state" "eu" {
 
 
 locals {
-  name             = "eudgc-ie"
+  name             = "eudcc-ie"
   dns_zone_name    = var.prefix == "" ? local.name : "${local.name}.${var.prefix}"
   dgc_gateway_fqdn = data.terraform_remote_state.eu.outputs.dgc_gateway_fqdn
 }

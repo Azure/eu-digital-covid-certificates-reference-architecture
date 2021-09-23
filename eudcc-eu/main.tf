@@ -20,7 +20,7 @@ data "terraform_remote_state" "dev" {
 }
 
 locals {
-  name = "eudgc-eu"
+  name = "eudcc-eu"
 }
 
 # Deploy the Base Infrastructure

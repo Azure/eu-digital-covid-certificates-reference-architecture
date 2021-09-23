@@ -1,0 +1,45 @@
+name: "Misc Containers: utility"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'misc-containers/utility/**'
+      - '.github/workflows/misc-containers-utility.yml'
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: azure-version
+        run: >-
+          AZURE_SHA=$(git rev-parse --short HEAD);
+          AZURE_REV=$(git rev-list --tags --max-count=1);
+          AZURE_TAG=$(git describe --tags ${AZURE_REV} 2> /dev/null || echo 0.0.0);
+          AZURE_VERSION=${AZURE_TAG}-${AZURE_SHA};
+          echo "AZURE_VERSION=${AZURE_VERSION}" >> ${GITHUB_ENV};
+      # GHCR Requires the image name to be lowercase, while
+      # `github.repository` will contain `Azure/...`.
+      - name: lowercase-repository
+        run: >-
+          GITHUB_REPO=${{ github.repository }};
+          echo "GITHUB_REPO_LWR=${GITHUB_REPO,,}" >> ${GITHUB_ENV};
+      - name: docker
+        working-directory: ./misc-containers/utility
+        run: >-
+          echo "${APP_PACKAGES_PASSWORD}" |
+          docker login "${APP_PACKAGES_URL}"
+          --username "${APP_PACKAGES_USERNAME}"
+          --password-stdin;
+          docker build .
+          --file ./Dockerfile
+          --tag "${APP_PACKAGES_URL}:${AZURE_VERSION}";
+          docker push "${APP_PACKAGES_URL}:${AZURE_VERSION}";
+        env:
+          APP_PACKAGES_URL: ghcr.io/${{ env.GITHUB_REPO_LWR }}/utility
+          APP_PACKAGES_USERNAME: ${{ github.actor }}
+          APP_PACKAGES_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
