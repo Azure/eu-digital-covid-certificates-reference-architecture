@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f59aab3be820ac9df54a8a98dc0e5050.json"
+  data-offline-search-index-json-src="/offline-search-index.fb3869b1d291c678c0207729330f1de1.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -255,12 +255,6 @@ This the multi-page printable view of this section.
 <h2 id="eu">EU</h2>
 <!-- BEGIN_TF_DOCS_EU -->
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">
-<span style="color:#8f5902;font-style:italic"># ACR Password</span>
-<span style="color:#c4a000">acr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
-
-<span style="color:#8f5902;font-style:italic"># ACR Username</span>
-<span style="color:#c4a000">acr_username</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
-
 <span style="color:#8f5902;font-style:italic"># OID of the Group to grant Administrator permissions</span>
 <span style="color:#c4a000">administrator_group_oid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
@@ -268,7 +262,13 @@ This the multi-page printable view of this section.
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Gateway</span>
-<span style="color:#c4a000">gateway_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;79&#34;</span>
+<span style="color:#c4a000">gateway_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.3-44c8778-azure-0.0.1-5f09fbf&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># GitHub Container Registry Password</span>
+<span style="color:#c4a000">ghcr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># GitHub Container Registry Username</span>
+<span style="color:#c4a000">ghcr_username</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Location Name</span>
 <span style="color:#c4a000">location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
@@ -292,31 +292,31 @@ This the multi-page printable view of this section.
 <span style="color:#c4a000">tenant_id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Tag of the Utility Image to import</span>
-<span style="color:#c4a000">utility_image_tag</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;3&#34;</span>
+<span style="color:#c4a000">utility_image_tag</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;0.0.1-c5b4119&#34;</span>
 </code></pre></div><!-- END_TF_DOCS_EU -->
 <h2 id="ie">IE</h2>
 <!-- BEGIN_TF_DOCS_IE -->
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">
-<span style="color:#8f5902;font-style:italic"># ACR Password</span>
-<span style="color:#c4a000">acr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
-
-<span style="color:#8f5902;font-style:italic"># ACR Username</span>
-<span style="color:#c4a000">acr_username</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
-
 <span style="color:#8f5902;font-style:italic"># OID of the Group to grant Administrator permissions. This is used to allow access to the jumpboxes for deployments and troubleshooting</span>
 <span style="color:#c4a000">administrator_group_oid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Business Rules Service</span>
-<span style="color:#c4a000">businessrule_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;93&#34;</span>
+<span style="color:#c4a000">businessrule_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.2-b0be8f4-azure-0.0.1-1293959&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
+<span style="color:#8f5902;font-style:italic"># GitHub Container Registry Password</span>
+<span style="color:#c4a000">ghcr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># GitHub Container Registry Username</span>
+<span style="color:#c4a000">ghcr_username</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
 <span style="color:#8f5902;font-style:italic"># Version Number of the Issuance Service</span>
-<span style="color:#c4a000">issuance_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;94&#34;</span>
+<span style="color:#c4a000">issuance_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.0.5-7408b55-azure-0.0.1-1293959&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Issuance Web</span>
-<span style="color:#c4a000">issuance_web_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;90&#34;</span>
+<span style="color:#c4a000">issuance_web_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.2-45daa28-azure-0.0.1-1293959&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Location Name</span>
 <span style="color:#c4a000">location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
@@ -325,7 +325,7 @@ This the multi-page printable view of this section.
 <span style="color:#c4a000">log_analytics_cluster_id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># version of the msal docker image to use</span>
-<span style="color:#c4a000">msal_proxy_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;0.0.1&#34;</span>
+<span style="color:#c4a000">msal_proxy_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;latest&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Tag of the Nginx Image to import</span>
 <span style="color:#c4a000">nginx_image_tag</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.21.1&#34;</span>
@@ -346,10 +346,10 @@ This the multi-page printable view of this section.
 <span style="color:#c4a000">tenant_id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Tag of the Utility Image to import</span>
-<span style="color:#c4a000">utility_image_tag</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;3&#34;</span>
+<span style="color:#c4a000">utility_image_tag</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;0.0.1-c5b4119&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Verifier Service</span>
-<span style="color:#c4a000">verifier_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;95&#34;</span>
+<span style="color:#c4a000">verifier_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.0.4-5888cb7-azure-0.0.1-1293959&#34;</span>
 </code></pre></div><!-- END_TF_DOCS_IE -->
 </div>
 
@@ -662,22 +662,22 @@ This the multi-page printable view of this section.
 </thead>
 <tbody>
 <tr>
-<td><a name="input_acr_password"></a> <a href="#input_acr_password">acr_password</a></td>
-<td>ACR Password</td>
-<td><code>string</code></td>
-<td>n/a</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
-<td><a name="input_acr_username"></a> <a href="#input_acr_username">acr_username</a></td>
-<td>ACR Username</td>
-<td><code>string</code></td>
-<td>n/a</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
 <td><a name="input_administrator_group_oid"></a> <a href="#input_administrator_group_oid">administrator_group_oid</a></td>
 <td>OID of the Group to grant Administrator permissions</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_password"></a> <a href="#input_ghcr_password">ghcr_password</a></td>
+<td>GitHub Container Registry Password</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_username"></a> <a href="#input_ghcr_username">ghcr_username</a></td>
+<td>GitHub Container Registry Username</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -735,7 +735,7 @@ This the multi-page printable view of this section.
 <td><a name="input_gateway_version"></a> <a href="#input_gateway_version">gateway_version</a></td>
 <td>Version Number of the Gateway</td>
 <td><code>string</code></td>
-<td><code>&quot;79&quot;</code></td>
+<td><code>&quot;1.1.3-44c8778-azure-0.0.1-5f09fbf&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
@@ -749,7 +749,7 @@ This the multi-page printable view of this section.
 <td><a name="input_utility_image_tag"></a> <a href="#input_utility_image_tag">utility_image_tag</a></td>
 <td>Tag of the Utility Image to import</td>
 <td><code>string</code></td>
-<td><code>&quot;3&quot;</code></td>
+<td><code>&quot;0.0.1-c5b4119&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 </tbody>
@@ -1091,22 +1091,22 @@ This the multi-page printable view of this section.
 </thead>
 <tbody>
 <tr>
-<td><a name="input_acr_password"></a> <a href="#input_acr_password">acr_password</a></td>
-<td>ACR Password</td>
-<td><code>string</code></td>
-<td>n/a</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
-<td><a name="input_acr_username"></a> <a href="#input_acr_username">acr_username</a></td>
-<td>ACR Username</td>
-<td><code>string</code></td>
-<td>n/a</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
 <td><a name="input_administrator_group_oid"></a> <a href="#input_administrator_group_oid">administrator_group_oid</a></td>
 <td>OID of the Group to grant Administrator permissions. This is used to allow access to the jumpboxes for deployments and troubleshooting</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_password"></a> <a href="#input_ghcr_password">ghcr_password</a></td>
+<td>GitHub Container Registry Password</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_username"></a> <a href="#input_ghcr_username">ghcr_username</a></td>
+<td>GitHub Container Registry Username</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -1157,7 +1157,7 @@ This the multi-page printable view of this section.
 <td><a name="input_businessrule_service_version"></a> <a href="#input_businessrule_service_version">businessrule_service_version</a></td>
 <td>Version Number of the Business Rules Service</td>
 <td><code>string</code></td>
-<td><code>&quot;93&quot;</code></td>
+<td><code>&quot;1.1.2-b0be8f4-azure-0.0.1-1293959&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
@@ -1171,14 +1171,14 @@ This the multi-page printable view of this section.
 <td><a name="input_issuance_service_version"></a> <a href="#input_issuance_service_version">issuance_service_version</a></td>
 <td>Version Number of the Issuance Service</td>
 <td><code>string</code></td>
-<td><code>&quot;94&quot;</code></td>
+<td><code>&quot;1.0.5-7408b55-azure-0.0.1-1293959&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
 <td><a name="input_issuance_web_version"></a> <a href="#input_issuance_web_version">issuance_web_version</a></td>
 <td>Version Number of the Issuance Web</td>
 <td><code>string</code></td>
-<td><code>&quot;90&quot;</code></td>
+<td><code>&quot;1.1.2-45daa28-azure-0.0.1-1293959&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
@@ -1192,7 +1192,7 @@ This the multi-page printable view of this section.
 <td><a name="input_msal_proxy_version"></a> <a href="#input_msal_proxy_version">msal_proxy_version</a></td>
 <td>version of the msal docker image to use</td>
 <td><code>string</code></td>
-<td><code>&quot;0.0.1&quot;</code></td>
+<td><code>&quot;latest&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
@@ -1206,14 +1206,14 @@ This the multi-page printable view of this section.
 <td><a name="input_utility_image_tag"></a> <a href="#input_utility_image_tag">utility_image_tag</a></td>
 <td>Tag of the Utility Image to import</td>
 <td><code>string</code></td>
-<td><code>&quot;3&quot;</code></td>
+<td><code>&quot;0.0.1-c5b4119&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
 <td><a name="input_verifier_service_version"></a> <a href="#input_verifier_service_version">verifier_service_version</a></td>
 <td>Version Number of the Verifier Service</td>
 <td><code>string</code></td>
-<td><code>&quot;95&quot;</code></td>
+<td><code>&quot;1.0.4-5888cb7-azure-0.0.1-1293959&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 </tbody>
