@@ -66,6 +66,8 @@ No modules.
 | [azurerm_network_security_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_group) | resource |
 | [azurerm_network_security_rule.haproxy_ingress_allow_http](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_rule) | resource |
 | [azurerm_network_security_rule.haproxy_ingress_allow_https](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/network_security_rule) | resource |
+| [azurerm_policy_assignment.assignment_policy_allowed_location](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/policy_assignment) | resource |
+| [azurerm_policy_set_definition.definition_policy_allowed_location](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/policy_set_definition) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_acr](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_keyvault](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
