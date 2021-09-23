@@ -188,7 +188,7 @@ resource "helm_release" "msal_authentication" {
       }
 
       "image" = {
-        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/msal-net-proxy"
+        "repository" = "${module.base_infra.acr_login_server}/eu-digital-covid-certificates/msal-net-proxy-opt"
         "tag"        = var.msal_proxy_version
       }
 

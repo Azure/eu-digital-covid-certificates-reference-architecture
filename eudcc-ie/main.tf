@@ -100,7 +100,7 @@ module "base_infra" {
     nginx = {
       # Used by DGCA Verifier Service Context Sidecar
       source      = "docker.io/library/nginx:${var.nginx_image_tag}"
-      destination = "nginx:${var.nginx_image_tag}"
+      destination = "eu-digital-covid-certificates/nginx:${var.nginx_image_tag}"
     }
     # TODO: Using the `latest` tag is bad practice, we'll work with the upstream team to
     #       get some better tags applied to the image.
