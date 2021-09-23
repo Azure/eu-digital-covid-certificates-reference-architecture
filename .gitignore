@@ -4,7 +4,6 @@
 terraform.tfvars
 *.log
 certs/
-eudcc-dev/jumpbox-ssh-configs/*
 .DS_Store
 *.tgz
 Chart.lock
