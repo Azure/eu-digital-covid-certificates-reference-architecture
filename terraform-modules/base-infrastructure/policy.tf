@@ -1,21 +1,9 @@
-# Pollicy Definition for Allowed Locations
-resource "azurerm_policy_set_definition" "definition_policy_allowed_location" {
-  name         = "${var.prefix}${var.name} Region Policy definition"
+# Definitions for Azure Policies to be applied
+resource "azurerm_policy_set_definition" "policy_set_definition" {
+  name         = "${var.prefix}${var.name} Policy Definitions"
   policy_type  = "Custom"
-  display_name = "${var.prefix}${var.name} Region Policy"
+  display_name = "${var.prefix}${var.name} Policies"
 
-  parameters = <<PARAMETERS
-    {
-        "allowedLocations": {
-            "type": "Array",
-            "metadata": {
-                "description": "The list of allowed locations for resources.",
-                "displayName": "Allowed locations",
-                "strongType": "location"
-            }
-        }
-    }
-PARAMETERS
   # Deploy the built-in "Allowed locations for resource groups" Policy
   #
   # This policy enables you to restrict the locations your organization can create resource groups in. Use to enforce your geo-compliance requirements.
@@ -23,7 +11,7 @@ PARAMETERS
     policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e765b5de-1225-4ba3-bd56-1ac6695af988"
     parameter_values     = <<VALUE
     {
-      "listOfAllowedLocations": {"value": "[parameters('allowedLocations')]"}
+      "listOfAllowedLocations": {"value": ["${azurerm_resource_group.rg.location}"]}
     }
     VALUE
   }
@@ -34,24 +22,53 @@ PARAMETERS
     policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c"
     parameter_values     = <<VALUE
     {
-      "listOfAllowedLocations": {"value": "[parameters('allowedLocations')]"}
+      "listOfAllowedLocations": {"value": ["${azurerm_resource_group.rg.location}"]}
+    }
+    VALUE
+  }
+  # Deploy the built-in "MySQL servers should use customer-managed keys to encrypt data at rest" Policy
+  #
+  # Use customer-managed keys to manage the encryption at rest of your MySQL servers. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys are commonly required to meet regulatory compliance standards. Customer-managed keys enable the data
+  # to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management.
+  policy_definition_reference {
+    policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/83cef61d-dbd1-4b20-a4fc-5fbc7da10833"
+    parameter_values     = <<VALUE
+    {
+      "effect": { "value" : "AuditIfNotExists" }
+    }
+    VALUE
+  }
+  # Deploy the built-in "Managed disks should use a specific set of disk encryption sets for the customer-managed key encryption" Policy
+  #
+  # Requiring a specific set of disk encryption sets to be used with managed disks give you control over the keys used for encryption at rest. You are able to select the allowed encrypted sets and all others are rejected when attached to a disk. Learn more at https://aka.ms/disks-cmk.
+  policy_definition_reference {
+    policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/d461a302-a187-421a-89ac-84acdb4edc04"
+    parameter_values     = <<VALUE
+    {
+      "effect": { "value" : "Audit" },
+      "allowedEncryptionSets": {"value": ["${azurerm_disk_encryption_set.aks_encryption_set.id}"]}
+    }
+    VALUE
+  }
+  # Deploy the built-in "Keys using RSA cryptography should have a specified minimum key size" Policy
+  #
+  # Set the minimum allowed key size for use with your key vaults. Use of RSA keys with small key sizes is not a secure practice and doesn't meet many industry certification requirements.
+  policy_definition_reference {
+    policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9"
+    parameter_values     = <<VALUE
+    {
+      "effect": { "value" : "Audit" },
+      "minimumRSAKeySize": {"value": 2048}
     }
     VALUE
   }
 }
 
-# Assign Pollicy Definition for Allowed Locations
-resource "azurerm_resource_group_policy_assignment" "assignment_policy_allowed_location" {
-  name                 = "${var.prefix}${var.name} Region Group Policy assignment"
+# Assign Policy Definition for Azure Policies to be applied
+resource "azurerm_resource_group_policy_assignment" "resource_group_policy_assignment" {
+  name                 = "${var.prefix}${var.name} Resource Group Policy Assignment"
   resource_group_id    = azurerm_resource_group.rg.id
-  policy_definition_id = azurerm_policy_set_definition.definition_policy_allowed_location.id
-  display_name         = "${var.prefix}${var.name} Region Policy"
-  description          = "This Policy enforces that only the creation of Resources in the allowed Azure regions for the scope of the resource group ${azurerm_resource_group.rg.name}."
-  parameters           = <<PARAMETERS
-{
-  "allowedLocations": {
-    "value": [ "${azurerm_resource_group.rg.location}" ]
-  }
-}
-PARAMETERS
+  policy_definition_id = azurerm_policy_set_definition.policy_set_definition.id
+  display_name         = "${var.prefix}${var.name} Policy Initiative"
+  description          = "Initiative of Policies to enforce the locality, security and privacy of all the resources of ${azurerm_resource_group.rg.name}."
 }
