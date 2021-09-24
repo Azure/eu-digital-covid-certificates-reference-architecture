@@ -95,6 +95,9 @@ description: >
 | <a name="input_administrator_group_oid"></a> [administrator\_group\_oid](#input\_administrator\_group\_oid) | OID of the Group to grant Administrator permissions. This is used to allow access to the jumpboxes for deployments and troubleshooting | `string` | n/a | yes |
 | <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Password | `string` | n/a | yes |
 | <a name="input_ghcr_username"></a> [ghcr\_username](#input\_ghcr\_username) | GitHub Container Registry Username | `string` | n/a | yes |
+| <a name="input_jump_box_identity_file"></a> [jump\_box\_identity\_file](#input\_jump\_box\_identity\_file) | The RSA Key for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
+| <a name="input_jump_box_identity_host"></a> [jump\_box\_identity\_host](#input\_jump\_box\_identity\_host) | The Host address for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
+| <a name="input_jump_box_identity_user"></a> [jump\_box\_identity\_user](#input\_jump\_box\_identity\_user) | The User for the Jump Box to authenticate, required for remote executing code over SSH | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Location Name | `string` | n/a | yes |
 | <a name="input_parent_dns_zone_name"></a> [parent\_dns\_zone\_name](#input\_parent\_dns\_zone\_name) | Parent DNS Zone Name | `string` | n/a | yes |
 | <a name="input_parent_dns_zone_rg_name"></a> [parent\_dns\_zone\_rg\_name](#input\_parent\_dns\_zone\_rg\_name) | Parent DNS Zone Resource Group Name | `string` | n/a | yes |

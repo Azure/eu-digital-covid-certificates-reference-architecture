@@ -38,6 +38,10 @@ module "base_infra" {
   parent_dns_zone_name    = var.parent_dns_zone_name
   parent_dns_zone_rg_name = var.parent_dns_zone_rg_name
 
+  jump_box_identity_file = var.jump_box_identity_file
+  jump_box_identity_host = var.jump_box_identity_host
+  jump_box_identity_user = var.jump_box_identity_user
+
   administrator_group_oid = var.administrator_group_oid
 
   enable_log_analytics_workspace = var.enable_log_analytics_workspace

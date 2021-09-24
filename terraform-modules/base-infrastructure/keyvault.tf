@@ -47,6 +47,7 @@ resource "null_resource" "keyvault_admin_group_ra_delay_before_consent" {
 
   depends_on = [
     azurerm_role_assignment.keyvault_admin_group_ra,
+    null_resource.keyvault_private_endpoint_delay_before_consent,
   ]
 }
 
@@ -97,4 +98,33 @@ resource "azurerm_monitor_diagnostic_setting" "keyvault_diagnostic_logs" {
   lifecycle {
     ignore_changes = [log, metric]
   }
+}
+
+# Allow time for dns record to apply.
+resource "null_resource" "keyvault_private_endpoint_delay_before_consent" {
+  provisioner "file" {
+    source      = "${path.module}/scripts/check_dns_propagation.sh"
+    destination = "/tmp/check_dns_propagation.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/check_dns_propagation.sh",
+      "/tmp/check_dns_propagation.sh ${azurerm_private_endpoint.keyvault_private_endpoint.private_dns_zone_configs[0].record_sets[0].fqdn} ${azurerm_private_endpoint.keyvault_private_endpoint.private_service_connection[0].private_ip_address} 600 2",
+    ]
+  }
+
+  connection {
+    agent       = false
+    timeout     = "2m"
+    type        = "ssh"
+    host        = var.jump_box_identity_host
+    user        = var.jump_box_identity_user
+    certificate = file("${var.jump_box_identity_file}.pub-aadcert.pub")
+    private_key = file("${var.jump_box_identity_file}")
+  }
+
+  depends_on = [
+    azurerm_private_endpoint.keyvault_private_endpoint,
+  ]
 }
