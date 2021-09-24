@@ -64,7 +64,7 @@ resource "azurerm_policy_set_definition" "policy_set_definition" {
   }
 }
 
-# Assign Pollicy Definition for Azure Policies to be applied
+# Assign Policy Definition for Azure Policies to be applied
 resource "azurerm_resource_group_policy_assignment" "resource_group_policy_assignment" {
   name                 = "${var.prefix}${var.name} Resource Group Policy Assignment"
   resource_group_id    = azurerm_resource_group.rg.id
