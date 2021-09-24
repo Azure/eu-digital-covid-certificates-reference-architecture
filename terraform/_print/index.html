@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fb3869b1d291c678c0207729330f1de1.json"
+  data-offline-search-index-json-src="/offline-search-index.9bd020509d32cb1acf4e955e92f5ebb9.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -270,6 +270,15 @@ This the multi-page printable view of this section.
 <span style="color:#8f5902;font-style:italic"># GitHub Container Registry Username</span>
 <span style="color:#c4a000">ghcr_username</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
+<span style="color:#8f5902;font-style:italic"># The RSA Key for the Jump Box, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># The Host address for the Jump Box, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_host</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># The User for the Jump Box to authenticate, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_user</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
 <span style="color:#8f5902;font-style:italic"># Location Name</span>
 <span style="color:#c4a000">location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
@@ -317,6 +326,15 @@ This the multi-page printable view of this section.
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Issuance Web</span>
 <span style="color:#c4a000">issuance_web_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.2-45daa28-azure-0.0.1-1293959&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># The RSA Key for the Jump Box, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># The Host address for the Jump Box, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_host</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># The User for the Jump Box to authenticate, required for remote executing code over SSH</span>
+<span style="color:#c4a000">jump_box_identity_user</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Location Name</span>
 <span style="color:#c4a000">location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
@@ -678,6 +696,27 @@ This the multi-page printable view of this section.
 <tr>
 <td><a name="input_ghcr_username"></a> <a href="#input_ghcr_username">ghcr_username</a></td>
 <td>GitHub Container Registry Username</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_file"></a> <a href="#input_jump_box_identity_file">jump_box_identity_file</a></td>
+<td>The RSA Key for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_host"></a> <a href="#input_jump_box_identity_host">jump_box_identity_host</a></td>
+<td>The Host address for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_user"></a> <a href="#input_jump_box_identity_user">jump_box_identity_user</a></td>
+<td>The User for the Jump Box to authenticate, required for remote executing code over SSH</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -1107,6 +1146,27 @@ This the multi-page printable view of this section.
 <tr>
 <td><a name="input_ghcr_username"></a> <a href="#input_ghcr_username">ghcr_username</a></td>
 <td>GitHub Container Registry Username</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_file"></a> <a href="#input_jump_box_identity_file">jump_box_identity_file</a></td>
+<td>The RSA Key for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_host"></a> <a href="#input_jump_box_identity_host">jump_box_identity_host</a></td>
+<td>The Host address for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_user"></a> <a href="#input_jump_box_identity_user">jump_box_identity_user</a></td>
+<td>The User for the Jump Box to authenticate, required for remote executing code over SSH</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -1721,6 +1781,10 @@ them into modules.</p>
 <td>resource</td>
 </tr>
 <tr>
+<td><a href="https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource">null_resource.keyvault_private_endpoint_delay_before_consent</a></td>
+<td>resource</td>
+</tr>
+<tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/null/3.1.0/docs/resources/resource">null_resource.mysql_delay_before_consent</a></td>
 <td>resource</td>
 </tr>
@@ -1774,6 +1838,27 @@ them into modules.</p>
 <tr>
 <td><a name="input_dev_vnet_rg_name"></a> <a href="#input_dev_vnet_rg_name">dev_vnet_rg_name</a></td>
 <td>Dev VNet RG Name</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_file"></a> <a href="#input_jump_box_identity_file">jump_box_identity_file</a></td>
+<td>The RSA Key for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_host"></a> <a href="#input_jump_box_identity_host">jump_box_identity_host</a></td>
+<td>The Host address for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_user"></a> <a href="#input_jump_box_identity_user">jump_box_identity_user</a></td>
+<td>The User for the Jump Box to authenticate, required for remote executing code over SSH</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>

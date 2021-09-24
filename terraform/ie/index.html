@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/ie/" /><meta property="article:section" content="terraform" />
 
-<meta property="article:modified_time" content="2021-09-23T17:18:08+01:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
+<meta property="article:modified_time" content="2021-09-24T09:27:59+01:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
 <meta itemprop="name" content="Ireland Terraform Stack">
 <meta itemprop="description" content="Docs for the EU Gateway deployment terraform
 ">
-<meta itemprop="dateModified" content="2021-09-23T17:18:08+01:00" />
-<meta itemprop="wordCount" content="414">
+<meta itemprop="dateModified" content="2021-09-24T09:27:59+01:00" />
+<meta itemprop="wordCount" content="469">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ireland Terraform Stack"/>
 <meta name="twitter:description" content="Docs for the EU Gateway deployment terraform
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fb3869b1d291c678c0207729330f1de1.json"
+  data-offline-search-index-json-src="/offline-search-index.9bd020509d32cb1acf4e955e92f5ebb9.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fb3869b1d291c678c0207729330f1de1.json"
+  data-offline-search-index-json-src="/offline-search-index.9bd020509d32cb1acf4e955e92f5ebb9.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -654,6 +654,27 @@
 <td style="text-align:center">yes</td>
 </tr>
 <tr>
+<td><a name="input_jump_box_identity_file"></a> <a href="#input_jump_box_identity_file">jump_box_identity_file</a></td>
+<td>The RSA Key for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_host"></a> <a href="#input_jump_box_identity_host">jump_box_identity_host</a></td>
+<td>The Host address for the Jump Box, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jump_box_identity_user"></a> <a href="#input_jump_box_identity_user">jump_box_identity_user</a></td>
+<td>The User for the Jump Box to authenticate, required for remote executing code over SSH</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
 <td><a name="input_location"></a> <a href="#input_location">location</a></td>
 <td>Location Name</td>
 <td><code>string</code></td>
@@ -794,8 +815,8 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    September 23, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/ed0a1fc6f6da3ded2b77a075172dc7b6c8cce88e">Switch from Private ACR, to Private GHCR (#8) (ed0a1fc)</a>
+    September 24, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/976af9a414b98ffc9de75c04552783377c5a5561">Added polling Script to wait for Firewall rules to propagate (#15) (976af9a)</a>
 
 </div>
 
