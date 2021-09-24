@@ -14,10 +14,21 @@ ssh-tunnel-start: EU_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-confi
 ssh-tunnel-start:
 	ssh -F $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu-ssh-config -N $(EU_RG)-$(EU_RG)-jumpbox-vm -D 0.0.0.0:8881 -oStrictHostKeyChecking=no & echo "$$!" > $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid
 
+.PHONY: ssh-tunnel-stop
+ssh-tunnel-stop: PID = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid)
+ssh-tunnel-stop:
+	kill -9 $(PID) || true
+	rm $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid
+
 .PHONY: print-ssh-cmd
 print-ssh-cmd:EU_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/output.json | jq '.["eu_rg_name"]["value"]')
 print-ssh-cmd:
 	@echo "az ssh vm --subscription $(SUB_ID) -g $(EU_RG) -n $(EU_RG)-jumpbox-vm"
+
+.PHONY: workspace
+workspace:
+	terraform init
+	terraform workspace select $(WORKSPACE) || terraform workspace new $(WORKSPACE)
 
 .PHONY: terraform
 terraform:
@@ -29,16 +40,6 @@ terraform:
 .PHONY: terraform-destroy
 terraform-destroy:
 	ALL_PROXY=socks5h://127.0.0.1:8881 HTTPS_PROXY=socks5://127.0.0.1:8881 HTTP_PROXY=socks5://127.0.0.1:8881 terraform destroy -var-file $(ROOT_DIR)/../terraform.tfvars -var jump_box_identity_file=$(JUMP_BOX_IDENTITY_FILE) -var jump_box_identity_user=$(JUMP_BOX_USER) -var jump_box_identity_host=$(JUMP_BOX_HOST)
-
-.PHONY: ssh-tunnel-stop
-ssh-tunnel-stop: PID = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid)
-ssh-tunnel-stop:
-	kill -9 $(PID) || true
-	rm $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid
-
-workspace:
-	terraform init
-	terraform workspace select $(WORKSPACE) || terraform workspace new $(WORKSPACE)
 
 .PHONY: output-hostnames
 output-hostnames:
