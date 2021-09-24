@@ -16,7 +16,7 @@ check_propagation() {
         sleep $wait_seconds
 
         diggResp=$(dig +short ${FQDN})
-        echo "dig Responce: ${diggResp}"
+        echo "dig Response: ${diggResp}"
         # If the DNS Lookup of the FQDN returns equal to private ip address then return.
         if [ "${diggResp}" == "${IP_ADDRESS}" ]; then
             echo "Found FQDN [${FQDN}] with new Private IP [${IP_ADDRESS}]"
