@@ -6,7 +6,7 @@ VERSION=$(shell git describe --long --tags)
 define COMPLETION_TEXT_BODY
 Congratulations!
 
-APE-COE's Privacy focused Blueprint of the EU Digital Green Certificate, (Version: "$(VERSION)") has been successfully deployed!
+APECOE's Privacy focused Blueprint of the EU Digital Green Certificate, (Version: "$(VERSION)") has been successfully deployed!
 
 Please refer to the documentation, to issue and verify your signed test certificates. https://azure.github.io/eu-digital-covid-certificates-reference-architecture/ .
 
@@ -31,7 +31,6 @@ Enjoy! 😀
 endef
 export COMPLETION_TEXT_BODY
 
-
 ifeq ($(strip $(PREFIX)),)
 	WORKSPACE = "default"
 else
@@ -39,11 +38,15 @@ else
 endif
 
 .PHONY: all
-all: checks certs workspace dev eu ie print-completion-msg
+all: checks certs terraform
 
 .PHONY: checks
 checks:
-	test -f terraform.tfvars
+	@echo "Verifying terraform.tfvars file exists"
+	@test -f terraform.tfvars || { echo "FAIL: Please create and populate the terraform.tfvars file before proceeding"; exit 1; }
+
+	@echo "Ensure az CLI has access to the specified subscription"
+	@az account show -s $$(cat terraform.tfvars| grep ^subscription_id | cut -d'"' -f2) &>/dev/null || { echo "FAIL: Please run \`az login\` before proceeding"; exit 1; }
 
 .PHONY: certs
 certs:
@@ -56,26 +59,29 @@ workspace: checks
 	WORKSPACE=$(WORKSPACE) $(MAKE) -C eudcc-ie workspace
 
 .PHONY: dev
-dev:
+dev: checks
 	$(MAKE) -C eudcc-dev terraform
 	$(MAKE) -C eudcc-dev ssh-config
 
 .PHONY: eu
-eu:
+eu: checks
 	$(MAKE) -C eudcc-eu all
 
 .PHONY: ie
-ie:
+ie: checks
 	$(MAKE) -C eudcc-ie all
 
+.PHONY: terraform
+terraform: workspace dev eu ie print-completion-msg
+
 .PHONY: terraform-destroy
-terraform-destroy:
+terraform-destroy: checks
 	$(MAKE) -C eudcc-ie terraform-destroy
 	$(MAKE) -C eudcc-eu terraform-destroy
 	$(MAKE) -C eudcc-dev terraform-destroy
 
 .PHONY: start-all-tunnels
-start-all-tunnels:
+start-all-tunnels: checks
 	$(MAKE) -C eudcc-eu ssh-tunnel-start
 	$(MAKE) -C eudcc-ie ssh-tunnel-start
 
