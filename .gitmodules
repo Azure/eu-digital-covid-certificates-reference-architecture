@@ -25,3 +25,6 @@
 [submodule "upstream/dgca-app-core-android"]
 	path = upstream/dgca-app-core-android
 	url = https://github.com/eu-digital-green-certificates/dgca-app-core-android.git
+[submodule "upstream/dgca-wallet-app-android"]
+	path = upstream/dgca-wallet-app-android
+	url = https://github.com/eu-digital-green-certificates/dgca-wallet-app-android
