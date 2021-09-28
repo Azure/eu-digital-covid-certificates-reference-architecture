@@ -1,0 +1,25 @@
+From 2ec93fa0b28a8750bd1d5b77eb342a79fc368ec4 Mon Sep 17 00:00:00 2001
+From: Graham Hayes <gr@ham.ie>
+Date: Tue, 24 Aug 2021 15:21:34 +0100
+Subject: [PATCH 2/2] Remove screenshot protection
+
+Signed-off-by: Graham Hayes <gr@ham.ie>
+---
+ app/src/main/java/dgca/wallet/app/android/MainActivity.kt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/app/src/main/java/dgca/wallet/app/android/MainActivity.kt b/app/src/main/java/dgca/wallet/app/android/MainActivity.kt
+index 28d7b1a..b46c9b9 100644
+--- a/app/src/main/java/dgca/wallet/app/android/MainActivity.kt
++++ b/app/src/main/java/dgca/wallet/app/android/MainActivity.kt
+@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
+ 
+         binding = ActivityMainBinding.inflate(layoutInflater)
+         setContentView(binding.root)
+-- 
+2.21.0
+

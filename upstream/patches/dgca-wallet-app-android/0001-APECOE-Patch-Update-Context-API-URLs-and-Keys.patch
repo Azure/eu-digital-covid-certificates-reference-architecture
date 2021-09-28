@@ -1,0 +1,81 @@
+From 763a3461e007e1ba9f045e5a260542616ba36bf9 Mon Sep 17 00:00:00 2001
+From: Kiall Mac Innes <kimacinn@microsoft.com>
+Date: Fri, 23 Jul 2021 14:07:17 +0000
+Subject: [PATCH 1/2] APECOE Patch: Update Context / API URLs and Keys
+
+Update Context / API URLs and Keys.
+---
+ app/src/acc/assets/wallet-context.jsonc       | 25 ++++++++-----------
+ .../wallet/app/android/di/NetworkModule.kt    |  2 +-
+ 2 files changed, 11 insertions(+), 16 deletions(-)
+
+diff --git a/app/src/acc/assets/wallet-context.jsonc b/app/src/acc/assets/wallet-context.jsonc
+index e0dcbd4..c82807d 100644
+--- a/app/src/acc/assets/wallet-context.jsonc
++++ b/app/src/acc/assets/wallet-context.jsonc
+@@ -4,39 +4,34 @@
+     "default": {
+       "privacyUrl": "https://publications.europa.eu/en/web/about-us/legal-notices/eu-mobile-apps",
+       "context": {
+-        "url": "https://dgca-issuance-web-eu-acc.cfapps.eu10.hana.ondemand.com/dgca-issuance-service/context",
++        "url": "https://dgca-issuance-service.eudgc-ie.apecoe.net/context",
+         "pubKeys": [
+-          "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-          "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++          "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+         ]
+       },
+       "endpoints": {
+         "claim": {
+-          "url": "https://dgca-issuance-web-eu-acc.cfapps.eu10.hana.ondemand.com/dgca-issuance-service/dgci/wallet/claim",
++          "url": "https://dgca-issuance-service.eudgc-ie.apecoe.net/dgci/wallet/claim",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "countryList": {
+-          "url": "https://dgca-issuance-web-eu-acc.cfapps.eu10.hana.ondemand.com/dgca-businessrule-service/countrylist",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/countrylist",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "rules": {
+-          "url": "https://dgca-issuance-web-eu-acc.cfapps.eu10.hana.ondemand.com/dgca-businessrule-service/rules",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/rules",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "valuesets": {
+-          "url": "https://dgca-issuance-web-eu-acc.cfapps.eu10.hana.ondemand.com/dgca-businessrule-service/valuesets",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/valuesets",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         }
+       }
+diff --git a/app/src/main/java/dgca/wallet/app/android/di/NetworkModule.kt b/app/src/main/java/dgca/wallet/app/android/di/NetworkModule.kt
+index 2c0e7c6..62e309c 100644
+--- a/app/src/main/java/dgca/wallet/app/android/di/NetworkModule.kt
++++ b/app/src/main/java/dgca/wallet/app/android/di/NetworkModule.kt
+@@ -45,7 +45,7 @@ import javax.inject.Singleton
+ 
+ private const val CONNECT_TIMEOUT = 30L
+ 
+-const val BASE_URL = "https://dgca-issuance-web.cfapps.eu10.hana.ondemand.com/"
++const val BASE_URL = "https://dgca-issuance-web.eudgc-ie.apecoe.net/"
+ const val SHA256_PREFIX = "sha256/"
+ 
+ @InstallIn(SingletonComponent::class)
+-- 
+2.21.0
+
