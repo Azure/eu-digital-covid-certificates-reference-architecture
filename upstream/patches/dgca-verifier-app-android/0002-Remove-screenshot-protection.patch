@@ -1,0 +1,25 @@
+From 0209dc81e5a36f854c735d1ad107271f994bec1f Mon Sep 17 00:00:00 2001
+From: Graham Hayes <gr@ham.ie>
+Date: Tue, 24 Aug 2021 15:21:15 +0100
+Subject: [PATCH 2/2] Remove screenshot protection
+
+Signed-off-by: Graham Hayes <gr@ham.ie>
+---
+ app/src/main/java/dgca/verifier/app/android/MainActivity.kt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/app/src/main/java/dgca/verifier/app/android/MainActivity.kt b/app/src/main/java/dgca/verifier/app/android/MainActivity.kt
+index 7aec044..98cba5b 100644
+--- a/app/src/main/java/dgca/verifier/app/android/MainActivity.kt
++++ b/app/src/main/java/dgca/verifier/app/android/MainActivity.kt
+@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+-        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
+         setContentView(R.layout.activity_main)
+     }
+ 
+-- 
+2.21.0
+

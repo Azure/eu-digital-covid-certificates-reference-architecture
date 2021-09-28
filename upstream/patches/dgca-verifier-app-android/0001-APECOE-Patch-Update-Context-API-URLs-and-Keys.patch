@@ -1,0 +1,90 @@
+From 0a150c50eb56e52e35aea3a599019f84944b1632 Mon Sep 17 00:00:00 2001
+From: Kiall Mac Innes <kimacinn@microsoft.com>
+Date: Fri, 23 Jul 2021 14:09:43 +0000
+Subject: [PATCH 1/2] APECOE Patch: Update Context / API URLs and Keys
+
+Update Context / API URLs and Keys. These should be made parameters as part of #54
+---
+ app/src/acc/assets/verifier-context.jsonc     | 30 ++++++++-----------
+ .../verifier/app/android/di/NetworkModule.kt  |  2 +-
+ 2 files changed, 13 insertions(+), 19 deletions(-)
+
+diff --git a/app/src/acc/assets/verifier-context.jsonc b/app/src/acc/assets/verifier-context.jsonc
+index 84d11d8..327e08d 100644
+--- a/app/src/acc/assets/verifier-context.jsonc
++++ b/app/src/acc/assets/verifier-context.jsonc
+@@ -4,46 +4,40 @@
+     "default": {
+       "privacyUrl": "https://publications.europa.eu/en/web/about-us/legal-notices/eu-mobile-apps",
+       "context": {
+-        "url": "https://dgca-verifier-service-eu-acc.cfapps.eu10.hana.ondemand.com/context",
++        "url": "https://dgca-verifier-service.eudgc-ie.apecoe.net/context",
+         "pubKeys": [
+-          "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-          "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++          "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+         ]
+       },
+       "endpoints": {
+         "status": {
+-          "url": "https://dgca-verifier-service-eu-acc.cfapps.eu10.hana.ondemand.com/signercertificateStatus",
++          "url": "https://dgca-verifier-service.eudgc-ie.apecoe.net/signercertificateStatus",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "update": {
+-          "url": "https://dgca-verifier-service-eu-acc.cfapps.eu10.hana.ondemand.com/signercertificateUpdate",
++          "url": "https://dgca-verifier-service.eudgc-ie.apecoe.net/signercertificateUpdate",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "countryList": {
+-          "url": "https://dgca-businessrule-service.cfapps.eu10.hana.ondemand.com/countrylist",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/countrylist",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "rules": {
+-          "url": "https://dgca-businessrule-service.cfapps.eu10.hana.ondemand.com/rules",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/rules",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         },
+         "valuesets": {
+-          "url": "https://dgca-businessrule-service.cfapps.eu10.hana.ondemand.com/valuesets",
++          "url": "https://dgca-businessrule-service.eudgc-ie.apecoe.net/valuesets",
+           "pubKeys": [
+-            "lKdU1EbQubxyDDm2q3N8KclZ2C94Num3xXjG0pk+3eI=",
+-            "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
++            "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+           ]
+         }
+       }
+diff --git a/app/src/main/java/dgca/verifier/app/android/di/NetworkModule.kt b/app/src/main/java/dgca/verifier/app/android/di/NetworkModule.kt
+index af23f69..6d046b4 100644
+--- a/app/src/main/java/dgca/verifier/app/android/di/NetworkModule.kt
++++ b/app/src/main/java/dgca/verifier/app/android/di/NetworkModule.kt
+@@ -45,7 +45,7 @@ import javax.inject.Singleton
+ 
+ private const val CONNECT_TIMEOUT = 30L
+ 
+-const val BASE_URL = "https://dgca-verifier-service.cfapps.eu10.hana.ondemand.com/"
++const val BASE_URL = "https://dgca-verifier-service.eudgc-ie.apecoe.net/"
+ const val SHA256_PREFIX = "sha256/"
+ 
+ @InstallIn(SingletonComponent::class)
+-- 
+2.21.0
+
