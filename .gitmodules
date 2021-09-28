@@ -16,3 +16,12 @@
 [submodule "upstream/dgca-verifier-service"]
 	path = upstream/dgca-verifier-service
 	url = https://github.com/eu-digital-green-certificates/dgca-verifier-service.git
+[submodule "upstream/dgca-verifier-app-android"]
+	path = upstream/dgca-verifier-app-android
+	url = https://github.com/eu-digital-green-certificates/dgca-verifier-app-android.git
+[submodule "upstream/dgc-certlogic-android"]
+	path = upstream/dgc-certlogic-android
+	url = https://github.com/eu-digital-green-certificates/dgc-certlogic-android.git
+[submodule "upstream/dgca-app-core-android"]
+	path = upstream/dgca-app-core-android
+	url = https://github.com/eu-digital-green-certificates/dgca-app-core-android.git
