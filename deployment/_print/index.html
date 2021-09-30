@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.922af87b7b86412726a3e1408c8f1205.json"
+  data-offline-search-index-json-src="/offline-search-index.2c63c87c5e30dbf86c91b3620ebfd36a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -155,6 +155,14 @@ This the multi-page printable view of this section.
     
 	
 <li>3: <a href="#pg-5f1f244f3c8958781382537f9cd8a82d">Validation</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-7973bf36e0b84b04d570d73cda1d62e6">Issuance Web Authentication Setup</a></li>
 
 
     
@@ -283,6 +291,45 @@ The process of generating the certificates has been automated in an <a href="scr
 <span style="color:#204a87">export</span> <span style="color:#000">HTTPS_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5://127.0.0.1:8881
 <span style="color:#204a87">export</span> <span style="color:#000">HTTP_PROXY</span><span style="color:#ce5c00;font-weight:bold">=</span>socks5://127.0.0.1:8881
 </code></pre></div><p>Use port 8881 for EU and 8882 for IE deployments.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7973bf36e0b84b04d570d73cda1d62e6">4 - Issuance Web Authentication Setup</h1>
+    <div class="lead">Issuance Web Authentication Setup</div>
+	<h2 id="issuance-web-authentication">Issuance Web Authentication</h2>
+<p>By default, when we deploy the issuance web application, the application is
+setup to allow all members of the AAD tenant to log into and issue certs.</p>
+<p>This is due to the need for an admin to grant consent to applications that have
+been directly assigned to users without their direct consent recorded in the
+AAD portal.</p>
+<h3 id="restricting-access-to-specific-users">Restricting Access to Specific users</h3>
+<ul>
+<li>Navigate to <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview</a></li>
+<li>Search for the application name (The URL for issuance web that is printed at the end of the <code>make terraform</code> command, minus the &ldquo;https://&quot;)
+e.g. &ldquo;dgca-issuance-web.eudcc-ie.example.com&rdquo;</li>
+<li>Click on the &ldquo;enterprise application&rdquo; result</li>
+<li>Click on properties</li>
+<li>Switch &ldquo;User assignment required?&rdquo; to &ldquo;Yes&rdquo;</li>
+<li>Click on &ldquo;Users and Groups&rdquo;</li>
+<li>Click &ldquo;Add User/Group&rdquo;</li>
+<li>Search for either the user you want to grant access, or the group that contains the users you want to add</li>
+<li>Leave role as &ldquo;Default Access&rdquo;</li>
+<li>Click &ldquo;Assign&rdquo;</li>
+<li>Click &ldquo;Permissions&rdquo;</li>
+<li>Click &ldquo;Grant admin consent for <em>ORG</em>&rdquo;</li>
+</ul>
 
 </div>
 
