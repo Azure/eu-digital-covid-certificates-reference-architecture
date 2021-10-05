@@ -1,6 +1,7 @@
 variable "prefix" {
   type        = string
   description = "Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing"
+  default     = ""
 }
 
 variable "location" {
