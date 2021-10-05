@@ -565,13 +565,6 @@
 &lt;td style=&#34;text-align:center&#34;&gt;yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a name=&#34;input_prefix&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_prefix&#34;&gt;prefix&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Prefix&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;n/a&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;yes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;a name=&#34;input_aad_pod_identity_chart_version&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_aad_pod_identity_chart_version&#34;&gt;aad_pod_identity_chart_version&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;n/a&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
@@ -709,6 +702,13 @@
 &lt;td&gt;The retention period for the logs in days&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;number&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;30&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a name=&#34;input_prefix&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_prefix&#34;&gt;prefix&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Prefix&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1008,8 +1008,8 @@
 &lt;td&gt;&lt;a name=&#34;input_prefix&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_prefix&#34;&gt;prefix&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Prefix&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;n/a&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;yes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
