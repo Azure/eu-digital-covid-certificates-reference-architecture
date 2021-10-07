@@ -51,9 +51,10 @@ locals {
 module "base_infra" {
   source = "../terraform-modules/base-infrastructure"
 
-  prefix   = var.prefix
-  name     = local.name
-  location = var.location
+  prefix     = var.prefix
+  generation = var.generation
+  name       = local.name
+  location   = var.location
 
   dev_vnet_rg_name = data.terraform_remote_state.dev.outputs.ie_rg_name
   dev_vnet_id      = data.terraform_remote_state.dev.outputs.ie_vnet_id
