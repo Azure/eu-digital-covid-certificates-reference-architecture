@@ -30,5 +30,3 @@ AAD portal.
 - Click "Assign"
 - Click "Permissions"
 - Click "Grant admin consent for _ORG_"
-
-
