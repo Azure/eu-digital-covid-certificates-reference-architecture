@@ -32,13 +32,13 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/terraform/variables/" /><meta property="article:section" content="terraform" />
 
-<meta property="article:modified_time" content="2021-10-08T15:38:25+01:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
+<meta property="article:modified_time" content="2021-10-08T15:51:58+01:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
 <meta itemprop="name" content="Installation - Variables">
 <meta itemprop="description" content="Gather the required variables:
 Dev # OID of the Group to grant Administrator permissions. This is used to allow access to the deployed AKS cluster for deployments and troubleshooting administrator_group_oid = &#34;&#34; # List of network prefixes allowed to SSH to Jumpbox VM jumpbox_ssh_source_address_prefixes = [] # Location Name location = &#34;&#34; # Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing prefix = &#34;&#34; # Subscription to deploy into subscription_id = &#34;&#34; # Tenant to deploy into tenant_id = &#34;&#34; EU # OID of the Group to grant Administrator permissions administrator_group_oid = &#34;&#34; # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not enable_log_analytics_workspace = false # Version Number of the Gateway gateway_version = &#34;1.">
-<meta itemprop="dateModified" content="2021-10-08T15:38:25+01:00" />
-<meta itemprop="wordCount" content="591">
+<meta itemprop="dateModified" content="2021-10-08T15:51:58+01:00" />
+<meta itemprop="wordCount" content="647">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation - Variables"/>
 <meta name="twitter:description" content="Gather the required variables:
@@ -97,7 +97,7 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7f1db2a8bc4112d7f29f93e3bb810ded.json"
+  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -124,7 +124,7 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7f1db2a8bc4112d7f29f93e3bb810ded.json"
+  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -358,6 +358,9 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
 <span style="color:#8f5902;font-style:italic"># Version Number of the Gateway</span>
 <span style="color:#c4a000">gateway_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.3-44c8778-azure-0.0.1-5f09fbf&#34;</span>
 
+<span style="color:#8f5902;font-style:italic"># Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault&#39;s). Changing this value can only be done during a fresh deployment.</span>
+<span style="color:#c4a000">generation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">1</span>
+
 <span style="color:#8f5902;font-style:italic"># GitHub Container Registry Password</span>
 <span style="color:#c4a000">ghcr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
@@ -408,6 +411,9 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
 
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
+
+<span style="color:#8f5902;font-style:italic"># Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault&#39;s). Changing this value can only be done during a fresh deployment.</span>
+<span style="color:#c4a000">generation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">1</span>
 
 <span style="color:#8f5902;font-style:italic"># GitHub Container Registry Password</span>
 <span style="color:#c4a000">ghcr_password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
@@ -469,7 +475,7 @@ Dev # OID of the Group to grant Administrator permissions. This is used to allow
 
     Last modified
     October 8, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/6e9bbffcf608e938257d66ae194d44c02e672ef0">DGCA Web: Prevent proxied URLs from containing a double / (#29) (6e9bbff)</a>
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/1fa019013994f82f260a0a81fd7f2373b41737d2">Add a &#39;generation&#39; variable (#30) (1fa0190)</a>
 
 </div>
 

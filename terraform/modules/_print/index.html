@@ -89,7 +89,7 @@ them into modules.
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7f1db2a8bc4112d7f29f93e3bb810ded.json"
+  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -676,6 +676,13 @@ them into modules.</p>
 <td style="text-align:center">yes</td>
 </tr>
 <tr>
+<td><a name="input_generation"></a> <a href="#input_generation">generation</a></td>
+<td>Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault&rsquo;s). Changing this value can only be done during a fresh deployment.</td>
+<td><code>number</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
 <td><a name="input_jump_box_identity_file"></a> <a href="#input_jump_box_identity_file">jump_box_identity_file</a></td>
 <td>The RSA Key for the Jump Box, required for remote executing code over SSH</td>
 <td><code>string</code></td>
@@ -720,6 +727,13 @@ them into modules.</p>
 <tr>
 <td><a name="input_parent_dns_zone_rg_name"></a> <a href="#input_parent_dns_zone_rg_name">parent_dns_zone_rg_name</a></td>
 <td>Parent DNS Zone Resource Group Name</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
+<td>Prefix</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -862,13 +876,6 @@ them into modules.</p>
 <td>The retention period for the logs in days</td>
 <td><code>number</code></td>
 <td><code>30</code></td>
-<td style="text-align:center">no</td>
-</tr>
-<tr>
-<td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
-<td>Prefix</td>
-<td><code>string</code></td>
-<td><code>&quot;&quot;</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
