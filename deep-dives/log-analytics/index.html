@@ -17,27 +17,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>AAD authentication for MySQL | EU Digital COVID Certificate - Azure Example</title>
+<title>Azure Log Analytics | EU Digital COVID Certificate - Azure Example</title>
 
 
-  <meta name="description" content="Deep Dive into AAD authentication for MySQL
+  <meta name="description" content="Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.
 ">
-<meta property="og:title" content="AAD authentication for MySQL" />
-<meta property="og:description" content="Deep Dive into AAD authentication for MySQL
+<meta property="og:title" content="Azure Log Analytics" />
+<meta property="og:description" content="Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/deep-dives/aad-mysql/" /><meta property="article:section" content="deep-dives" />
+<meta property="og:url" content="/deep-dives/log-analytics/" /><meta property="article:section" content="deep-dives" />
 
 <meta property="article:modified_time" content="2021-11-01T12:15:24+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
-<meta itemprop="name" content="AAD authentication for MySQL">
-<meta itemprop="description" content="Deep Dive into AAD authentication for MySQL
+<meta itemprop="name" content="Azure Log Analytics">
+<meta itemprop="description" content="Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.
 ">
 <meta itemprop="dateModified" content="2021-11-01T12:15:24+00:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="599">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AAD authentication for MySQL"/>
-<meta name="twitter:description" content="Deep Dive into AAD authentication for MySQL
+<meta name="twitter:title" content="Azure Log Analytics"/>
+<meta name="twitter:description" content="Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.
 "/>
 
 
@@ -178,12 +178,12 @@
   <a href="/deep-dives/keyvault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskeyvault"><span class="">KeyVault</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divescmk-li">
   <a href="/deep-dives/cmk/" title="Customer Managed Keys" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divescmk"><span class="">CMK</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-deep-divesaad-mysql-li">
-  <a href="/deep-dives/aad-mysql/" title="AAD authentication for MySQL" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-mysql"><span class="td-sidebar-nav-active-item">AAD for MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-mysql-li">
+  <a href="/deep-dives/aad-mysql/" title="AAD authentication for MySQL" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-mysql"><span class="">AAD for MySQL</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-aks-li">
   <a href="/deep-dives/aad-aks/" title="AAD authentication for Azure Kubernetes Service" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-aks"><span class="">AAD for AKS</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveslog-analytics-li">
-  <a href="/deep-dives/log-analytics/" title="Azure Log Analytics" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveslog-analytics"><span class="">Log Analytics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-deep-diveslog-analytics-li">
+  <a href="/deep-dives/log-analytics/" title="Azure Log Analytics" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-deep-diveslog-analytics"><span class="td-sidebar-nav-active-item">Log Analytics</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-terraform-li">
@@ -237,9 +237,9 @@
     
     
 
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/deep-dives/aad-mysql.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/deep-dives/aad-mysql.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/issues/new?title=AAD%20authentication%20for%20MySQL" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/deep-dives/log-analytics.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/deep-dives/log-analytics.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/issues/new?title=Azure%20Log%20Analytics" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
 
   
@@ -251,6 +251,19 @@
 
             
 
+
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#azure-log-analytics">Azure Log Analytics</a>
+      <ul>
+        <li><a href="#azure-log-analytics-workspaces">Azure Log Analytics Workspaces</a></li>
+        <li><a href="#azure-log-analytics-cluster">Azure Log Analytics Cluster</a></li>
+        <li><a href="#azure-log-analytics-solution">Azure Log Analytics Solution</a></li>
+        <li><a href="#azure-log-analytics-diagnostic-setting">Azure Log Analytics Diagnostic Setting</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
 
 
 
@@ -297,7 +310,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/deep-dives/aad-mysql/">AAD for MySQL</a>
+	<a href="/deep-dives/log-analytics/">Log Analytics</a>
 </li>
 
 	</ol>
@@ -305,8 +318,8 @@
 
             
 <div class="td-content">
-	<h1>AAD authentication for MySQL</h1>
-	<div class="lead">Deep Dive into AAD authentication for MySQL</div>
+	<h1>Azure Log Analytics</h1>
+	<div class="lead">Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.</div>
 	<header class="article-meta">
 		
 		
@@ -322,7 +335,141 @@
 		
 		
 	</header>    
-	<p>TODO&hellip;.</p>
+	<h2 id="azure-log-analytics">Azure Log Analytics</h2>
+<p>The Azure Log Analytics agent collects telemetry from Azure resources, on-premises machines, and machines monitored by System Center Operations Manager and sends the collected data to your Log Analytics Workspace in Azure Monitor.
+The Log Analytics agent also supports insights and other services in Azure Monitor such as VM insights and Azure Security Center.</p>
+<h3 id="azure-log-analytics-workspaces">Azure Log Analytics Workspaces</h3>
+<p>Log Analytics is a tool in the Azure portal to edit and run log queries from data collected by Azure Monitor Logs and interactively analyze their results.
+You can use Log Analytics queries to retrieve records that match particular criteria, identify trends, analyze patterns, and provide a variety of insights into your data.</p>
+<h3 id="azure-log-analytics-cluster">Azure Log Analytics Cluster</h3>
+<p>Azure Monitor Logs Dedicated Clusters are a deployment option that enables advanced capabilities for Azure Monitor Logs customers. Customers can select which of their Log Analytics workspaces should be hosted on dedicated clusters.
+Capabilities that require dedicated clusters currently include: Customer-managed Keys, Double encryption, Availability Zones, Lockbox and Multi-workspace.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Dedicated clusters require customers to commit for at least 500 GB of data ingestion per day.</p>
+</blockquote>
+<h4 id="linking-log-analytics-workspaces-to-a-log-analytics-cluster-in-your-current-subscription">Linking Log Analytics Workspaces to a Log Analytics Cluster in your current subscription</h4>
+<ul>
+<li>To link an existing Log Analytics Cluster to a <code>COVID 19 EU Digital Green Certificate Project</code>&rsquo;s Log Analytics Workspaces, finstly enable <code>enable_log_analytics_workspace</code> to <code>true</code> and add the resource id of the cluster in <code>log_analytics_cluster_id</code> in <code>terraform.tfvars</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#000;font-weight:bold">...</span>
+<span style="color:#c4a000">enable_log_analytics_workspace</span>      = <span style="color:#204a87;font-weight:bold">true</span>
+<span style="color:#c4a000">log_analytics_cluster_id</span>            = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#000;font-weight:bold">...</span>
+</code></pre></div><h3 id="azure-log-analytics-solution">Azure Log Analytics Solution</h3>
+<p>Monitoring solutions in Azure Monitor provide analysis of the operation of an Azure application or service.</p>
+<h4 id="azure-log-analytics-solutions-table">Azure Log Analytics Solutions table</h4>
+<table>
+<thead>
+<tr>
+<th>Log Analytics Solution</th>
+<th>Publisher</th>
+<th>Product</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ContainerInsights</td>
+<td>Microsoft</td>
+<td>OMSGallery/ContainerInsights</td>
+<td>Container insights is a feature designed to monitor the performance of container workloads.</td>
+</tr>
+<tr>
+<td>KeyVaultAnalytics</td>
+<td>Microsoft</td>
+<td>OMSGallery/KeyVaultAnalytics</td>
+<td>Key Vault insights provides comprehensive monitoring of your key vaults by delivering a unified view of your Key Vault requests, performance, failures, and latency.</td>
+</tr>
+<tr>
+<td>SecurityInsights</td>
+<td>Microsoft</td>
+<td>OMSGallery/SecurityInsights</td>
+<td>Microsoft Azure Sentinel is a scalable, cloud-native, security information event management (SIEM) and security orchestration automated response (SOAR) solution. Azure Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for alert detection, threat visibility, proactive hunting, and threat response.The Azure Sentinel PowerShell module (Az.SecurityInsights) allows you to interact with the following components: * Incidents * Analytics Rules (Alert Rules)</td>
+</tr>
+<tr>
+<td>NetworkMonitoring</td>
+<td>Microsoft</td>
+<td>OMSGallery/NetworkMonitoring</td>
+<td>Network Monitoring insights is a feature designed to monitor the performance of Network Monitoring traffic.</td>
+</tr>
+<tr>
+<td>ServiceMap</td>
+<td>Microsoft</td>
+<td>OMSGallery/ServiceMap</td>
+<td>Service Map automatically discovers application components on Windows and Linux systems and maps the communication between services. With Service Map, you can view your servers in the way that you think of them: as interconnected systems that deliver critical services. Service Map shows connections between servers, processes, inbound and outbound connection latency, and ports across any TCP-connected architecture, with no configuration required other than the installation of an agent.</td>
+</tr>
+<tr>
+<td>AzureActivity</td>
+<td>Microsoft</td>
+<td>OMSGallery/AzureActivity</td>
+<td>The Activity log is a platform log in Azure that provides insight into subscription-level events. This includes such information as when a resource is modified or when a virtual machine is started. You can view the Activity log in the Azure portal or retrieve entries with PowerShell and CLI. This article provides details on viewing the Activity log and sending it to different destinations.</td>
+</tr>
+<tr>
+<td>Updates</td>
+<td>Microsoft</td>
+<td>OMSGallery/Updates</td>
+<td>Enable Update Management using Azure Resource Manager template</td>
+</tr>
+<tr>
+<td>ChangeTracking</td>
+<td>Microsoft</td>
+<td>OMSGallery/ChangeTracking</td>
+<td></td>
+</tr>
+<tr>
+<td>AntiMalware</td>
+<td>Microsoft</td>
+<td>OMSGallery/AntiMalware</td>
+<td></td>
+</tr>
+<tr>
+<td>SecurityInsights</td>
+<td>Microsoft</td>
+<td>OMSGallery/SecurityInsights</td>
+<td></td>
+</tr>
+<tr>
+<td>SQLAssessmentPlus</td>
+<td>Microsoft</td>
+<td>OMSGallery/SQLAssessmentPlus</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure-log-analytics-diagnostic-setting">Azure Log Analytics Diagnostic Setting</h3>
+<p>Manages a Diagnostic Setting for an existing Resource</p>
+<h4 id="azure-log-analytics-diagnostic-setting-table">Azure Log Analytics Diagnostic Setting table</h4>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Log</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KeyVault</td>
+<td>AuditEvent</td>
+<td>AllMetrics</td>
+</tr>
+<tr>
+<td>ACR</td>
+<td>ContainerRegistryRepositoryEvents</td>
+<td>ContainerRegistryLoginEvents</td>
+</tr>
+<tr>
+<td>MySQL Server</td>
+<td>MySqlAuditLogs, MySqlSlowLogs</td>
+<td>AllMetrics</td>
+</tr>
+<tr>
+<td>AKS</td>
+<td>oms_agent</td>
+<td>oms_agent</td>
+</tr>
+</tbody>
+</table>
 
 	
 	
