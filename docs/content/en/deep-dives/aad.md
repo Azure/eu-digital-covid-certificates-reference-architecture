@@ -9,18 +9,30 @@ description: >
 ## Azure Active Directory (AAD) Authentication
 
 This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
-Fortifying the integrity of the whole system by removing stored passwords used for authentication for database connections.
-it is also utilised to create managed identities and bindings in Kubernetes in pod level pod-managed identities of AKS,
-allowing pod authentication to resources that rely on AAD as an identity provider.
-
-Web Authentication to the certificate issuing service with AAD is documented in detail in the
-[Deployment Section](docs/content/en/deployment/web-authentication.md) of the documentation.
+Fortifying the integrity of the whole system by removing stored passwords. User accounts and managed ids are used through and reference architecture in place of passwords.
 
 ### AAD authentication for Azure Kubernetes Service
 
 Within Azure Kubernetes Service (AKS), Pod-Identity creates identities and bindings as Kubernetes primitives that allow pods to access
 Azure resources that authenticates AAD as an identity provider.
 
-This reference architecture uses AAD Pod-Identity all eu-digital-green-certificates service contianers, will be the role level "`Key Vault Secrets User`" which Key Vault will reference the service for only relavent sectect with Key vault and RBAC support see [HERE](docs/content/en/deep-dives/keyvault.md).
+This reference architecture uses AAD Pod-Identity on all service containers.
+
+All service containers' managed identities, within Key Vault their role level will be the minimum scoped access to read the required secret,
+key or cert, as [Key Vault has RBAC enabled]({{< relref "keyvault" >}}) which allows the ability to have greater granularity in restricting access.
 
 ### AAD authentication for MySQL
+
+Authentication to Databases' with static passwords or shared credentials stored in internal systems is a security and privacy risk,
+as credentials may become exposed due to over sharing the passwords to other parties or not being having a short rotation policy.
+
+This reference architecture implements AAD authentication for MySQL on all the architecture's MySQL servers which enable the ability for authentication
+by short life tokens instead of passwords for applications connecting to Azure Database for MySQL.
+
+### AAD authentication for Web Authentication
+
+The verification and the authentication of users who have the correct authority to create a certificate on an issuing service is paramount,
+straightening the issuing web service with AAD allowing the ability for Organization level access levels and User and Groups policies.
+
+Web Authentication to the certificate issuing service with AAD is documented in detail in the
+[Deployment Section]({{< relref "web-authentication" >}}) of the documentation.
