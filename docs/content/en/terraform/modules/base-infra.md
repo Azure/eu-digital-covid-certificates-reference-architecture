@@ -136,6 +136,7 @@ No modules.
 | <a name="input_dev_vnet_id"></a> [dev\_vnet\_id](#input\_dev\_vnet\_id) | Dev VNet ID | `string` | n/a | yes |
 | <a name="input_dev_vnet_name"></a> [dev\_vnet\_name](#input\_dev\_vnet\_name) | Dev VNet Name | `string` | n/a | yes |
 | <a name="input_dev_vnet_rg_name"></a> [dev\_vnet\_rg\_name](#input\_dev\_vnet\_rg\_name) | Dev VNet RG Name | `string` | n/a | yes |
+| <a name="input_generation"></a> [generation](#input\_generation) | Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault's). Changing this value can only be done during a fresh deployment. | `number` | n/a | yes |
 | <a name="input_jump_box_identity_file"></a> [jump\_box\_identity\_file](#input\_jump\_box\_identity\_file) | The RSA Key for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
 | <a name="input_jump_box_identity_host"></a> [jump\_box\_identity\_host](#input\_jump\_box\_identity\_host) | The Host address for the Jump Box, required for remote executing code over SSH | `string` | n/a | yes |
 | <a name="input_jump_box_identity_user"></a> [jump\_box\_identity\_user](#input\_jump\_box\_identity\_user) | The User for the Jump Box to authenticate, required for remote executing code over SSH | `string` | n/a | yes |

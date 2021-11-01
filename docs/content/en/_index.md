@@ -1,6 +1,6 @@
 
 ---
-title: "EU Digital COVID Certificate - Azure Example Deployment"
+title: "EU Digital COVID Certificate - Azure Reference Architecture"
 linkTitle: "Documentation"
 type: "docs"
 weight: 20
@@ -16,23 +16,11 @@ cascade:
     path: "/**"
 ---
 
-## EU Digital Green Ceritificates
+## Purpose and target audience
+This guide is intended to accompany the "Azure reference architecture for the EU Digital COVID Certificate project" repository. It includes pre-requisites information, developers' environment configuration, deployment steps, validation steps, and covers the principles guiding the reference architecture design decisions.
 
-### WHY
-The project is intended to facilitate free movement of EU citizens within EU countries in compliance to a common set of COVID regulations and allowing for some level of per-country customization
-### WHO
-Developed by Deutsche Telekom and SAP and shared as open source for implementation and hosting by all EU member countries
+This documentation assumes a technical audience versed in cloud hosting concepts and familiar with the Azure platform.
 
-### WHAT
-The project includes:
-- EU Digital Green Cert Gateway
-- Reference workloads for member countries (Certificate Issuing and Verifying services, business rule services)
-- Reference mobile apps (Wallet and Verifier apps)
 
-## Base Principles
-
-- All End User Identifiable Information is encrypted at rest, with Customer Managed Keys
-- The infrastructure control plane follows best practices and limits access at authorisation, network and application levels
-- Immutable, declaritive configuration and deployment management
 
 
