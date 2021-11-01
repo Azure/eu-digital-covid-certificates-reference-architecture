@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.33e2ca4fe1d6c19c3a0049990c8d965c.json"
+  data-offline-search-index-json-src="/offline-search-index.f511a27138f42427c501d14bd18de0fb.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -146,7 +146,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-ef7305720b2586f142c3caf5cd7a4426">KeyVault</a></li>
+<li>2: <a href="#pg-d5987f444d597a1e20168e2286f6b23e">Key Vault</a></li>
 
 
     
@@ -229,12 +229,172 @@ This the multi-page printable view of this section.
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-ef7305720b2586f142c3caf5cd7a4426">2 - KeyVault</h1>
-    <div class="lead">Deep Dive into KeyVault</div>
-	<h2 id="key-vault">Key Vault</h2>
-<p>Azure Key Vault is a cloud service for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, or cryptographic keys. Key Vault service supports two types of containers: vaults and managed hardware security module(HSM) pools. Vaults support storing software and HSM-backed keys, secrets, and certificates. Managed HSM pools only support HSM-backed keys</p>
-<h3 id="azure-key-vault-access-policy-permissions">Azure Key Vault Access Policy Permissions</h3>
-<p>This project implementation of Azure Key Vault has enabled RBAC authorization as standard, which allows the ability for the finer granularity of granting the smallest sub-section of resources the the the necessary access to read then again only the required secrets and keys.</p>
+	<h1 id="pg-d5987f444d597a1e20168e2286f6b23e">2 - Key Vault</h1>
+    <div class="lead">Deep Dive into Key Vault</div>
+	<h2 id="background-and-further-reading">Background and Further Reading</h2>
+<p>Azure Key Vault is a cloud service for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, or cryptographic keys.</p>
+<p>For more information on Azure Key Vault please refer to the <a href="https://docs.microsoft.com/en-us/azure/key-vault/">product documentation</a>.</p>
+<h3 id="azure-key-vault-rbac">Azure Key Vault RBAC</h3>
+<p>This reference architecture&rsquo;s implementation of Azure Key Vault has enabled RBAC authorization as standard. Azure Key Vault RBAC is a new feature (~Feb 2021) which provides the ability to have separate permissions on individual keys, secrets, and certificates. This reduces the number of Key Vaults needed to maintain minimal access rights.</p>
+<p>For more information on Azure Key Vault RBAC please refer to the <a href="https://docs.microsoft.com/en-gb/azure/key-vault/general/rbac-guide">product documentation</a>.</p>
+<h3 id="azure-spring-propertysource">Azure Spring PropertySource</h3>
+<p>Each of the upstream Spring based applications has been configured to use a Azure KeyVault Spring PropertySource. This allows the applications to load certain Spring properties from KeyVault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.</p>
+<p>See the <a href="https://github.com/Azure/azure-sdk-for-java/tree/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot-starter-keyvault-secrets">Azure Key Vault Secrets Spring Boot starter client library for Java documentation</a> and <a href="https://github.com/Azure/azure-sdk-for-java/blob/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot/src/main/java/com/azure/spring/keyvault/KeyVaultOperation.java#L165-L177">algorithm</a> for more details.</p>
+<h3 id="azure-key-vault-provider-for-secrets-store-csi-driver-aks">Azure Key Vault Provider for Secrets Store CSI Driver (AKS)</h3>
+<p>The Azure Key Vault provider for Secrets Store CSI driver allows us to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes Pods.</p>
+<p>This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod&rsquo;s filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with KeyVault, discussed in the next section below.</p>
+<p>For more information on this CSI driver please refer to the <a href="https://github.com/Azure/secrets-store-csi-driver-provider-azure">upstream documentation</a>.</p>
+<h3 id="future-direct-integration-of-keyvault-into-the-upstream-applications">Future: Direct integration of KeyVault into the upstream applications</h3>
+<p>Ideally, each of the upstream applications would never require access to read the various certificate private keys from Key Vault and they would instead integrate directly with the Key Vault sigining APIs. This would significantly reduce the risk of accidentally exposing private keys in the event of a misconfigration, malware, breach or other security incident by storing the Private Keys in a non-exportable HSM backed key.</p>
+<p>Due to the number of changes that would be necessary to the upstream codebase, we chose to not implement this as part of this reference architecture, however we would recommend this be implemented for any production workloads.</p>
+<h2 id="eu-key-vault">EU Key Vault</h2>
+<p>The following table lists all items in the EU Key Vault, along with a short description of their purpose.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Naming Scheme</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trustanchor</td>
+<td>Certificate</td>
+<td>Freeform</td>
+<td>Root Certificate Authority (CA) Private Key and Certificate bundle</td>
+</tr>
+<tr>
+<td>dgc-trustanchor-certificatealias</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>The certificate alias to use from within the trustanchor bundle</td>
+</tr>
+<tr>
+<td>mysql-pw</td>
+<td>Secret</td>
+<td>Freeform</td>
+<td>The Azure MySQL Administrative User Password. Unused by the Reference Architecture, however may be necessary for day to day opereations in a production environment</td>
+</tr>
+<tr>
+<td>mysql-encryption-key</td>
+<td>Key</td>
+<td>Freeform</td>
+<td>Encryption key used for <a href="https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql">Azure MySQL Customer Managed Key</a></td>
+</tr>
+<tr>
+<td>aks-encryption-key</td>
+<td>Key</td>
+<td>Freeform</td>
+<td>Encryption key used for <a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Azure Kubernetes Service Customer Managed Key</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ie-key-vault">IE Key Vault</h2>
+<p>The following table lists all items in the IE Key Vault, along with a short description of their purpose.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Naming Scheme</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trustanchor-content</td>
+<td>Secret</td>
+<td>Freeform</td>
+<td>Root Certificate Authority (CA) Private Key and Certificate bundle</td>
+</tr>
+<tr>
+<td>dgc-gateway-connector-trustanchor-password</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>Password for the trustanchor bundle</td>
+</tr>
+<tr>
+<td>dgc-gateway-connector-trustanchor-alias</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>The certificate alias to use from within the trustanchor bundle</td>
+</tr>
+<tr>
+<td>msal-authentication-client-secret</td>
+<td>Secret</td>
+<td>Freeform</td>
+<td>The Application Client Secret used for AAD Authentication on the Issuance Web Portal</td>
+</tr>
+<tr>
+<td>tls-trust-store-content</td>
+<td>Secret</td>
+<td>Freeform</td>
+<td>The TLS Trust Store bundle in PKCS #12 format. This is used for <a href="https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning">HTTP Public Key Pinning</a> on all HTTP connections.</td>
+</tr>
+<tr>
+<td>dgc-gateway-connector-tlstruststore-password</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>Password for the TLS Trust Store bundle</td>
+</tr>
+<tr>
+<td>tls-key-store</td>
+<td>Certificate</td>
+<td>Freeform</td>
+<td>The TLS Key Store bundle contains the Auth certificate which is used to Authenticate a country to the EU Gateway</td>
+</tr>
+<tr>
+<td>dgc-gateway-connector-tlskeystore-alias</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>The certificate alias to use from within the TLS Key Store bundle</td>
+</tr>
+<tr>
+<td>upload-key-store</td>
+<td>Certificate</td>
+<td>Freeform</td>
+<td>The Upload Key Store bundle contains the Upload certificate which is used to sign uploads from a country to the EU Gateway</td>
+</tr>
+<tr>
+<td>dgc-gateway-connector-uploadkeystore-alias</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>The certificate alias to use from within the Upload Key Store bundle</td>
+</tr>
+<tr>
+<td>dsc-key-store</td>
+<td>Certificate</td>
+<td>Freeform</td>
+<td>The DSC Key Store bindle contains the Document Signer Certificates which are used to sign end user Digital Covid Certificates</td>
+</tr>
+<tr>
+<td>issuance-certalias</td>
+<td>Secret</td>
+<td>Spring PropertySource</td>
+<td>The certificate alias to use from within the DSC Key Store bindle</td>
+</tr>
+<tr>
+<td>mysql-pw</td>
+<td>Secret</td>
+<td>Freeform</td>
+<td>The Azure MySQL Administrative User Password. Unused by the Reference Architecture, however may be necessary for day to day operations in a production environment</td>
+</tr>
+<tr>
+<td>mysql-encryption-key</td>
+<td>Key</td>
+<td>Freeform</td>
+<td>Encryption key used for <a href="https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql">Azure MySQL Customer Managed Key</a></td>
+</tr>
+<tr>
+<td>aks-encryption-key</td>
+<td>Key</td>
+<td>Freeform</td>
+<td>Encryption key used for <a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Azure Kubernetes Service Customer Managed Key</a></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 

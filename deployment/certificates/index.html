@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deployment/certificates/" /><meta property="article:section" content="deployment" />
 
-<meta property="article:modified_time" content="2021-11-01T15:47:09+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
+<meta property="article:modified_time" content="2021-11-01T15:45:57+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
 <meta itemprop="name" content="Certificate Generation">
 <meta itemprop="description" content="Generate Required Certificates
 ">
-<meta itemprop="dateModified" content="2021-11-01T15:47:09+00:00" />
-<meta itemprop="wordCount" content="233">
+<meta itemprop="dateModified" content="2021-11-01T15:45:57+00:00" />
+<meta itemprop="wordCount" content="236">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Certificate Generation"/>
 <meta name="twitter:description" content="Generate Required Certificates
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.33e2ca4fe1d6c19c3a0049990c8d965c.json"
+  data-offline-search-index-json-src="/offline-search-index.f511a27138f42427c501d14bd18de0fb.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.33e2ca4fe1d6c19c3a0049990c8d965c.json"
+  data-offline-search-index-json-src="/offline-search-index.f511a27138f42427c501d14bd18de0fb.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -174,8 +174,8 @@
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesprivate-link-li">
   <a href="/deep-dives/private-link/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesprivate-link"><span class="">Private Link</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveskeyvault-li">
-  <a href="/deep-dives/keyvault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskeyvault"><span class="">KeyVault</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveskey-vault-li">
+  <a href="/deep-dives/key-vault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskey-vault"><span class="">Key Vault</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divescmk-li">
   <a href="/deep-dives/cmk/" title="Customer Managed Keys" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divescmk"><span class="">CMK</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-mysql-li">
@@ -334,7 +334,7 @@
 		
 	</header>    
 	<h3 id="background-and-further-reading">Background and Further Reading</h3>
-<p>The EU Digital Covid Certificate project uses and generates many different certificates and certificate authorities (CAs). A summary of the most important certificates and CA has been included in the table below. For a full list of these, please refer to the <a href="https://github.com/eu-digital-green-certificates/dgc-overview/blob/main/guides/certificate-governance.md">upstream documentation</a> for complete documentation of these certificates and CAs.</p>
+<p>The EU Digital Covid Certificate project uses and generates many different certificates and certificate authorities (CAs). A summary of the most important certificates and CAs has been included in the table below. For a full list of these, please refer to the <a href="https://github.com/eu-digital-green-certificates/dgc-overview/blob/main/guides/certificate-governance.md">upstream documentation</a> for complete documentation of these certificates and CAs.</p>
 <table>
 <thead>
 <tr>
@@ -367,19 +367,19 @@
 <td>Country</td>
 <td>CSCA</td>
 <td>Trustanchor</td>
-<td>The Country Signing Certificate Authority is used to sign Document Signer Certificates</td>
+<td>The Country Signing Certificate Authority (CSCA) is used to sign Document Signer Certificates</td>
 </tr>
 <tr>
 <td>Country</td>
 <td>DSC</td>
 <td>Country CSCA</td>
-<td>The Document Signer Certificates are used to sign individual Digital Covid Certificates</td>
+<td>The Document Signer Certificates (DSC) are used to sign individual Digital Covid Certificates</td>
 </tr>
 <tr>
 <td>Individual</td>
 <td>DCC</td>
 <td>Country DSC</td>
-<td>The Digital Covid Certificate that is issused to members of the general public</td>
+<td>The Digital Covid Certificate (DCC) that is issused to members of the general public</td>
 </tr>
 </tbody>
 </table>
@@ -400,7 +400,7 @@ DONE
 
     Last modified
     November 1, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/b71578f56b0059761469b1786fbc385e714d4260">Add expanded CMK Docs (b71578f)</a>
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/998e1f1da7838c3d154d3ff1ddff949e9980e853">Update Key Vault Docs with more information (998e1f1)</a>
 
 </div>
 
