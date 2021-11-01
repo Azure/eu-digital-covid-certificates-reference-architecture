@@ -66,13 +66,79 @@ jobs:
       - name: build
         working-directory: ./upstream/dgca-wallet-app-android
         run: |-
-          ./gradlew --no-daemon build -PCONFIG_FILE_NAME="verifier-context.jsonc"
-
-      - name: Archive apks
+          ./gradlew --no-daemon build -PCONFIG_FILE_NAME="wallet-context.jsonc"
+      - name: Archive ACC Release APK
         uses: actions/upload-artifact@v2
         with:
-          name: apks
+          name: app-acc-release-unsigned
           path: |
-            ./upstream/dgca-wallet-app-android/app/build/outputs/apk/acc/release/*
-            ./upstream/dgca-wallet-app-android/app/build/outputs/apk/acc/debug/*
-          retention-days: 5
+            ./upstream/dgca-wallet-app-android/app/build/outputs/apk/acc/release/app-acc-release-unsigned.apk
+          retention-days: 1
+      - name: Archive ACC Debug APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-acc-debug-unsigned
+          path: |
+            ./upstream/dgca-wallet-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk
+          retention-days: 1
+  sign:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - name: Download ACC Release APK
+        uses: actions/download-artifact@v2
+        with:
+          name: app-acc-release-unsigned
+      - name: Download ACC Debug APK
+        uses: actions/download-artifact@v2
+        with:
+          name: app-acc-debug-unsigned
+      - name: sign-acc-release
+        run: |-
+          echo "${KEY_STORE_BASE64}" | base64 --decode > ./key.jks
+          ZIPALIGN=${ANDROID_HOME}/build-tools/${BUILD_TOOLS_VERSION}/zipalign
+          APKSIGNER=${ANDROID_HOME}/build-tools/${BUILD_TOOLS_VERSION}/apksigner
+          ${ZIPALIGN} -c -v 4 app-acc-release-unsigned.apk
+          ${APKSIGNER} sign \
+          --ks ./key.jks \
+          --ks-pass pass:${KEY_STORE_PASSWORD} \
+          --ks-key-alias ${KEY_ALIAS} \
+          --out app-acc-release-signed.apk \
+          app-acc-release-unsigned.apk
+          ${APKSIGNER} verify app-acc-release-signed.apk
+        env:
+          BUILD_TOOLS_VERSION: 29.0.3
+          KEY_ALIAS: ${{ secrets.DEV_ANDROID_SIGNING_KEY_ALIAS }}
+          KEY_STORE_BASE64: ${{ secrets.DEV_ANDROID_SIGNING_KEY }}
+          KEY_STORE_PASSWORD: ${{ secrets.DEV_ANDROID_SIGNING_KEY_PASSWORD }}
+      - name: sign-acc-debug
+        run: |-
+          echo "${KEY_STORE_BASE64}" | base64 --decode > ./key.jks
+          ZIPALIGN=${ANDROID_HOME}/build-tools/${BUILD_TOOLS_VERSION}/zipalign
+          APKSIGNER=${ANDROID_HOME}/build-tools/${BUILD_TOOLS_VERSION}/apksigner
+          ${ZIPALIGN} -c -v 4 app-acc-debug.apk
+          ${APKSIGNER} sign \
+          --ks ./key.jks \
+          --ks-pass pass:${KEY_STORE_PASSWORD} \
+          --ks-key-alias ${KEY_ALIAS} \
+          --out app-acc-debug-signed.apk \
+          app-acc-debug.apk
+          ${APKSIGNER} verify app-acc-debug-signed.apk
+        env:
+          BUILD_TOOLS_VERSION: 29.0.3
+          KEY_ALIAS: ${{ secrets.DEV_ANDROID_SIGNING_KEY_ALIAS }}
+          KEY_STORE_BASE64: ${{ secrets.DEV_ANDROID_SIGNING_KEY }}
+          KEY_STORE_PASSWORD: ${{ secrets.DEV_ANDROID_SIGNING_KEY_PASSWORD }}
+      - name: Archive ACC Release APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-acc-release-signed
+          path: |
+            app-acc-release-signed.apk
+      - name: Archive ACC Debug APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-acc-debug-signed
+          path: |
+            app-acc-debug-signed.apk
