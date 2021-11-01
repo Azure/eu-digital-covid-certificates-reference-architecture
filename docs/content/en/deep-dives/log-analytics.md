@@ -8,7 +8,7 @@ description: >
 
 ## Azure Log Analytics
 
-The Azure Log Analytics agent collects telemetry on Azure resources, and even on-premises machines, and those monitored by System Center Operations Manager and sends it collected data to your Log Analytics workspace in Azure Monitor.
+The Azure Log Analytics agent collects telemetry from Azure resources, on-premises machines, and machines monitored by System Center Operations Manager and sends the collected data to your Log Analytics Workspace in Azure Monitor.
 The Log Analytics agent also supports insights and other services in Azure Monitor such as VM insights and Azure Security Center.
 
 ### Azure Log Analytics Workspaces
