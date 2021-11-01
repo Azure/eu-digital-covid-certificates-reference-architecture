@@ -45,6 +45,9 @@ enable_log_analytics_workspace = false
 # Version Number of the Gateway
 gateway_version = "1.1.3-44c8778-azure-0.0.1-5f09fbf"
 
+# Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault's). Changing this value can only be done during a fresh deployment.
+generation = 1
+
 # GitHub Container Registry Password
 ghcr_password = ""
 
@@ -99,6 +102,9 @@ businessrule_service_version = "1.1.2-b0be8f4-azure-0.0.1-1293959"
 
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false
+
+# Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault's). Changing this value can only be done during a fresh deployment.
+generation = 1
 
 # GitHub Container Registry Password
 ghcr_password = ""
