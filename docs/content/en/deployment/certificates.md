@@ -7,6 +7,7 @@ description: >
 ---
 
 ### Certificiate Types and Background
+
 TODO: An intro to each type of cert used etc, links to the EU DGC repos documentation, etc
 
 
