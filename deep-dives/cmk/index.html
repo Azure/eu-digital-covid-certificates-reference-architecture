@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deep-dives/cmk/" /><meta property="article:section" content="deep-dives" />
 
-<meta property="article:modified_time" content="2021-10-08T15:51:58+01:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
+<meta property="article:modified_time" content="2021-11-01T12:15:13+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
 <meta itemprop="name" content="Customer Managed Keys">
 <meta itemprop="description" content="Deep Dive into Customer Managed Keys
 ">
-<meta itemprop="dateModified" content="2021-10-08T15:51:58+01:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="dateModified" content="2021-11-01T12:15:13+00:00" />
+<meta itemprop="wordCount" content="178">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Customer Managed Keys"/>
 <meta name="twitter:description" content="Deep Dive into Customer Managed Keys
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
+  data-offline-search-index-json-src="/offline-search-index.5434c52a333cdeb777cd8d7fb6b43799.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
+  data-offline-search-index-json-src="/offline-search-index.5434c52a333cdeb777cd8d7fb6b43799.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -250,6 +250,16 @@
             
 
 
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#customer-managed-keys">Customer Managed Keys</a>
+      <ul>
+        <li><a href="#table-of-service-which-use-customer-managed-keys">Table of Service which Use Customer-Managed Keys</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+
 
 
             
@@ -320,15 +330,48 @@
 		
 		
 	</header>    
-	<p>TODO&hellip;.</p>
+	<h2 id="customer-managed-keys">Customer Managed Keys</h2>
+<p>Service Encryption provides a layer of encryption for customer data-at-rest giving customers two options for encryption key management: Microsoft-managed keys or Customer-managed Key. When using Microsoft-managed keys, Microsoft online services automatically generate and securely store the root keys used for Service Encryption.</p>
+<p>Customers with requirements to control their own root encryption keys can use Service Encryption with Customer-managed Key. Using Customer-managed Key, customers can generate their own cryptographic keys using either an on-premises Hardware Service Module (HSM) or Azure Key Vault (AKV). Customer root keys are stored in AKV, where they can be used as the root of one of the keychains that encrypts customer mailbox data or files. Customer root keys can only be accessed indirectly by Microsoft online service code for data encryption and cannot be accessed directly by Microsoft employees.</p>
+<h3 id="table-of-service-which-use-customer-managed-keys">Table of Service which Use Customer-Managed Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Key Name</th>
+<th>Key role assimgment scope</th>
+<th>Key Type</th>
+<th>Key Size</th>
+<th>Key Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AKS</td>
+<td>aks-encryption-key</td>
+<td>AKS User Assigned Identity</td>
+<td>RSA-HSM</td>
+<td>2048</td>
+<td>unwrapKey, wrapKey</td>
+</tr>
+<tr>
+<td>MySQL Server</td>
+<td>mysql-encryption-key</td>
+<td>MySQL Server System Assigned Identity</td>
+<td>RSA-HSM</td>
+<td>2048</td>
+<td>unwrapKey, wrapKey</td>
+</tr>
+</tbody>
+</table>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    October 8, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/1fa019013994f82f260a0a81fd7f2373b41737d2">Add a &#39;generation&#39; variable (#30) (1fa0190)</a>
+    November 1, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/6f4454b011d187df60817e18aeb6d2225ce50c44">Added some more content to deep dives (#31) (6f4454b)</a>
 
 </div>
 

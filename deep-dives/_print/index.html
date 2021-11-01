@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.875e81cef58894113dde225ad3a700f8.json"
+  data-offline-search-index-json-src="/offline-search-index.5434c52a333cdeb777cd8d7fb6b43799.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -203,7 +203,9 @@ This the multi-page printable view of this section.
     
 	<h1 id="pg-47ee9e1ad9b64d3297b0c2eaaa7cbea4">1 - Private Link</h1>
     <div class="lead">Deep Dive into Private Link</div>
-	<p>TODO&hellip;.</p>
+	<h2 id="private-link">Private Link</h2>
+<p>Azure Private Link enables you to access Azure PaaS Services and Azure hosted customer-owned/partner services over a Private Endpoint in your virtual network. Traffic between your virtual network and the service traverses over the Microsoft backbone network, eliminating exposure from the public Internet. You can also create your own Private Link Service in your virtual network and deliver it privately to your customers.</p>
+<p>This Project utilises Private Link&rsquo;s security &amp; privacy benefiting of eliminating exposure from the public Internet and opting into the whole infrastructure being inaccessible from the Internet, apart from a jump-box and ingress functionality.</p>
 
 </div>
 
@@ -221,7 +223,10 @@ This the multi-page printable view of this section.
     
 	<h1 id="pg-ef7305720b2586f142c3caf5cd7a4426">2 - KeyVault</h1>
     <div class="lead">Deep Dive into KeyVault</div>
-	<p>TODO&hellip;.</p>
+	<h2 id="key-vault">Key Vault</h2>
+<p>Azure Key Vault is a cloud service for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, or cryptographic keys. Key Vault service supports two types of containers: vaults and managed hardware security module(HSM) pools. Vaults support storing software and HSM-backed keys, secrets, and certificates. Managed HSM pools only support HSM-backed keys</p>
+<h3 id="azure-key-vault-access-policy-permissions">Azure Key Vault Access Policy Permissions</h3>
+<p>This project implementation of Azure Key Vault has enabled RBAC authorization as standard, which allows the ability for the finer granularity of granting the smallest sub-section of resources the the the necessary access to read then again only the required secrets and keys.</p>
 
 </div>
 
@@ -239,7 +244,40 @@ This the multi-page printable view of this section.
     
 	<h1 id="pg-5f2f1fd4118064f69fccd19c66512246">3 - Customer Managed Keys</h1>
     <div class="lead">Deep Dive into Customer Managed Keys</div>
-	<p>TODO&hellip;.</p>
+	<h2 id="customer-managed-keys">Customer Managed Keys</h2>
+<p>Service Encryption provides a layer of encryption for customer data-at-rest giving customers two options for encryption key management: Microsoft-managed keys or Customer-managed Key. When using Microsoft-managed keys, Microsoft online services automatically generate and securely store the root keys used for Service Encryption.</p>
+<p>Customers with requirements to control their own root encryption keys can use Service Encryption with Customer-managed Key. Using Customer-managed Key, customers can generate their own cryptographic keys using either an on-premises Hardware Service Module (HSM) or Azure Key Vault (AKV). Customer root keys are stored in AKV, where they can be used as the root of one of the keychains that encrypts customer mailbox data or files. Customer root keys can only be accessed indirectly by Microsoft online service code for data encryption and cannot be accessed directly by Microsoft employees.</p>
+<h3 id="table-of-service-which-use-customer-managed-keys">Table of Service which Use Customer-Managed Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Key Name</th>
+<th>Key role assimgment scope</th>
+<th>Key Type</th>
+<th>Key Size</th>
+<th>Key Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AKS</td>
+<td>aks-encryption-key</td>
+<td>AKS User Assigned Identity</td>
+<td>RSA-HSM</td>
+<td>2048</td>
+<td>unwrapKey, wrapKey</td>
+</tr>
+<tr>
+<td>MySQL Server</td>
+<td>mysql-encryption-key</td>
+<td>MySQL Server System Assigned Identity</td>
+<td>RSA-HSM</td>
+<td>2048</td>
+<td>unwrapKey, wrapKey</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
