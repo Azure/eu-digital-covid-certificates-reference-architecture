@@ -19,7 +19,7 @@ Azure resources that authenticates AAD as an identity provider.
 This reference architecture uses AAD Pod-Identity on all service containers.
 
 All service containers' managed identities, within Key Vault their role level will be the minimum scoped access to read the required secret,
-key or cert, as [Key Vault has RBAC enabled]({{< relref "keyvault" >}}) which allows the ability to have greater granularity in restricting access.
+key or cert, as [Key Vault has RBAC enabled]({{< relref "key-vault" >}}) which allows the ability to have greater granularity in restricting access.
 
 ### AAD authentication for MySQL
 
