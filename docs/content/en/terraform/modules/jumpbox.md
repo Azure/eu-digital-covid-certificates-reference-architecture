@@ -52,7 +52,7 @@ No modules.
 | <a name="input_jumpbox_ssh_source_address_prefixes"></a> [jumpbox\_ssh\_source\_address\_prefixes](#input\_jumpbox\_ssh\_source\_address\_prefixes) | List of prefixes allowed to SSH to Jumpbox VM | `list(string)` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Location Name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Environment Name | `string` | n/a | yes |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix | `string` | n/a | yes |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix | `string` | `""` | no |
 
 ## Outputs
 
