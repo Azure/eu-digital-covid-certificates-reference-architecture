@@ -23,9 +23,9 @@
 
 
   
-  <meta name="description" content="TODO: High Level EU DGC Project Description
-TODO: High Level Azure Ref Arch Project Description
-">
+  <meta name="description" content="Project purpose
+The Azure platform offers some of the most extensive and advanced controls for protecting security and privacy of customer data.
+The …">
 <meta property="og:title" content="Background" />
 <meta property="og:description" content="An example of the EU Digital COVID Certificate system on Azure" />
 <meta property="og:type" content="website" />
@@ -89,7 +89,7 @@ TODO: High Level Azure Ref Arch Project Description
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f511a27138f42427c501d14bd18de0fb.json"
+  data-offline-search-index-json-src="/offline-search-index.61dc4d5087b698087a97943f4d1f955a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -116,7 +116,7 @@ TODO: High Level Azure Ref Arch Project Description
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f511a27138f42427c501d14bd18de0fb.json"
+  data-offline-search-index-json-src="/offline-search-index.61dc4d5087b698087a97943f4d1f955a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -128,7 +128,7 @@ TODO: High Level Azure Ref Arch Project Description
   <nav class="collapse td-sidebar-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pr-md-3 ul-0">
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
-  <a href="/" title="EU Digital COVID Certificate - Azure Example Deployment" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Documentation</span></a>
+  <a href="/" title="EU Digital COVID Certificate - Azure Reference Architecture" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Documentation</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-background-li">
   <a href="/background/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-background"><span class="td-sidebar-nav-active-item">Background</span></a>
@@ -248,6 +248,19 @@ TODO: High Level Azure Ref Arch Project Description
             
 
 
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-purpose">Project purpose</a></li>
+    <li><a href="#introducing-the-eu-digital-green-ceritificates-project">Introducing the &ldquo;EU Digital Green Ceritificates&rdquo; project</a>
+      <ul>
+        <li><a href="#high-level-architecture">High level architecture</a></li>
+        <li><a href="#credits">Credits</a></li>
+      </ul>
+    </li>
+    <li><a href="#guiding-principles-for-the-azure-reference-architecture">Guiding principles for the Azure reference architecture</a></li>
+  </ul>
+</nav></div>
+
 
 
             
@@ -308,8 +321,30 @@ TODO: High Level Azure Ref Arch Project Description
 		
 		
 	</header>
-	<p>TODO: High Level EU DGC Project Description</p>
-<p>TODO: High Level Azure Ref Arch Project Description</p>
+	<h2 id="project-purpose">Project purpose</h2>
+<p>The Azure platform offers some of the most extensive and advanced controls for protecting security and privacy of customer data.</p>
+<p>The reference architecture in this repository is intended to showcase some of these controls making Azure a great choice for hosting mission critical workloads. As context for this exercise, rather than developing a fictitious workload, we will adopt a familiar (at least in the European Union), mission critical, distributed, and open-source workload. This choice will allow us to focus on the cloud deployment and configuration best practices, leveraging existing code for the workload itself.</p>
+<h2 id="introducing-the-eu-digital-green-ceritificates-project">Introducing the &ldquo;EU Digital Green Ceritificates&rdquo; project</h2>
+<p>The &ldquo;EU Digital Green Ceritificates&rdquo; project (aka &ldquo;EU Digital Covid Certificates&rdquo; project, hereforth EU DCC), is intended to facilitate free movement of EU citizens in compliance to a common set of COVID regulations and allowing for some level of per-country customization. It was Developed by Deutsche Telekom and SAP and shared as open source for implementation and hosting by all EU member countries. The repository for the project can be found <a href="https://github.com/eu-digital-green-certificates/dgc-overview">here</a>.</p>
+<h3 id="high-level-architecture">High level architecture</h3>
+<p>The project includes three main sets of components:</p>
+<ul>
+<li><strong>EU Digital COVID Cert Gateway</strong>. This is a centrally hosted component designed to faciliate the management and distribution of public keys from each member country to all others.</li>
+<li><strong>Reference workloads for member countries</strong>. A set of components offered as sample implementations for various services like certificate issuing, verification services, and business rule services. These are intended for deployment by each EU member country.</li>
+<li><strong>Reference mobile apps</strong>. Lastly, in order to help implement mobile applications for storing COVID certificates (for citizens) and verifying compliance status (for businesses, public venues, and border patrol), sample applications for Android and iOS platforms are included.</li>
+</ul>
+<h3 id="credits">Credits</h3>
+<p>Many thanks to all contributors to the <a href="https://github.com/orgs/eu-digital-green-certificates">EU Digital Green Certificates</a> projects. We leverage their work in this reference architecture and we are thankful for the opportunity they provided.</p>
+<h2 id="guiding-principles-for-the-azure-reference-architecture">Guiding principles for the Azure reference architecture</h2>
+<p>The EU DCC project itself does not prescribe how the reference components should be deployed or hosted leaving some key design choices to each implementation team.
+The  following are some of the principles guiding our design choices for the Azure reference architecture.</p>
+<ul>
+<li>All user-identifiable information is encrypted in transit, and at rest with Customer Managed Keys (CMK)</li>
+<li>The infrastructure control plane follows best practices and limits access at authorisation, network and application levels</li>
+<li>Immutable, declaritive configuration and deployment management</li>
+</ul>
+<p>See the <a href="/deep-dives/">Deep dives</a> section for more information.</p>
+<p>Read about the project <a href="/prerequisites/">prerequisites</a>.</p>
 
         <div class="section-index">
     
@@ -328,8 +363,8 @@ TODO: High Level Azure Ref Arch Project Description
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 1, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/998e1f1da7838c3d154d3ff1ddff949e9980e853">Update Key Vault Docs with more information (998e1f1)</a>
+    November 2, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/02e1f4541729608cd6af8475c6d5a91607981a9c">Update to the documentation main page and background page (02e1f45)</a>
 
 </div>
 
