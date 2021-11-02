@@ -6,10 +6,11 @@ description: >
     Common prerequisites necessary for all deployment methods
 ---
 
-### Azure Prerequisites
+## Azure Prerequisites
 
 * An active Azure account
 * A subscription available for deployment into, where you have `Owner` privileges
 * TODO: Any preview features needing to be registered?
-* TODO: DNS Domain Name / Zone resource in Azure?
+* DNS Domain Name / Zone resource in Azure
+  * See the [following guide]({{< relref "azure-dns" >}}) for setting up a domainin in Azure DNS
 * TODO: What do we do with TF State?
