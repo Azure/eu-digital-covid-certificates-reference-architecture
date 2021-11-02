@@ -16,7 +16,7 @@ Fortifying the integrity of the whole system by removing stored passwords. User 
 Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
 Azure resources that authenticates AAD as an identity provider.
 
-This reference architecture uses AAD Pod-Identity on all service containers.
+This reference architecture uses AAD Pod Identity on all service containers.
 
 All service containers' managed identities, within Key Vault their role level will be the minimum scoped access to read the required secret,
 key or cert, as [Key Vault has RBAC enabled]({{< relref "key-vault" >}}) which allows the ability to have greater granularity in restricting access.
