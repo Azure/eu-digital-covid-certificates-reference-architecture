@@ -13,7 +13,7 @@ Fortifying the integrity of the whole system by removing stored passwords. User 
 
 ### AAD authentication for Azure Kubernetes Service
 
-Within Azure Kubernetes Service (AKS), Pod-Identity creates identities and bindings as Kubernetes primitives that allow pods to access
+Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
 Azure resources that authenticates AAD as an identity provider.
 
 This reference architecture uses AAD Pod-Identity on all service containers.
