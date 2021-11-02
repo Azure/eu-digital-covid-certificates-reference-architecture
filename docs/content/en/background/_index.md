@@ -18,7 +18,7 @@ The project includes three main sets of components:
 - **Reference mobile apps**. Lastly, in order to help implement mobile applications for storing COVID certificates (for citizens) and verifying compliance status (for businesses, public venues, and border patrol), sample applications for Android and iOS platforms are included.
 
 ### Credits
-Many thanks to the [folks](https://github.com/orgs/eu-digital-green-certificates/people) working on the EU Digital Green Certificates upstream project. We leverage their work in this reference architecture and we are thankful for the opportunity.
+Many thanks to all contributors to the [EU Digital Green Certificates](https://github.com/orgs/eu-digital-green-certificates) projects. We leverage their work in this reference architecture and we are thankful for the opportunity they provided.
 
 ## Guiding principles for the Azure reference architecture
 The EU DCC project itself does not prescribe how the reference components should be deployed or hosted leaving some key design choices to each implementation team.
