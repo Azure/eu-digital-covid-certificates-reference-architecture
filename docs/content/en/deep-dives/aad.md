@@ -9,7 +9,7 @@ description: >
 ## Azure Active Directory (AAD) Authentication
 
 This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
-Fortifying the integrity of the whole system by removing stored passwords. User accounts and managed ids are used through and reference architecture in place of passwords.
+Fortifying the integrity of the whole system by removing stored passwords. User accounts and [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) are used through and reference architecture in place of passwords.
 
 ### AAD authentication for Azure Kubernetes Service
 
