@@ -30,7 +30,7 @@ Key Vault is configured to use RBAC based on AAD, please refer to the [Key Vault
 Authentication to Databases' with static passwords or shared credentials stored in internal systems may be a security and privacy risk,
 as credentials may become exposed due to over sharing the passwords to other parties or not being having a short rotation policy.
 
-This reference architecture implements AAD authentication for MySQL on all the architecture's MySQL servers which enable the ability for authentication
+This reference architecture implements AAD authentication for MySQL on all deployed MySQL servers which enables authentication
 via short life tokens instead of passwords for applications connecting to Azure Database for MySQL.
 
 ### AAD authentication for Web Authentication
