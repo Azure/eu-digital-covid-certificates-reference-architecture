@@ -62,7 +62,7 @@ Here are the relavent DNS varables required for `terraform.tfvars` file.
 
 ```terraform
 ..
-parent_dns_zone_name                = "dns name"
-parent_dns_zone_rg_name             = "<id>"
+parent_dns_zone_name                = "contoso.com"
+parent_dns_zone_rg_name             = "edgc-dns-rg"
 ..
 ```
