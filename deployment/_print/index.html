@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a342ac1885b455d5ebab6972d1988645.json"
+  data-offline-search-index-json-src="/offline-search-index.6c4908c13033f44362d943eb7d00b8c2.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -273,55 +273,135 @@ DONE
 	<h1 id="pg-b9a4a5a0671ddf27dde5cd81d762194c">2 - Deployment</h1>
     <div class="lead">Deploy the EU Digital Green Certificate Reference Architecture</div>
 	<h2 id="set-variables">Set Variables</h2>
+<p>Below is a starter set of variables needed to deploy a simple example of the stack.</p>
+<p>A full set of options is documented in the <a href="/terraform/">Terraform</a> section.</p>
+<p>We used a combined <code>terraform.tfvars</code> for all three steps, so combine any extra options needed into this single file.</p>
 <p>Create a <code>terraform.tfvars</code> at the root of the repo that contains:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#c4a000">prefix</span>                              = <span style="color:#4e9a06">&#34;&lt;prefix&gt;&#34;</span>
+<span style="color:#c4a000">location</span>                            = <span style="color:#4e9a06">&#34;northeurope&#34;</span>
 <span style="color:#c4a000">subscription_id</span>                     = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
 <span style="color:#c4a000">tenant_id</span>                           = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;dns name&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">administrator_group_oid</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
 <span style="color:#c4a000">jumpbox_ssh_source_address_prefixes</span> = <span style="color:#000;font-weight:bold">[]</span>
 <span style="color:#c4a000">ghcr_username</span>                       = <span style="color:#4e9a06">&#34;&lt;GH Username&gt;&#34;</span>
 <span style="color:#c4a000">ghcr_password</span>                       = <span style="color:#4e9a06">&#34;&lt;GH Password / Token&gt;&#34;</span>
-<span style="color:#c4a000">administrator_group_oid</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
-<span style="color:#c4a000">location</span>                            = <span style="color:#4e9a06">&#34;northeurope&#34;</span>
-<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;dns name&#34;</span>
-<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
-<span style="color:#c4a000">enable_log_analytics_workspace</span>      = <span style="color:#204a87;font-weight:bold">false</span>
-<span style="color:#c4a000">log_analytics_cluster_id</span>            = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
-</code></pre></div><p>Where:</p>
-<ul>
-<li><code>prefix</code> is set as a unique identifier (please avoid spaces or special characters). This is used to create names and identifiers of the different resources, so multiple deployments can be done on the same subscription.</li>
-<li><code>jumpbox_ssh_source_address_prefixes</code> is set as the public IP address(es) from which you are connecting to Azure (run <code>curl icanhazip.com</code> to find your public IP).</li>
-<li><code>tenant_id</code> is the id of the tenant owning the subcription where the deployment will be made.</li>
-<li><code>subscription_id</code> the id of the subcription where the deployment wil be made.</li>
-<li><code>jumpbox_ssh_source_address_prefixes</code> Additional allowed ip / network prefixes allowed to connect to the jump boxes. We will automatically add the external IP address of the machine running the deployment. These should be in a comma separated list, using network prefix format like : <code>[&quot;10.0.0.0/8&quot;,&quot;192.168.100.25/32&quot;]</code></li>
-<li><code>acr_username</code> the username of the ACR (Azure containter registry) where the images will be pulled from.</li>
-<li><code>acr_password</code> password for the ACR.</li>
-<li><code>administrator_group_oid</code> Object id of the AAD group that will get adminstrator access.</li>
-<li><code>location</code> The az region (short name) where the deployment will be made.</li>
-<li><code>parent_dns_zone_name</code> The name of the domain created for the deployment in the prerequisites section.</li>
-<li><code>parent_dns_zone_rg_name</code> The resource group where the DNS zone has been created.</li>
-<li><code>enable_log_analytics_workspace</code> Enable Azure Log Analytics Workspace, disabled by default.</li>
-<li><code>log_analytics_cluster_id</code> The resource ID of the Azure Log Analytics cluster with CMK (Customer Managed Key) where the Logs from Log Analytics Workspace will be sent to, disabled by default. <code>enable_log_analytics_workspace</code>  is also required to be enabled to gather the logging data.</li>
-</ul>
-<h2 id="all-in-one-deployment">All In One Deployment</h2>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th style="text-align:center">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
+<td>Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</td>
+<td><code>string</code></td>
+<td><code>&quot;&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_location"></a> <a href="#input_location">location</a></td>
+<td>Location Name</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_subscription_id"></a> <a href="#input_subscription_id">subscription_id</a></td>
+<td>Subscription to deploy into</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_tenant_id"></a> <a href="#input_tenant_id">tenant_id</a></td>
+<td>Tenant to deploy into</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_parent_dns_zone_name"></a> <a href="#input_parent_dns_zone_name">parent_dns_zone_name</a></td>
+<td>Parent DNS Zone Name</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_parent_dns_zone_rg_name"></a> <a href="#input_parent_dns_zone_rg_name">parent_dns_zone_rg_name</a></td>
+<td>Parent DNS Zone Resource Group Name</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_administrator_group_oid"></a> <a href="#input_administrator_group_oid">administrator_group_oid</a></td>
+<td>OID of the Group to grant Administrator permissions. This is used to allow access to the deployed AKS cluster for deployments and troubleshooting</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_jumpbox_ssh_source_address_prefixes"></a> <a href="#input_jumpbox_ssh_source_address_prefixes">jumpbox_ssh_source_address_prefixes</a></td>
+<td>List of network prefixes allowed to SSH to Jumpbox VM</td>
+<td><code>list(string)</code></td>
+<td><code>[]</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_password"></a> <a href="#input_ghcr_password">ghcr_password</a></td>
+<td>GitHub Container Registry Password</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_ghcr_username"></a> <a href="#input_ghcr_username">ghcr_username</a></td>
+<td>GitHub Container Registry Username</td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td style="text-align:center">yes</td>
+</tr>
+</tbody>
+</table>
+<p>## Deployment</p>
+<p>We offer two ways of doing the install, and all in one deployment, or a step by step, which can help you understand the difference
+resources, groups and terraform stacks.</p>
+<h3 id="all-in-one-deployment">All In One Deployment</h3>
 <p>Once the variables file has been created, the process of creating the infrastructure and deploying the application has been automated though terraform and scripts. Before initialing the deployment, Azure cli (az) must be logged in, you can log in by running <code>az login</code>.
 After logged, the process can be started by running <code>make</code> on the base directory of the project. This will create the required certificates and start the terraform deployment of the different components described in the step by step process.</p>
-<h2 id="step-by-step-deployment">Step by Step Deployment</h2>
-<p>This section describes how to apply each step manually instead of gettin invoked by the main <code>make</code>.</p>
-<h3 id="step-by-step---terraform-workspaces">Step by Step - Terraform workspaces</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make
+</code></pre></div><h3 id="step-by-step-deployment">Step by Step Deployment</h3>
+<p>This section describes how to apply each step manually instead of getting invoked by the main <code>make</code>.</p>
+<h4 id="step-by-step---terraform-workspaces">Step by Step - Terraform workspaces</h4>
 <p>Deployment is done via terraform, which supports workspaces for isolation between different deployments of the same infrastructure. In this case, we use the variable defined in <code>prefix</code> to create different terraform workspaces, so multiple users can perform a deployment in the same subscription. Running <code>make workspace</code> will go to the different terraform stacks and adjust the namespace.</p>
-<h3 id="step-by-step---tools">Step by Step - Tools</h3>
-<p>Some dgc specific signatures are required for the certificate generation in the next step, tools target in main Makefile, downloads the gdc-cli binary (jar) in the tools folder. There&rsquo;s also a Makefile in the tools folder that can be invoked directly.</p>
-<h3 id="step-by-step---certificates">Step by Step - Certificates</h3>
-<p>As describes in <code>certificates</code> doc section, project relies on certificates to ensure security as well as the green digitcal certificate itself.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make workspace
+</code></pre></div><h4 id="step-by-step---certificates">Step by Step - Certificates</h4>
+<p>As describes in <code>certificates</code> doc section, project relies on certificates to ensure security as well as the green digital certificate itself.
 The process of generating the certificates has been automated in an <a href="scripts/generate-certs.sh">script</a>, it can be invoked with the required arguments/variables by <code>make certs</code> command.</p>
-<h3 id="step-by-step---jumpboxes">Step by Step - Jumpboxes</h3>
-<p>For security, none of the services used in this deployment, uses public endpoints (except of course the load balances), this prevents anyy public IP reaching the Databases or Key vault. This means that before connecting Kubernetes cluster (AKS) to perform deployments, we need to connect to jumphosts that have private connectivity to the services.</p>
-<p>This step is performed by moving to the <code>eudgc-dev</code> and executing <code>make</code>. The first part of this make target will create the infrastructure for the jumpboxes using terraform, once the VMs are ready, it will create ssh configuration files (in <code>eudgc-dev/jumpbox-ssh-configs</code> folder) to facilitate the access to it as well as stablishing the required tunnels to reach AKS clusters.</p>
-<h3 id="step-by-step---eu-infrastructure">Step by Step - EU Infrastructure</h3>
-<p>Each country service, relies on the &ldquo;central&rdquo; european gategway. The folder <code>eudgc-eu</code> contains the folder with the infrastructre and deployment of the gateway. The default make target (all), will first stanlish the required ssh tunnels to start the proxy in the VNET where the deployment will be made, enabling the deployment of the application after the AKS cluster is up and running.</p>
-<h3 id="step-by-step---ie-infrastructure">Step by Step - IE Infrastructure</h3>
-<p>The main applications of this deployment are the validation and rules services, that are deployed by each country and the mobile apps will contact to. Those services, as well as the EU are deployed into a kubernetes (AKS) cluster, applying the same security principles, only the HTTPS services being exposed. All the infrastructre and deployment is done via terraform, in the folder <code>eudgc-ie</code>.</p>
-
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make certs
+</code></pre></div><h4 id="step-by-step---jumpboxes">Step by Step - Jumpboxes</h4>
+<p>For security, none of the services used in this deployment, uses public endpoints (except of course the load balances), this prevents any public IP reaching the Databases or Key vault. This means that before connecting Kubernetes cluster (AKS) to perform deployments, we need to connect to jumphosts that have private connectivity to the services.</p>
+<p>This step is performed by moving to the <code>eudgc-dev</code> and executing <code>make</code>. The first part of this make target will create the infrastructure for the jumpboxes using terraform, once the VMs are ready, it will create ssh configuration files (in <code>eudgc-dev/jumpbox-ssh-configs</code> folder) to facilitate the access to it as well as establishing the required tunnels to reach AKS clusters.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> eudcc-dev/
+➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-dev <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make
+</code></pre></div><h4 id="step-by-step---eu-infrastructure">Step by Step - EU Infrastructure</h4>
+<p>Each country service, relies on the &ldquo;central&rdquo; european gateway. The folder <code>eudgc-eu</code> contains the folder with the infrastructure and deployment of the gateway. The default make target (all), will first establish the required ssh tunnels to start the proxy in the VNET where the deployment will be made, enabling the deployment of the application after the AKS cluster is up and running.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-dev <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> ../
+➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> eudcc-eu/
+➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-eu <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make
+</code></pre></div><h4 id="step-by-step---ie-infrastructure">Step by Step - IE Infrastructure</h4>
+<p>The main applications of this deployment are the validation and rules services, that are deployed by each country and the mobile apps will contact to. Those services, as well as the EU are deployed into a kubernetes (AKS) cluster, applying the same security principles, only the HTTPS services being exposed. All the infrastructure and deployment is done via terraform, in the folder <code>eudgc-ie</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-eu <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> ../
+➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> eudcc-ie/
+➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-ie <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make
+</code></pre></div>
 </div>
 
 

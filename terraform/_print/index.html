@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a342ac1885b455d5ebab6972d1988645.json"
+  data-offline-search-index-json-src="/offline-search-index.6c4908c13033f44362d943eb7d00b8c2.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -243,7 +243,7 @@ This the multi-page printable view of this section.
 <span style="color:#8f5902;font-style:italic"># Location Name</span>
 <span style="color:#c4a000">location</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
-<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</span>
+<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</span>
 <span style="color:#c4a000">prefix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Subscription to deploy into</span>
@@ -294,7 +294,7 @@ This the multi-page printable view of this section.
 <span style="color:#8f5902;font-style:italic"># Parent DNS Zone Resource Group Name</span>
 <span style="color:#c4a000">parent_dns_zone_rg_name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
-<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</span>
+<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</span>
 <span style="color:#c4a000">prefix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Subscription to deploy into</span>
@@ -360,7 +360,7 @@ This the multi-page printable view of this section.
 <span style="color:#8f5902;font-style:italic"># Parent DNS Zone Resource Group Name</span>
 <span style="color:#c4a000">parent_dns_zone_rg_name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
-<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</span>
+<span style="color:#8f5902;font-style:italic"># Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</span>
 <span style="color:#c4a000">prefix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
 <span style="color:#8f5902;font-style:italic"># Subscription to deploy into</span>
@@ -494,7 +494,7 @@ This the multi-page printable view of this section.
 </tr>
 <tr>
 <td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
-<td>Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</td>
+<td>Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</td>
 <td><code>string</code></td>
 <td><code>&quot;&quot;</code></td>
 <td style="text-align:center">no</td>
@@ -792,7 +792,7 @@ This the multi-page printable view of this section.
 </tr>
 <tr>
 <td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
-<td>Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</td>
+<td>Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</td>
 <td><code>string</code></td>
 <td><code>&quot;&quot;</code></td>
 <td style="text-align:center">no</td>
@@ -1277,7 +1277,7 @@ This the multi-page printable view of this section.
 </tr>
 <tr>
 <td><a name="input_prefix"></a> <a href="#input_prefix">prefix</a></td>
-<td>Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing</td>
+<td>Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)</td>
 <td><code>string</code></td>
 <td><code>&quot;&quot;</code></td>
 <td style="text-align:center">no</td>
@@ -1597,10 +1597,6 @@ them into modules.</p>
 <td>resource</td>
 </tr>
 <tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone">azurerm_private_dns_zone.private_dns_zone_postgresql</a></td>
-<td>resource</td>
-</tr>
-<tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link">azurerm_private_dns_zone_virtual_network_link.private_dns_zone_acr_link</a></td>
 <td>resource</td>
 </tr>
@@ -1630,14 +1626,6 @@ them into modules.</p>
 </tr>
 <tr>
 <td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link">azurerm_private_dns_zone_virtual_network_link.private_dns_zone_mysql_link_dev</a></td>
-<td>resource</td>
-</tr>
-<tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link">azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link</a></td>
-<td>resource</td>
-</tr>
-<tr>
-<td><a href="https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link">azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link_dev</a></td>
 <td>resource</td>
 </tr>
 <tr>
@@ -2156,10 +2144,6 @@ them into modules.</p>
 </tr>
 <tr>
 <td><a name="output_private_dns_zone_mysql_id"></a> <a href="#output_private_dns_zone_mysql_id">private_dns_zone_mysql_id</a></td>
-<td>n/a</td>
-</tr>
-<tr>
-<td><a name="output_private_dns_zone_postgresql_id"></a> <a href="#output_private_dns_zone_postgresql_id">private_dns_zone_postgresql_id</a></td>
 <td>n/a</td>
 </tr>
 <tr>
