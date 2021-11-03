@@ -17,27 +17,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>AAD authentication for Azure Kubernetes Service | EU Digital COVID Certificate - Azure Example</title>
+<title>AAD authentication | EU Digital COVID Certificate - Azure Example</title>
 
 
-  <meta name="description" content="Deep Dive into AAD authentication for Azure Kubernetes Service
+  <meta name="description" content="Deep Dive into AAD authentication
 ">
-<meta property="og:title" content="AAD authentication for Azure Kubernetes Service" />
-<meta property="og:description" content="Deep Dive into AAD authentication for Azure Kubernetes Service
+<meta property="og:title" content="AAD authentication" />
+<meta property="og:description" content="Deep Dive into AAD authentication
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/deep-dives/aad-aks/" /><meta property="article:section" content="deep-dives" />
+<meta property="og:url" content="/deep-dives/aad/" /><meta property="article:section" content="deep-dives" />
 
-<meta property="article:modified_time" content="2021-11-02T11:53:41+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
+<meta property="article:modified_time" content="2021-11-03T12:12:23+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Example" />
 
-<meta itemprop="name" content="AAD authentication for Azure Kubernetes Service">
-<meta itemprop="description" content="Deep Dive into AAD authentication for Azure Kubernetes Service
+<meta itemprop="name" content="AAD authentication">
+<meta itemprop="description" content="Deep Dive into AAD authentication
 ">
-<meta itemprop="dateModified" content="2021-11-02T11:53:41+00:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="dateModified" content="2021-11-03T12:12:23+00:00" />
+<meta itemprop="wordCount" content="297">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AAD authentication for Azure Kubernetes Service"/>
-<meta name="twitter:description" content="Deep Dive into AAD authentication for Azure Kubernetes Service
+<meta name="twitter:title" content="AAD authentication"/>
+<meta name="twitter:description" content="Deep Dive into AAD authentication
 "/>
 
 
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.61dc4d5087b698087a97943f4d1f955a.json"
+  data-offline-search-index-json-src="/offline-search-index.aa0db556e5beb589d0c5a67915b948c6.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.61dc4d5087b698087a97943f4d1f955a.json"
+  data-offline-search-index-json-src="/offline-search-index.aa0db556e5beb589d0c5a67915b948c6.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -178,10 +178,8 @@
   <a href="/deep-dives/key-vault/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveskey-vault"><span class="">Key Vault</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divescmk-li">
   <a href="/deep-dives/cmk/" title="Customer Managed Keys" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divescmk"><span class="">CMK</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-divesaad-mysql-li">
-  <a href="/deep-dives/aad-mysql/" title="AAD authentication for MySQL" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-mysql"><span class="">AAD for MySQL</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-deep-divesaad-aks-li">
-  <a href="/deep-dives/aad-aks/" title="AAD authentication for Azure Kubernetes Service" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad-aks"><span class="td-sidebar-nav-active-item">AAD for AKS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-deep-divesaad-li">
+  <a href="/deep-dives/aad/" title="AAD authentication" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-deep-divesaad"><span class="td-sidebar-nav-active-item">AAD</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deep-diveslog-analytics-li">
   <a href="/deep-dives/log-analytics/" title="Azure Log Analytics" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deep-diveslog-analytics"><span class="">Log Analytics</span></a>
 </li>
@@ -237,9 +235,9 @@
     
     
 
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/deep-dives/aad-aks.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/deep-dives/aad-aks.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/issues/new?title=AAD%20authentication%20for%20Azure%20Kubernetes%20Service" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/deep-dives/aad.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/deep-dives/aad.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/issues/new?title=AAD%20authentication" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
 
   
@@ -251,6 +249,19 @@
 
             
 
+
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#azure-active-directory-aad-authentication">Azure Active Directory (AAD) Authentication</a>
+      <ul>
+        <li><a href="#aad-authentication-for-azure-kubernetes-service">AAD authentication for Azure Kubernetes Service</a></li>
+        <li><a href="#key-vault">AAD authentication for Key Vault</a></li>
+        <li><a href="#mysql">AAD authentication for Azure Database for MySQL</a></li>
+        <li><a href="#aad-authentication-for-web-authentication">AAD authentication for Web Authentication</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
 
 
 
@@ -297,7 +308,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/deep-dives/aad-aks/">AAD for AKS</a>
+	<a href="/deep-dives/aad/">AAD</a>
 </li>
 
 	</ol>
@@ -305,8 +316,8 @@
 
             
 <div class="td-content">
-	<h1>AAD authentication for Azure Kubernetes Service</h1>
-	<div class="lead">Deep Dive into AAD authentication for Azure Kubernetes Service</div>
+	<h1>AAD authentication</h1>
+	<div class="lead">Deep Dive into AAD authentication</div>
 	<header class="article-meta">
 		
 		
@@ -322,15 +333,35 @@
 		
 		
 	</header>    
-	<p>TODO&hellip;.</p>
+	<h2 id="azure-active-directory-aad-authentication">Azure Active Directory (AAD) Authentication</h2>
+<p>This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
+Fortifying the integrity of the whole system by removing stored passwords. User accounts and <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">Managed Identities</a> are used through and reference architecture in place of passwords.</p>
+<h3 id="aad-authentication-for-azure-kubernetes-service">AAD authentication for Azure Kubernetes Service</h3>
+<p>Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
+Azure resources that authenticates AAD as an identity provider.</p>
+<p>This reference architecture uses AAD Pod Identity on all service containers.</p>
+<p>Each service containers' managed identities is granted least privilege rights to the resources it consumes, for example,
+single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
+<h3 id="key-vault">AAD authentication for Key Vault</h3>
+<p>Key Vault is configured to use RBAC based on AAD, please refer to the <a href="/deep-dives/key-vault/">Key Vault</a> section for more information.</p>
+<h3 id="mysql">AAD authentication for Azure Database for MySQL</h3>
+<p>Authentication to Databases' with static passwords or shared credentials stored in internal systems may be a security and privacy risk,
+as credentials may become exposed due to over sharing the passwords to other parties or not being having a short rotation policy.</p>
+<p>This reference architecture implements AAD authentication for MySQL on all deployed MySQL servers which enables authentication
+via short life tokens instead of passwords for applications connecting to Azure Database for MySQL.</p>
+<h3 id="aad-authentication-for-web-authentication">AAD authentication for Web Authentication</h3>
+<p>The verification and the authentication of users who have the correct authority to create a certificate on an issuing service is paramount,
+straightening the issuing web service with AAD allowing the ability for Organization level access levels and User and Groups policies.</p>
+<p>Web Authentication to the certificate issuing service with AAD is documented in detail in the
+<a href="/deployment/web-authentication/">Deployment Section</a> of the documentation.</p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 2, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/02e1f4541729608cd6af8475c6d5a91607981a9c">Update to the documentation main page and background page (02e1f45)</a>
+    November 3, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/a79a23547fa59ca9f7b093e1a7b0dcded1ff85e4">aad docs (#36) (a79a235)</a>
 
 </div>
 

@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.61dc4d5087b698087a97943f4d1f955a.json"
+  data-offline-search-index-json-src="/offline-search-index.aa0db556e5beb589d0c5a67915b948c6.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -162,7 +162,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>4: <a href="#pg-3185a5296e7652f166caa17526bb0ab7">AAD authentication for MySQL</a></li>
+<li>4: <a href="#pg-9d8b3a78c22c5b3f91d2d50532b657ad">AAD authentication</a></li>
 
 
     
@@ -170,15 +170,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>5: <a href="#pg-e973f25724399ba7886e162ebc9d8947">AAD authentication for Azure Kubernetes Service</a></li>
-
-
-    
-  
-    
-    
-	
-<li>6: <a href="#pg-a169c7f5e8566e46f73dcc12b00ec4ca">Azure Log Analytics</a></li>
+<li>5: <a href="#pg-a169c7f5e8566e46f73dcc12b00ec4ca">Azure Log Analytics</a></li>
 
 
     
@@ -212,8 +204,43 @@ This the multi-page printable view of this section.
 	<h1 id="pg-47ee9e1ad9b64d3297b0c2eaaa7cbea4">1 - Private Link</h1>
     <div class="lead">Deep Dive into Private Link</div>
 	<h2 id="private-link">Private Link</h2>
-<p>Azure Private Link enables you to access Azure PaaS Services and Azure hosted customer-owned/partner services over a Private Endpoint in your virtual network. Traffic between your virtual network and the service traverses over the Microsoft backbone network, eliminating exposure from the public Internet. You can also create your own Private Link Service in your virtual network and deliver it privately to your customers.</p>
-<p>This Project utilises Private Link&rsquo;s security &amp; privacy benefiting of eliminating exposure from the public Internet and opting into the whole infrastructure being inaccessible from the Internet, apart from a jump-box and ingress functionality.</p>
+<p>Azure Private Link enables you to access Azure PaaS Services and Azure-hosted customer-owned/partner services over a Private Endpoint in your virtual network.
+Traffic between your virtual network and the service traverses over the Microsoft backbone network, eliminating exposure from the public Internet.
+You can also create your own Private Link Service in your virtual network and deliver it privately to your customers.</p>
+<p>This reference architecture utilizes Private Link&rsquo;s security &amp; privacy benefiting from eliminating exposure from the public Internet and
+opting into the whole infrastructure being inaccessible from the Internet, apart from a jump-box and ingress functionality.</p>
+<h2 id="private-link-resources">Private Link Resources</h2>
+<p>The following table lists all Resources in both EU and IE regions Private Link Networks.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>DNS Zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACR</td>
+<td>privatelink.azurecr.io</td>
+</tr>
+<tr>
+<td>AKS</td>
+<td>privatelink.<code>&lt;region location&gt;</code>.azmk8s.io</td>
+</tr>
+<tr>
+<td>Key Vault</td>
+<td>privatelink.vaultcore.azure.net</td>
+</tr>
+<tr>
+<td>MySQL Server</td>
+<td>privatelink.mysql.database.azure.com</td>
+</tr>
+<tr>
+<td>PostgreSQL Server</td>
+<td>privatelink.postgres.database.azure.com</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
@@ -480,9 +507,29 @@ never leaves a HSM boundary, while allowing customers to have secure external ba
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-3185a5296e7652f166caa17526bb0ab7">4 - AAD authentication for MySQL</h1>
-    <div class="lead">Deep Dive into AAD authentication for MySQL</div>
-	<p>TODO&hellip;.</p>
+	<h1 id="pg-9d8b3a78c22c5b3f91d2d50532b657ad">4 - AAD authentication</h1>
+    <div class="lead">Deep Dive into AAD authentication</div>
+	<h2 id="azure-active-directory-aad-authentication">Azure Active Directory (AAD) Authentication</h2>
+<p>This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
+Fortifying the integrity of the whole system by removing stored passwords. User accounts and <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">Managed Identities</a> are used through and reference architecture in place of passwords.</p>
+<h3 id="aad-authentication-for-azure-kubernetes-service">AAD authentication for Azure Kubernetes Service</h3>
+<p>Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
+Azure resources that authenticates AAD as an identity provider.</p>
+<p>This reference architecture uses AAD Pod Identity on all service containers.</p>
+<p>Each service containers' managed identities is granted least privilege rights to the resources it consumes, for example,
+single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
+<h3 id="key-vault">AAD authentication for Key Vault</h3>
+<p>Key Vault is configured to use RBAC based on AAD, please refer to the <a href="/deep-dives/key-vault/">Key Vault</a> section for more information.</p>
+<h3 id="mysql">AAD authentication for Azure Database for MySQL</h3>
+<p>Authentication to Databases' with static passwords or shared credentials stored in internal systems may be a security and privacy risk,
+as credentials may become exposed due to over sharing the passwords to other parties or not being having a short rotation policy.</p>
+<p>This reference architecture implements AAD authentication for MySQL on all deployed MySQL servers which enables authentication
+via short life tokens instead of passwords for applications connecting to Azure Database for MySQL.</p>
+<h3 id="aad-authentication-for-web-authentication">AAD authentication for Web Authentication</h3>
+<p>The verification and the authentication of users who have the correct authority to create a certificate on an issuing service is paramount,
+straightening the issuing web service with AAD allowing the ability for Organization level access levels and User and Groups policies.</p>
+<p>Web Authentication to the certificate issuing service with AAD is documented in detail in the
+<a href="/deployment/web-authentication/">Deployment Section</a> of the documentation.</p>
 
 </div>
 
@@ -498,25 +545,7 @@ never leaves a HSM boundary, while allowing customers to have secure external ba
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-e973f25724399ba7886e162ebc9d8947">5 - AAD authentication for Azure Kubernetes Service</h1>
-    <div class="lead">Deep Dive into AAD authentication for Azure Kubernetes Service</div>
-	<p>TODO&hellip;.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a169c7f5e8566e46f73dcc12b00ec4ca">6 - Azure Log Analytics</h1>
+	<h1 id="pg-a169c7f5e8566e46f73dcc12b00ec4ca">5 - Azure Log Analytics</h1>
     <div class="lead">Deep Dive into Azure Log Analytics workspaces and linking to an Azure Log Analytics Cluster.</div>
 	<h2 id="azure-log-analytics">Azure Log Analytics</h2>
 <p>The Azure Log Analytics agent collects telemetry from Azure resources, on-premises machines, and machines monitored by System Center Operations Manager and sends the collected data to your Log Analytics Workspace in Azure Monitor.
