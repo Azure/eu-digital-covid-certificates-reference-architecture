@@ -51,7 +51,7 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = 'EU Digital COVID Certificate - Azure Example'
+title = "EU Digital COVID Certificate - Azure Reference Architecture"
 description = "An example of the EU Digital COVID Certificate system on Azure"
 languageName ="English"
 # Weight used for sorting.
