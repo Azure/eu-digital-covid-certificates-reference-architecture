@@ -96,24 +96,3 @@ resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_mysql
   private_dns_zone_name = azurerm_private_dns_zone.private_dns_zone_mysql.name
   virtual_network_id    = var.dev_vnet_id
 }
-
-# PostgreSQL Private Link DNS Zone
-# TODO: This should be made optional, as not all base_infra users require it.
-resource "azurerm_private_dns_zone" "private_dns_zone_postgresql" {
-  name                = "privatelink.postgres.database.azure.com"
-  resource_group_name = azurerm_resource_group.rg.name
-}
-
-resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_postgresql_link" {
-  name                  = "private-dns-zone-postgresql-link"
-  resource_group_name   = azurerm_resource_group.rg.name
-  private_dns_zone_name = azurerm_private_dns_zone.private_dns_zone_postgresql.name
-  virtual_network_id    = azurerm_virtual_network.vnet.id
-}
-
-resource "azurerm_private_dns_zone_virtual_network_link" "private_dns_zone_postgresql_link_dev" {
-  name                  = "private-dns-zone-postgresql-link-dev"
-  resource_group_name   = azurerm_resource_group.rg.name
-  private_dns_zone_name = azurerm_private_dns_zone.private_dns_zone_postgresql.name
-  virtual_network_id    = var.dev_vnet_id
-}

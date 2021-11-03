@@ -71,7 +71,6 @@ No modules.
 | [azurerm_private_dns_zone.private_dns_zone_aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_keyvault](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone.private_dns_zone_mysql](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
-| [azurerm_private_dns_zone.private_dns_zone_postgresql](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone) | resource |
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_acr_link](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_acr_link_dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_aks_link](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
@@ -80,8 +79,6 @@ No modules.
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_keyvault_link_dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_mysql_link](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_mysql_link_dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
-| [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
-| [azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link_dev](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_private_endpoint.acr_private_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_endpoint) | resource |
 | [azurerm_private_endpoint.keyvault_private_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_endpoint) | resource |
 | [azurerm_private_endpoint.mysql_private_endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_endpoint) | resource |
@@ -189,7 +186,6 @@ No modules.
 | <a name="output_mysql_server_fqdn"></a> [mysql\_server\_fqdn](#output\_mysql\_server\_fqdn) | n/a |
 | <a name="output_mysql_server_name"></a> [mysql\_server\_name](#output\_mysql\_server\_name) | n/a |
 | <a name="output_private_dns_zone_mysql_id"></a> [private\_dns\_zone\_mysql\_id](#output\_private\_dns\_zone\_mysql\_id) | n/a |
-| <a name="output_private_dns_zone_postgresql_id"></a> [private\_dns\_zone\_postgresql\_id](#output\_private\_dns\_zone\_postgresql\_id) | n/a |
 | <a name="output_rg_id"></a> [rg\_id](#output\_rg\_id) | n/a |
 | <a name="output_rg_location"></a> [rg\_location](#output\_rg\_location) | n/a |
 | <a name="output_rg_name"></a> [rg\_name](#output\_rg\_name) | n/a |
