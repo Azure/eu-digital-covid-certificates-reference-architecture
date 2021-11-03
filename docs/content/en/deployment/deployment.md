@@ -21,7 +21,7 @@ prefix                              = "<prefix>"
 location                            = "northeurope"
 subscription_id                     = "<id>"
 tenant_id                           = "<id>"
-parent_dns_zone_name                = "dns name"
+parent_dns_zone_name                = "contoso.com"
 parent_dns_zone_rg_name             = "<id>"
 administrator_group_oid             = "<id>"
 jumpbox_ssh_source_address_prefixes = []
@@ -43,7 +43,7 @@ ghcr_password                       = "<GH Password / Token>"
 | <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Password | `string` | n/a | yes |
 | <a name="input_ghcr_username"></a> [ghcr\_username](#input\_ghcr\_username) | GitHub Container Registry Username | `string` | n/a | yes |
 
-## Deployment
+## Deployment
 
 We offer two ways of doing the install, and all in one deployment, or a step by step, which can help you understand the difference
 resources, groups and terraform stacks.
