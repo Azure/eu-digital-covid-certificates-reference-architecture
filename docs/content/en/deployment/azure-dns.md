@@ -20,9 +20,9 @@ You must have full control of this domain. Full control includes the ability to 
 
     | Setting        | Example Value   | Details                                                                                                                                                                                                                                                                            |
     | -------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Resource group | `apecoe-dns`    | Create a resource group. The resource group name must be unique within the subscription that you selected. The location of the resource group has no impact on the DNS zone. Note to reference this resource group as `parent_dns_zone_rg_name` in `terraform.tfvars` config file. |
+    | Resource group | `edgc-dns-rg`    | Create a resource group. The resource group name must be unique within the subscription that you selected. The location of the resource group has no impact on the DNS zone. Note to reference this resource group as `parent_dns_zone_rg_name` in `terraform.tfvars` config file. |
     | Zone child     | leave unchecked | Since this zone is not a [child zone](https://docs.microsoft.com/en-us/azure/dns/tutorial-public-dns-zones-child) you should leave this unchecked                                                                                                                                  |
-    | Name           | `apecoe.net`    | Field for your parent zone name. Note to DNS as `parent_dns_zone_name` in `terraform.tfvars` config file.                                                                                                                                                                          |
+    | Name           | `contoso.com`    | Field for your parent zone name. Note to DNS as `parent_dns_zone_name` in `terraform.tfvars` config file.                                                                                                                                                                          |
     | Location       | North Europe    | This field is based on the location selected as part of Resource group creation                                                                                                                                                                                                    |
 
 ## Retrieve name servers
@@ -42,20 +42,23 @@ Each registrar has its own DNS management tools to change the name server record
 1. When you delegate a domain to Azure DNS, you must use the name servers that Azure DNS provides. Use all four name servers, regardless of the name of your domain. Domain delegation doesn't require a name server to use the same top-level domain as your domain.
 1. Once All Azure NS have been set and podagated, you can verify the DNS by testing with the follwoing command to verify the NS records.
 
-```bash
-$ dig apecoe.net
+### For Windows verify DNS in command pronmpt
+
+```cmd
+nslookup -type=SOA contoso.com
 
 ```
 
-```cmd
-nslookup -type=SOA apecoe.net
+### For linux/Mac verify DNS in command pronmpt
+
+```bash
+dig contoso.com
 
 ```
 
 ## Applying DNS values to terraform.tfvars
 
 Here are the relavent DNS varables required for `terraform.tfvars` file.
-
 
 ```terraform
 ..
