@@ -67,3 +67,6 @@ Manages a Diagnostic Setting for an existing Resource
 | ACR                    | ContainerRegistryRepositoryEvents | ContainerRegistryLoginEvents |
 | MySQL Server           | MySqlAuditLogs, MySqlSlowLogs     | AllMetrics                   |
 | AKS                    | oms_agent                         | oms_agent                    |
+
+
+Read about [Terraform]({{< relref "../terraform" >}}) in the next section.

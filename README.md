@@ -1,8 +1,4 @@
-# COVID 19 EU Digital Green Certificate Project
-
-## Project Docs site
-
-There is a full deployment guide please look at our docs site - https://symmetrical-eureka-325a8bfe.pages.github.io/
+# EU Digital Covid Certificate - Azure Reference Architecture
 
 ## Project purpose
 The Azure platform offers some of the most extensive and advanced controls for protecting security and privacy of customer data.
@@ -12,11 +8,10 @@ The reference architecture in this repository is intended to showcase some of th
 ## Introducing the "EU Digital Green Ceritificates" project
 The "EU Digital Green Ceritificates" project (aka "EU Digital Covid Certificates" project, hereforth EU DCC), is intended to facilitate free movement of EU citizens in compliance to a common set of COVID regulations and allowing for some level of per-country customization. It was Developed by Deutsche Telekom and SAP and shared as open source for implementation and hosting by all EU member countries. The repository for the project can be found [here](https://github.com/eu-digital-green-certificates/dgc-overview).
 
-### High level architecture
-The project includes three main sets of components:
-- **EU Digital COVID Cert Gateway**. This is a centrally hosted component designed to faciliate the management and distribution of public keys from each member country to all others.
-- **Reference workloads for member countries**. A set of components offered as sample implementations for various services like certificate issuing, verification services, and business rule services. These are intended for deployment by each EU member country.
-- **Reference mobile apps**. Lastly, in order to help implement mobile applications for storing COVID certificates (for citizens) and verifying compliance status (for businesses, public venues, and border patrol), sample applications for Android and iOS platforms are included.
+## Documentation
+A guide for navigating and using this reference architecture can be found [here](https://symmetrical-eureka-325a8bfe.pages.github.io/).
+
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

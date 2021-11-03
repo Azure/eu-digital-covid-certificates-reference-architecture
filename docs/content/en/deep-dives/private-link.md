@@ -27,3 +27,7 @@ The following table lists all Resources in both EU and IE regions Private Link N
 | Key Vault         | privatelink.vaultcore.azure.net           |
 | MySQL Server      | privatelink.mysql.database.azure.com      |
 | PostgreSQL Server | privatelink.postgres.database.azure.com   |
+
+
+
+Read about [Key Vault]({{< relref "key-vault.md" >}}) in the next section.

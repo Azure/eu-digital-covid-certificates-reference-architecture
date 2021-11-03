@@ -50,3 +50,6 @@ For lower security requirements, software backed encryption keys can also be use
 | ------------ | -------------------- | ------------------------------------- | -------- | -------- | ------------------ |
 | AKS          | aks-encryption-key   | AKS User Assigned Identity            | RSA-HSM  | 2048     | unwrapKey, wrapKey |
 | MySQL Server | mysql-encryption-key | MySQL Server System Assigned Identity | RSA-HSM  | 2048     | unwrapKey, wrapKey |
+
+
+Read about [AAD configuration]({{< relref "aad.md" >}}) in the next section.
