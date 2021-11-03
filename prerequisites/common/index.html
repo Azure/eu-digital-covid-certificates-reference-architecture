@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/prerequisites/common/" /><meta property="article:section" content="prerequisites" />
 
-<meta property="article:modified_time" content="2021-11-03T14:54:26+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-03T15:20:53+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Common">
 <meta itemprop="description" content="Common prerequisites necessary for all deployment methods
 ">
-<meta itemprop="dateModified" content="2021-11-03T14:54:26+00:00" />
-<meta itemprop="wordCount" content="122">
+<meta itemprop="dateModified" content="2021-11-03T15:20:53+00:00" />
+<meta itemprop="wordCount" content="181">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Common"/>
 <meta name="twitter:description" content="Common prerequisites necessary for all deployment methods
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b266a7873381731560041e30b5bb6b5b.json"
+  data-offline-search-index-json-src="/offline-search-index.a342ac1885b455d5ebab6972d1988645.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b266a7873381731560041e30b5bb6b5b.json"
+  data-offline-search-index-json-src="/offline-search-index.a342ac1885b455d5ebab6972d1988645.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -336,8 +336,7 @@
 <ul>
 <li>An active Azure account</li>
 <li>A subscription available for deployment into, where you have <code>Owner</code> privileges</li>
-<li>Ensure by checking the following table <a href="/prerequisites/common/#required-azure-preview-features">below</a> Azure Preview features are registered on this subscription.</li>
-<li>DNS Domain Name / Zone resource in Azure
+<li>DNS Domain Name / Zone resource in Azure:
 <ul>
 <li>See the <a href="/prerequisites/azure-dns/">following guide</a> for setting up a domainin in Azure DNS</li>
 </ul>
@@ -345,32 +344,44 @@
 <li>TODO: What do we do with TF State?</li>
 </ul>
 <h3 id="required-azure-preview-features">Required Azure Preview features</h3>
+<p>Please ensure that the following Azure Preview features listed in the table below are registered on the Azure subscription.</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
+<th>Documentation</th>
 <th>Name Space</th>
+<th>Feature Flag</th>
 <th>Description</th>
+<th>Azure PowerShell Command</th>
 <th>Azure CLI Command</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Host-based encryption on Azure Kubernetes Service (AKS)</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli">docs.microsoft.com</a></td>
 <td>&ldquo;Microsoft.Compute&rdquo;</td>
+<td>&ldquo;EncryptionAtHost&rdquo;</td>
 <td>The data stored on the VM host of your AKS agent nodes' VMs is encrypted at rest and flows encrypted to the Storage service. This means the temp disks are encrypted at rest with platform-managed keys</td>
+<td><code>Register-AzProviderFeature -FeatureName &quot;EncryptionAtHost&quot; -ProviderNamespace &quot;Microsoft.Compute&quot;</code></td>
 <td><code>az feature register --namespace &quot;Microsoft.Compute&quot; --name &quot;EncryptionAtHost&quot;</code></td>
 </tr>
 </tbody>
 </table>
-
+<p>After applying all the feature registrations, please check that the registration state have fully registered, as it may take a few minutes, before deploying this reference architecture.</p>
+<h4 id="powershell">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell"> <span style="color:#204a87">Get-AzProviderFeature</span> <span style="color:#000">-FeatureName</span> <span style="color:#4e9a06">&#34;&lt;Feature_Flag&gt;&#34;</span> <span style="color:#000">-ProviderNamespace</span> <span style="color:#4e9a06">&#34;&lt;NAME_SPACE&gt;&#34;</span>
+</code></pre></div><h4 id="az-cli">AZ CLI</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az feature show --namespace <span style="color:#4e9a06">&#34;&lt;NAME_SPACE&gt;&#34;</span> --name <span style="color:#4e9a06">&#34;&lt;Feature_Flag&gt;&#34;</span>
+</code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
     November 3, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/2cf7d93df39f3275eba5524b2a09bae0d982e0dc">Shorten Keyvault name (2cf7d93)</a>
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/6ef3c6b575edfade73b936f960c907d79d73f099">improved Required Azure Preview features docs (6ef3c6b)</a>
 
 </div>
 
