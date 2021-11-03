@@ -14,6 +14,8 @@ description: >
 
 ### DNS Domain Name / Zone resource in Azure
 
+The reference architecture takes advantage of Azure DNS for create and allocate DNS host names to service APIs and web endpoints programmatically through code.
+
 Please see the [following guide]({{< relref "azure-dns" >}}) for setting up a domainin in Azure DNS.
 
 ### Required Azure Preview features
