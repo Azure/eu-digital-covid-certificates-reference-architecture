@@ -1,13 +1,15 @@
-# COVID 19 EU Digital Green Certificate Project
+# EU Digital Covid Certificate - Azure Reference Architecture
 
-## Background
-In early 2021 the European Union agreed to implement a system for member countries to issue and verify vaccination, testing and recovery certificates using a stndardized system. This is part of an initiative to homoginize travel/immigration policies among member countries. The system is made up of several components which have been shared in a sample implementation on a Github repo [here](https://github.com/eu-digital-green-certificates).
+## Project purpose
+The Azure platform offers some of the most extensive and advanced controls for protecting security and privacy of customer data.
 
-## Project goals
-As for other sample applications, PE COE intends to focus on data protection and privacy controls and showcase options and capabilities of Azure as the hosting cloud. The architecture choices will therefor be driven by the opportunity to showcase these features rather than scale/performance considerations.
+The reference architecture in this repository is intended to showcase some of these controls making Azure a great choice for hosting mission critical workloads. As context for this exercise, rather than developing a fictitious workload, we will adopt a familiar (at least in the European Union), mission critical, distributed, and open-source workload. This choice will allow us to focus on the cloud deployment and configuration best practices, leveraging existing code for the workload itself.
 
-## Data protection/data residency scenarios
-TODO...
+## Introducing the "EU Digital Green Ceritificates" project
+The "EU Digital Green Ceritificates" project (aka "EU Digital Covid Certificates" project, hereforth EU DCC), is intended to facilitate free movement of EU citizens in compliance to a common set of COVID regulations and allowing for some level of per-country customization. It was Developed by Deutsche Telekom and SAP and shared as open source for implementation and hosting by all EU member countries. The repository for the project can be found [here](https://github.com/eu-digital-green-certificates/dgc-overview).
+
+## Documentation
+A guide for navigating and using this reference architecture can be found [here](https://symmetrical-eureka-325a8bfe.pages.github.io/).
 
 ## Contributing
 
@@ -25,8 +27,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
