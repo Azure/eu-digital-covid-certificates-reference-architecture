@@ -1,6 +1,6 @@
 ---
 title: "Azure DNS - Setting Up a Custom DNS within Azure DNS"
-linkTitle: "Azure DNS - Setting Up a Custom DNS within Azure DNS"
+linkTitle: "Azure DNS"
 weight: 40
 description: >
     This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.
