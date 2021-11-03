@@ -1,7 +1,7 @@
 ---
 title: "GitHub Codespaces"
 linkTitle: "GitHub Codespaces"
-weight: 20
+weight: 40
 description: >
     Prerequisites necessary for deployment using GitHub Codespaces
 ---

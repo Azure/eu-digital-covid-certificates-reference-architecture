@@ -10,9 +10,11 @@ description: >
 
 * An active Azure account
 * A subscription available for deployment into, where you have `Owner` privileges
-* DNS Domain Name / Zone resource in Azure:
-  * See the [following guide]({{< relref "azure-dns" >}}) for setting up a domainin in Azure DNS
 * TODO: What do we do with TF State?
+
+### DNS Domain Name / Zone resource in Azure
+
+Please see the [following guide]({{< relref "azure-dns" >}}) for setting up a domainin in Azure DNS.
 
 ### Required Azure Preview features
 
