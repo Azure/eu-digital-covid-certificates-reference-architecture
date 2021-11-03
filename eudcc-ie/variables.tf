@@ -1,6 +1,6 @@
 variable "prefix" {
   type        = string
-  description = "Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing"
+  description = "Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)"
   default     = ""
 }
 

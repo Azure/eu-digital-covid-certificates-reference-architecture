@@ -20,7 +20,7 @@ jumpbox_ssh_source_address_prefixes = []
 # Location Name
 location = ""
 
-# Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing
+# Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)
 prefix = ""
 
 # Subscription to deploy into
@@ -75,7 +75,7 @@ parent_dns_zone_name = ""
 # Parent DNS Zone Resource Group Name
 parent_dns_zone_rg_name = ""
 
-# Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing
+# Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)
 prefix = ""
 
 # Subscription to deploy into
@@ -145,7 +145,7 @@ parent_dns_zone_name = ""
 # Parent DNS Zone Resource Group Name
 parent_dns_zone_rg_name = ""
 
-# Resource Name Prefix. This should be a unique string for each deployment, and is used to ensure that multiple deployments can be done to the same subscription for development and testing
+# Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries)
 prefix = ""
 
 # Subscription to deploy into
