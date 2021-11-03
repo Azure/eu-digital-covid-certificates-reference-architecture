@@ -27,6 +27,8 @@ The  following are some of the principles guiding our design choices for the Azu
 - The infrastructure control plane follows best practices and limits access at authorisation, network and application levels
 - Immutable, declaritive configuration and deployment management
 
+In addition, to represent a sample EU country deploying their components, we have chosen to use Ireland as an example (see the eudcc-ie folder in the repo).
+
 See the [Deep dives]({{< relref "../deep-dives" >}}) section for more information.
 
 Read about the project [prerequisites]({{< relref "../prerequisites" >}}).
