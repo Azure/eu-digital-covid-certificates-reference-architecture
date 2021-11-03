@@ -26,7 +26,6 @@ The following table lists all Resources in both EU and IE regions Private Link N
 | AKS               | privatelink.`<region location>`.azmk8s.io |
 | Key Vault         | privatelink.vaultcore.azure.net           |
 | MySQL Server      | privatelink.mysql.database.azure.com      |
-| PostgreSQL Server | privatelink.postgres.database.azure.com   |
 
 
 

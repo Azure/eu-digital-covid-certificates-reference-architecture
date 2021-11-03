@@ -17,5 +17,5 @@ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl
 # Install Helm CLI
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sudo bash
 
-# Install MySQL & PostgreSQL Clients
-sudo apt-get install --yes mysql-client postgresql-client-12
+# Install MySQL
+sudo apt-get install --yes mysql-client
