@@ -250,6 +250,10 @@
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone&#34;&gt;azurerm_private_dns_zone.private_dns_zone_postgresql&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;resource&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link&#34;&gt;azurerm_private_dns_zone_virtual_network_link.private_dns_zone_acr_link&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
@@ -279,6 +283,14 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link&#34;&gt;azurerm_private_dns_zone_virtual_network_link.private_dns_zone_mysql_link_dev&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;resource&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link&#34;&gt;azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;resource&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/private_dns_zone_virtual_network_link&#34;&gt;azurerm_private_dns_zone_virtual_network_link.private_dns_zone_postgresql_link_dev&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -797,6 +809,10 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a name=&#34;output_private_dns_zone_mysql_id&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#output_private_dns_zone_mysql_id&#34;&gt;private_dns_zone_mysql_id&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;n/a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a name=&#34;output_private_dns_zone_postgresql_id&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#output_private_dns_zone_postgresql_id&#34;&gt;private_dns_zone_postgresql_id&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;n/a&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
