@@ -1,7 +1,7 @@
 ---
 title: "Manual"
 linkTitle: "Manual"
-weight: 20
+weight: 50
 description: >
     Prerequisites necessary for manual deployment
 ---

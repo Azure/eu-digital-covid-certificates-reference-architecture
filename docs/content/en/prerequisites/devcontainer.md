@@ -1,7 +1,7 @@
 ---
 title: "VS Code DevContainer"
 linkTitle: "VS Code DevContainer"
-weight: 10
+weight: 30
 description: >
     Prerequisites necessary for deployment using a VS Code DevContainer
 ---
