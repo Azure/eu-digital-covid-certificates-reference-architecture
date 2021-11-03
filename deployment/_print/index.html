@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.44c36e4b36b9b2bf4bda493e02dabbfa.json"
+  data-offline-search-index-json-src="/offline-search-index.cac9b6d6c6d4b97061aaaf2cf51d3007.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -146,7 +146,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-75fed6018caf3b5a185295c1431f604e">Azure DNS - Setting Up a Custom DNS within Azure DNS</a></li>
+<li>2: <a href="#pg-b9a4a5a0671ddf27dde5cd81d762194c">Deployment</a></li>
 
 
     
@@ -154,7 +154,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>3: <a href="#pg-b9a4a5a0671ddf27dde5cd81d762194c">Deployment</a></li>
+<li>3: <a href="#pg-5f1f244f3c8958781382537f9cd8a82d">Validation</a></li>
 
 
     
@@ -162,15 +162,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>4: <a href="#pg-5f1f244f3c8958781382537f9cd8a82d">Validation</a></li>
-
-
-    
-  
-    
-    
-	
-<li>5: <a href="#pg-7973bf36e0b84b04d570d73cda1d62e6">Issuance Web Authentication Setup</a></li>
+<li>4: <a href="#pg-7973bf36e0b84b04d570d73cda1d62e6">Issuance Web Authentication Setup</a></li>
 
 
     
@@ -278,90 +270,7 @@ DONE
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-75fed6018caf3b5a185295c1431f604e">2 - Azure DNS - Setting Up a Custom DNS within Azure DNS</h1>
-    <div class="lead">This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.</div>
-	<h2 id="prerequisites">Prerequisites</h2>
-<p>You must have a domain name available to test with that you can host in Azure DNS.
-You must have full control of this domain. Full control includes the ability to set the name server (NS) records for the domain.</p>
-<h2 id="create-a-dns-zone">Create a DNS zone</h2>
-<ol>
-<li>Go to the <a href="https://portal.azure.com/">Azure portal</a> to create a DNS zone. Search for and select <strong>DNS zones</strong>.</li>
-<li>Select Create <strong>DNS zone</strong>.</li>
-<li>On the Create DNS zone page, enter the following values, and then select Create. For example:
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Example Value</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Resource group</td>
-<td><code>apecoe-dns</code></td>
-<td>Create a resource group. The resource group name must be unique within the subscription that you selected. The location of the resource group has no impact on the DNS zone. Note to reference this resource group as <code>parent_dns_zone_rg_name</code> in <code>terraform.tfvars</code> config file.</td>
-</tr>
-<tr>
-<td>Zone child</td>
-<td>leave unchecked</td>
-<td>Since this zone is not a <a href="https://docs.microsoft.com/en-us/azure/dns/tutorial-public-dns-zones-child">child zone</a> you should leave this unchecked</td>
-</tr>
-<tr>
-<td>Name</td>
-<td><code>apecoe.net</code></td>
-<td>Field for your parent zone name. Note to DNS as <code>parent_dns_zone_name</code> in <code>terraform.tfvars</code> config file.</td>
-</tr>
-<tr>
-<td>Location</td>
-<td>North Europe</td>
-<td>This field is based on the location selected as part of Resource group creation</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<h2 id="retrieve-name-servers">Retrieve name servers</h2>
-<p>Before you can delegate your DNS zone to Azure DNS, you need to know the name servers for your zone.</p>
-<ol>
-<li>With the DNS zone created, in the Azure portal Favorites pane, select All resources. On the All resources page, select your DNS zone.</li>
-<li>Retrieve the name servers from the DNS zone page. the assigned ns will look similar to: <code>ns1-01.azure-dns.com</code>, <code>ns2-01.azure-dns.net</code>, <code>ns3-01.azure-dns.org</code>, and <code>ns4-01.azure-dns.info</code>.</li>
-</ol>
-<h2 id="delegate-the-domain">Delegate the domain</h2>
-<p>Once the DNS zone gets created and you have the name servers,
-you&rsquo;ll need to update the parent domain with the Azure DNS name servers.
-Each registrar has its own DNS management tools to change the name server records for a domain.</p>
-<ol>
-<li>In the registrar&rsquo;s DNS management page, edit the NS records and replace the NS records with the Azure DNS name servers.</li>
-<li>When you delegate a domain to Azure DNS, you must use the name servers that Azure DNS provides. Use all four name servers, regardless of the name of your domain. Domain delegation doesn&rsquo;t require a name server to use the same top-level domain as your domain.</li>
-<li>Once All Azure NS have been set and podagated, you can verify the DNS by testing with the follwoing command to verify the NS records.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dig apecoe.net
-
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">nslookup -type=SOA apecoe.net
-
-</code></pre></div><h2 id="applying-dns-values-to-terraformtfvars">Applying DNS values to terraform.tfvars</h2>
-<p>Here are the relavent DNS varables required for <code>terraform.tfvars</code> file.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#000;font-weight:bold">..</span>
-<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;dns name&#34;</span>
-<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
-<span style="color:#000;font-weight:bold">..</span>
-</code></pre></div>
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-b9a4a5a0671ddf27dde5cd81d762194c">3 - Deployment</h1>
+	<h1 id="pg-b9a4a5a0671ddf27dde5cd81d762194c">2 - Deployment</h1>
     <div class="lead">Deploy the EU Digital Green Certificate Reference Architecture</div>
 	<h2 id="set-variables">Set Variables</h2>
 <p>Create a <code>terraform.tfvars</code> at the root of the repo that contains:</p>
@@ -427,7 +336,7 @@ The process of generating the certificates has been automated in an <a href="scr
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-5f1f244f3c8958781382537f9cd8a82d">4 - Validation</h1>
+	<h1 id="pg-5f1f244f3c8958781382537f9cd8a82d">3 - Validation</h1>
     <div class="lead">Validation the deployment of the EU Digital Green Certificate Reference Architecture</div>
 	<h3 id="issue-a-certificate">Issue a Certificate</h3>
 <p>TODO: Descibe how to access the Issuance Web site and how to issue a Vaccine Cert.</p>
@@ -455,7 +364,7 @@ The process of generating the certificates has been automated in an <a href="scr
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-7973bf36e0b84b04d570d73cda1d62e6">5 - Issuance Web Authentication Setup</h1>
+	<h1 id="pg-7973bf36e0b84b04d570d73cda1d62e6">4 - Issuance Web Authentication Setup</h1>
     <div class="lead">Issuance Web Authentication Setup</div>
 	<h2 id="issuance-web-authentication">Issuance Web Authentication</h2>
 <p>By default, when we deploy the issuance web application, the application is

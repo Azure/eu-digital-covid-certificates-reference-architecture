@@ -26,15 +26,15 @@
 <meta property="og:description" content="This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/deployment/azure-dns/" /><meta property="article:section" content="deployment" />
+<meta property="og:url" content="/prerequisites/azure-dns/" /><meta property="article:section" content="prerequisites" />
 
-<meta property="article:modified_time" content="2021-11-03T12:34:11+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-03T14:54:23+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Azure DNS - Setting Up a Custom DNS within Azure DNS">
 <meta itemprop="description" content="This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.
 ">
-<meta itemprop="dateModified" content="2021-11-03T12:34:11+00:00" />
-<meta itemprop="wordCount" content="415">
+<meta itemprop="dateModified" content="2021-11-03T14:54:23+00:00" />
+<meta itemprop="wordCount" content="427">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Azure DNS - Setting Up a Custom DNS within Azure DNS"/>
 <meta name="twitter:description" content="This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.44c36e4b36b9b2bf4bda493e02dabbfa.json"
+  data-offline-search-index-json-src="/offline-search-index.cac9b6d6c6d4b97061aaaf2cf51d3007.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.44c36e4b36b9b2bf4bda493e02dabbfa.json"
+  data-offline-search-index-json-src="/offline-search-index.cac9b6d6c6d4b97061aaaf2cf51d3007.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -136,26 +136,26 @@
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-background-li">
   <a href="/background/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-background"><span class="">Background</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-prerequisites-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-prerequisites-li">
   <a href="/prerequisites/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-prerequisites"><span class="">Prerequisites</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitescommon-li">
   <a href="/prerequisites/common/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitescommon"><span class="">Common</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitesdevcontainer-li">
   <a href="/prerequisites/devcontainer/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitesdevcontainer"><span class="">VS Code DevContainer</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-prerequisitesazure-dns-li">
+  <a href="/prerequisites/azure-dns/" title="Azure DNS - Setting Up a Custom DNS within Azure DNS" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-prerequisitesazure-dns"><span class="td-sidebar-nav-active-item">Azure DNS</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitesgithub-codespaces-li">
   <a href="/prerequisites/github-codespaces/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitesgithub-codespaces"><span class="">GitHub Codespaces</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-prerequisitesmanual-li">
   <a href="/prerequisites/manual/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-prerequisitesmanual"><span class="">Manual</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-deployment-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-deployment-li">
   <a href="/deployment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-deployment"><span class="">Deployment</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentcertificates-li">
   <a href="/deployment/certificates/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deploymentcertificates"><span class="">Certificate Generation</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-deploymentazure-dns-li">
-  <a href="/deployment/azure-dns/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-deploymentazure-dns"><span class="td-sidebar-nav-active-item">Azure DNS - Setting Up a Custom DNS within Azure DNS</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentdeployment-li">
   <a href="/deployment/deployment/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-deploymentdeployment"><span class="">Deployment</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-deploymentvalidation-li">
@@ -237,14 +237,14 @@
     
     
 
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/deployment/azure-dns.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/deployment/azure-dns.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/edit/main/docs/content/en/prerequisites/azure-dns.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+    <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/new/main/docs/content/en/prerequisites/azure-dns.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
     <a href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/issues/new?title=Azure%20DNS%20-%20Setting%20Up%20a%20Custom%20DNS%20within%20Azure%20DNS" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
     
 
   
   
-    <a id="print" href="/deployment/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+    <a id="print" href="/prerequisites/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
   
   </div>
 
@@ -257,7 +257,12 @@
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#create-a-dns-zone">Create a DNS zone</a></li>
     <li><a href="#retrieve-name-servers">Retrieve name servers</a></li>
-    <li><a href="#delegate-the-domain">Delegate the domain</a></li>
+    <li><a href="#delegate-the-domain">Delegate the domain</a>
+      <ul>
+        <li><a href="#for-windows-verify-dns-in-command-pronmpt">For Windows verify DNS in command pronmpt</a></li>
+        <li><a href="#for-linuxmac-verify-dns-in-command-pronmpt">For linux/Mac verify DNS in command pronmpt</a></li>
+      </ul>
+    </li>
     <li><a href="#applying-dns-values-to-terraformtfvars">Applying DNS values to terraform.tfvars</a></li>
   </ul>
 </nav></div>
@@ -300,14 +305,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/deployment/">Deployment</a>
+	<a href="/prerequisites/">Prerequisites</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/deployment/azure-dns/">Azure DNS - Setting Up a Custom DNS within Azure DNS</a>
+	<a href="/prerequisites/azure-dns/">Azure DNS</a>
 </li>
 
 	</ol>
@@ -351,7 +356,7 @@ You must have full control of this domain. Full control includes the ability to 
 <tbody>
 <tr>
 <td>Resource group</td>
-<td><code>apecoe-dns</code></td>
+<td><code>edgc-dns-rg</code></td>
 <td>Create a resource group. The resource group name must be unique within the subscription that you selected. The location of the resource group has no impact on the DNS zone. Note to reference this resource group as <code>parent_dns_zone_rg_name</code> in <code>terraform.tfvars</code> config file.</td>
 </tr>
 <tr>
@@ -361,7 +366,7 @@ You must have full control of this domain. Full control includes the ability to 
 </tr>
 <tr>
 <td>Name</td>
-<td><code>apecoe.net</code></td>
+<td><code>contoso.com</code></td>
 <td>Field for your parent zone name. Note to DNS as <code>parent_dns_zone_name</code> in <code>terraform.tfvars</code> config file.</td>
 </tr>
 <tr>
@@ -388,15 +393,17 @@ Each registrar has its own DNS management tools to change the name server record
 <li>When you delegate a domain to Azure DNS, you must use the name servers that Azure DNS provides. Use all four name servers, regardless of the name of your domain. Domain delegation doesn&rsquo;t require a name server to use the same top-level domain as your domain.</li>
 <li>Once All Azure NS have been set and podagated, you can verify the DNS by testing with the follwoing command to verify the NS records.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dig apecoe.net
+<h3 id="for-windows-verify-dns-in-command-pronmpt">For Windows verify DNS in command pronmpt</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">nslookup -type=SOA contoso.com
 
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">nslookup -type=SOA apecoe.net
+</code></pre></div><h3 id="for-linuxmac-verify-dns-in-command-pronmpt">For linux/Mac verify DNS in command pronmpt</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig contoso.com
 
 </code></pre></div><h2 id="applying-dns-values-to-terraformtfvars">Applying DNS values to terraform.tfvars</h2>
 <p>Here are the relavent DNS varables required for <code>terraform.tfvars</code> file.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#000;font-weight:bold">..</span>
-<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;dns name&#34;</span>
-<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;&lt;id&gt;&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_name</span>                = <span style="color:#4e9a06">&#34;contoso.com&#34;</span>
+<span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;edgc-dns-rg&#34;</span>
 <span style="color:#000;font-weight:bold">..</span>
 </code></pre></div>
 	
@@ -405,7 +412,7 @@ Each registrar has its own DNS management tools to change the name server record
 
     Last modified
     November 3, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/5862c8c7988583d16b913f82811df568265abaee">Added README content &amp; title fix (5862c8c)</a>
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/5ccac0f9bc1e792acce52dfff3810765c0b67990">Fixed issues with AAD guide and moved to prerequisites section of docs (#41) (5ccac0f)</a>
 
 </div>
 
