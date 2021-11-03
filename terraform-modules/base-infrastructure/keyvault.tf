@@ -1,6 +1,6 @@
 # KeyVault
 resource "azurerm_key_vault" "keyvault" {
-  name                        = "${var.prefix}${var.name}-keyvault-g${var.generation}"
+  name                        = "${var.prefix}${var.name}-kv-g${var.generation}"
   location                    = azurerm_resource_group.rg.location
   resource_group_name         = azurerm_resource_group.rg.name
   enabled_for_disk_encryption = true
