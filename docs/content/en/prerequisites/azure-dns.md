@@ -66,3 +66,6 @@ parent_dns_zone_name                = "contoso.com"
 parent_dns_zone_rg_name             = "edgc-dns-rg"
 ..
 ```
+
+
+Read about the [Visual Studio Code Dev Container]({{< relref "devcontainer.md" >}}) in the next section.
