@@ -28,7 +28,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 # Install Additional Packages
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get -y install --no-install-recommends bash-completion openssh-client psmisc nano vim wget unzip jq make git npm openjdk-11-jdk azure-cli=${AZURE_CLI_VERSION} kubectl=${KUBETCL_VERSION} \
+    && apt-get -y install --no-install-recommends bash-completion openssh-client psmisc nano vim wget unzip jq make git npm openjdk-11-jre azure-cli=${AZURE_CLI_VERSION} kubectl=${KUBETCL_VERSION} \
     && echo 'source /etc/profile.d/bash_completion.sh' >> ~/.bashrc \
     && apt-get autoremove -y \
     && apt-get clean -y \
