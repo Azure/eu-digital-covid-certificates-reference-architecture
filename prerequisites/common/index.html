@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/prerequisites/common/" /><meta property="article:section" content="prerequisites" />
 
-<meta property="article:modified_time" content="2021-11-03T16:13:14+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-04T14:23:37+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Common">
 <meta itemprop="description" content="Common prerequisites necessary for all deployment methods
 ">
-<meta itemprop="dateModified" content="2021-11-03T16:13:14+00:00" />
-<meta itemprop="wordCount" content="206">
+<meta itemprop="dateModified" content="2021-11-04T14:23:37+00:00" />
+<meta itemprop="wordCount" content="216">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Common"/>
 <meta name="twitter:description" content="Common prerequisites necessary for all deployment methods
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a287d51ebf7ded0bb4ccb4349fe9eeb3.json"
+  data-offline-search-index-json-src="/offline-search-index.be923a3a547fe36788c2aa6371ce3693.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a287d51ebf7ded0bb4ccb4349fe9eeb3.json"
+  data-offline-search-index-json-src="/offline-search-index.be923a3a547fe36788c2aa6371ce3693.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -373,14 +373,15 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PowerShell" data-lang="PowerShell"> <span style="color:#204a87">Get-AzProviderFeature</span> <span style="color:#000">-FeatureName</span> <span style="color:#4e9a06">&#34;&lt;Feature_Flag&gt;&#34;</span> <span style="color:#000">-ProviderNamespace</span> <span style="color:#4e9a06">&#34;&lt;NAME_SPACE&gt;&#34;</span>
 </code></pre></div><h4 id="az-cli">AZ CLI</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az feature show --namespace <span style="color:#4e9a06">&#34;&lt;NAME_SPACE&gt;&#34;</span> --name <span style="color:#4e9a06">&#34;&lt;Feature_Flag&gt;&#34;</span>
-</code></pre></div>
+</code></pre></div><p>Read about <a href="/prerequisites/azure-dns/">setting up Azure DNS</a> in the next section.</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 3, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/a81166f0a6b57a6cdf76c305bd97064ceee1434a">Small fixes to deployment page (a81166f)</a>
+    November 4, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/4456b1de42ec129fd403cd7bd41181be962f877a">Lorenr/more-doc-tweaks (#49) (4456b1d)</a>
 
 </div>
 

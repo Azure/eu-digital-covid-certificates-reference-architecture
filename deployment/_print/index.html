@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a287d51ebf7ded0bb4ccb4349fe9eeb3.json"
+  data-offline-search-index-json-src="/offline-search-index.be923a3a547fe36788c2aa6371ce3693.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -255,7 +255,8 @@ Signing IE Auth Cert
 Signing IE CSCA Cert
 Signing IE Upload Cert
 DONE
-</code></pre></div>
+</code></pre></div><p>Read about <a href="/deployment/deployment/">deployment</a> in the next section.</p>
+
 </div>
 
 
@@ -401,7 +402,8 @@ The process of generating the certificates has been automated in an <a href="scr
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-eu <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> ../
 ➜ /workspaces/eu-digital-covid-certificates-reference-architecture <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ <span style="color:#204a87">cd</span> eudcc-ie/
 ➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-ie <span style="color:#ce5c00;font-weight:bold">(</span>main<span style="color:#ce5c00;font-weight:bold">)</span> $ make
-</code></pre></div>
+</code></pre></div><p>Read about <a href="/deployment/validation/">validation</a> in the next section.</p>
+
 </div>
 
 
@@ -471,7 +473,8 @@ $ az account <span style="color:#204a87">set</span> -s &lt;subscription_id&gt;
 <p>Next, login to the AKS Cluster:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ az aks get-credentials -g eudcc-eu -n eudcc-eu-aks
 $ kubectl get pods --all-namespaces
-</code></pre></div>
+</code></pre></div><p>Read about <a href="/deployment/web-authentication/">web authentication</a> in the next section.</p>
+
 </div>
 
 
@@ -496,7 +499,7 @@ been directly assigned to users without their direct consent recorded in the
 AAD portal.</p>
 <h3 id="restricting-access-to-specific-users">Restricting Access to Specific users</h3>
 <ul>
-<li>Navigate to <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview</a></li>
+<li>Navigate to the <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">Active directory blade</a> in the Azure portal.</li>
 <li>Search for the application name (The URL for issuance web that is printed at the end of the <code>make terraform</code> command, minus the &ldquo;https://&quot;)
 e.g. &ldquo;dgca-issuance-web.eudcc-ie.example.com&rdquo;</li>
 <li>Click on the &ldquo;enterprise application&rdquo; result</li>
