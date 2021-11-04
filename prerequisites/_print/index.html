@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f001258dddfeaa510336759597e004be.json"
+  data-offline-search-index-json-src="/offline-search-index.82bf6a096439b9a6b4a1c1759067f3ba.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -146,7 +146,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-9a5c41fdb43bcf90794f7897810c3eee">VS Code DevContainer</a></li>
+<li>2: <a href="#pg-66a2f9583ee2fe073acfe1a68f9efe47">Azure DNS - Setting Up a Custom DNS within Azure DNS</a></li>
 
 
     
@@ -154,7 +154,7 @@ This the multi-page printable view of this section.
     
     
 	
-<li>3: <a href="#pg-66a2f9583ee2fe073acfe1a68f9efe47">Azure DNS - Setting Up a Custom DNS within Azure DNS</a></li>
+<li>3: <a href="#pg-9a5c41fdb43bcf90794f7897810c3eee">VS Code DevContainer</a></li>
 
 
     
@@ -209,13 +209,11 @@ This the multi-page printable view of this section.
 <ul>
 <li>An active Azure account</li>
 <li>A subscription available for deployment into, where you have <code>Owner</code> privileges</li>
-<li>DNS Domain Name / Zone resource in Azure:
-<ul>
-<li>See the <a href="/prerequisites/azure-dns/">following guide</a> for setting up a domainin in Azure DNS</li>
-</ul>
-</li>
 <li>TODO: What do we do with TF State?</li>
 </ul>
+<h3 id="dns-domain-name--zone-resource-in-azure">DNS Domain Name / Zone resource in Azure</h3>
+<p>The reference architecture takes advantage of Azure DNS for create and allocate DNS host names to service APIs and web endpoints programmatically through code.</p>
+<p>Please see the <a href="/prerequisites/azure-dns/">following guide</a> for setting up a domainin in Azure DNS.</p>
 <h3 id="required-azure-preview-features">Required Azure Preview features</h3>
 <p>Please ensure that the following Azure Preview features listed in the table below are registered on the Azure subscription.</p>
 <table>
@@ -262,37 +260,7 @@ This the multi-page printable view of this section.
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-9a5c41fdb43bcf90794f7897810c3eee">2 - VS Code DevContainer</h1>
-    <div class="lead">Prerequisites necessary for deployment using a VS Code DevContainer</div>
-	<p>This repository includes configuration for a DevContainer, allowing for repeatable and reliable usage in VS Code or using <a href="/prerequisites/github-codespaces/">GitHub Codespaces</a>.</p>
-<p>This document describes it&rsquo;s use within a VS Code. For other options, see <a href="/prerequisites/">here</a>.</p>
-<h3 id="download-and-install-docker">Download and install Docker</h3>
-<p>Docker is required for running the DevContainer, please follow the Docker <a href="https://docs.docker.com/get-docker/">installation guidance</a> for your platform.</p>
-<h3 id="download-and-install-vs-code">Download and install VS Code</h3>
-<p>Visual Studio Code is Microsoft&rsquo;s free IDE, it can be downloaded here: <a href="https://code.visualstudio.com/">Visual Studio code</a>.</p>
-<h3 id="install-required-vs-code-extensions">Install required VS Code extensions</h3>
-<p>The &ldquo;Remote - Containers&rdquo; extension is required to use a DevContainer, it is not installed by default. Please follow the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">installation instructions</a> for installing this extension.</p>
-<h3 id="clone-the-respository-and-open-in-a-devcontainer">Clone the respository and open in a DevContainer</h3>
-<p>Once the repository has been cloned, VS code will prompt to open the repository in a container, if this would not happen, it can be triggered by the command palete (CMD+Shift+p) and selecting the command &lsquo;Reopen in container&rsquo;. The first time, vs code automatically will build and run the container locally, attaching the IDE UI to it.</p>
-<p>Once container has been opened, please go to the deployment page of the docs.</p>
-<h3 id="open-a-terminal-within-devcontainer">Open a Terminal within DevContainer</h3>
-<p>To open a Terminal within the DevContainer, press <code>Ctrl+Shift+P</code> (<code>Cmd+Shift+P</code> on OSX), and begin to type &ldquo;Terminal&rdquo;. Choose the &ldquo;Terminal: Create New Terminal&rdquo; option and press return.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-66a2f9583ee2fe073acfe1a68f9efe47">3 - Azure DNS - Setting Up a Custom DNS within Azure DNS</h1>
+	<h1 id="pg-66a2f9583ee2fe073acfe1a68f9efe47">2 - Azure DNS - Setting Up a Custom DNS within Azure DNS</h1>
     <div class="lead">This guide shows the following steps to create a Custom DNS in Azure DNS aswell as adding the correct Varables for the Configuration to be utilized by The Reference Architecture.</div>
 	<h2 id="prerequisites">Prerequisites</h2>
 <p>You must have a domain name available to test with that you can host in Azure DNS.
@@ -363,6 +331,36 @@ Each registrar has its own DNS management tools to change the name server record
 <span style="color:#c4a000">parent_dns_zone_rg_name</span>             = <span style="color:#4e9a06">&#34;edgc-dns-rg&#34;</span>
 <span style="color:#000;font-weight:bold">..</span>
 </code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9a5c41fdb43bcf90794f7897810c3eee">3 - VS Code DevContainer</h1>
+    <div class="lead">Prerequisites necessary for deployment using a VS Code DevContainer</div>
+	<p>This repository includes configuration for a DevContainer, allowing for repeatable and reliable usage in VS Code or using <a href="/prerequisites/github-codespaces/">GitHub Codespaces</a>.</p>
+<p>This document describes it&rsquo;s use within a VS Code. For other options, see <a href="/prerequisites/">here</a>.</p>
+<h3 id="download-and-install-docker">Download and install Docker</h3>
+<p>Docker is required for running the DevContainer, please follow the Docker <a href="https://docs.docker.com/get-docker/">installation guidance</a> for your platform.</p>
+<h3 id="download-and-install-vs-code">Download and install VS Code</h3>
+<p>Visual Studio Code is Microsoft&rsquo;s free IDE, it can be downloaded here: <a href="https://code.visualstudio.com/">Visual Studio code</a>.</p>
+<h3 id="install-required-vs-code-extensions">Install required VS Code extensions</h3>
+<p>The &ldquo;Remote - Containers&rdquo; extension is required to use a DevContainer, it is not installed by default. Please follow the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">installation instructions</a> for installing this extension.</p>
+<h3 id="clone-the-respository-and-open-in-a-devcontainer">Clone the respository and open in a DevContainer</h3>
+<p>Once the repository has been cloned, VS code will prompt to open the repository in a container, if this would not happen, it can be triggered by the command palete (CMD+Shift+p) and selecting the command &lsquo;Reopen in container&rsquo;. The first time, vs code automatically will build and run the container locally, attaching the IDE UI to it.</p>
+<p>Once container has been opened, please go to the deployment page of the docs.</p>
+<h3 id="open-a-terminal-within-devcontainer">Open a Terminal within DevContainer</h3>
+<p>To open a Terminal within the DevContainer, press <code>Ctrl+Shift+P</code> (<code>Cmd+Shift+P</code> on OSX), and begin to type &ldquo;Terminal&rdquo;. Choose the &ldquo;Terminal: Create New Terminal&rdquo; option and press return.</p>
+
 </div>
 
 
