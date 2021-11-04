@@ -85,3 +85,4 @@ Next, login to the AKS Cluster:
 $ az aks get-credentials -g eudcc-eu -n eudcc-eu-aks
 $ kubectl get pods --all-namespaces
 ```
+Read about [web authentication]({{< relref "web-authentication.md" >}}) in the next section.
