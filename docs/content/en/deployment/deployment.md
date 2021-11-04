@@ -107,3 +107,5 @@ The main applications of this deployment are the validation and rules services, 
 ➜ /workspaces/eu-digital-covid-certificates-reference-architecture (main) $ cd eudcc-ie/
 ➜ /workspaces/eu-digital-covid-certificates-reference-architecture/eudcc-ie (main) $ make
 ```
+
+Read about [validation]({{< relref "validation.md" >}}) in the next section.
