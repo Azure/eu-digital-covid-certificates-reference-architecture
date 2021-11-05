@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcd1c086fa36dad4662b99440bc18011.json"
+  data-offline-search-index-json-src="/offline-search-index.fb92cd4dfcca89398e8f429df3f3b641.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -445,12 +445,12 @@ opting into the whole infrastructure being inaccessible from the Internet, apart
 <h3 id="mysql">MySQL</h3>
 <p>The MySQL server has its data encrypted by a Data Encryption Key (DEK), which itself is encrypted by a Key Encryption Key, which is stored in Key Vault, and has access controls applied to it.
 These controls mean that if the MySQL server Managed Identity has its access revoked, it can no longer access the DEK, which means it cannot access the encrypted data.</p>
-<p>There is more documentation for this here - <a href="https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql">https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql</a></p>
+<p>There is more documentation for this here - <a href="https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql">Azure Documentation</a></p>
 <h3 id="aks">AKS</h3>
 <p>For AKS we have enabled encryption of Kubernetes Persistent Volumes (using the Azure Disks Storage Class), and the OS Disks, using a CMK.</p>
 <p>This ensures any data stored in Kubernetes is encrypted at rest, using a DEK that has been wrapped by a KEK, that is stored in the Key Vault.
 Revoking the AKS clusters managed identity&rsquo;s access to the key will mean that AKS can no longer decrypt the key, and as such cannot decrypt the data.</p>
-<p>There is more documentation for this here - <a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys</a></p>
+<p>There is more documentation for this here - <a href="https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys">Azure Documentation</a></p>
 <h3 id="key-vault-options">Key Vault Options</h3>
 <p>For this example we chose a Key Vault Premium instance and used HSM backed keys for the KEK, that are generated on the HSM.
 This gives a good level of protection from the KEK being leaked (as it never leaves the HSM), but may not fufil specific FIPS level requirements, or other regulations.
