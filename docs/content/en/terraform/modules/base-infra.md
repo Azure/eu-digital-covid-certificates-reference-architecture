@@ -4,6 +4,8 @@ linkTitle: "Base Infrastructure Module"
 weight: 10
 ---
 
+{{< tf-generated-warning >}}
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

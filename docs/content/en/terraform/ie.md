@@ -6,6 +6,8 @@ description: >
     Docs for the EU Gateway deployment terraform
 ---
 
+{{< tf-generated-warning >}}
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
