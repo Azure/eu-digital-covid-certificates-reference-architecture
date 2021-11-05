@@ -31,11 +31,6 @@ Enjoy! 😀
 endef
 export COMPLETION_TEXT_BODY
 
-ifeq ($(strip $(PREFIX)),)
-	WORKSPACE = "default"
-else
-	WORKSPACE = $(PREFIX)
-endif
 
 .PHONY: all
 all: checks certs terraform
@@ -52,12 +47,6 @@ checks:
 certs:
 	$(ROOT_DIR)/scripts/generate-certs.sh
 
-.PHONY: workspace
-workspace: checks
-	WORKSPACE=$(WORKSPACE) $(MAKE) -C eudcc-dev workspace
-	WORKSPACE=$(WORKSPACE) $(MAKE) -C eudcc-eu workspace
-	WORKSPACE=$(WORKSPACE) $(MAKE) -C eudcc-ie workspace
-
 .PHONY: dev
 dev: checks
 	$(MAKE) -C eudcc-dev terraform
@@ -72,7 +61,7 @@ ie: checks
 	$(MAKE) -C eudcc-ie all
 
 .PHONY: terraform
-terraform: workspace dev eu ie print-completion-msg
+terraform: dev eu ie print-completion-msg
 
 .PHONY: terraform-destroy
 terraform-destroy: checks
@@ -103,3 +92,29 @@ print-hostnames:
 .PHONY: print-completion-msg
 print-completion-msg:
 	@echo "$$COMPLETION_TEXT_BODY"
+
+.PHONY: state-export
+state-export:
+	@mkdir -p exports
+	@mkdir -p exports/eudcc-dev
+	@mkdir -p exports/eudcc-eu
+	@mkdir -p exports/eudcc-ie
+	@[[ -d certs ]] && rsync -avhW --no-compress --progress certs/ exports/certs/
+	@[[ -f eudcc-dev/terraform.tfstate ]] && rsync -avhW --no-compress --progress eudcc-dev/terraform.tfstate exports/eudcc-dev/terraform.tfstate
+	@[[ -f eudcc-eu/terraform.tfstate ]] && rsync -avhW --no-compress --progress eudcc-eu/terraform.tfstate exports/eudcc-eu/terraform.tfstate
+	@[[ -f eudcc-ie/terraform.tfstate ]] && rsync -avhW --no-compress --progress eudcc-ie/terraform.tfstate exports/eudcc-ie/terraform.tfstate
+	@[[ -f terraform.tfvars ]] && rsync -avhW --no-compress --progress terraform.tfvars exports/terraform.tfvars
+	@zip -r exports.zip exports/
+	@rm -rf exports/
+	@echo "Export Complete!"
+
+.PHONY: state-import
+state-import:
+	@unzip import.zip
+	@[[ -d import/certs ]] && rsync -avhW --no-compress --progress import/certs/ certs/
+	@[[ -f import/eudcc-dev/terraform.tfstate ]] && rsync -avhW --no-compress --progress import/eudcc-dev/terraform.tfstate eudcc-dev/terraform.tfstate
+	@[[ -f import/eudcc-eu/terraform.tfstate ]] && rsync -avhW --no-compress --progress import/eudcc-eu/terraform.tfstate eudcc-eu/terraform.tfstate
+	@[[ -f import/eudcc-ie/terraform.tfstate ]] && rsync -avhW --no-compress --progress import/eudcc-ie/terraform.tfstate eudcc-ie/terraform.tfstate
+	@[[ -f import/terraform.tfvars ]] && rsync -avhW --no-compress --progress import/terraform.tfvars terraform.tfvars
+	@rm -rf import/
+	@echo "Import Complete!"

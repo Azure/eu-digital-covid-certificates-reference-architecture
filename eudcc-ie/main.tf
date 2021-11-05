@@ -10,33 +10,17 @@ provider "azuread" {
 
 # Load the Dev Env Remote State
 data "terraform_remote_state" "dev" {
-  backend   = "azurerm"
-  workspace = terraform.workspace
-
+  backend = "local"
   config = {
-    storage_account_name = "eudgctfstate"
-    container_name       = "eudgc-dev"
-    key                  = "terraform.tfstate"
-
-    use_azuread_auth = true
-    subscription_id  = var.subscription_id
-    tenant_id        = var.tenant_id
+    path = "../eudcc-dev/terraform.tfstate"
   }
 }
 
-# Load the EU Env Remote State
+# # Load the EU Env Remote State
 data "terraform_remote_state" "eu" {
-  backend   = "azurerm"
-  workspace = terraform.workspace
-
+  backend = "local"
   config = {
-    storage_account_name = "eudgctfstate"
-    container_name       = "eudgc-eu"
-    key                  = "terraform.tfstate"
-
-    use_azuread_auth = true
-    subscription_id  = var.subscription_id
-    tenant_id        = var.tenant_id
+    path = "../eudcc-eu/terraform.tfstate"
   }
 }
 

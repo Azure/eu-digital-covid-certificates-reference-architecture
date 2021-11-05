@@ -13,13 +13,13 @@ Fortifying the integrity of the whole system by removing stored passwords. User 
 
 ### AAD authentication for Azure Kubernetes Service
 
-Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
-Azure resources that authenticates AAD as an identity provider.
+Within Azure Kubernetes Service (AKS), [AAD Pod Identity](https://github.com/Azure/aad-pod-identity#readme) enables Kubernetes applications to access cloud resources securely with Azure Active Directory.
 
-This reference architecture uses AAD Pod Identity on all service containers.
+Using Kubernetes primitives, administrators configure identities and bindings to match pods. Then without any code modifications, your containerized applications can leverage any resource in the cloud that depends on AAD as an identity provider.
 
-Each service containers' managed identities is granted least privilege rights to the resources it consumes, for example,
-single secret RBAC grants within [Key Vault]({{< relref "aad#key-vault" >}}) or single database access within [Azure Database for MySQL]({{< relref "aad#mysql" >}}).
+This reference architecture uses AAD Pod Identity on all AKS Pods.
+
+Each AKS Pod has a managed identity which has been granted least privilege rights to the resources it consumes, for example, single secret RBAC grants within [Key Vault]({{< relref "aad#key-vault" >}}) or single database access within [Azure Database for MySQL]({{< relref "aad#mysql" >}}).
 
 ### AAD authentication for Key Vault {id="key-vault"}
 

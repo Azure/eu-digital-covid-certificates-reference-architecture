@@ -1,10 +1,12 @@
 ---
-title: "Ireland Terraform Stack"
-linkTitle: "Ireland Terraform Stack"
+title: "IE Terraform Stack"
+linkTitle: "IE Terraform Stack"
 weight: 30
 description: >
-    Docs for the EU Gateway deployment terraform
+    Docs for the Ireland country deployment terraform
 ---
+
+{{< tf-generated-warning >}}
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

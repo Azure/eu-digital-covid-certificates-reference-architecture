@@ -1,7 +1,7 @@
 ---
 title: "VS Code DevContainer"
 linkTitle: "VS Code DevContainer"
-weight: 10
+weight: 30
 description: >
     Prerequisites necessary for deployment using a VS Code DevContainer
 ---
@@ -31,3 +31,6 @@ Once container has been opened, please go to the deployment page of the docs.
 ### Open a Terminal within DevContainer
 
 To open a Terminal within the DevContainer, press `Ctrl+Shift+P` (`Cmd+Shift+P` on OSX), and begin to type "Terminal". Choose the "Terminal: Create New Terminal" option and press return.
+
+
+Read about using [Github codespaces]({{< relref "github-codespaces.md" >}}) in the next section.

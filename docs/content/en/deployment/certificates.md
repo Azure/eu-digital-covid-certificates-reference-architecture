@@ -33,3 +33,6 @@ Signing IE CSCA Cert
 Signing IE Upload Cert
 DONE
 ```
+
+
+Read about [deployment]({{< relref "deployment.md" >}}) in the next section.

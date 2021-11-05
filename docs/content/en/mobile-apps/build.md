@@ -1,6 +1,6 @@
 ---
-title: "Build"
-linkTitle: "Build"
+title: "Android Build"
+linkTitle: "Android Build"
 weight: 10
 description: >
     Description of how to build the Android Apps
@@ -8,7 +8,7 @@ description: >
 
 ### Prerequisites
 * Java JDK. The app has been sucessfully build with JDK 8 and JDK 11, but other later versions should also build the app correctly. We will be also use the keytool from Java JDK to generate the signing certificates for testing.
-* [Android SDK](https://developer.android.com/studio) required to compress and align the aplication to apk format. Android studio must be started at least once, so it downloads all the additional build tools. 
+* [Android SDK](https://developer.android.com/studio) required to compress and align the aplication to apk format. Android studio must be started at least once, so it downloads all the additional build tools.
 * Apk signing certificates.
 
 

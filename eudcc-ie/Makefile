@@ -25,11 +25,6 @@ print-ssh-cmd:IE_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/o
 print-ssh-cmd:
 	@echo "az ssh vm --subscription $(SUB_ID) -g $(IE_RG) -n $(IE_RG)-jumpbox-vm"
 
-.PHONY: workspace
-workspace:
-	terraform init
-	terraform workspace select $(WORKSPACE) || terraform workspace new $(WORKSPACE)
-
 .PHONY: terraform
 terraform:
 	find $(ROOT_DIR)/../charts/ -name \*.tgz -delete -or -name Chart.lock -delete

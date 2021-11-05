@@ -17,7 +17,7 @@ AAD portal.
 
 ### Restricting Access to Specific users
 
-- Navigate to https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview
+- Navigate to the [Active directory blade](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) in the Azure portal.
 - Search for the application name (The URL for issuance web that is printed at the end of the `make terraform` command, minus the "https://")
   e.g. "dgca-issuance-web.eudcc-ie.example.com"
 - Click on the "enterprise application" result

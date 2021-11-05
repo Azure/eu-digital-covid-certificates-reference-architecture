@@ -9,3 +9,5 @@ certs/
 Chart.lock
 output.json
 eudcc-ie/rules/out
+exports/
+*.zip
