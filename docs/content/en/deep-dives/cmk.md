@@ -21,7 +21,7 @@ We have the Key Vault service generate the 2 keys used (details below) in a HSM 
 The MySQL server has its data encrypted by a Data Encryption Key (DEK), which itself is encrypted by a Key Encryption Key, which is stored in Key Vault, and has access controls applied to it.
 These controls mean that if the MySQL server Managed Identity has its access revoked, it can no longer access the DEK, which means it cannot access the encrypted data.
 
-There is more documentation for this here - https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql
+There is more documentation for this here - [Azure Documentation](https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql)
 
 ### AKS
 
@@ -30,7 +30,7 @@ For AKS we have enabled encryption of Kubernetes Persistent Volumes (using the A
 This ensures any data stored in Kubernetes is encrypted at rest, using a DEK that has been wrapped by a KEK, that is stored in the Key Vault.
 Revoking the AKS clusters managed identity's access to the key will mean that AKS can no longer decrypt the key, and as such cannot decrypt the data.
 
-There is more documentation for this here - https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys
+There is more documentation for this here - [Azure Documentation](https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys)
 ### Key Vault Options
 
 For this example we chose a Key Vault Premium instance and used HSM backed keys for the KEK, that are generated on the HSM.
