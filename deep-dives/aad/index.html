@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deep-dives/aad/" /><meta property="article:section" content="deep-dives" />
 
-<meta property="article:modified_time" content="2021-11-04T14:38:11+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-05T10:00:11+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="AAD authentication">
 <meta itemprop="description" content="Deep Dive into AAD authentication
 ">
-<meta itemprop="dateModified" content="2021-11-04T14:38:11+00:00" />
-<meta itemprop="wordCount" content="305">
+<meta itemprop="dateModified" content="2021-11-05T10:00:11+00:00" />
+<meta itemprop="wordCount" content="334">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AAD authentication"/>
 <meta name="twitter:description" content="Deep Dive into AAD authentication
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.97b852f73b4aa9bb3992cd6cdbd2d6f8.json"
+  data-offline-search-index-json-src="/offline-search-index.fcd1c086fa36dad4662b99440bc18011.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.97b852f73b4aa9bb3992cd6cdbd2d6f8.json"
+  data-offline-search-index-json-src="/offline-search-index.fcd1c086fa36dad4662b99440bc18011.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -339,11 +339,10 @@
 <p>This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
 Fortifying the integrity of the whole system by removing stored passwords. User accounts and <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">Managed Identities</a> are used through and reference architecture in place of passwords.</p>
 <h3 id="aad-authentication-for-azure-kubernetes-service">AAD authentication for Azure Kubernetes Service</h3>
-<p>Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
-Azure resources that authenticates AAD as an identity provider.</p>
-<p>This reference architecture uses AAD Pod Identity on all service containers.</p>
-<p>Each service containers' managed identities is granted least privilege rights to the resources it consumes, for example,
-single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
+<p>Within Azure Kubernetes Service (AKS), <a href="https://github.com/Azure/aad-pod-identity#readme">AAD Pod Identity</a> enables Kubernetes applications to access cloud resources securely with Azure Active Directory.</p>
+<p>Using Kubernetes primitives, administrators configure identities and bindings to match pods. Then without any code modifications, your containerized applications can leverage any resource in the cloud that depends on AAD as an identity provider.</p>
+<p>This reference architecture uses AAD Pod Identity on all AKS Pods.</p>
+<p>Each AKS Pod has a managed identity which has been granted least privilege rights to the resources it consumes, for example, single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
 <h3 id="key-vault">AAD authentication for Key Vault</h3>
 <p>Key Vault is configured to use RBAC based on AAD, please refer to the <a href="/deep-dives/key-vault/">Key Vault</a> section for more information.</p>
 <h3 id="mysql">AAD authentication for Azure Database for MySQL</h3>
@@ -363,8 +362,8 @@ straightening the issuing web service with AAD allowing the ability for Organiza
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 4, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/a290bfb7486baf2740ba658da7d95065cfa855d9">Docs: Rename Android Apps section to Mobile Apps (a290bfb)</a>
+    November 5, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/a88e276f751eeca3cb1d6d4a68a1a5be270c1af5">Docs: Add Generated Content Warning to TF Sections (a88e276)</a>
 
 </div>
 

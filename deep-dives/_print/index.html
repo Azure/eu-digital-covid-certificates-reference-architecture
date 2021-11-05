@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.97b852f73b4aa9bb3992cd6cdbd2d6f8.json"
+  data-offline-search-index-json-src="/offline-search-index.fcd1c086fa36dad4662b99440bc18011.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -512,11 +512,10 @@ never leaves a HSM boundary, while allowing customers to have secure external ba
 <p>This reference architecture utilises Azure Active Directory (AAD) for Authentication where possible to do so.
 Fortifying the integrity of the whole system by removing stored passwords. User accounts and <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">Managed Identities</a> are used through and reference architecture in place of passwords.</p>
 <h3 id="aad-authentication-for-azure-kubernetes-service">AAD authentication for Azure Kubernetes Service</h3>
-<p>Within Azure Kubernetes Service (AKS), (AAD Pod Identity)[https://github.com/Azure/aad-pod-identity#readme] creates identities and bindings as Kubernetes primitives that allow pods to access
-Azure resources that authenticates AAD as an identity provider.</p>
-<p>This reference architecture uses AAD Pod Identity on all service containers.</p>
-<p>Each service containers' managed identities is granted least privilege rights to the resources it consumes, for example,
-single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
+<p>Within Azure Kubernetes Service (AKS), <a href="https://github.com/Azure/aad-pod-identity#readme">AAD Pod Identity</a> enables Kubernetes applications to access cloud resources securely with Azure Active Directory.</p>
+<p>Using Kubernetes primitives, administrators configure identities and bindings to match pods. Then without any code modifications, your containerized applications can leverage any resource in the cloud that depends on AAD as an identity provider.</p>
+<p>This reference architecture uses AAD Pod Identity on all AKS Pods.</p>
+<p>Each AKS Pod has a managed identity which has been granted least privilege rights to the resources it consumes, for example, single secret RBAC grants within <a href="/deep-dives/aad/#key-vault">Key Vault</a> or single database access within <a href="/deep-dives/aad/#mysql">Azure Database for MySQL</a>.</p>
 <h3 id="key-vault">AAD authentication for Key Vault</h3>
 <p>Key Vault is configured to use RBAC based on AAD, please refer to the <a href="/deep-dives/key-vault/">Key Vault</a> section for more information.</p>
 <h3 id="mysql">AAD authentication for Azure Database for MySQL</h3>
