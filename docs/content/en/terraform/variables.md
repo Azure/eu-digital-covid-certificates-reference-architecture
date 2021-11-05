@@ -4,7 +4,7 @@ linkTitle: "Variables"
 weight: 1
 ---
 
-Gather the required variables:
+{{< tf-generated-warning >}}
 
 ## Dev
 
