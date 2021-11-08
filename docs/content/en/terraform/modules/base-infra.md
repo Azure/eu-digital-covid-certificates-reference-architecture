@@ -48,9 +48,7 @@ No modules.
 | [azurerm_key_vault_secret.mysql_pw](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/key_vault_secret) | resource |
 | [azurerm_kubernetes_cluster.aks](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/kubernetes_cluster) | resource |
 | [azurerm_log_analytics_linked_service.log_analytics_linked_service](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_linked_service) | resource |
-| [azurerm_log_analytics_solution.anti_malware](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_solution.azure_activity](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
-| [azurerm_log_analytics_solution.change_tracking](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_solution.container_insights](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_solution.key_vault_analytics](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_solution.network_monitoring](https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution) | resource |

@@ -98,21 +98,6 @@ resource "azurerm_log_analytics_solution" "service_map" {
   }
 }
 
-# Azure Log Analytics solution for AntiMalware
-resource "azurerm_log_analytics_solution" "anti_malware" {
-  count                 = var.enable_log_analytics_workspace ? 1 : 0
-  solution_name         = "AntiMalware"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
-  workspace_resource_id = azurerm_log_analytics_workspace.log_analytics_workspace[0].id
-  workspace_name        = azurerm_log_analytics_workspace.log_analytics_workspace[0].name
-
-  plan {
-    publisher = "Microsoft"
-    product   = "OMSGallery/AntiMalware"
-  }
-}
-
 # Azure Log Analytics solution for AzureActivity
 resource "azurerm_log_analytics_solution" "azure_activity" {
   count                 = var.enable_log_analytics_workspace ? 1 : 0
@@ -125,21 +110,6 @@ resource "azurerm_log_analytics_solution" "azure_activity" {
   plan {
     publisher = "Microsoft"
     product   = "OMSGallery/AzureActivity"
-  }
-}
-
-# Azure Log Analytics solution for ChangeTracking
-resource "azurerm_log_analytics_solution" "change_tracking" {
-  count                 = var.enable_log_analytics_workspace ? 1 : 0
-  solution_name         = "ChangeTracking"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
-  workspace_resource_id = azurerm_log_analytics_workspace.log_analytics_workspace[0].id
-  workspace_name        = azurerm_log_analytics_workspace.log_analytics_workspace[0].name
-
-  plan {
-    publisher = "Microsoft"
-    product   = "OMSGallery/ChangeTracking"
   }
 }
 
