@@ -155,15 +155,7 @@
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution&#34;&gt;azurerm_log_analytics_solution.anti_malware&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;resource&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution&#34;&gt;azurerm_log_analytics_solution.azure_activity&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;resource&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://registry.terraform.io/providers/hashicorp/azurerm/2.71.0/docs/resources/log_analytics_solution&#34;&gt;azurerm_log_analytics_solution.change_tracking&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;resource&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
