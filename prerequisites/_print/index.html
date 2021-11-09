@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
+  data-offline-search-index-json-src="/offline-search-index.ee68b8c22aa5a7082a7bee2e22352d12.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -246,7 +246,17 @@ This the multi-page printable view of this section.
 </code></pre></div><h4 id="az-cli">AZ CLI</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az feature show --namespace <span style="color:#4e9a06">&#34;&lt;NAME_SPACE&gt;&#34;</span> --name <span style="color:#4e9a06">&#34;&lt;Feature_Flag&gt;&#34;</span>
 </code></pre></div><p>Read about <a href="/prerequisites/azure-dns/">setting up Azure DNS</a> in the next section.</p>
-
+<h3 id="terraform-state-managment">Terraform State Managment</h3>
+<p>This reference architecture uses Terraform&rsquo;s state store to manage the infrastructure and configuration lifecycle.</p>
+<p>This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.</p>
+<p>Ideally the state store should be stored and accessed remotely, but for simplicity for this blueprint Terraform&rsquo;s state store locally in files named <code>terraform.tfstate</code>.</p>
+<h4 id="export-terraform-state-store-terraform-varable-and-certs">Export Terraform State Store, Terraform Varable and Certs</h4>
+<p>Runing this command will generate a <code>export.zip</code> in the root on the project, while you can right click on and download if on Github Codespaces.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make state-export
+</code></pre></div><h4 id="import-terraform-state-store-terraform-varable-and-certs">Import Terraform State Store, Terraform Varable and Certs</h4>
+<p>Importing a zip file called <code>import.zip</code> in the root on the project.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make state-import
+</code></pre></div>
 </div>
 
 
