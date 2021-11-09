@@ -15,7 +15,6 @@ You can also create your own Private Link Service in your virtual network and de
 This reference architecture utilizes Private Link's security & privacy benefiting from eliminating exposure from the public Internet and
 opting into the whole infrastructure being inaccessible from the Internet, apart from a jump-box and ingress functionality.
 
-
 ## Private Link Resources
 
 The following table lists all Resources in both EU and IE regions Private Link Networks.
@@ -27,6 +26,8 @@ The following table lists all Resources in both EU and IE regions Private Link N
 | Key Vault         | privatelink.vaultcore.azure.net           |
 | MySQL Server      | privatelink.mysql.database.azure.com      |
 
-
-
-Read about [Key Vault]({{< relref "key-vault.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Learn more about **Azure Private Link** and get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/private-link/).
+>
+>Read about [Key Vault]({{< relref "key-vault.md" >}}) in the next section.
