@@ -20,7 +20,7 @@ For more information on Azure Key Vault RBAC please refer to the [product docume
 
 ### Azure Spring PropertySource
 
-Each of the upstream Spring based applications has been configured to use a Azure KeyVault Spring PropertySource. This allows the applications to load certain Spring properties from KeyVault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.
+Each of the upstream Spring based applications has been configured to use a Azure Key Vault Spring PropertySource. This allows the applications to load certain Spring properties from Key Vault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.
 
 See the [Azure Key Vault Secrets Spring Boot starter client library for Java documentation](https://github.com/Azure/azure-sdk-for-java/tree/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot-starter-keyvault-secrets) and [algorithm](https://github.com/Azure/azure-sdk-for-java/blob/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot/src/main/java/com/azure/spring/keyvault/KeyVaultOperation.java#L165-L177) for more details.
 
@@ -28,11 +28,11 @@ See the [Azure Key Vault Secrets Spring Boot starter client library for Java doc
 
 The Azure Key Vault provider for Secrets Store CSI driver allows us to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes Pods.
 
-This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod's filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with KeyVault, discussed in the next section below.
+This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod's filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with Key Vault, discussed in the next section below.
 
 For more information on this CSI driver please refer to the [upstream documentation](https://github.com/Azure/secrets-store-csi-driver-provider-azure).
 
-### Future: Direct integration of KeyVault into the upstream applications
+### Future: Direct integration of Key Vault into the upstream applications
 
 Ideally, each of the upstream applications would never require access to read the various certificate private keys from Key Vault and they would instead integrate directly with the Key Vault sigining APIs. This would significantly reduce the risk of accidentally exposing private keys in the event of a misconfigration, malware, breach or other security incident by storing the Private Keys in a non-exportable HSM backed key.
 

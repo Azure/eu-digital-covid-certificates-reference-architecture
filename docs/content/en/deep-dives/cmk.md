@@ -40,7 +40,7 @@ For these cases, a [Managed HSM](https://docs.microsoft.com/en-us/azure/key-vaul
 This can support importing KEKs from an [onsite HSM](https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/hsm-protected-keys-byok) that ensures the import
 never leaves a HSM boundary, while allowing customers to have secure external backups of the key.
 
-As Managed HSMs use a similar API to KeyVault, any changes needed to  use a Managed HSM would be minimal.
+As Managed HSMs use a similar API to Key Vault, any changes needed to  use a Managed HSM would be minimal.
 
 For lower security requirements, software backed encryption keys can also be used for CMK, for reduced cost, and easier, but less secure backup.
 
