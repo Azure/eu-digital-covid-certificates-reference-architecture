@@ -5,11 +5,6 @@ SUB_ID = $(shell cat $(ROOT_DIR)/../terraform.tfvars| grep ^subscription_id | cu
 .PHONY: all
 all: terraform ssh-config
 
-.PHONY: workspace
-workspace:
-	terraform init
-	terraform workspace select $(WORKSPACE) || terraform workspace new $(WORKSPACE)
-
 .PHONY: terraform
 terraform:
 	terraform init

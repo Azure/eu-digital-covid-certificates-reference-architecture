@@ -41,3 +41,27 @@ az feature show --namespace "<NAME_SPACE>" --name "<Feature_Flag>"
 ```
 
 Read about [setting up Azure DNS]({{< relref "azure-dns.md" >}}) in the next section.
+
+### Terraform State Managment
+
+This reference architecture uses Terraform's state store to manage the infrastructure and configuration lifecycle.
+
+This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.
+
+Ideally the state store should be stored and accessed remotely, but for simplicity for this blueprint Terraform's state store locally in files named `terraform.tfstate`.
+
+#### Export Terraform State Store, Terraform Varable and Certs
+
+Runing this command will generate a `export.zip` in the root on the project, while you can right click on and download if on Github Codespaces.
+
+```bash
+$ make state-export
+```
+
+#### Import Terraform State Store, Terraform Varable and Certs
+
+Importing a zip file called `import.zip` in the root on the project.
+
+```bash
+$ make state-import
+```

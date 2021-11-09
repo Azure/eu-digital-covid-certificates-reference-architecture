@@ -1,9 +1,5 @@
 terraform {
-  backend "azurerm" {
-    storage_account_name = "eudgctfstate"
-    container_name       = "eudgc-dev"
-    key                  = "terraform.tfstate"
+  backend "local" {
 
-    use_azuread_auth = true
   }
 }
