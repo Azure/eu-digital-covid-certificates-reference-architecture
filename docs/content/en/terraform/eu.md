@@ -64,7 +64,7 @@ description: >
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_gateway_version"></a> [gateway\_version](#input\_gateway\_version) | Version Number of the Gateway | `string` | `"1.1.3-44c8778-azure-0.0.1-5f09fbf"` | no |
-| <a name="input_generation"></a> [generation](#input\_generation) | Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault's). Changing this value can only be done during a fresh deployment. | `number` | `1` | no |
+| <a name="input_generation"></a> [generation](#input\_generation) | Generation number to be appended to certain resource names (e.g. Purge Protected Key Vault's). Changing this value can only be done during a fresh deployment. | `number` | `1` | no |
 | <a name="input_log_analytics_cluster_id"></a> [log\_analytics\_cluster\_id](#input\_log\_analytics\_cluster\_id) | Enable the sending of Azure Log Workspace to Log Analytics Analytics Custer ID supplied | `string` | `null` | no |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Resource Name Prefix. Should be less than 6 chars. This is used to make sure some resource names are globally unique for some azure resources that require unique names (like Key Vault and Azure Container Registries) | `string` | `""` | no |
 | <a name="input_utility_image_tag"></a> [utility\_image\_tag](#input\_utility\_image\_tag) | Tag of the Utility Image to import | `string` | `"0.0.1-c5b4119"` | no |
