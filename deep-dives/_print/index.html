@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5dec63d97001e9c9e40a238772d508a6.json"
+  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -262,13 +262,13 @@ opting into the whole infrastructure being inaccessible from the Internet, apart
 <p>This reference architecture&rsquo;s implementation of Azure Key Vault has enabled RBAC authorization as standard. Azure Key Vault RBAC is a new feature (~Feb 2021) which provides the ability to have separate permissions on individual keys, secrets, and certificates. This reduces the number of Key Vaults needed to maintain minimal access rights.</p>
 <p>For more information on Azure Key Vault RBAC please refer to the <a href="https://docs.microsoft.com/en-gb/azure/key-vault/general/rbac-guide">product documentation</a>.</p>
 <h3 id="azure-spring-propertysource">Azure Spring PropertySource</h3>
-<p>Each of the upstream Spring based applications has been configured to use a Azure KeyVault Spring PropertySource. This allows the applications to load certain Spring properties from KeyVault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.</p>
+<p>Each of the upstream Spring based applications has been configured to use a Azure Key Vault Spring PropertySource. This allows the applications to load certain Spring properties from Key Vault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.</p>
 <p>See the <a href="https://github.com/Azure/azure-sdk-for-java/tree/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot-starter-keyvault-secrets">Azure Key Vault Secrets Spring Boot starter client library for Java documentation</a> and <a href="https://github.com/Azure/azure-sdk-for-java/blob/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot/src/main/java/com/azure/spring/keyvault/KeyVaultOperation.java#L165-L177">algorithm</a> for more details.</p>
 <h3 id="azure-key-vault-provider-for-secrets-store-csi-driver-aks">Azure Key Vault Provider for Secrets Store CSI Driver (AKS)</h3>
 <p>The Azure Key Vault provider for Secrets Store CSI driver allows us to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes Pods.</p>
-<p>This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod&rsquo;s filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with KeyVault, discussed in the next section below.</p>
+<p>This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod&rsquo;s filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with Key Vault, discussed in the next section below.</p>
 <p>For more information on this CSI driver please refer to the <a href="https://github.com/Azure/secrets-store-csi-driver-provider-azure">upstream documentation</a>.</p>
-<h3 id="future-direct-integration-of-keyvault-into-the-upstream-applications">Future: Direct integration of KeyVault into the upstream applications</h3>
+<h3 id="future-direct-integration-of-key-vault-into-the-upstream-applications">Future: Direct integration of Key Vault into the upstream applications</h3>
 <p>Ideally, each of the upstream applications would never require access to read the various certificate private keys from Key Vault and they would instead integrate directly with the Key Vault sigining APIs. This would significantly reduce the risk of accidentally exposing private keys in the event of a misconfigration, malware, breach or other security incident by storing the Private Keys in a non-exportable HSM backed key.</p>
 <p>Due to the number of changes that would be necessary to the upstream codebase, we chose to not implement this as part of this reference architecture, however we would recommend this be implemented for any production workloads.</p>
 <h2 id="eu-key-vault">EU Key Vault</h2>
@@ -457,7 +457,7 @@ This gives a good level of protection from the KEK being leaked (as it never lea
 For these cases, a <a href="https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview">Managed HSM</a> may be required.</p>
 <p>This can support importing KEKs from an <a href="https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/hsm-protected-keys-byok">onsite HSM</a> that ensures the import
 never leaves a HSM boundary, while allowing customers to have secure external backups of the key.</p>
-<p>As Managed HSMs use a similar API to KeyVault, any changes needed to  use a Managed HSM would be minimal.</p>
+<p>As Managed HSMs use a similar API to Key Vault, any changes needed to  use a Managed HSM would be minimal.</p>
 <p>For lower security requirements, software backed encryption keys can also be used for CMK, for reduced cost, and easier, but less secure backup.</p>
 <h3 id="table-of-service-which-use-customer-managed-keys">Table of Service which Use Customer-Managed Keys</h3>
 <table>

@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deep-dives/cmk/" /><meta property="article:section" content="deep-dives" />
 
-<meta property="article:modified_time" content="2021-11-08T14:39:04+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-09T14:14:30+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Customer Managed Keys">
 <meta itemprop="description" content="Deep Dive into Customer Managed Keys
 ">
-<meta itemprop="dateModified" content="2021-11-08T14:39:04+00:00" />
-<meta itemprop="wordCount" content="618">
+<meta itemprop="dateModified" content="2021-11-09T14:14:30+00:00" />
+<meta itemprop="wordCount" content="619">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Customer Managed Keys"/>
 <meta name="twitter:description" content="Deep Dive into Customer Managed Keys
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5dec63d97001e9c9e40a238772d508a6.json"
+  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5dec63d97001e9c9e40a238772d508a6.json"
+  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -355,7 +355,7 @@ This gives a good level of protection from the KEK being leaked (as it never lea
 For these cases, a <a href="https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/overview">Managed HSM</a> may be required.</p>
 <p>This can support importing KEKs from an <a href="https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/hsm-protected-keys-byok">onsite HSM</a> that ensures the import
 never leaves a HSM boundary, while allowing customers to have secure external backups of the key.</p>
-<p>As Managed HSMs use a similar API to KeyVault, any changes needed to  use a Managed HSM would be minimal.</p>
+<p>As Managed HSMs use a similar API to Key Vault, any changes needed to  use a Managed HSM would be minimal.</p>
 <p>For lower security requirements, software backed encryption keys can also be used for CMK, for reduced cost, and easier, but less secure backup.</p>
 <h3 id="table-of-service-which-use-customer-managed-keys">Table of Service which Use Customer-Managed Keys</h3>
 <table>
@@ -395,8 +395,8 @@ never leaves a HSM boundary, while allowing customers to have secure external ba
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 8, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/3c65257b23e527f5940e838a982f75cbadd451cd">Cleaned up log-analytics docs and Terraform required solutions (#54) (3c65257)</a>
+    November 9, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/b649e0d76f4557bdeb72d44df5c1e42959323ade">* Docs fixed product naming - KeyVault vs Key Vault (b649e0d)</a>
 
 </div>
 

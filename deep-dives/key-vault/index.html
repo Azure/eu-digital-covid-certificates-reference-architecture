@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deep-dives/key-vault/" /><meta property="article:section" content="deep-dives" />
 
-<meta property="article:modified_time" content="2021-11-08T14:39:04+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-11-09T14:14:30+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Key Vault">
 <meta itemprop="description" content="Deep Dive into Key Vault
 ">
-<meta itemprop="dateModified" content="2021-11-08T14:39:04+00:00" />
-<meta itemprop="wordCount" content="815">
+<meta itemprop="dateModified" content="2021-11-09T14:14:30+00:00" />
+<meta itemprop="wordCount" content="819">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Key Vault"/>
 <meta name="twitter:description" content="Deep Dive into Key Vault
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5dec63d97001e9c9e40a238772d508a6.json"
+  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5dec63d97001e9c9e40a238772d508a6.json"
+  data-offline-search-index-json-src="/offline-search-index.7df9db577c2469ddcccacebe8ed46d94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -259,7 +259,7 @@
         <li><a href="#azure-key-vault-rbac">Azure Key Vault RBAC</a></li>
         <li><a href="#azure-spring-propertysource">Azure Spring PropertySource</a></li>
         <li><a href="#azure-key-vault-provider-for-secrets-store-csi-driver-aks">Azure Key Vault Provider for Secrets Store CSI Driver (AKS)</a></li>
-        <li><a href="#future-direct-integration-of-keyvault-into-the-upstream-applications">Future: Direct integration of KeyVault into the upstream applications</a></li>
+        <li><a href="#future-direct-integration-of-key-vault-into-the-upstream-applications">Future: Direct integration of Key Vault into the upstream applications</a></li>
       </ul>
     </li>
     <li><a href="#eu-key-vault">EU Key Vault</a></li>
@@ -344,13 +344,13 @@
 <p>This reference architecture&rsquo;s implementation of Azure Key Vault has enabled RBAC authorization as standard. Azure Key Vault RBAC is a new feature (~Feb 2021) which provides the ability to have separate permissions on individual keys, secrets, and certificates. This reduces the number of Key Vaults needed to maintain minimal access rights.</p>
 <p>For more information on Azure Key Vault RBAC please refer to the <a href="https://docs.microsoft.com/en-gb/azure/key-vault/general/rbac-guide">product documentation</a>.</p>
 <h3 id="azure-spring-propertysource">Azure Spring PropertySource</h3>
-<p>Each of the upstream Spring based applications has been configured to use a Azure KeyVault Spring PropertySource. This allows the applications to load certain Spring properties from KeyVault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.</p>
+<p>Each of the upstream Spring based applications has been configured to use a Azure Key Vault Spring PropertySource. This allows the applications to load certain Spring properties from Key Vault, however it requires us to use a specific naming pattern for the KeyVault items. The table below shows which naming pattern is used for each key.</p>
 <p>See the <a href="https://github.com/Azure/azure-sdk-for-java/tree/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot-starter-keyvault-secrets">Azure Key Vault Secrets Spring Boot starter client library for Java documentation</a> and <a href="https://github.com/Azure/azure-sdk-for-java/blob/3f31d68eed6fbe11516ca3afe3955c8840a6e974/sdk/spring/azure-spring-boot/src/main/java/com/azure/spring/keyvault/KeyVaultOperation.java#L165-L177">algorithm</a> for more details.</p>
 <h3 id="azure-key-vault-provider-for-secrets-store-csi-driver-aks">Azure Key Vault Provider for Secrets Store CSI Driver (AKS)</h3>
 <p>The Azure Key Vault provider for Secrets Store CSI driver allows us to get secret contents stored in an Azure Key Vault instance and use the Secrets Store CSI driver interface to mount them into Kubernetes Pods.</p>
-<p>This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod&rsquo;s filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with KeyVault, discussed in the next section below.</p>
+<p>This reference architecture uses this CSI Driver to mount the various certificates into the approperiate Kubernetes Pod&rsquo;s filesystem. This method was chosen as it reduced the number of upstream code changes necessary, however, ideally this would be replaced with direct integration with Key Vault, discussed in the next section below.</p>
 <p>For more information on this CSI driver please refer to the <a href="https://github.com/Azure/secrets-store-csi-driver-provider-azure">upstream documentation</a>.</p>
-<h3 id="future-direct-integration-of-keyvault-into-the-upstream-applications">Future: Direct integration of KeyVault into the upstream applications</h3>
+<h3 id="future-direct-integration-of-key-vault-into-the-upstream-applications">Future: Direct integration of Key Vault into the upstream applications</h3>
 <p>Ideally, each of the upstream applications would never require access to read the various certificate private keys from Key Vault and they would instead integrate directly with the Key Vault sigining APIs. This would significantly reduce the risk of accidentally exposing private keys in the event of a misconfigration, malware, breach or other security incident by storing the Private Keys in a non-exportable HSM backed key.</p>
 <p>Due to the number of changes that would be necessary to the upstream codebase, we chose to not implement this as part of this reference architecture, however we would recommend this be implemented for any production workloads.</p>
 <h2 id="eu-key-vault">EU Key Vault</h2>
@@ -508,8 +508,8 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 
     Last modified
-    November 8, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/3c65257b23e527f5940e838a982f75cbadd451cd">Cleaned up log-analytics docs and Terraform required solutions (#54) (3c65257)</a>
+    November 9, 2021
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/b649e0d76f4557bdeb72d44df5c1e42959323ade">* Docs fixed product naming - KeyVault vs Key Vault (b649e0d)</a>
 
 </div>
 
