@@ -31,4 +31,3 @@ To open a Terminal within the Codespace, press `Ctrl+Shift+P` (`Cmd+Shift+P` on 
 >Learn more about **Github Codespaces** and get the most up-to-date information at the [GitHub Docs](https://docs.github.com/en/codespaces).
 >
 >Read about [manual deployment]({{< relref "manual.md" >}}) in the next section.
-
