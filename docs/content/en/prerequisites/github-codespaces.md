@@ -26,5 +26,9 @@ GitHub will take several minutes to build the Codespace, once complete, proceed 
 
 To open a Terminal within the Codespace, press `Ctrl+Shift+P` (`Cmd+Shift+P` on OSX), and begin to type "Terminal". Choose the "Terminal: Create New Terminal" option and press return.
 
+> __Calls to Action__
+>
+>Learn more about **Github Codespaces** and get the most up-to-date information at the [GitHub Docs](https://docs.github.com/en/codespaces).
+>
+>Read about [manual deployment]({{< relref "manual.md" >}}) in the next section.
 
-Read about [manual deployment]({{< relref "manual.md" >}}) in the next section.

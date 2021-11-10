@@ -65,3 +65,7 @@ Importing a zip file called `import.zip` in the root on the project.
 ```bash
 $ make state-import
 ```
+
+> __Calls to Action__
+>
+>Read about the [Azure DNS]({{< relref "azure-dns.md" >}}) in the next section.
