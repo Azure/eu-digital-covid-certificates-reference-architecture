@@ -34,5 +34,6 @@ Signing IE Upload Cert
 DONE
 ```
 
-
-Read about [deployment]({{< relref "deployment.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Read about [deployment]({{< relref "deployment.md" >}}) in the next section.
