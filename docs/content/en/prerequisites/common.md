@@ -40,7 +40,7 @@ After applying all the feature registrations, please check that the registration
 az feature show --namespace "<NAME_SPACE>" --name "<Feature_Flag>"
 ```
 
-Read about [setting up Azure DNS]({{< relref "azure-dns.md" >}}) in the next section.
+>Read about [setting up Azure DNS]({{< relref "azure-dns.md" >}}) in the next section.
 
 ### Terraform State Managment
 
