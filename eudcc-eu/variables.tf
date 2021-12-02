@@ -6,7 +6,7 @@ variable "prefix" {
 
 variable "generation" {
   type        = number
-  description = "Generation number to be appended to certain resource names (e.g. Purge Protected KeyVault's). Changing this value can only be done during a fresh deployment."
+  description = "Generation number to be appended to certain resource names (e.g. Purge Protected Key Vault's). Changing this value can only be done during a fresh deployment."
   default     = 1
 }
 
