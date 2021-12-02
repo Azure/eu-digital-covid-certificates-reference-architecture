@@ -20,7 +20,7 @@ The EU Digital Covid Certificate project uses and generates many different certi
 | Country    | Auth        | Trustanchor  | The Auth cert is used to authenticate against the EU Gateway for read operations              |
 | Country    | Upload      | Trustanchor  | The Upload cert is used to authenticate against the EU Gateway for upload (write) operations  |
 | Country    | CSCA        | Trustanchor  | The Country Signing Certificate Authority (CSCA) is used to sign Document Signer Certificates |
-| Country    | DSC         | Country CSCA | The Document Signer Certificates (DSC) is used to sign individual Digital Covid Certificates  |
+| Country    | DSC         | Country CSCA | The Document Signer Certificates (DSC) are used to sign individual Digital Covid Certificates |
 | Individual | DCC         | Country DSC  | The Digital Covid Certificate (DCC) that is issued to members of the general public           |
 
 ### Generating the required certificates for the Reference Architecture
