@@ -28,13 +28,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/deployment/certificates/" /><meta property="article:section" content="deployment" />
 
-<meta property="article:modified_time" content="2021-12-02T14:12:27+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
+<meta property="article:modified_time" content="2021-12-02T14:41:37+00:00" /><meta property="og:site_name" content="EU Digital COVID Certificate - Azure Reference Architecture" />
 
 <meta itemprop="name" content="Certificate Generation">
 <meta itemprop="description" content="Generate Required Certificates
 ">
-<meta itemprop="dateModified" content="2021-12-02T14:12:27+00:00" />
-<meta itemprop="wordCount" content="246">
+<meta itemprop="dateModified" content="2021-12-02T14:41:37+00:00" />
+<meta itemprop="wordCount" content="275">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Certificate Generation"/>
 <meta name="twitter:description" content="Generate Required Certificates
@@ -93,7 +93,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c0af1e2c7c79b25a22d8b9a8c4905f1a.json"
+  data-offline-search-index-json-src="/offline-search-index.0f09e356a96bbc2f5ebff99eeffcc24a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c0af1e2c7c79b25a22d8b9a8c4905f1a.json"
+  data-offline-search-index-json-src="/offline-search-index.0f09e356a96bbc2f5ebff99eeffcc24a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -333,7 +333,11 @@
 		
 		
 	</header>    
-	<h3 id="background-and-further-reading">Background and Further Reading</h3>
+	<blockquote>
+<p><strong>Note</strong></p>
+<p>This method of certificate generation is intended only for demonstration purposes with this reference architecture, and it is highly recommended this <strong>not be used in a production environment</strong>.</p>
+</blockquote>
+<h3 id="background-and-further-reading">Background and Further Reading</h3>
 <p>The EU Digital Covid Certificate project uses and generates many different certificates and certificate authorities (CAs). A summary of the most important certificates and CAs has been included in the table below. For a full list of these, please refer to the <a href="https://github.com/eu-digital-green-certificates/dgc-overview/blob/main/guides/certificate-governance.md">upstream documentation</a> for complete documentation of these certificates and CAs.</p>
 <table>
 <thead>
@@ -355,13 +359,13 @@
 <td>Country</td>
 <td>Auth</td>
 <td>Trustanchor</td>
-<td>The Auth cert is used to authenthicate against the EU Gateway for read operations</td>
+<td>The Auth cert is used to authenticate against the EU Gateway for read operations</td>
 </tr>
 <tr>
 <td>Country</td>
 <td>Upload</td>
 <td>Trustanchor</td>
-<td>The Upload cert is used to authenthicate against the EU Gateway for upload (write) operations</td>
+<td>The Upload cert is used to authenticate against the EU Gateway for upload (write) operations</td>
 </tr>
 <tr>
 <td>Country</td>
@@ -379,7 +383,7 @@
 <td>Individual</td>
 <td>DCC</td>
 <td>Country DSC</td>
-<td>The Digital Covid Certificate (DCC) that is issused to members of the general public</td>
+<td>The Digital Covid Certificate (DCC) that is issued to members of the general public</td>
 </tr>
 </tbody>
 </table>
@@ -404,7 +408,7 @@ DONE
 
     Last modified
     December 2, 2021
-    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/6ba36ff9202112cd021925db33ee70b8ac29c28b">Added refs to docs and added into note box to standout more (#56) (6ba36ff)</a>
+    : <a  href="https://github.com/Azure/eu-digital-covid-certificates-reference-architecture/commit/79d6fa6bb4ac3654ea4dfc08a9607d66d397552a">Added Note about note not recommending Certificate Generation in prod to doc (#57) (79d6fa6)</a>
 
 </div>
 
