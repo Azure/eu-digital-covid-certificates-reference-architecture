@@ -8,7 +8,7 @@ description: >
 
 > __Note__
 >
->This method of Certificate Generation has been designed to be intended for automation and simpler user experience for this reference architecture, and is highly recommended **not to be replicated in a production environment**.
+> This method of certificate generation is intended only for demonstration purposes with this reference architecture, and it is highly recommended this **not be used in a production environment**.
 
 ### Background and Further Reading
 
