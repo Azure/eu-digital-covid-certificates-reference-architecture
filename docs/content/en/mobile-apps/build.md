@@ -7,20 +7,22 @@ description: >
 ---
 
 ### Prerequisites
-* Java JDK. The app has been sucessfully build with JDK 8 and JDK 11, but other later versions should also build the app correctly. We will be also use the keytool from Java JDK to generate the signing certificates for testing.
-* [Android SDK](https://developer.android.com/studio) required to compress and align the aplication to apk format. Android studio must be started at least once, so it downloads all the additional build tools.
-* Apk signing certificates.
 
+* Java JDK. The app has been successfully built with JDK 8 and JDK 11, but other later versions should also build the app correctly. We will be also using the keytool from Java JDK to generate the signing certificates for testing.
+* [Android SDK](https://developer.android.com/studio) required to compress and align the application to APK format. Android studio must be started at least once, so it downloads all the additional build tools.
+* APK signing certificates.
 
 ### Android Wallet Build
+
 Android Wallet app, can be downloaded from [TODO](), and introduce the URL and the certificates at runtime,  but it is also possible to build it.
 The source code for the wallet app, can be found in the git repository: git@ssh.dev.azure.com:v3/PE-COE/EU-Digital-Green-Certificate/dgca-wallet-app-android.
-The app, depends on another packages of the same project, which needs to be cloned/downloaded before attempting to run the build. The three repositories, wallet app, and the two depencendies listed below, needs to be placed under the same folder structure.
+The app depends on other packages of the same project, which need to be cloned/downloaded before attempting to run the build. The three repositories, the wallet app, and the two dependencies listed below, need to be placed under the same folder structure.
+
 * app-core-android git@ssh.dev.azure.com:v3/PE-COE/EU-Digital-Green-Certificate/dgca-app-core-android
 * dgc-certlogic-android git@ssh.dev.azure.com:v3/PE-COE/EU-Digital-Green-Certificate/dgc-certlogic-android
 
-
 ## Build
+
 ```bash
 #Update the paths and versions to your specific platform and installation, MAC os and android SDK have been successfully tested.
 export ANDROID_SDK_VERSION="31.0.0"
@@ -42,9 +44,9 @@ ${ANDROID_BUILD_TOOLS_PATH}/apksigner sign --ks ./dgca-wallet-sign-cert.jks --ks
 popd
 ```
 
-
 ### Android Verifier Build
-Similarly to the wallet app, it can be downloaded from [TODO](), in order to build it yourself, you can follow the script below.
+
+Similar to the wallet app, it can be downloaded from [TODO](), in order to build it yourself, you can follow the script below.
 
 ```bash
 #Update the paths and versions to your specific platform and installation, MAC os and android SDK have been successfully tested.
