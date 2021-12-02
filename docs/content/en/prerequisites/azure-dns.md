@@ -67,5 +67,8 @@ parent_dns_zone_rg_name             = "edgc-dns-rg"
 ..
 ```
 
-
-Read about the [Visual Studio Code Dev Container]({{< relref "devcontainer.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Learn more about **Azure DNS** and get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/dns/).
+>
+>Read about the [Visual Studio Code Dev Container]({{< relref "devcontainer.md" >}}) in the next section.

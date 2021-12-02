@@ -31,4 +31,6 @@ In addition, to represent a sample EU country deploying their components, we hav
 
 See the [Deep dives]({{< relref "../deep-dives" >}}) section for more information.
 
-Read about the project [prerequisites]({{< relref "../prerequisites" >}}).
+> __Calls to Action__
+>
+>Read about the project [prerequisites]({{< relref "../prerequisites" >}}).

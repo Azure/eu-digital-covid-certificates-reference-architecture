@@ -41,5 +41,8 @@ straightening the issuing web service with AAD allowing the ability for Organiza
 Web Authentication to the certificate issuing service with AAD is documented in detail in the
 [Deployment Section]({{< relref "web-authentication" >}}) of the documentation.
 
-
-Read about [Log Analytics]({{< relref "log-analytics.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Learn more about **Azure Active Directory (AAD)** and get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/).
+>
+>Read about [Log Analytics]({{< relref "log-analytics.md" >}}) in the next section.

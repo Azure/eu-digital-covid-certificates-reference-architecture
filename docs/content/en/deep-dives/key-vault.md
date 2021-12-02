@@ -72,5 +72,8 @@ The following table lists all items in the IE Key Vault, along with a short desc
 | mysql-encryption-key                         | Key         | Freeform              | Encryption key used for [Azure MySQL Customer Managed Key](https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql)                                   |
 | aks-encryption-key                           | Key         | Freeform              | Encryption key used for [Azure Kubernetes Service Customer Managed Key](https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys)                      |
 
-
-Read about [Customer managed keys]({{< relref "cmk.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Learn more about **Azure Key Vault** and get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/key-vault/).
+>
+>Read about [Customer managed keys]({{< relref "cmk.md" >}}) in the next section.

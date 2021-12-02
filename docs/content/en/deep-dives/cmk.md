@@ -31,6 +31,7 @@ This ensures any data stored in Kubernetes is encrypted at rest, using a DEK tha
 Revoking the AKS clusters managed identity's access to the key will mean that AKS can no longer decrypt the key, and as such cannot decrypt the data.
 
 There is more documentation for this here - [Azure Documentation](https://docs.microsoft.com/en-us/azure/aks/azure-disk-customer-managed-keys)
+
 ### Key Vault Options
 
 For this example we chose a Key Vault Premium instance and used HSM backed keys for the KEK, that are generated on the HSM.
@@ -51,5 +52,10 @@ For lower security requirements, software backed encryption keys can also be use
 | AKS          | aks-encryption-key   | AKS User Assigned Identity            | RSA-HSM  | 2048     | unwrapKey, wrapKey |
 | MySQL Server | mysql-encryption-key | MySQL Server System Assigned Identity | RSA-HSM  | 2048     | unwrapKey, wrapKey |
 
-
-Read about [AAD configuration]({{< relref "aad.md" >}}) in the next section.
+> __Calls to Action__
+>
+>Learn more about **Customer-managed keys for Azure Storage encryption** to get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview).
+>
+>Learn more about **Connecting with Managed Identity to Azure Database for MySQL** to get the most up-to-date information at the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/mysql/howto-connect-with-managed-identity).
+>
+>Read about [AAD configuration]({{< relref "aad.md" >}}) in the next section.
