@@ -24,11 +24,11 @@ AAD portal.
 - Click on the "enterprise application" result
 - Click on properties
 - Switch "User assignment required?" to "Yes"
-  ![web auth enterprise app propperties](/screenshots/web-auth-enterprise-app-properties.png 'image demonstrating natagating to the properties panel of the enterprise application and enableding the User assignment required option and then saving.')
+  ![web auth enterprise app propperties](/screenshots/web-auth-enterprise-app-properties.png 'image demonstrating navigating to the properties panel of the enterprise application and enabling the User assignment required option and then saving.')
 - Click on "Users and Groups"
 - Click "Add User/Group"
-- Search for either the user you want to grant access, or the group that contains the users you want to add
-  ![web auth add user and groups](/screenshots/web-auth-add-user-groups.png 'image demonstrating natagating the added user or gourp panel in the poral to selected desired users to access the Web Authentication and also apply the default role to.')
+- Search for either the user you want to grant access or the group that contains the users you want to add
+  ![web auth add user and groups](/screenshots/web-auth-add-user-groups.png 'image demonstrating navigating the added user or group panel in the portal to selected desired users to access the Web Authentication and also apply the default role to.')
 - Leave role as "Default Access"
 - Click "Assign"
 - Click "Permissions"
