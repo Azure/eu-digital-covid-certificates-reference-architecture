@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0f09e356a96bbc2f5ebff99eeffcc24a.json"
+  data-offline-search-index-json-src="/offline-search-index.161f202a8c86ab27ddc5433a2be3690c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -514,17 +514,21 @@ AAD portal.</p>
 <ul>
 <li>Navigate to the <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">Active directory blade</a> in the Azure portal.</li>
 <li>Search for the application name (The URL for issuance web that is printed at the end of the <code>make terraform</code> command, minus the &ldquo;https://&quot;)
-e.g. &ldquo;dgca-issuance-web.eudcc-ie.example.com&rdquo;</li>
+e.g. &ldquo;dgca-issuance-web.eudcc-ie.contoso.com&rdquo;
+<img src="/screenshots/web-auth-search-enterprise-apps.png" alt="web auth search enterprise apps" title="Search results for enterprise Apps with the name &quot;dgca-issuance-web.eudcc-ie.prefix.contoso.com&quot; showing one result in the Active directory blade."></li>
 <li>Click on the &ldquo;enterprise application&rdquo; result</li>
 <li>Click on properties</li>
-<li>Switch &ldquo;User assignment required?&rdquo; to &ldquo;Yes&rdquo;</li>
+<li>Switch &ldquo;User assignment required?&rdquo; to &ldquo;Yes&rdquo;
+<img src="/screenshots/web-auth-enterprise-app-properties.png" alt="web auth enterprise app propperties" title="image demonstrating navigating to the properties panel of the enterprise application and enabling the User assignment required option and then saving."></li>
 <li>Click on &ldquo;Users and Groups&rdquo;</li>
 <li>Click &ldquo;Add User/Group&rdquo;</li>
-<li>Search for either the user you want to grant access, or the group that contains the users you want to add</li>
+<li>Search for either the user you want to grant access or the group that contains the users you want to add
+<img src="/screenshots/web-auth-add-user-groups.png" alt="web auth add user and groups" title="image demonstrating navigating the added user or group panel in the portal to selected desired users to access the Web Authentication and also apply the default role to."></li>
 <li>Leave role as &ldquo;Default Access&rdquo;</li>
 <li>Click &ldquo;Assign&rdquo;</li>
 <li>Click &ldquo;Permissions&rdquo;</li>
-<li>Click &ldquo;Grant admin consent for <em>ORG</em>&rdquo;</li>
+<li>Click &ldquo;Grant admin consent for <em>ORG</em>&rdquo;
+<img src="/screenshots/web-auth-assigned-default-access-role.png" alt="web auth assign default access role" title="image demonstrating a user that has been successfully added to the enterprise application and will be enabled to authenticate to the Issuance Web Authentication."></li>
 </ul>
 
 </div>
