@@ -34,6 +34,11 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Android build tools
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get -y install --no-install-recommends zipalign apksigner
+
 # Install Terraform
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip ./terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin/ \
