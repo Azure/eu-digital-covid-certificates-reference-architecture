@@ -1,0 +1,77 @@
+SHELL:=/bin/bash
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+PREFIX = $(shell cat $(ROOT_DIR)/terraform.tfvars| grep ^prefix | cut -d'"' -f2)
+VERSION=$(shell git describe --long --tags)
+
+
+.PHONY: patch-upstream
+patch-upstream: dgca-wallet-app-android-patch dgca-app-core-android-patch dgca-verifier-service-patch dgca-verifier-app-android-patch dgca-issuance-web-patch dgca-issuance-service-patch dgca-businessrule-service-patch dgc-gateway-patch dgc-certlogic-android-pat
+
+.PHONY: dgca-wallet-app-android-patch
+dgca-wallet-app-android-patch:
+	cd $(ROOT_DIR)/dgca-wallet-app-android/; \
+	for file in $(ROOT_DIR)/patches/dgca-wallet-app-android/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-app-core-android-patch
+dgca-app-core-android-patch:
+	cd $(ROOT_DIR)/ dgca-app-core-android/; \
+	for file in $(ROOT_DIR)/patches/dgca-app-core-android/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-verifier-service-patch
+dgca-verifier-service-patch:
+	cd $(ROOT_DIR)/dgca-verifier-service/; \
+	for file in $(ROOT_DIR)/patches/dgca-verifier-service/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-verifier-app-android-patch
+dgca-verifier-app-android-patch:
+	cd $(ROOT_DIR)/dgca-verifier-app-android/; \
+	for file in $(ROOT_DIR)/patches/dgca-verifier-app-android/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-issuance-web-patch
+dgca-issuance-web-patch:
+	cd $(ROOT_DIR)/dgca-issuance-web/; \
+	for file in $(ROOT_DIR)/patches/dgca-issuance-web/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-issuance-service-patch
+dgca-issuance-service-patch:
+	cd $(ROOT_DIR)/dgca-issuance-service/; \
+	for file in $(ROOT_DIR)/patches/dgca-issuance-service/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-businessrule-service-patch
+dgca-businessrule-service-patch:
+	cd $(ROOT_DIR)/dgca-businessrule-service/ &
+	for file in $(ROOT_DIR)/patches/dgca-businessrule-service/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgc-gateway-patch
+dgc-gateway-patch:
+	cd $(ROOT_DIR)/dgc-gateway/; \
+	for file in $(ROOT_DIR)/patches/dgc-gateway/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgc-certlogic-android-patch
+dgc-certlogic-android-patch:
+	cd $(ROOT_DIR)/dgc-certlogic-android/; \
+	for file in $(ROOT_DIR)/patches/dgc-certlogic-android/*.patch; do \
+		git apply -p1 --verbose < $$file; \
+	done;
+
+.PHONY: dgca-wallet-app-android-build
+
+dgca-wallet-app-android-build:
+	cd $(ROOT_DIR)/dgca-wallet-app-android/; \
+
