@@ -4,6 +4,10 @@ PREFIX = $(shell cat $(ROOT_DIR)/terraform.tfvars| grep ^prefix | cut -d'"' -f2)
 VERSION=$(shell git describe --long --tags)
 
 
+.PHONY: update-submodules
+update-submodules:
+	git submodule update --init --recursive
+
 .PHONY: patch-upstream
 patch-upstream: dgca-wallet-app-android-patch dgca-app-core-android-patch dgca-verifier-service-patch dgca-verifier-app-android-patch dgca-issuance-web-patch dgca-issuance-service-patch dgca-businessrule-service-patch dgc-gateway-patch dgc-certlogic-android-pat
 
