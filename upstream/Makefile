@@ -77,5 +77,10 @@ dgc-certlogic-android-patch:
 .PHONY: dgca-wallet-app-android-build
 dgca-wallet-app-android-build:
 	cd $(ROOT_DIR)/dgca-wallet-app-android/; \
-	./gradlew --no-daemon build -PCONFIG_FILE_NAME="wallet-context.jsonc" --info
+	./gradlew --no-daemon build -x test -PCONFIG_FILE_NAME="wallet-context.jsonc" --info
+
+.PHONY: dgca-verifier-app-android-build
+dgca-verifier-app-android-build:
+	cd $(ROOT_DIR)/dgca-verifier-app-android/; \
+	./gradlew --no-daemon build -x test -PCONFIG_FILE_NAME="verifier-context.jsonc" --info
 
