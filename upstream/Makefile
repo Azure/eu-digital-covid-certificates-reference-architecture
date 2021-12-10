@@ -103,4 +103,23 @@ dgca-wallet-app-android-sign:
 	$(ROOT_DIR)/dgca-wallet-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
     java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-wallet-app-android-debug-signed.apk
 
+.PHONY: dgca-verifier-app-android-sign
+dgca-verifier-app-android-sign:
+	zipalign -c -v 4 $(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/release/app-acc-release-unsigned.apk; \
+	java -jar /usr/bin/apksigner sign \
+	--ks $(ROOT_DIR)/../certs/dgca-wallet-sign-cert.jks \
+	--ks-pass pass:"$${KEY_STORE_PASSWORD}" \
+	--ks-key-alias "$${KEY_ALIAS}" \
+	--out $(ROOT_DIR)/dgca-verifier-app-android-release-signed.apk \
+	$(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/release/app-acc-release-unsigned.apk; \
+    java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-verifier-app-android-release-signed.apk; \
+	zipalign -c -v 4 $(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
+	java -jar /usr/bin/apksigner sign \
+	--ks $(ROOT_DIR)/../certs/dgca-wallet-sign-cert.jks \
+	--ks-pass pass:"$${KEY_STORE_PASSWORD}" \
+	--ks-key-alias "$${KEY_ALIAS}" \
+	--out $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk \
+	$(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
+    java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk
+
 
