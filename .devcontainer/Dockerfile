@@ -46,11 +46,8 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 	&& rm android-sdk-tools.zip \
     && chown -R vscode android-sdk-linux
 
-
 ENV PATH $PATH:/opt/android-sdk-linux/cmdline-tools/
 ENV ANDROID_SDK_ROOT=/opt/android-sdk-linux
-
-# # Used to Ensure all licences have been accepted, to proceed with build.
 RUN cd $ANDROID_SDK_ROOT/cmdline-tools/tools/bin \
     && yes | ./sdkmanager --licenses
 
