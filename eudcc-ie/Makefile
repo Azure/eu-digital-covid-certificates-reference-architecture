@@ -21,7 +21,7 @@ ssh-tunnel-stop:
 	rm $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/ie.pid
 
 .PHONY: print-ssh-cmd
-print-ssh-cmd:IE_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/output.json | jq '.["ie_rg_name"]["value"]')
+print-ssh-cmd: IE_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/output.json >> /dev/null 2>&1 | jq '.["ie_rg_name"]["value"]')
 print-ssh-cmd:
 	@echo "az ssh vm --subscription $(SUB_ID) -g $(IE_RG) -n $(IE_RG)-jumpbox-vm"
 
@@ -38,20 +38,20 @@ terraform-destroy:
 
 .PHONY: output-hostnames
 output-hostnames:
-	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.[]["value"]' | sed "s/.*/&\//")"
+	@echo "$(shell cat $(ROOT_DIR)/output.json >> /dev/null 2>&1 | jq '.[]["value"]' | sed "s/.*/&\//")"
 
 .PHONY: output-issuance-web-address
 output-issuance-web-address:
-	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["issuance_web_address"]["value"]' | sed "s/.*/&\//")"
+	@echo "$(shell cat $(ROOT_DIR)/output.json >> /dev/null 2>&1 | jq '.["issuance_web_address"]["value"]' | sed "s/.*/&\//")"
 
 .PHONY: output-issuance-service-url
 output-issuance-service-url:
-	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")"
+	@echo "$(shell cat $(ROOT_DIR)/output.json >> /dev/null 2>&1 | jq '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")"
 
 .PHONY: output-businessrule-service-url
 output-businessrule-service-url:
-	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")"
+	@echo "$(shell cat $(ROOT_DIR)/output.json >> /dev/null 2>&1 | jq '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")"
 
 .PHONY: output-verifier-service-url
 output-verifier-service-url:
-	@echo "$(shell cat $(ROOT_DIR)/output.json | jq '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")"
+	@echo "$(shell cat $(ROOT_DIR)/output.json >> /dev/null 2>&1 | jq '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")"

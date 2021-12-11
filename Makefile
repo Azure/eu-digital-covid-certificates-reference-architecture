@@ -79,6 +79,10 @@ stop-all-tunnels:
 	$(MAKE) -C eudcc-eu ssh-tunnel-stop
 	$(MAKE) -C eudcc-ie ssh-tunnel-stop
 
+.PHONY: android-build
+android-build:
+	$(MAKE) -C upstream all
+
 .PHONY: print-ssh-cmd
 print-ssh-cmd:
 	@$(MAKE) -C eudcc-eu print-ssh-cmd
