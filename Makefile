@@ -12,10 +12,10 @@ Please refer to the documentation, to issue and verify your signed test certific
 
 You can SSH into the regions Jumpbox to view the Kubernetes Cluster, Databases and key vaults secrets and perform operations, by the following commands:
 EU jumpbox:
-$(shell $(MAKE) -sC eudcc-eu print-ssh-cmd)
+[[ -f $(ROOT_DIR)/eudcc-dev/jumpbox-ssh-configs/output.json ]] && $(shell $(MAKE) -sC eudcc-eu print-ssh-cmd)
 
 IE jumpbox:
-$(shell $(MAKE) -sC eudcc-ie print-ssh-cmd)
+[[ -f $(ROOT_DIR)/eudcc-dev/jumpbox-ssh-configs/output.json ]] && $(shell $(MAKE) -sC eudcc-ie print-ssh-cmd)
 
 
 To issue your first test Cert, in you Web Browser head to: $(shell $(MAKE) -sC eudcc-ie output-issuance-web-address)
