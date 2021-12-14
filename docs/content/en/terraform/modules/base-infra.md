@@ -151,6 +151,7 @@ No modules.
 | <a name="input_cert_manager_image_tag"></a> [cert\_manager\_image\_tag](#input\_cert\_manager\_image\_tag) | n/a | `string` | `"v1.4.0"` | no |
 | <a name="input_csi_node_driver_registrar_image_tag"></a> [csi\_node\_driver\_registrar\_image\_tag](#input\_csi\_node\_driver\_registrar\_image\_tag) | n/a | `string` | `"v2.2.0"` | no |
 | <a name="input_csi_secrets_store_provider_azure_chart_version"></a> [csi\_secrets\_store\_provider\_azure\_chart\_version](#input\_csi\_secrets\_store\_provider\_azure\_chart\_version) | n/a | `string` | `"0.1.0"` | no |
+| <a name="input_enable_azure_policy"></a> [enable\_azure\_policy](#input\_enable\_azure\_policy) | Enable the creation of policy\_set\_definitions and resource\_group\_policy\_assignment or not | `bool` | `false` | no |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_external_dns_chart_version"></a> [external\_dns\_chart\_version](#input\_external\_dns\_chart\_version) | n/a | `string` | `"5.1.3"` | no |
 | <a name="input_external_dns_image_tag"></a> [external\_dns\_image\_tag](#input\_external\_dns\_image\_tag) | n/a | `string` | `"0.8.0-debian-10-r26"` | no |

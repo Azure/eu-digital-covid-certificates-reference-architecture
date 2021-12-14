@@ -109,6 +109,7 @@ in the project, please regenerate the Terraform docs by: `cd docs/ && make build
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription to deploy into | `string` | n/a | yes |
 | <a name="input_tenant_id"></a> [tenant\_id](#input\_tenant\_id) | Tenant to deploy into | `string` | n/a | yes |
 | <a name="input_businessrule_service_version"></a> [businessrule\_service\_version](#input\_businessrule\_service\_version) | Version Number of the Business Rules Service | `string` | `"1.1.2-b0be8f4-azure-0.0.1-1293959"` | no |
+| <a name="input_enable_azure_policy"></a> [enable\_azure\_policy](#input\_enable\_azure\_policy) | Enable the creation of policy\_set\_definitions and resource\_group\_policy\_assignment or not | `bool` | `false` | no |
 | <a name="input_enable_log_analytics_workspace"></a> [enable\_log\_analytics\_workspace](#input\_enable\_log\_analytics\_workspace) | Enable the creation of azurerm\_log\_analytics\_workspace and azurerm\_log\_analytics\_solution or not | `bool` | `false` | no |
 | <a name="input_generation"></a> [generation](#input\_generation) | Generation number to be appended to certain resource names (e.g. Purge Protected Key Vault's). Changing this value can only be done during a fresh deployment. | `number` | `1` | no |
 | <a name="input_issuance_service_version"></a> [issuance\_service\_version](#input\_issuance\_service\_version) | Version Number of the Issuance Service | `string` | `"1.0.5-7408b55-azure-0.0.1-1293959"` | no |

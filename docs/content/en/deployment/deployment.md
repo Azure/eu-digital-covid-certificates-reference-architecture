@@ -27,6 +27,7 @@ administrator_group_oid             = "<id>"
 jumpbox_ssh_source_address_prefixes = []
 ghcr_username                       = "<GH Username>"
 ghcr_password                       = "<GH Password / Token>"
+enable_azure_policy                 = true
 ```
 
 
@@ -42,6 +43,7 @@ ghcr_password                       = "<GH Password / Token>"
 | <a name="input_jumpbox_ssh_source_address_prefixes"></a> [jumpbox\_ssh\_source\_address\_prefixes](#input\_jumpbox\_ssh\_source\_address\_prefixes) | List of network prefixes allowed to SSH to Jumpbox VM | `list(string)` | `[]` | no |
 | <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Password | `string` | n/a | yes |
 | <a name="input_ghcr_username"></a> [ghcr\_username](#input\_ghcr\_username) | GitHub Container Registry Username | `string` | n/a | yes |
+| <a name="input_enable_azure_policy"></a> [prefix](#input\_enable_azure_policy) | Enable Azure Policy. Incase of Quota or duplication restrictions. these Policies can be enable and disabled through this boolean.) | `boolean` | `""` | no |
 
 ## Deployment
 

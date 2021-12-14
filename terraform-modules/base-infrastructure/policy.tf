@@ -1,5 +1,6 @@
 # Definitions for Azure Policies to be applied
 resource "azurerm_policy_set_definition" "policy_set_definition" {
+  count        = var.enable_azure_policy ? 1 : 0
   name         = "${var.prefix}${var.name} Policy Definitions"
   policy_type  = "Custom"
   display_name = "${var.prefix}${var.name} Policies"
@@ -66,6 +67,7 @@ resource "azurerm_policy_set_definition" "policy_set_definition" {
 
 # Assign Policy Definition for Azure Policies to be applied
 resource "azurerm_resource_group_policy_assignment" "resource_group_policy_assignment" {
+  count                = var.enable_azure_policy ? 1 : 0
   name                 = "${var.prefix}${var.name} Resource Group Policy Assignment"
   resource_group_id    = azurerm_resource_group.rg.id
   policy_definition_id = azurerm_policy_set_definition.policy_set_definition.id

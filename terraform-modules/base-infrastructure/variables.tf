@@ -130,6 +130,12 @@ variable "enable_log_analytics_workspace" {
   default     = false
 }
 
+variable "enable_azure_policy" {
+  type        = bool
+  description = "Enable the creation of policy_set_definitions and resource_group_policy_assignment or not"
+  default     = false
+}
+
 variable "log_analytics_workspace_sku" {
   description = "The SKU (pricing level) of the Log Analytics workspace. For new subscriptions the SKU should be set to PerGB2018"
   type        = string
