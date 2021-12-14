@@ -40,8 +40,8 @@ resource "null_resource" "keyvault_admin_group_ra_delay_before_consent" {
     environment = {
       SCOPE          = "${azurerm_key_vault.keyvault.id}"
       PRINCIPAL_ID   = "${var.administrator_group_oid}"
-      MAX_ITERATIONS = 600
-      WAIT_SECONDS   = 2
+      MAX_ITERATIONS = 60
+      WAIT_SECONDS   = 20
     }
   }
 

@@ -4,75 +4,115 @@ PREFIX = $(shell cat $(ROOT_DIR)/terraform.tfvars| grep ^prefix | cut -d'"' -f2)
 VERSION=$(shell git describe --long --tags)
 
 
+.PHONY: all
+all: update-submodules patch-upstream dgca-wallet-app-android-build dgca-wallet-app-android-sign dgca-verifier-app-android-build  dgca-verifier-app-android-sign
+
 .PHONY: update-submodules
 update-submodules:
 	git submodule update --init --recursive
 
 .PHONY: patch-upstream
-patch-upstream: dgca-wallet-app-android-patch dgca-app-core-android-patch dgca-verifier-service-patch dgca-verifier-app-android-patch dgca-issuance-web-patch dgca-issuance-service-patch dgca-businessrule-service-patch dgc-gateway-patch dgc-certlogic-android-pat
+patch-upstream: dgca-wallet-app-android-patch dgca-app-core-android-patch dgca-verifier-service-patch dgca-verifier-app-android-patch dgca-issuance-service-patch dgca-businessrule-service-patch dgc-gateway-patch
 
 .PHONY: dgca-wallet-app-android-patch
 dgca-wallet-app-android-patch:
 	cd $(ROOT_DIR)/dgca-wallet-app-android/; \
 	for file in $(ROOT_DIR)/patches/dgca-wallet-app-android/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-app-core-android-patch
 dgca-app-core-android-patch:
 	cd $(ROOT_DIR)/ dgca-app-core-android/; \
 	for file in $(ROOT_DIR)/patches/dgca-app-core-android/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-verifier-service-patch
 dgca-verifier-service-patch:
 	cd $(ROOT_DIR)/dgca-verifier-service/; \
 	for file in $(ROOT_DIR)/patches/dgca-verifier-service/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-verifier-app-android-patch
 dgca-verifier-app-android-patch:
 	cd $(ROOT_DIR)/dgca-verifier-app-android/; \
 	for file in $(ROOT_DIR)/patches/dgca-verifier-app-android/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-issuance-web-patch
 dgca-issuance-web-patch:
 	cd $(ROOT_DIR)/dgca-issuance-web/; \
 	for file in $(ROOT_DIR)/patches/dgca-issuance-web/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-issuance-service-patch
 dgca-issuance-service-patch:
 	cd $(ROOT_DIR)/dgca-issuance-service/; \
 	for file in $(ROOT_DIR)/patches/dgca-issuance-service/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgca-businessrule-service-patch
 dgca-businessrule-service-patch:
 	cd $(ROOT_DIR)/dgca-businessrule-service/ &
 	for file in $(ROOT_DIR)/patches/dgca-businessrule-service/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgc-gateway-patch
 dgc-gateway-patch:
 	cd $(ROOT_DIR)/dgc-gateway/; \
 	for file in $(ROOT_DIR)/patches/dgc-gateway/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
 
 .PHONY: dgc-certlogic-android-patch
 dgc-certlogic-android-patch:
 	cd $(ROOT_DIR)/dgc-certlogic-android/; \
 	for file in $(ROOT_DIR)/patches/dgc-certlogic-android/*.patch; do \
-		git apply -p1 --verbose < $$file; \
+		if ! git apply -p1 -R --check < $$file; then \
+			git apply -p1 --verbose < $$file; \
+		fi \
 	done;
+
+.PHONY: dgca-wallet-app-android-inject-config
+dgca-wallet-app-android-inject-config: ISSUANCE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-wallet-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-wallet-app-android-inject-config:
+	cat $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context.jsonc > $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context_backup.jsonc
+	cat $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context_backup.jsonc | \
+	jq --arg issuance_service_url_context "$(ISSUANCE_SERVICE_URL)context" \
+	--arg issuance_service_url_claim "$(ISSUANCE_SERVICE_URL)dgci/wallet/claim" \
+	--arg businessrule_service_url_countrylist "$(BUSINESSRULE_SERVICE_URL)countrylist" \
+	--arg businessrule_service_url_rules "$(BUSINESSRULE_SERVICE_URL)rules" \
+	--arg businessrule_service_url_valuesets "$(BUSINESSRULE_SERVICE_URL)valuesets" \
+	'(.versions.default.context.url = $$issuance_service_url_context) \
+	|(.versions.default.endpoints.claim.url = $$issuance_service_url_claim) \
+	|(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) \
+	|(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) \
+	|(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
+	> $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context.jsonc
+
 
 .PHONY: dgca-wallet-app-android-build
 dgca-wallet-app-android-build:
@@ -121,5 +161,3 @@ dgca-verifier-app-android-sign:
 	--out $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk \
 	$(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
     java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk
-
-
