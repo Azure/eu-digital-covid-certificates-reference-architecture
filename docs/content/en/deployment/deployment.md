@@ -41,7 +41,7 @@ enable_azure_policy                 = true
 | <a name="input_parent_dns_zone_rg_name"></a> [parent\_dns\_zone\_rg\_name](#input\_parent\_dns\_zone\_rg\_name) | Parent DNS Zone Resource Group Name | `string` | n/a | yes |
 | <a name="input_administrator_group_oid"></a> [administrator\_group\_oid](#input\_administrator\_group\_oid) | OID of the Group to grant Administrator permissions. This is used to allow access to the deployed AKS cluster for deployments and troubleshooting | `string` | n/a | yes |
 | <a name="input_jumpbox_ssh_source_address_prefixes"></a> [jumpbox\_ssh\_source\_address\_prefixes](#input\_jumpbox\_ssh\_source\_address\_prefixes) | List of network prefixes allowed to SSH to Jumpbox VM | `list(string)` | `[]` | no |
-| <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Password | `string` | n/a | yes |
+| <a name="input_ghcr_password"></a> [ghcr\_password](#input\_ghcr\_password) | GitHub Container Registry Personal Access Token (PAT) with `read:packages` access, Refer to [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for more information.| `string` | n/a | yes |
 | <a name="input_ghcr_username"></a> [ghcr\_username](#input\_ghcr\_username) | GitHub Container Registry Username | `string` | n/a | yes |
 | <a name="input_enable_azure_policy"></a> [prefix](#input\_enable_azure_policy) | Enable Azure Policy. Incase of Quota or duplication restrictions. these Policies can be enable and disabled through this boolean.) | `boolean` | `""` | no |
 

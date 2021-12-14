@@ -10,7 +10,6 @@ description: >
 
 * An active Azure account
 * A subscription available for deployment into, where you have `Owner` privileges
-* TODO: What do we do with TF State?
 
 ### DNS Domain Name / Zone resource in Azure
 
