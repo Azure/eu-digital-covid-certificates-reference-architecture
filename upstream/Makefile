@@ -113,6 +113,25 @@ dgca-wallet-app-android-inject-config:
 	|(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
 	> $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context.jsonc
 
+.PHONY: dgca-verifier-app-android-inject-config
+dgca-verifier-app-android-inject-config: VERIFIER_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-verifier-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-verifier-app-android-inject-config:
+	cat $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context.jsonc > $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context_backup.jsonc
+	cat $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context_backup.jsonc | \
+	jq --arg issuance_service_url_context "$(VERIFIER_SERVICE_URL)context" \
+	--arg issuance_service_url_status "$(VERIFIER_SERVICE_URL)signercertificateStatus" \
+	--arg issuance_service_url_update "$(VERIFIER_SERVICE_URL)signercertificateUpdate" \
+	--arg businessrule_service_url_countrylist "$(BUSINESSRULE_SERVICE_URL)countrylist" \
+	--arg businessrule_service_url_rules "$(BUSINESSRULE_SERVICE_URL)rules" \
+	--arg businessrule_service_url_valuesets "$(BUSINESSRULE_SERVICE_URL)valuesets" \
+	'(.versions.default.context.url = $$issuance_service_url_context) \
+	|(.versions.default.endpoints.status.url = $$issuance_service_url_status) \
+	|(.versions.default.endpoints.update.url = $$issuance_service_url_update) \
+	|(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) \
+	|(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) \
+	|(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
+	> $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context.jsonc
 
 .PHONY: dgca-wallet-app-android-build
 dgca-wallet-app-android-build:
