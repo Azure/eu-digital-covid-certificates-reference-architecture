@@ -96,8 +96,8 @@ dgc-certlogic-android-patch:
 	done;
 
 .PHONY: dgca-wallet-app-android-inject-config
-dgca-wallet-app-android-inject-config: ISSUANCE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")
-dgca-wallet-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-wallet-app-android-inject-config: ISSUANCE_SERVICE_URL:=$(shell  [ -f "$(ROOT_DIR)/../eudcc-ie/output.json" ] && cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["issuance_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-wallet-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell [ -f "$(ROOT_DIR)/../eudcc-ie/output.json" ] && cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
 dgca-wallet-app-android-inject-config:
 	cat $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context.jsonc > $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context_backup.jsonc
 	cat $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context_backup.jsonc | \
@@ -106,16 +106,12 @@ dgca-wallet-app-android-inject-config:
 	--arg businessrule_service_url_countrylist "$(BUSINESSRULE_SERVICE_URL)countrylist" \
 	--arg businessrule_service_url_rules "$(BUSINESSRULE_SERVICE_URL)rules" \
 	--arg businessrule_service_url_valuesets "$(BUSINESSRULE_SERVICE_URL)valuesets" \
-	'(.versions.default.context.url = $$issuance_service_url_context) \
-	|(.versions.default.endpoints.claim.url = $$issuance_service_url_claim) \
-	|(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) \
-	|(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) \
-	|(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
+	'(.versions.default.context.url = $$issuance_service_url_context) |(.versions.default.endpoints.claim.url = $$issuance_service_url_claim) |(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) |(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) |(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
 	> $(ROOT_DIR)/dgca-wallet-app-android/app/src/acc/assets/wallet-context.jsonc
 
 .PHONY: dgca-verifier-app-android-inject-config
-dgca-verifier-app-android-inject-config: VERIFIER_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")
-dgca-verifier-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-verifier-app-android-inject-config: VERIFIER_SERVICE_URL:=$(shell [ -f "$(ROOT_DIR)/../eudcc-ie/output.json" ] && cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["verifier_service_url"]["value"]' | sed "s/.*/&\//")
+dgca-verifier-app-android-inject-config: BUSINESSRULE_SERVICE_URL:=$(shell [ -f "$(ROOT_DIR)/../eudcc-ie/output.json" ] && cat $(ROOT_DIR)/../eudcc-ie/output.json | jq -r '.["businessrule_service_url"]["value"]' | sed "s/.*/&\//")
 dgca-verifier-app-android-inject-config:
 	cat $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context.jsonc > $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context_backup.jsonc
 	cat $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context_backup.jsonc | \
@@ -125,12 +121,7 @@ dgca-verifier-app-android-inject-config:
 	--arg businessrule_service_url_countrylist "$(BUSINESSRULE_SERVICE_URL)countrylist" \
 	--arg businessrule_service_url_rules "$(BUSINESSRULE_SERVICE_URL)rules" \
 	--arg businessrule_service_url_valuesets "$(BUSINESSRULE_SERVICE_URL)valuesets" \
-	'(.versions.default.context.url = $$issuance_service_url_context) \
-	|(.versions.default.endpoints.status.url = $$issuance_service_url_status) \
-	|(.versions.default.endpoints.update.url = $$issuance_service_url_update) \
-	|(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) \
-	|(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) \
-	|(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
+	'(.versions.default.context.url = $$issuance_service_url_context) |(.versions.default.endpoints.status.url = $$issuance_service_url_status) |(.versions.default.endpoints.update.url = $$issuance_service_url_update) |(.versions.default.endpoints.countryList.url = $$businessrule_service_url_countrylist) |(.versions.default.endpoints.rules.url = $$businessrule_service_url_rules) |(.versions.default.endpoints.valuesets.url = $$businessrule_service_url_valuesets)' \
 	> $(ROOT_DIR)/dgca-verifier-app-android/app/src/acc/assets/verifier-context.jsonc
 
 .PHONY: dgca-wallet-app-android-build
@@ -179,16 +170,16 @@ dgca-verifier-app-android-sign:
 	zipalign -c -v 4 $(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/release/app-acc-release-unsigned.apk; \
 	java -jar /usr/bin/apksigner sign \
 	--ks $(ROOT_DIR)/../certs/dgca-verifier-sign-cert.jks \
-	--ks-pass pass:"dgca-verifier-sign-cert" \
-	--ks-key-alias "dgca-verifier-sign-cert" \
+	--ks-pass pass:"dgca-wallet-sign-cert" \
+	--ks-key-alias "dgca-wallet-sign-cert" \
 	--out $(ROOT_DIR)/dgca-verifier-app-android-release-signed.apk \
 	$(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/release/app-acc-release-unsigned.apk; \
     java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-verifier-app-android-release-signed.apk; \
 	zipalign -c -v 4 $(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
 	java -jar /usr/bin/apksigner sign \
 	--ks $(ROOT_DIR)/../certs/dgca-verifier-sign-cert.jks \
-	--ks-pass pass:"dgca-verifier-sign-cert" \
-	--ks-key-alias "dgca-verifier-sign-cert" \
+	--ks-pass pass:"dgca-wallet-sign-cert" \
+	--ks-key-alias "dgca-wallet-sign-cert" \
 	--out $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk \
 	$(ROOT_DIR)/dgca-verifier-app-android/app/build/outputs/apk/acc/debug/app-acc-debug.apk; \
     java -jar /usr/bin/apksigner verify $(ROOT_DIR)/dgca-verifier-app-android-debug-signed.apk
