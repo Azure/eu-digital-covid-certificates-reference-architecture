@@ -54,6 +54,7 @@ module "base_infra" {
   administrator_group_oid = var.administrator_group_oid
 
   enable_log_analytics_workspace = var.enable_log_analytics_workspace
+  enable_azure_policy            = var.enable_azure_policy
   log_analytics_cluster_id       = var.log_analytics_cluster_id
   acr_imports = {
     dgca-issuance-service = {

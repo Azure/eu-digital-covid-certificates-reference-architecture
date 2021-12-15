@@ -42,6 +42,9 @@ tenant_id = ""
 # OID of the Group to grant Administrator permissions
 administrator_group_oid = ""
 
+# Enable the creation of policy_set_definitions and resource_group_policy_assignment or not
+enable_azure_policy = false
+
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false
 
@@ -102,6 +105,9 @@ administrator_group_oid = ""
 
 # Version Number of the Business Rules Service
 businessrule_service_version = "1.1.2-b0be8f4-azure-0.0.1-1293959"
+
+# Enable the creation of policy_set_definitions and resource_group_policy_assignment or not
+enable_azure_policy = false
 
 # Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not
 enable_log_analytics_workspace = false

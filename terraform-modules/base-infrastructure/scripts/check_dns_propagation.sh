@@ -9,7 +9,7 @@ check_propagation() {
     IP_ADDRESS="${2}"
     max_iterations="${3}"
     wait_seconds="${4}"
-    sleep 45
+    sleep 60
 
     while true; do
         iterations=$((iterations + 1))
