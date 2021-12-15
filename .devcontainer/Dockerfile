@@ -7,6 +7,7 @@ ENV KUBETCL_VERSION=1.22.1-00
 ENV AZURE_CLI_VERSION=2.27.1-1~focal
 ENV AZURE_CLI_SSH_EXTENSION_VERSION=0.1.6
 ENV DGC_CLI_VERSION=0.6.1
+ENV ANDROID_SDK_CMD_TOOLS_VERSION=6514223_latest
 
 # Install Basic Packages (Stuff needed for other Apt Repos)
 RUN export DEBIAN_FRONTEND=noninteractive \
@@ -37,7 +38,18 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 # Install Android build tools
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get -y install --no-install-recommends zipalign apksigner
+    && apt-get -y install --no-install-recommends zipalign apksigner \
+    && cd /opt \
+	&& wget -O android-sdk-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_CMD_TOOLS_VERSION}.zip \
+	&& mkdir -p /opt/android-sdk-linux/cmdline-tools/ \
+	&& unzip -q android-sdk-tools.zip -d /opt/android-sdk-linux/cmdline-tools/ \
+	&& rm android-sdk-tools.zip \
+    && chown -R vscode android-sdk-linux
+
+ENV PATH $PATH:/opt/android-sdk-linux/cmdline-tools/
+ENV ANDROID_SDK_ROOT=/opt/android-sdk-linux
+RUN cd $ANDROID_SDK_ROOT/cmdline-tools/tools/bin \
+    && yes | ./sdkmanager --licenses
 
 # Install Terraform
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
