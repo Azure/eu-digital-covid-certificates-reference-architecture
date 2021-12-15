@@ -52,8 +52,8 @@ resource "null_resource" "aks_delay_before_consent" {
     environment = {
       SCOPE          = "${azurerm_key_vault.keyvault.id}/keys/${azurerm_key_vault_key.aks_encryption_key.name}"
       PRINCIPAL_ID   = "${azurerm_disk_encryption_set.aks_encryption_set.identity.0.principal_id}"
-      MAX_ITERATIONS = 600
-      WAIT_SECONDS   = 2
+      MAX_ITERATIONS = 60
+      WAIT_SECONDS   = 20
     }
   }
 

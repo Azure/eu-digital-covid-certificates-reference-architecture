@@ -21,7 +21,7 @@ ssh-tunnel-stop:
 	rm $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/eu.pid
 
 .PHONY: print-ssh-cmd
-print-ssh-cmd:EU_RG = $(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/output.json | jq '.["eu_rg_name"]["value"]')
+print-ssh-cmd: EU_RG:=$(shell cat $(ROOT_DIR)/../eudcc-dev/jumpbox-ssh-configs/output.json | jq '.["eu_rg_name"]["value"]')
 print-ssh-cmd:
 	@echo "az ssh vm --subscription $(SUB_ID) -g $(EU_RG) -n $(EU_RG)-jumpbox-vm"
 

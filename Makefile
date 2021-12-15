@@ -12,18 +12,18 @@ Please refer to the documentation, to issue and verify your signed test certific
 
 You can SSH into the regions Jumpbox to view the Kubernetes Cluster, Databases and key vaults secrets and perform operations, by the following commands:
 EU jumpbox:
-$(shell $(MAKE) -sC eudcc-eu print-ssh-cmd)
+$(shell [ -f "$(ROOT_DIR)/eudcc-dev/jumpbox-ssh-configs/output.json" ] && $(MAKE) -sC eudcc-eu print-ssh-cmd)
 
 IE jumpbox:
-$(shell $(MAKE) -sC eudcc-ie print-ssh-cmd)
+$(shell [ -f "$(ROOT_DIR)/eudcc-dev/jumpbox-ssh-configs/output.json" ] &&  $(MAKE) -sC eudcc-ie print-ssh-cmd)
 
 
-To issue your first test Cert, in you Web Browser head to: $(shell $(MAKE) -sC eudcc-ie output-issuance-web-address)
+To issue your first test Cert, in you Web Browser head to: $(shell [ -f "$(ROOT_DIR)/eudcc-ie/output.json" ] && $(MAKE) -sC eudcc-ie output-issuance-web-address)
 
 Required Endpoints to apply when building the Android Apps:
-- Issuance Service: $(shell $(MAKE) -sC eudcc-ie output-issuance-service-url)
-- Business Rule Service: $(shell $(MAKE) -sC eudcc-ie output-businessrule-service-url)
-- Verifier Service: $(shell $(MAKE) -sC eudcc-ie output-verifier-service-url)
+- Issuance Service: $(shell [ -f "$(ROOT_DIR)/eudcc-ie/output.json" ] && $(MAKE) -sC eudcc-ie output-issuance-service-url)
+- Business Rule Service: $(shell [ -f "$(ROOT_DIR)/eudcc-ie/output.json" ] && $(MAKE) -sC eudcc-ie output-businessrule-service-url)
+- Verifier Service: $(shell [ -f "$(ROOT_DIR)/eudcc-ie/output.json" ] && $(MAKE) -sC eudcc-ie output-verifier-service-url)
 
 Enjoy! 😀
 
@@ -78,6 +78,10 @@ start-all-tunnels: checks
 stop-all-tunnels:
 	$(MAKE) -C eudcc-eu ssh-tunnel-stop
 	$(MAKE) -C eudcc-ie ssh-tunnel-stop
+
+.PHONY: android-build
+android-build:
+	$(MAKE) -C upstream all
 
 .PHONY: print-ssh-cmd
 print-ssh-cmd:

@@ -29,8 +29,8 @@ resource "null_resource" "mysql_delay_before_consent" {
     environment = {
       SCOPE          = "${azurerm_key_vault.keyvault.id}/keys/${azurerm_key_vault_key.mysql_encryption_key.name}"
       PRINCIPAL_ID   = "${azurerm_mysql_server.mysql.identity.0.principal_id}"
-      MAX_ITERATIONS = 600
-      WAIT_SECONDS   = 2
+      MAX_ITERATIONS = 60
+      WAIT_SECONDS   = 20
     }
   }
 
