@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.161f202a8c86ab27ddc5433a2be3690c.json"
+  data-offline-search-index-json-src="/offline-search-index.cb278bcdd9f3e7bb9d4fa80df09f30c6.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -271,6 +271,9 @@ in the project, please regenerate the Terraform docs by: `cd docs/ && make build
 <span style="color:#8f5902;font-style:italic"># OID of the Group to grant Administrator permissions</span>
 <span style="color:#c4a000">administrator_group_oid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span>
 
+<span style="color:#8f5902;font-style:italic"># Enable the creation of policy_set_definitions and resource_group_policy_assignment or not</span>
+<span style="color:#c4a000">enable_azure_policy</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
+
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
@@ -327,6 +330,9 @@ in the project, please regenerate the Terraform docs by: `cd docs/ && make build
 
 <span style="color:#8f5902;font-style:italic"># Version Number of the Business Rules Service</span>
 <span style="color:#c4a000">businessrule_service_version</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1.1.2-b0be8f4-azure-0.0.1-1293959&#34;</span>
+
+<span style="color:#8f5902;font-style:italic"># Enable the creation of policy_set_definitions and resource_group_policy_assignment or not</span>
+<span style="color:#c4a000">enable_azure_policy</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
 
 <span style="color:#8f5902;font-style:italic"># Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not</span>
 <span style="color:#c4a000">enable_log_analytics_workspace</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">false</span>
@@ -789,6 +795,13 @@ in the project, please regenerate the Terraform docs by: `cd docs/ && make build
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_enable_azure_policy"></a> <a href="#input_enable_azure_policy">enable_azure_policy</a></td>
+<td>Enable the creation of policy_set_definitions and resource_group_policy_assignment or not</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td style="text-align:center">no</td>
 </tr>
 <tr>
 <td><a name="input_enable_log_analytics_workspace"></a> <a href="#input_enable_log_analytics_workspace">enable_log_analytics_workspace</a></td>
@@ -1259,6 +1272,13 @@ in the project, please regenerate the Terraform docs by: `cd docs/ && make build
 <td>Version Number of the Business Rules Service</td>
 <td><code>string</code></td>
 <td><code>&quot;1.1.2-b0be8f4-azure-0.0.1-1293959&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_enable_azure_policy"></a> <a href="#input_enable_azure_policy">enable_azure_policy</a></td>
+<td>Enable the creation of policy_set_definitions and resource_group_policy_assignment or not</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>
@@ -2011,6 +2031,13 @@ them into modules.</p>
 <td>n/a</td>
 <td><code>string</code></td>
 <td><code>&quot;0.1.0&quot;</code></td>
+<td style="text-align:center">no</td>
+</tr>
+<tr>
+<td><a name="input_enable_azure_policy"></a> <a href="#input_enable_azure_policy">enable_azure_policy</a></td>
+<td>Enable the creation of policy_set_definitions and resource_group_policy_assignment or not</td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
 <td style="text-align:center">no</td>
 </tr>
 <tr>

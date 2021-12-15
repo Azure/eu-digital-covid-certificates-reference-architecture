@@ -627,6 +627,13 @@
 &lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;a name=&#34;input_enable_azure_policy&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_enable_azure_policy&#34;&gt;enable_azure_policy&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Enable the creation of policy_set_definitions and resource_group_policy_assignment or not&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bool&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;a name=&#34;input_enable_log_analytics_workspace&#34;&gt;&lt;/a&gt; &lt;a href=&#34;#input_enable_log_analytics_workspace&#34;&gt;enable_log_analytics_workspace&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Enable the creation of azurerm_log_analytics_workspace and azurerm_log_analytics_solution or not&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;bool&lt;/code&gt;&lt;/td&gt;

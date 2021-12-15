@@ -87,7 +87,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.161f202a8c86ab27ddc5433a2be3690c.json"
+  data-offline-search-index-json-src="/offline-search-index.cb278bcdd9f3e7bb9d4fa80df09f30c6.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -295,6 +295,7 @@ DONE
 <span style="color:#c4a000">jumpbox_ssh_source_address_prefixes</span> = <span style="color:#000;font-weight:bold">[]</span>
 <span style="color:#c4a000">ghcr_username</span>                       = <span style="color:#4e9a06">&#34;&lt;GH Username&gt;&#34;</span>
 <span style="color:#c4a000">ghcr_password</span>                       = <span style="color:#4e9a06">&#34;&lt;GH Password / Token&gt;&#34;</span>
+<span style="color:#c4a000">enable_azure_policy</span>                 = <span style="color:#204a87;font-weight:bold">true</span>
 </code></pre></div><table>
 <thead>
 <tr>
@@ -364,7 +365,7 @@ DONE
 </tr>
 <tr>
 <td><a name="input_ghcr_password"></a> <a href="#input_ghcr_password">ghcr_password</a></td>
-<td>GitHub Container Registry Password</td>
+<td>GitHub Container Registry Personal Access Token (PAT) with <code>read:packages</code> access, Refer to <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Creating a personal access token</a> for more information.</td>
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
@@ -375,6 +376,13 @@ DONE
 <td><code>string</code></td>
 <td>n/a</td>
 <td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td><a name="input_enable_azure_policy"></a> <a href="#input_enable_azure_policy">prefix</a></td>
+<td>Enable Azure Policy. Incase of Quota or duplication restrictions. these Policies can be enable and disabled through this boolean.)</td>
+<td><code>boolean</code></td>
+<td><code>&quot;&quot;</code></td>
+<td style="text-align:center">no</td>
 </tr>
 </tbody>
 </table>
