@@ -1,5 +1,5 @@
 
-baseURL = '/'
+baseURL = '/eu-digital-covid-certificates-reference-architecture/'
 languageCode = 'en'
 title = 'EU Digital COVID Certificate - Azure Reference Architecture'
 
