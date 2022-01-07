@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EU Digital COVID Certificate - Azure Reference Architecture – Mobile Applications</title>
-    <link>/mobile-apps/</link>
+    <link>/eu-digital-covid-certificates-reference-architecture/mobile-apps/</link>
     <description>Recent content in Mobile Applications on EU Digital COVID Certificate - Azure Reference Architecture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="/mobile-apps/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/eu-digital-covid-certificates-reference-architecture/mobile-apps/index.xml" rel="self" type="application/rss+xml" />
     
     
       

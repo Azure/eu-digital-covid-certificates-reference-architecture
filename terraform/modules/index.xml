@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EU Digital COVID Certificate - Azure Reference Architecture – Terraform Modules</title>
-    <link>/terraform/modules/</link>
+    <link>/eu-digital-covid-certificates-reference-architecture/terraform/modules/</link>
     <description>Recent content in Terraform Modules on EU Digital COVID Certificate - Azure Reference Architecture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="/terraform/modules/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/eu-digital-covid-certificates-reference-architecture/terraform/modules/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Terraform: Base Infrastructure Terraform Module</title>
-      <link>/terraform/modules/base-infra/</link>
+      <link>/eu-digital-covid-certificates-reference-architecture/terraform/modules/base-infra/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/terraform/modules/base-infra/</guid>
+      <guid>/eu-digital-covid-certificates-reference-architecture/terraform/modules/base-infra/</guid>
       <description>
         
         
@@ -836,10 +836,10 @@
     
     <item>
       <title>Terraform: Jumpbox Terraform Module</title>
-      <link>/terraform/modules/jumpbox/</link>
+      <link>/eu-digital-covid-certificates-reference-architecture/terraform/modules/jumpbox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/terraform/modules/jumpbox/</guid>
+      <guid>/eu-digital-covid-certificates-reference-architecture/terraform/modules/jumpbox/</guid>
       <description>
         
         
