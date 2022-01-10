@@ -3,90 +3,90 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/variables/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/mobile-apps/build/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/background/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/modules/base-infra/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/common/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/dev/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/private-link/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/azure-dns/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/eu/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/modules/jumpbox/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/key-vault/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deployment/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deployment/certificates/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/cmk/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/ie/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/mobile-apps/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/devcontainer/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/github-codespaces/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/aad/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deployment/deployment/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/prerequisites/manual/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deployment/validation/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deployment/web-authentication/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/deep-dives/log-analytics/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/modules/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url><url>
     <loc>/eu-digital-covid-certificates-reference-architecture/terraform/</loc>
-    <lastmod>2022-01-07T17:28:50+00:00</lastmod>
+    <lastmod>2022-01-10T10:19:37+00:00</lastmod>
   </url>
 </urlset>
