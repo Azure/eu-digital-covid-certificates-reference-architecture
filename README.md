@@ -9,7 +9,7 @@ The reference architecture in this repository is intended to showcase some of th
 The "EU Digital Green Ceritificates" project (aka "EU Digital Covid Certificates" project, hereforth EU DCC), is intended to facilitate free movement of EU citizens in compliance to a common set of COVID regulations and allowing for some level of per-country customization. It was Developed by Deutsche Telekom and SAP and shared as open source for implementation and hosting by all EU member countries. The repository for the project can be found [here](https://github.com/eu-digital-green-certificates/dgc-overview).
 
 ## Documentation
-A guide for navigating and using this reference architecture can be found [here](https://symmetrical-eureka-325a8bfe.pages.github.io/).
+A guide for navigating and using this reference architecture can be found [here](https://azure.github.io/eu-digital-covid-certificates-reference-architecture/).
 
 
 ## Contributing
