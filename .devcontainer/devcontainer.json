@@ -1,8 +1,14 @@
 {
-    "name": "EU Digital Green Cert Azure Reference",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "name": "EU Digital Covid Certificate - Azure Reference Architecture",
+
+    // Option 1: Use the pre-built Dev Container image from GitHub
+    "image": "ghcr.io/azure/eu-digital-covid-certificates-reference-architecture/devcontainer:latest",
+
+    // Option 2: Build a Dev Container image locally
+    //"build": {
+    //    "dockerfile": "Dockerfile"
+    //},
+
     "containerUser": "vscode",
     "extensions": [
         "hashicorp.terraform"
